@@ -3,7 +3,7 @@ The repo represents a variety data structures and algorithms implemented from sc
 
 The purpose of the repo was to strengthen my skill at both programming languages along with reinforcing fundamental concepts of computer science. 
 
-
+In progress still..
 # Data Structures 
 ## Python
 1. [Binary Search Tree](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/BinarySearchTree.py)
