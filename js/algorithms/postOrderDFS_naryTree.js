@@ -1,12 +1,16 @@
-function postorder_recursive(node) {
-    /*
-    This algorithm traverses an N-Ary tree
-    in post-order fashion recursively. 
 
-    Assumes input nodes have a property .children
-    containing all the children the node is connected to,
-    and a property .val
-    */
+/**
+ *  This code describes the recursive post order traversal
+    of a n-ary tree. Before any given node in the tree is visited,
+    all the nodes in the left subtree of the current node, and all
+    the nodes in the right subtree of the current node are visited.
+
+ * @param {object} node Root of Nary Tree
+ * @param {number} node.val Value of current node 
+ * @param {object[]} node.children Array of children that are rooted to current node
+ * @returns {number[]} Output values of n-ary tree in post order 
+ */
+function postorder_recursive(node) {
     if (node == null) {
         return []; 
     }
@@ -26,16 +30,18 @@ function postOrder_helperRecursive(node, output) {
 }
 
 
+/**
+ *  This code describes the iterative post order traversal
+    of a n-ary tree. Before any given node in the tree is visited,
+    all the nodes in the left subtree of the current node, and all
+    the nodes in the right subtree of the current node are visited.
+
+ * @param {object} node Root of Nary Tree
+ * @param {number} node.val Value of current node 
+ * @param {object[]} node.children Array of children that are rooted to current node
+ * @returns {number[]} Output values in binary tree in post order 
+ */
 function postorder_iterative(node) {
-    /*
-    This algorithm traverses an N-Ary tree in post-order fashion iteratively. 
-
-    Assumes input nodes have a property .children containing all the children the node is connected to,
-    and a property .val.
-
-    Key thing: emulate the recursive call stack using an actual stack.
-    How we convert recursive code to iterative code. 
-    */
     if (node == null) {
        return []; 
     }

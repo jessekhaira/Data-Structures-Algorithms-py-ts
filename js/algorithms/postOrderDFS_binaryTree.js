@@ -1,17 +1,17 @@
-function postOrderDFS_recursive(node, output) {
-    /*
-    This code describes the recursive post order traversal
+/**
+ *  This code describes the recursive post order traversal
     of a binary tree. Before any given node in the tree is visited,
     all the nodes in the left subtree of the current node, and all
     the nodes in the right subtree of the current node are visited.
-
-    Inputs:
-        -> node (Binary Tree Node): Binary Tree node that is assumed 
-        to have a .left property, .right property, and .val property.
-        -> output(list)
-    Returns:
-        -> list[int] containing binary trees values in post-order
-    */
+    
+ * @param {object} node Root of Binary Tree
+ * @param {number} node.val Value of current node 
+ * @param {object} node.left Left subtree rooted to current node
+ * @param {object} node.right Right subtree rooted to current node 
+ * @param {number[]} output Array of values 
+ * @returns {number[]} Output values in binary tree in post order 
+ */
+function postOrderDFS_recursive(node, output) {
     if (node == null) {
         return;
     }
@@ -22,20 +22,20 @@ function postOrderDFS_recursive(node, output) {
 }
 
 
-function postOrderDFS_iterative(node) {
-    /*
-    This code describes the recursive post order traversal
+
+/**
+ *  This code describes the iterative post order traversal
     of a binary tree. Before any given node in the tree is visited,
     all the nodes in the left subtree of the current node, and all
     the nodes in the right subtree of the current node are visited.
 
-    Inputs:
-        -> node (Binary Tree Node): Binary Tree node that is assumed 
-        to have a .left property, .right property, and .val property.
-        -> output(list)
-    Returns:
-        -> list[int] containing binary trees values in post-order
-    */
+ * @param {object} node Root of Binary Tree
+ * @param {number} node.val Value of current node 
+ * @param {object} node.left Left subtree rooted to current node
+ * @param {object} node.right Right subtree rooted to current node 
+ * @returns {number[]} Output values in binary tree in post order 
+ */
+function postOrderDFS_iterative(node) {
     if (node == null) {
         return; 
     }

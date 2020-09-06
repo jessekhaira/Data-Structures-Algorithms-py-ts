@@ -1,20 +1,24 @@
 import {BinaryTreeNode} from "./utils/BinaryTree";
-class BinarySearchTree {
-    /*
-    This class represents a binary search tree. This data structure is a
+
+/**
+ *  This class represents a binary search tree. This data structure is a
     rooted binary tree where for any given node, all values in the left subtree
     of that node are less than or equal to that nodes value, while all values in the right 
     subtree of that node are greater than that nodes value.
 
     This allows for efficient lookups, insertions, and deletions in the average
     case of O(logN) T | O(1)S. But this data structure does not guarantee balancing,
-    meaning that in the worst case, lookups, insertions, and deletions take O(N) T | O(1) S
+    meaning that in the worst case, lookups, insertions, and deletions take O(N) T | O(1) S.
 
-    Inputs:
-        -> val (int): Integer representing the value at the root of the BST
-    */ 
-
+ * @constructor @public
+ */
+class BinarySearchTree {
+    /**@param {number} val Value present at the root of the binary search tree */
     constructor(val) {
+        /** Root of binary tree
+         * @public
+         * @type {BinaryTreeNode}
+         */
         this.root = new BinaryTreeNode(val);
     }
     

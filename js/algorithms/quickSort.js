@@ -1,14 +1,13 @@
-function quickSort(array) {
-    /*
-    This function represents an efficient implementation of the quick sort
-    algorithm that runs in O(NlogN) time and O(logN) space, where N is the 
-    length of the input array.
 
-    Inputs:
-        -> array(list[int]): List of integers
-    Returns:
-        -> array(list[int]): Sorted in ascending order
-    */
+/**
+ * This function represents an efficient implementation of the quick sort
+   algorithm that runs in O(NlogN) time and O(logN) space, where N is the 
+   length of the input array.
+ * @param {number[]} array List of integers to sort in ascending
+    order
+ * @returns {number[]} List of integers sorted in ascending order 
+ */
+function quickSort(array) {
    if (array == null) {
        return null;
    }

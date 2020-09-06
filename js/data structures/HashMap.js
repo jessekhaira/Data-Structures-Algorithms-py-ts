@@ -1,22 +1,30 @@
-class ChainingNode {
-    /*
-    This class represents a Linked List node used for chaining to resolve
-    collisons in a HashMap class.
+/**
+ *  This class represents a Linked List node used to resolve
+    collisons in a HashMap.
 
-    Inputs:
-        -> key (int): Integer representing the key being hashed into the HashMap
-        -> value (int): Integer representing the value being hashed into the HashMap
-    */
+ * @public
+ * @constructor
+ */
+class ChainingNode {
+    /**
+     * 
+     * @param {number} key Integer representing the key being hashed into the HashMap
+     * @param {number } val Integer representing the value being hashed into the HashMap
+     */
     constructor(key,val) {
         this.key = key;
         this.val =val;
+
+        /**
+         * @type {null|ChainingNode} Node the current node is linked to 
+         */
         this.next = null;
     }
 }
 
-class HashMap {
-    /*
-    This class represents a HashMap class that accepts integer inputs. All methods
+
+/**
+ *  This class represents a HashMap class that accepts integer inputs. All methods
     of a HashMap are supported by this class -> put, remove, get, with dynamic array 
     resizing. 
 
@@ -25,10 +33,16 @@ class HashMap {
     is exceeded, dynamic array resizing is done to ensure O(1) TS lookups, removals, and
     additions. Hash collisons are handled through chaining with Linked Lists. 
 
-    Inputs:
-        -> k (int): Initial capacity of the static array. Default is 3000.
-        -> load_factor (int): Target load factor for the HashMap. Goal is to keep below 0.75. 
-    */
+ * @public
+ * @constructor
+
+ */
+class HashMap {
+    /**
+     * 
+     * @param {number} k Initial capacity of the static array. Default is 3000.
+     * @param {number} loadFactor Target load factor for the HashMap. Goal is to keep below 0.75. 
+     */
     constructor(k=3000, loadFactor=0.75) {
         this.buckets = Array(k).fill(null);
         this.loadFactor = loadFactor;
