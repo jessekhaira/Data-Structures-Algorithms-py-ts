@@ -5,7 +5,7 @@
     integers in O(NlogN) time using just O(N) space.
  * @param {number[]} array List of integers to sort in ascending
     order
- * @returns {number[]} array List of integers sorted in ascending order
+ * @returns {number[]} List of integers sorted in ascending order
  */
 function mergesort(array) {
     if (array == null || array.length === 0) {
