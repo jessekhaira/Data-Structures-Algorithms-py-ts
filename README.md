@@ -7,11 +7,13 @@ In progress still..
 1. [Binary Search Tree](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/BinarySearchTree.py)
 2. [Disjoint Set](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/DisjointSet.py)
 3. [HashMap](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/HashMap.py)
+4. [Min/Max Heap](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/Heap.py)
 
 ## JavaScript
 1. [Binary Search Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/BinarySearchTree.js)
 2. [Disjoint Set](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/DisjointSet.js)
 3. [HashMap](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/HashMap.js)
+4. [Min/Max Heap](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/Heap.js)
 
 
 # Algorithms
