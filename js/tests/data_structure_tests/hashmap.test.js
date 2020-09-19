@@ -1,4 +1,4 @@
-import {HashMap} from "../data structures/HashMap.js";
+import {HashMap} from "../../data structures/HashMap.js";
 
 
 test('test 1', () => {

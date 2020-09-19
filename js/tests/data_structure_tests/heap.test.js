@@ -1,4 +1,4 @@
-import {Heap} from "../data structures/Heap.js";
+import {Heap} from "../../data structures/Heap.js";
 
 
 test('test minheap', () => {

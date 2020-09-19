@@ -1,4 +1,4 @@
-import {DisjointSet} from "../data structures/DisjointSet.js";
+import {DisjointSet} from "../../data structures/DisjointSet.js";
 
 
 

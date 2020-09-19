@@ -1,4 +1,4 @@
-import quickSort from "../algorithms/quickSort";
+import quickSort from "../../algorithms/quickSort";
 
 
 test('test 1', () => {

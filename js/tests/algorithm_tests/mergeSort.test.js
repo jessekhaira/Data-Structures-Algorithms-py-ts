@@ -1,4 +1,4 @@
-import mergesort from "../algorithms/mergeSort"
+import mergesort from "../../algorithms/mergeSort"
 
 test('test 1', () => {
     let obj1 = [20,4,5,-9,-120]
