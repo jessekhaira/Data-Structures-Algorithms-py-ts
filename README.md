@@ -33,4 +33,4 @@ In progress still..
 4. [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/quickSort.js)
 5. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/mergeSort.js) 
 6. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/FloydsTortoiseHareAlgo.js)
-7. [QuickSelect](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quickselect.js)
+7. [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/quickselect.js)
