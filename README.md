@@ -23,7 +23,8 @@ In progress still..
 3. [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/postOrderDFS_naryTree.py)
 4. [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quicksort.py)
 5. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/mergesort.py) 
-5. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
+6. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
+7. [QuickSelect](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quickselect.py)
 
 ## JavaScript
 1. [Breadth First Search](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/breadthFirstSearch.js)
@@ -31,4 +32,5 @@ In progress still..
 3. [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/postOrderDFS_naryTree.js)
 4. [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/quickSort.js)
 5. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/mergeSort.js) 
-5. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/FloydsTortoiseHareAlgo.js)
+6. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/FloydsTortoiseHareAlgo.js)
+7. [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/quickselect.js)
