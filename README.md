@@ -25,6 +25,7 @@ In progress still..
 5. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/mergesort.py) 
 6. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
 7. [QuickSelect](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quickselect.py)
+8. [Knuth-Morris-Pratt](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/knuthMorrisPratt.py)
 
 ## JavaScript
 1. [Breadth First Search](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/breadthFirstSearch.js)
@@ -34,3 +35,4 @@ In progress still..
 5. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/mergeSort.js) 
 6. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/FloydsTortoiseHareAlgo.js)
 7. [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/quickselect.js)
+8. [Knuth-Morris-Pratt](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/knuthMorrisPratt.js)
