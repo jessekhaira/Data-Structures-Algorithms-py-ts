@@ -89,6 +89,12 @@ class Trie {
     }
 
 
+    /**
+     * Deletes a word from the trie if the word exists in the trie in O(k) time, O(1) space b/a/w.
+
+     * @param {string} word 
+     * @returns {null} 
+     */
     delete(word) {
         if (!(this.lookup(word))) {
             return null;
