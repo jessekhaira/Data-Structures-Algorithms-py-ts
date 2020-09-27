@@ -1,6 +1,6 @@
 from utils.binaryTree import binaryTreeNode
 
-class BinarySearchTree(object):
+class BinarySearchTree:
     """
     This class represents a binary search tree. This data structure is a
     rooted binary tree where for any given node, all values in the left subtree

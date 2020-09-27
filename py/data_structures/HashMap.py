@@ -1,4 +1,4 @@
-class ChainingNode(object):
+class ChainingNode:
     """
     This class represents a Linked List node used for chaining to resolve
     collisons in a HashMap class.
@@ -13,7 +13,7 @@ class ChainingNode(object):
         self.next = None 
 
 
-class HashMap(object):
+class HashMap:
     """
     This class represents a HashMap class that accepts integer inputs. All methods
     of a HashMap are supported by this class -> put, remove, get, with dynamic array 
