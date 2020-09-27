@@ -15,7 +15,7 @@ In progress still..
 2. [Disjoint Set](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/DisjointSet.js)
 3. [HashMap](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/HashMap.js)
 4. [Min/Max Heap](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/Heap.js)
-5. [Trie](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/Trie.js)
+5. [Trie](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/data%20structures/Trie.js)
 
 
 # Algorithms
