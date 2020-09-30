@@ -20,21 +20,32 @@ In progress still..
 
 # Algorithms
 ## Python
+### Sorting & Selection 
+1. [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quicksort.py)
+2. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/mergesort.py) 
+3. [QuickSelect](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quickselect.py)
+
+### Tree/Graph Traversal 
 1. [Breadth First Search](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/breadthFirstSearch.py)
 2. [Post Order Depth First Search Binary Tree](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/postOrderDFS_binaryTree.py)
 3. [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/postOrderDFS_naryTree.py)
-4. [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quicksort.py)
-5. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/mergesort.py) 
-6. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
-7. [QuickSelect](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quickselect.py)
-8. [Knuth-Morris-Pratt](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/knuthMorrisPratt.py)
+
+### Miscellaneous
+1. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
+2. [Knuth-Morris-Pratt](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/knuthMorrisPratt.py)
 
 ## JavaScript
+
+### Sorting & Selection 
+1. [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/quickSort.js)
+2. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/mergeSort.js) 
+3. [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/quickselect.js)
+
+### Tree/Graph Traversal 
 1. [Breadth First Search](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/breadthFirstSearch.js)
 2. [Post Order Depth First Search Binary Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/postOrderDFS_binaryTree.js)
 3. [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/postOrderDFS_naryTree.js)
-4. [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/quickSort.js)
-5. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/mergeSort.js) 
-6. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/FloydsTortoiseHareAlgo.js)
-7. [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/quickselect.js)
-8. [Knuth-Morris-Pratt](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/knuthMorrisPratt.js)
+
+### Miscellaneous
+1. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/FloydsTortoiseHareAlgo.js)
+2. [Knuth-Morris-Pratt](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/knuthMorrisPratt.js)
