@@ -33,6 +33,7 @@ In progress still..
 ### Miscellaneous
 1. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
 2. [Knuth-Morris-Pratt](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/knuthMorrisPratt.py)
+3. [Binary Search]((https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/binarySearch.py)
 
 ## JavaScript
 
