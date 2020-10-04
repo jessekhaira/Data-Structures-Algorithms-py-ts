@@ -50,3 +50,4 @@ In progress still..
 ### Miscellaneous
 1. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/FloydsTortoiseHareAlgo.js)
 2. [Knuth-Morris-Pratt](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/knuthMorrisPratt.js)
+3. [Binary Search](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/binarySearch.js)
