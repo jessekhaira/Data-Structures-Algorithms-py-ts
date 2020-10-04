@@ -65,10 +65,10 @@ export function iterativeBinarySearch(array, target) {
  * @returns {number} Represents the idx at which the target value occurs, or -1 if it does not occur
  */
 export function recursiveBinarySearch(array, target) {
-    return recursiveHelperBS(array, target, 0, array.length-1); 
+    return recursiveHelperBinarySearch(array, target, 0, array.length-1); 
 }
 
-function recursiveHelperBS(array, target, left, right) {
+function recursiveHelperBinarySearch(array, target, left, right) {
     if (left == right) {
         return (array[left] === target ? left: -1);
     }
@@ -78,10 +78,10 @@ function recursiveHelperBS(array, target, left, right) {
     }
 
     else if (array[mid] >target) {
-        return recursiveHelperBS(array, target, left, mid);
+        return recursiveHelperBinarySearch(array, target, left, mid);
     }
 
     else {
-        return recursiveHelperBS(array, target, mid+1, right); 
+        return recursiveHelperBinarySearch(array, target, mid+1, right); 
     }
 }
