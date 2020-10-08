@@ -1,5 +1,5 @@
 # Data Structures and Algorithms in JavaScript and Python
-The repo represents a variety of fundamental data structures and algorithms implemented from scratch in a clear and concise way in both JavaScript and Python. 
+The repo represents a variety of fundamental data structures and algorithms implemented with good documentation in both JavaScript and Python. 
 
 In progress still..
 # Data Structures 
