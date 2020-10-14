@@ -29,6 +29,7 @@ In progress still..
 1. [Breadth First Search](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/breadthFirstSearch.py)
 2. [Post Order Depth First Search Binary Tree](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/postOrderDFS_binaryTree.py)
 3. [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/postOrderDFS_naryTree.py)
+4. [Morris Traversal](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/algorithms/MorrisTraversal.py)
 
 ### Miscellaneous
 1. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
@@ -46,6 +47,7 @@ In progress still..
 1. [Breadth First Search](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/breadthFirstSearch.js)
 2. [Post Order Depth First Search Binary Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/postOrderDFS_binaryTree.js)
 3. [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/postOrderDFS_naryTree.js)
+4. [Morris Traversal](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/MorrisTraversal.js)
 
 ### Miscellaneous
 1. [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/FloydsTortoiseHareAlgo.js)
