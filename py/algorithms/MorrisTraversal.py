@@ -12,6 +12,11 @@ def Morris_Inorder_Traversal(node):
 
     Time b/a/w: O(n) where n is the number of nodes in the tree
     Space b/a/w: O(1)
+
+    Input:
+        -> node (Binary Tree Node): Root of binary tree
+    Output:
+        -> set{} containing all nodes in the tree with one child 
     """
     if not node:
         return
@@ -62,13 +67,18 @@ def Morris_PreOrder_Traversal(node):
     This algorithm represents a way to traverse binary trees in pre-order manner using just
     O(1) space with the Morris Traversal algorithm.
     
-    In pre-order traversal, the node is visited first, 
+    In pre-order traversal, the node is visited first, then its left subtree, then its right subtree. 
 
     In this case, the algorithm is being used to find the number of nodes in the binary
     tree with just one child. 
 
     Time b/a/w: O(n) where n is the number of nodes in the tree
     Space b/a/w: O(1)
+
+    Input:
+        -> node (Binary Tree Node): Root of binary tree
+    Output:
+        -> set{} containing all nodes in the tree with one child 
     """
     output = set()
     while node:
