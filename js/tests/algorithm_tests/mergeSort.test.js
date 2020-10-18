@@ -9,5 +9,12 @@ test('test 1', () => {
 test('test 2', () => {
     let obj1 = [-9,4,5,9,10,10,20,5,8,-30,-90];
     expect(mergesort(obj1)).toStrictEqual(obj1.sort((a,b) => a-b));
-} )
+});
+
+
+
+test('test 3', () => {
+    let obj1 = [-9,4,5,9,10,10,20,5,8,-30,-90, 20, 0, 0, 0, 3, 4,5, 0, 2,3, 3,3];
+    expect(mergesort(obj1)).toStrictEqual(obj1.sort((a,b) => a-b));
+});
 
