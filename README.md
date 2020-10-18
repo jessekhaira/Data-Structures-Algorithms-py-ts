@@ -43,6 +43,7 @@ In progress still..
 1. [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/quickSort.js)
 2. [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/mergeSort.js) 
 3. [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/quickselect.js)
+4. [HeapSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/heapsort.js) 
 
 ### Tree/Graph Traversal 
 1. [Breadth First Search](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/breadthFirstSearch.js)
