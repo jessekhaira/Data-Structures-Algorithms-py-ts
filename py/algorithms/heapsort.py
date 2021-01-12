@@ -32,6 +32,14 @@ def heapsort(array):
 
 
 def heapify(array):
+    """
+    This function accepts an input array of integers, and max-heapifys the array. 
+
+    Inputs:
+        - array(list[int]): List of integers
+    Outputs:
+        - None 
+    """ 
     pointer = (len(array)-2)//2
     while pointer >= 0:
         siftDown(array, pointer, len(array)-1)
