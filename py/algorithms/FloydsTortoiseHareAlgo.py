@@ -1,14 +1,12 @@
 def floydsTortoiseHareAlgo(node):
     """
-    This function implements an algorithm called floyd's
-    tortoise and hare algorithm. It can be used to find whether
-    or not a cycle exists in a linked list, and at which node
-    the cycle starts at using O(1) space (versus doing the above
-    tasks with a hash-set or Hash Map).
+    This function represents floyd's tortoise and hare algorithm. It can be used to find whether or 
+    not a cycle exists in a linked list, and at which node the cycle starts at using O(1) space 
+    (versus doing the above tasks with a data structure like a hash set). 
     
     Inputs:
-        -> node (Linked List Node): Assumes the input is a node within
-        a linked list with a .val property and a .next property
+        -> node (Linked List Node): Assumes the input is a node within a linked list with a .val property and 
+        a .next property
 
     Outputs:
         -> None if there is no cycle in the linked list, or the Node that starts the cycle 
