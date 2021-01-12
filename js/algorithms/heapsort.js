@@ -35,6 +35,11 @@ function heapsort(array) {
     return array;
 }
 
+
+/**
+ * This function accepts an input array of integers, and max-heapifys the array. 
+ * @param {number[]} array List of integers 
+ */
 function heapify(array) {
     let parentIdx = Math.floor(array.length-2/2);
     while (parentIdx >= 0) {
