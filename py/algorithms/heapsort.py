@@ -65,10 +65,11 @@ def swap(array, i, j):
     """
     This function accepts an array of integers, and two integers i and j that represent
     indices within the array of integers, and swaps the values contained at the two indices.
+
     Inputs:
-        - array(list[int])
-        - i(int)
-        - j(int)
+        - array(list[int]): List of integer 
+        - i(int): Integer representing an index in the array
+        - j(int): Integer representing an index in the array 
     Outputs:
         - None. Swaps inplace. 
     """
