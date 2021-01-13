@@ -13,10 +13,9 @@ def quickselect(array, k):
         to retrieve the output value. 
     
     Example:
-
-    array = [3,5,-2,1,4,5]
-    output = quickselect(array, 0) 
-    print(output) # will be -2
+        array = [3,5,-2,1,4,5]
+        output = quickselect(array, 0) 
+        print(output) # will be -2
     """
     assert k <= len(array), "k has to be within 0 to len(array)-1!"
     kth_elem = quickselectHelper(array, k, 0, len(array)-1)
