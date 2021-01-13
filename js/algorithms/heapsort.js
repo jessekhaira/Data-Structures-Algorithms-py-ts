@@ -60,6 +60,7 @@ function swap(array, i, j) {
     [array[i], array[j]] = [array[j], array[i]];
 }
 
+
 function siftDown(array, start, end) {
     let firstChild = start*2+1;
     while (firstChild <= end) {

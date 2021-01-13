@@ -46,6 +46,20 @@ def heapify(array):
         pointer -= 1 
     
 def siftDown(array, start, end):
+    """
+    This function represents the siftdown algorithm used to maintain the heap property for a 
+    max heap. This algorithm accepts an array of integers, and two integers that represent indices 
+    within the heap such that start <= end. The element located at the start index is moved down 
+    the heap until start > end, or the heap property is satisifed. 
+
+    Inputs:
+        - array(list[int]): List of integers representing a heap
+        - start(int): Integer representing an index within the heap
+        - end(int): Integer representing an index within the heap
+    Outputs:
+        - None
+    """ 
+
     firstChild = start*2+1
     while firstChild <= end:
         secondChild = start*2+2 if start*2+2 <= end else -1 
