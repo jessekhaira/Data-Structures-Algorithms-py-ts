@@ -62,4 +62,14 @@ def siftDown(array, start, end):
             break 
 
 def swap(array, i, j):
+    """
+    This function accepts an array of integers, and two integers i and j that represent
+    indices within the array of integers, and swaps the values contained at the two indices.
+    Inputs:
+        - array(list[int])
+        - i(int)
+        - j(int)
+    Outputs:
+        - None. Swaps inplace. 
+    """
     array[i], array[j] = array[j], array[i] 
