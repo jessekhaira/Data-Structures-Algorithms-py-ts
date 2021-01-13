@@ -59,7 +59,6 @@ def siftDown(array, start, end):
     Outputs:
         - None
     """ 
-
     firstChild = start*2+1
     while firstChild <= end:
         secondChild = start*2+2 if start*2+2 <= end else -1 

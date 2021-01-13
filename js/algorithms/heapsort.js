@@ -60,7 +60,17 @@ function swap(array, i, j) {
     [array[i], array[j]] = [array[j], array[i]];
 }
 
+/**
+ *  This function represents the siftdown algorithm used to maintain the heap property for a 
+    max heap. This algorithm accepts an array of integers, and two integers that represent indices 
+    within the heap such that start <= end. The element located at the start index is moved down 
+    the heap until start > end, or the heap property is satisifed. 
 
+ * @param {number[]} array List of integers representing a heap
+ * @param {number} start Integer representing an index within the heap
+ * @param {number} end Integer representing an index within the heap
+ * @returns {undefined} Sifts down in place 
+ */
 function siftDown(array, start, end) {
     let firstChild = start*2+1;
     while (firstChild <= end) {
