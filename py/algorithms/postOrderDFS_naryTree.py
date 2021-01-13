@@ -1,11 +1,9 @@
 def postOrderDFS_nary(node):
     """
-    This algorithm traverses an N-Ary tree
-    in post-order fashion recursively. 
+    This algorithm traverses an N-Ary tree in post-order fashion recursively. 
 
-    Assumes input nodes have a property .children
-    containing all the children the node is connected to,
-    and a property .val
+    Assumes input nodes have a property .children containing all the children 
+    the node is connected to, and a property .val
     """
     if not node:
         return
@@ -29,8 +27,7 @@ def postorder_iterative(self, node):
     Assumes input nodes have a property .children containing all the children the node is connected to,
     and a property .val.
 
-    Key thing: emulate the recursive call stack using an actual stack.
-    How we convert recursive code to iterative code. 
+    Key thing: emulate the recursive call stack using an actual stack. How we convert recursive code to iterative code. 
     """
     if not node:
         return
