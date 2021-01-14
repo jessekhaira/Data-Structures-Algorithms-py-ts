@@ -22,6 +22,18 @@ class BinarySearchTree {
         this.root = new BinaryTreeNode(val);
     }
     
+    /**
+     *  This method inserts a node into the binary search tree, will ensuring that the 
+        binary search tree property is adhered to.
+
+        Time Complexity:
+            - best/average: O(logN)
+            - worst: O(N) 
+        Space Complexity:
+            - O(1) b/a/w 
+        
+     * @param {number} val Integer representing the value to be inserted into the tree 
+     */
     insert(val) {
         let node = this.root;
         return this._insertHelper(node, val);
