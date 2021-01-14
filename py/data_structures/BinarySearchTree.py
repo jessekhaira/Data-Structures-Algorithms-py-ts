@@ -61,7 +61,7 @@ class BinarySearchTree:
             - O(1) b/a/w 
         
         Inputs:
-            - val (int): 
+            - val (int): Integer representing the node value to look up in the tree 
         Outputs:
             - Node(binaryTreeNode): Binary tree node that contains the given value in the BST 
             or None if no node contains the given value
