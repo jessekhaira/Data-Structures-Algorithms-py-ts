@@ -8,7 +8,7 @@ class BinarySearchTree:
     subtree of that node are greater than that nodes value.
 
     This allows for efficient lookups, insertions, and deletions in the average
-    case of O(logN) T | O(1)S. But this data structure does not guarantee balancing,
+    case of O(logN) T | O(1) S. But this data structure does not guarantee balancing,
     meaning that in the worst case, there are O(N) T | O(1) S lookups, insertions, and 
     deletions.
 
@@ -19,6 +19,20 @@ class BinarySearchTree:
         self.root = binaryTreeNode(val)
     
     def insertion(self,val):
+        """
+        This method inserts a node into the binary search tree, will ensuring that the 
+        binary search tree property is adhered to.
+
+        Time Complexity:
+            - best/average: O(logN)
+            - worst: O(N) 
+        Space Complexity:
+            - O(1) b/a/w 
+        
+        Inputs:
+            - val (int): Integer representing the value to be inserted into the tree 
+        """ 
+        
         node = self.root
         return self._insertionHelper(val,node)
         
