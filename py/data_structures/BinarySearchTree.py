@@ -31,6 +31,8 @@ class BinarySearchTree:
         
         Inputs:
             - val (int): Integer representing the value to be inserted into the tree 
+        Outputs:
+            - None 
         """ 
         
         node = self.root
@@ -48,6 +50,22 @@ class BinarySearchTree:
             return node 
 
     def lookup(self, val):
+        """
+        This method looks for the node that contains the given value in the binary 
+        search tree. 
+
+        Time Complexity:
+            - best/average: O(logN)
+            - worst: O(N) 
+        Space Complexity:
+            - O(1) b/a/w 
+        
+        Inputs:
+            - val (int): 
+        Outputs:
+            - Node(binaryTreeNode): Binary tree node that contains the given value in the BST 
+            or None if no node contains the given value
+        """
         node = self.root
         return self._lookupHelper(node, val)
     

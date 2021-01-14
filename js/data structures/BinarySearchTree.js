@@ -33,6 +33,7 @@ class BinarySearchTree {
             - O(1) b/a/w 
         
      * @param {number} val Integer representing the value to be inserted into the tree 
+     * @returns {undefined} 
      */
     insert(val) {
         let node = this.root;
@@ -53,6 +54,9 @@ class BinarySearchTree {
         }
     }
 
+    /**
+     * @param {number} val 
+     */
     lookup(val) {
         node = this.root;
         return this._lookupHelper(node, val);
