@@ -4,8 +4,8 @@ class ChainingNode:
     collisons in a HashMap class.
 
     Inputs:
-        -> key (int): Integer representing the key being hashed into the HashMap
-        -> value (int): Integer representing the value being hashed into the HashMap
+        - key (int): Integer representing the key being hashed into the HashMap
+        - value (int): Integer representing the value being hashed into the HashMap
     """
     def __init__(self, key, value):
         self.key = key
@@ -25,15 +25,26 @@ class HashMap:
     additions. 
 
     Inputs:
-        -> k (int): Initial capacity of the static array. Default is 3000.
-        -> load_factor (int): Target load factor for the HashMap. Goal is to keep below 0.75. 
+        - k (int): Initial capacity of the static array. Default is 3000.
+        - load_factor (int): Target load factor for the HashMap. Goal is to keep below 0.75. 
     """
     def __init__(self, k=3000, load_factor=0.75):
         self.load_factor = load_factor
         self.static_arr = [None] * k
         self.curr_capacity = 0
     
+
     def put(self, key, value):
+        """
+        This method puts a value within the hash table according to its hash value, with the keys
+        assumed to be integers. 
+
+        Inputs:
+            - key (int): Integer representing the key to hash into the hash table
+            - value (any): Value associated with the key being hashed into the hash table
+        Outputs:
+            - None
+        """ 
         hash_value = self._hashFunc(key)
         if self.static_arr[hash_value] == None:
             self.static_arr[hash_value] = ChainingNode(key,value)
