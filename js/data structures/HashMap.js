@@ -39,7 +39,6 @@ class ChainingNode {
  */
 class HashMap {
     /**
-     * 
      * @param {number} k Initial capacity of the static array. Default is 3000.
      * @param {number} loadFactor Target load factor for the HashMap. Goal is to keep below 0.75. 
      */
