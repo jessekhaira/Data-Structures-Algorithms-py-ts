@@ -45,6 +45,10 @@ class HashMap:
         Outputs:
             - None
         """ 
+        # get the hash value and look at the bucket in the hash table where this key should be inserted
+        # if the bucket is empty, then insert the key-value pair directly into the bucket by inserting
+        # node of new linkedlist. Otherwise, add the key-value pair to the end of the linkedlist in the
+        # bucket. 
         hash_value = self._hashFunc(key)
         if self.static_arr[hash_value] == None:
             self.static_arr[hash_value] = ChainingNode(key,value)
