@@ -120,13 +120,14 @@ class Heap:
 
     def _swap(self, heap, i, j):
         """
-        This method has the responsibility of swapping the values at two indices within an array.
+        This method has the responsibility of swapping the values at two indices within an array
+        inplace. 
 
         Inputs:
             - heap(list[int]): List of integers representing a heap
             - i (int): Integer representing an index within the input array
             - j (int): Integer representing an index within the input array
         Outputs:
-            - None 
+            - None. Swaps indices inplace. 
         """ 
         heap[i], heap[j] = heap[j], heap[i]

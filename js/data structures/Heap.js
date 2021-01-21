@@ -145,6 +145,14 @@ class Heap {
         return heap[0]; 
     }
     
+    /**
+     * This method has the responsibility of swapping the values at two indices within an array 
+     * inplace. 
+     * @param {number[]} heap List of integers representing a heap
+     * @param {number} i Integer representing an index within the input array
+     * @param {number} j Integer representing an index within the input array
+     * @returns {undefined} Swaps indices inplace 
+     */
     swap(heap, i, j) {
         [heap[i], heap[j]] = [heap[j], heap[i]];
     }
