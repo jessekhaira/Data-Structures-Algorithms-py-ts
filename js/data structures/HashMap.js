@@ -49,7 +49,20 @@ class HashMap {
         this.capacity = 0; 
     }
 
+    /**
+     *  This method puts a value within the hash table according to its hash value, with the keys
+        assumed to be integers. 
+     * @param {Number} key Integer representing the key to hash into the hash table
+     * @param {any} val Value associated with the key being hashed into the hash table
+     * @returns {undefined} 
+     */
     put (key, val) {
+        /*
+        get the hash value and look at the bucket in the hash table where this key should be inserted
+        if the bucket is empty, then insert the key-value pair directly into the bucket by inserting
+        node of new linkedlist. Otherwise, add the key-value pair to the end of the linkedlist that 
+        exists in the bucket 
+        */ 
         let hashVal = this.hashFunc(key);
         if (this.buckets[hashVal] === null) {
             this.buckets[hashVal] = new ChainingNode(key, val);
