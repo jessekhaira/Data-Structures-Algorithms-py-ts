@@ -65,6 +65,16 @@ class HashMap:
                 curr_node.val = value 
     
     def get(self, key):
+        """
+        This function retrieves the value associated with the given input key, if it exists within the 
+        hashtable. 
+
+        Inputs:
+            - key (int): Integer representing the key to lookup in the hashtable.
+        Returns:
+            - value (any): The value associated with the key in the hashtable. If the key doesn't exist 
+                in the table, then None will be returned. 
+        """
         hash_value = self._hashFunc(key)
         if self.static_arr[hash_value] == None:
             return 
