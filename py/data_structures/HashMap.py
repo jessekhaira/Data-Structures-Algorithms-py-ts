@@ -75,6 +75,9 @@ class HashMap:
             - value (any): The value associated with the key in the hashtable. If the key doesn't exist 
                 in the table, then None will be returned. 
         """
+        # look up the bucket in the hashtable the key should be residing and if nothing exists in that
+        # bucket, return none. Otherwise, traverse the linked list that exists in that bucket until there
+        # is nothing left or the appropriate key is found. 
         hash_value = self._hashFunc(key)
         if self.static_arr[hash_value] == None:
             return 
