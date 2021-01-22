@@ -21,6 +21,9 @@ class Heap:
     """
     def __init__(self, custom_comparator = None, type_heap =0):
         if not custom_comparator:
+            # if the type_heap property is zero, the heap will be assumed to be a min-heap
+            # and the comparator function used to ensure the heap property is set appropriately 
+            # otherwise if the type_heap is 1, then the heap will be assumed to be a max-heap
             if type_heap == 0:
                 self.comparator_func = lambda x,y: 1 if x-y < 0 else 0 
             else:
