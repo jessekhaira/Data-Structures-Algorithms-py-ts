@@ -100,6 +100,13 @@ class HashMap {
         }
     }
 
+    /**
+     * This function retrieves the value associated with the given input key, if it exists within the 
+        hashtable. 
+     * @param {number} key Integer representing the key to lookup in the hashtable.
+     * @returns {any} The value associated with the key in the hashtable. If the key doesn't exist 
+                in the table, then null will be returned. 
+     */
     get (key) {
         let hashVal = this.hashFunc(key);
         if (this.buckets[hashVal] === null) {
