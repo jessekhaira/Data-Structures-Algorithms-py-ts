@@ -108,6 +108,11 @@ class HashMap {
                 in the table, then null will be returned. 
      */
     get (key) {
+        /*
+            look up the bucket in the hashtable the key should be residing and if nothing exists in that
+            bucket, return none. Otherwise, traverse the linked list that exists in that bucket until there
+            is nothing left or the appropriate key is found.
+        */  
         let hashVal = this.hashFunc(key);
         if (this.buckets[hashVal] === null) {
             return null;
