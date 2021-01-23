@@ -51,6 +51,14 @@ class HashMap {
     /**
      *  This method puts a value within the hash table according to its hash value, with the keys
         assumed to be integers. 
+
+        Time:
+            - O(1) best/avg
+            - O(N) worst 
+        Space:
+            - O(1) best/avg
+            - O(N) worst
+
      * @param {Number} key Integer representing the key to hash into the hash table
      * @param {any} val Value associated with the key being hashed into the hash table
      * @returns {undefined} 
@@ -103,6 +111,13 @@ class HashMap {
     /**
      * This function retrieves the value associated with the given input key, if it exists within the 
         hashtable. 
+
+        Time:
+            - O(1) best/avg
+            - O(N) worst
+        Space:
+            - O(1) best/avg/worst  
+
      * @param {number} key Integer representing the key to lookup in the hashtable.
      * @returns {any} The value associated with the key in the hashtable. If the key doesn't exist 
                 in the table, then null will be returned. 
