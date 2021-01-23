@@ -93,6 +93,10 @@ class HashMap {
         }
     }
 
+    /**
+     * Method used to double the size of the array underlying the HashMap when the load factor of the 
+     * HashMap is exceeded. 
+     */
     _rehash() {
         let savedArr = this.buckets;
         this.buckets = Array(this.buckets.length*2).fill(null);
