@@ -39,6 +39,12 @@ class HashMap:
         This method puts a value within the hash table according to its hash value, with the keys
         assumed to be integers. 
 
+        Time:
+            - O(1) best/avg
+            - O(1) amortized worst case 
+        Space:
+            - O(1) TS b/a/w 
+
         Inputs:
             - key (int): Integer representing the key to hash into the hash table
             - value (any): Value associated with the key being hashed into the hash table
