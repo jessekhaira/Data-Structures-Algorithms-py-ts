@@ -73,7 +73,13 @@ class HashMap:
     def get(self, key):
         """
         This function retrieves the value associated with the given input key, if it exists within the 
-        hashtable. 
+        hashtable.
+
+        Time:
+            - O(1) best/avg
+            - O(1) amortized worst case 
+        Space:
+            - O(1) TS b/a/w  
 
         Inputs:
             - key (int): Integer representing the key to lookup in the hashtable.
