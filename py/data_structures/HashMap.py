@@ -103,6 +103,10 @@ class HashMap:
             return currNode.val
     
     def _dynamicArrayResizing(self):
+        """
+        Method used to double the size of the array underlying the HashMap when the load factor of the 
+        HashMap is exceeded. 
+        """ 
         savedArr = self.static_arr
         self.static_arr = [None] * len(self.static_arr)*2
         for pointer in savedArr:
