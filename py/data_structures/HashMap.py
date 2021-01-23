@@ -41,9 +41,10 @@ class HashMap:
 
         Time:
             - O(1) best/avg
-            - O(1) amortized worst case 
+            - O(N) worst 
         Space:
-            - O(1) TS b/a/w 
+            - O(1) best/avg
+            - O(N) worst
 
         Inputs:
             - key (int): Integer representing the key to hash into the hash table
@@ -77,9 +78,9 @@ class HashMap:
 
         Time:
             - O(1) best/avg
-            - O(1) amortized worst case 
+            - O(N) worst
         Space:
-            - O(1) TS b/a/w  
+            - O(1) best/avg/worst  
 
         Inputs:
             - key (int): Integer representing the key to lookup in the hashtable.
