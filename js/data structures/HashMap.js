@@ -51,14 +51,13 @@ class HashMap {
     /**
      *  This method puts a value within the hash table according to its hash value, with the keys
         assumed to be integers. 
-
-        Time:
-            - O(1) best/avg
-            - O(N) worst 
-        Space:
-            - O(1) best/avg
-            - O(N) worst
-
+        
+     * Time:
+     * - O(1) best/avg
+     * - O(N) worst
+     * 
+     * Space:
+     * - O(1) best/avg/worst  
      * @param {Number} key Integer representing the key to hash into the hash table
      * @param {any} val Value associated with the key being hashed into the hash table
      * @returns {undefined} 
