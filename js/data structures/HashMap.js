@@ -116,11 +116,12 @@ class HashMap {
      * This function retrieves the value associated with the given input key, if it exists within the 
         hashtable. 
 
-        Time:
-            - O(1) best/avg
-            - O(N) worst
-        Space:
-            - O(1) best/avg/worst  
+     * Time:
+     * - O(1) best/avg
+     * - O(N) worst
+     * 
+     * Space:
+     * - O(1) best/avg/worst  
 
      * @param {number} key Integer representing the key to lookup in the hashtable.
      * @returns {any} The value associated with the key in the hashtable. If the key doesn't exist 
