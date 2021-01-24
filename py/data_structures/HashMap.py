@@ -119,6 +119,14 @@ class HashMap:
     
 
     def remove(self, key):
+        """
+        If the input key is within the hashtable, this method removes the key-value pair from the hashtable.
+        
+        Inputs:
+            - key (int): Integer representing a key that may be present in the hashtable
+        Returns:
+            - None 
+        """ 
         hash_value = self._hashFunc(key)
         if self.static_arr[hash_value] == None:
             return 
