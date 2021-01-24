@@ -148,6 +148,12 @@ class HashMap {
         }
     }
 
+    /**
+     * If the input key is within the hashtable, this method removes the key-value pair from the hashtable.
+
+     * @param {Number} key Number representing a key that may be present in the hashtable
+     * @returns {undefined} 
+     */
     remove(key) {
         let hashVal = this.hashFunc(key);
         if (this.buckets[hashVal] === null) {
