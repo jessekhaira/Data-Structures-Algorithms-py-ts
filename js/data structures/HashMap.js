@@ -150,6 +150,13 @@ class HashMap {
 
     /**
      * If the input key is within the hashtable, this method removes the key-value pair from the hashtable.
+     * 
+     * Time:
+     * - O(1) best/avg
+     * - O(N) worst
+     * 
+     * Space:
+     * - O(1) best/avg/worst  
 
      * @param {Number} key Number representing a key that may be present in the hashtable
      * @returns {undefined} 

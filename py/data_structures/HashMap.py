@@ -121,7 +121,13 @@ class HashMap:
     def remove(self, key):
         """
         If the input key is within the hashtable, this method removes the key-value pair from the hashtable.
-        
+
+        Time:
+            - O(1) best/avg
+            - O(N) worst
+        Space:
+            - O(1) best/avg/worst  
+
         Inputs:
             - key (int): Integer representing a key that may be present in the hashtable
         Returns:
