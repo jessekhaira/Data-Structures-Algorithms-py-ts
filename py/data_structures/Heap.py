@@ -83,15 +83,18 @@ class Heap:
 
     def _siftDown(self, heap, start, end):
         """
-        Used to ensure the heap property is met when a value has been removed from the heap by moving
-        the new root down the heap until the heap property is satisfied. Also used for heapifying.
+        This method has the responsibility of ensuring the heap property is met when elements
+        are removed from the heap. 
+        
+        When the root element is removed from the heap, a new element is placed at the root. This method
+        will move that element down the heap until the heap property is satisfied. 
 
         Inputs:
             - heap(list[int]): List of integers representing a heap
             - start (int): Integer representing the index in the array to start sifting down from
             - end (int): Integer representing the index in the array to stop sifting down to
         Outputs:
-            - None. Siftsdown in place. 
+            - None. Sifts down in place. 
         """
         currIdx = start 
         firstChildIdx = start*2+1
