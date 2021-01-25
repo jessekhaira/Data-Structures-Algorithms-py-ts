@@ -156,6 +156,15 @@ class HashMap:
                 return 
             
     def _hashFunc(self, key):
+        """
+        This function represents the hashing algorithm being used for the hashmap. This function takes
+        integers as inputs and produces the bucket within the hashmap the integer falls into. 
+
+        Inputs:
+            - key (int): Integer input to be hashed into the hashmap
+        Outputs: 
+            - Integer representing the index within the hashmap the key falls into
+        """ 
         # abs() to be able to hash in positive AND negative ints
         # although python does support negative integer indices 
         return abs(key % len(self.static_arr))
