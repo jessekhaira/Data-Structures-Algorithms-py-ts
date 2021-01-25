@@ -186,6 +186,19 @@ class HashMap {
         }
     }
 
+    /**
+     *  This function represents the hashing algorithm being used for the hashmap. This function takes
+        integers as inputs and produces the bucket within the hashmap the integer falls into. 
+
+     *Time:
+     *- O(1) best/avg/worst
+        
+     * Space:
+     *- O(1) best/avg/worst
+            
+     * @param {Number} key Integer input to be hashed into the hashmap
+     * @returns {Number} Integer representing the index within the hashmap the key falls into
+     */
     hashFunc(key) {
         return key % this.buckets.length;
     }
