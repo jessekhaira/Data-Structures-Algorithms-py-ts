@@ -85,6 +85,13 @@ class Heap:
         """
         Used to ensure the heap property is met when a value has been removed from the heap by moving
         the new root down the heap until the heap property is satisfied. Also used for heapifying.
+
+        Inputs:
+            - heap(list[int]): List of integers representing a heap
+            - start (int): Integer representing the index in the array to start sifting down from
+            - end (int): Integer representing the index in the array to stop sifting down to
+        Outputs:
+            - None. Siftsdown in place. 
         """
         currIdx = start 
         firstChildIdx = start*2+1
