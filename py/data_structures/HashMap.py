@@ -160,6 +160,11 @@ class HashMap:
         This function represents the hashing algorithm being used for the hashmap. This function takes
         integers as inputs and produces the bucket within the hashmap the integer falls into. 
 
+        Time:
+            - O(1) best/avg/worst
+        Space:
+            - O(1) best/avg/worst
+        
         Inputs:
             - key (int): Integer input to be hashed into the hashmap
         Outputs: 
