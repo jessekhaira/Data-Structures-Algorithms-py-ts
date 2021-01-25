@@ -110,8 +110,17 @@ class Heap {
     }
 
     /**
-     *  Used to ensure the heap property is met when a value has been removed from the heap by moving
-        the new root down the heap until the heap property is satisfied. Also used for heapifying.
+     * This method has the responsibility of ensuring the heap property is met when elements
+        are removed from the heap. 
+        
+        When the root element is removed from the heap, a new element is placed at the root. This method
+        will move that element down the heap until the heap property is satisfied. 
+
+     * @param {number[]} heap  List of integers representing a heap
+     * @param {number} start Integer representing the index in the array to start sifting down from
+     * @param {number} end Integer representing the index in the array to stop sifting down to
+     * @returns {undefined} None. Sifts down in place. 
+
      */
     _siftDown(heap, start, end) {
         let currIdx = start; 
