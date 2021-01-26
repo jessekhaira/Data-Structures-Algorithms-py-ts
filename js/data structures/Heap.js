@@ -71,8 +71,15 @@ class Heap {
     }
 
     /**
-     *  Used to ensure the heap property is met when a value has been inserted into the 
-        heap by moving the inserted value up the heap until the heap property has been satisfied
+     *  This method has the responsibility of ensuring the heap property is met when elements
+        are inserted into the heap. 
+        
+        When an element is inserted into the heap, the heap property will most likely be violated.
+        This method moves the inserted element up the heap until the heap property is satisifed.
+     * @param {number[]} heap List of integers representing a heap
+     * @param {number} start Integer representing the index in the array to start sifting up from
+     * @param {number} end Integer representing the index in the array to stop sifting up 
+     * @returns {undefined} Undefined. Sifts up in place.
      */
     _siftUp(heap, start, end) {
         let parentIdx = Math.floor((start-1)/2);

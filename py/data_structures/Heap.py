@@ -124,8 +124,8 @@ class Heap:
 
         Inputs:
             - heap(list[int]): List of integers representing a heap
-            - start (int): Integer representing the index in the array to start sifting down from
-            - end (int): Integer representing the index in the array to stop sifting down to
+            - start (int): Integer representing the index in the array to start sifting up from
+            - end (int): Integer representing the index in the array to stop sifting up 
         Outputs:
             - None. Sifts up in place. 
         """
