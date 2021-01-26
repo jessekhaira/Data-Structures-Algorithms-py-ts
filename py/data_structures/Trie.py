@@ -1,16 +1,19 @@
 class Trie:
     """
-    This class represents a prefix Trie data structure. The Trie is an ordered tree data
-    structure used to store strings. 
+    This class represents a (simple) prefix Trie data structure. The Trie is an ordered tree 
+    data structure used to store strings. Anytime you have a dataset of strings and you'd like
+    to query the dataset, you can consider using a Trie. 
 
-    Costs b/a/w:
-    - insert: O(k)
-    - lookup: O(k)
-    - deletion: O(k)
-    - startsWith: O(k)
-    - Space: O(n*k)
+    Time: all best/avg/worst
+        - insert: O(k) 
+        - lookup: O(k)
+        - deletion: O(k)
+        - startsWith: O(k)
+    Space: 
+        - O(n*k)
 
-    Where k is the length of a word, and n is the total number of words stored in the trie.
+    Where k is the length of the longest word stored in the trie, and n is the total number of words 
+    stored in the trie.
 
     Used for autocomplete, spell checking, IP routing, etc. 
     """
@@ -20,12 +23,19 @@ class Trie:
 
     def insert(self, word):
         """
-        Inserts a word into the Trie in O(k) time, O(1) space b/a/w.
+        Inserts a word into the Trie.
+        
+        Time:
+            - O(k) best/avg/worst
+        Space:
+            - O(k) best/avg/worst
+
+        k - length of the word being inserted into the trie 
 
         Input:
-        - word(str)
+            - word(str)
         Returns:
-        - None 
+            - None 
         """ 
         node = self.root
         self._insertHelper(node, word)

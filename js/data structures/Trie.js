@@ -1,17 +1,20 @@
 /**
- *  This class represents a prefix Trie data structure. The Trie is an ordered tree data
-    structure used to store strings. 
+ *  This class represents a (simple) prefix Trie data structure. The Trie is an ordered tree 
+    data structure used to store strings. Anytime you have a dataset of strings and you'd like
+    to query the dataset, you can consider using a Trie. 
 
-    Costs b/a/w:
-    - insert: O(k)
-    - lookup: O(k)
-    - deletion: O(k)
-    - startsWith: O(k)
-    - Space: O(n*k)
+ * Time: all best/avg/worst
+ *- insert: O(k) 
+ *- lookup: O(k)
+ *- deletion: O(k)
+ *- startsWith: O(k)
 
-    Where k is the length of a word, and n is the total number of words stored in the trie.
+ * Space: 
+ *- O(n*k)
 
-    Used for autocomplete, spell checking, IP routing, etc. 
+
+ * Where k is the length of a word, and n is the total number of words stored in the trie.
+ * Used for autocomplete, spell checking, IP routing, etc. 
  */
 class Trie {
     constructor() {
