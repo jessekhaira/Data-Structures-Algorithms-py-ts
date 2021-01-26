@@ -30,9 +30,18 @@ class Trie {
     }
 
     /**
-     *  Inserts a word into the Trie in O(k) time, O(1) space b/a/w.
+     * Inserts a word into the Trie in O(k) time, O(1) space b/a/w.
      * @param {string} word 
-     * @returns {null}
+     * 
+     * Time:
+     *- O(k) best/avg/worst
+        
+     * Space:
+     *- O(k) best/avg/worst
+
+     * k - length of the word being inserted into the trie 
+
+     * @returns {undefined}
      */
     insert(word) {
         let node = this.root;
