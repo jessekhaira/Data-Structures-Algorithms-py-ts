@@ -36,8 +36,10 @@ class Heap:
         This method will create a heap out of the given array elements in-place, so the input
         array will be mutated.
         
-        T O(N) best/avg/worst
-        S O(1) 
+        Time
+            - O(N) best/avg/worst
+        Space 
+            - O(1) best/avg/worst
         """
         firstParentIdx = (len(array)-2)//2
         while firstParentIdx >= 0:
@@ -48,8 +50,10 @@ class Heap:
         """
         Inserts value into the min/max heap using the siftUp helper method.
         
-        T O(logN) best/avg/worst
-        S O(1) 
+        Time
+            - O(logN) best/avg/worst
+        Space 
+            - O(1) best/avg/worst
         """ 
         heap.append(val)
         self._siftUp(heap, len(heap)-1, 0)        
@@ -58,8 +62,10 @@ class Heap:
         """
         Peeks at the highest priority element in the min/max heap.
 
-        T O(1) best/avg/worst
-        S O(1) 
+        Time 
+            - O(1) best/avg/worst
+        Space 
+            - O(1) best/avg/worst
         """ 
         if not heap:
             return 
@@ -70,8 +76,10 @@ class Heap:
         Removes the highest priority element from the min/max heap using the siftDown helper
         method.
 
-        T O(logN) best/avg/worst
-        S O(1)
+        Time
+            - O(logN) best/avg/worst
+        Space 
+            - O(1) best/avg/worst
         """
         if not heap:
             return 
@@ -86,8 +94,8 @@ class Heap:
         This method has the responsibility of ensuring the heap property is met when elements
         are removed from the heap. 
         
-        When the root element is removed from the heap, a new element is placed at the root. This method
-        will move that element down the heap until the heap property is satisfied. 
+        When the root element is removed from the heap, a new element is placed at the root. 
+        This method will move that element down the heap until the heap property is satisfied. 
 
         Inputs:
             - heap(list[int]): List of integers representing a heap

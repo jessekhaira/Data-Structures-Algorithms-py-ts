@@ -45,8 +45,11 @@ class Heap {
      *  This method will create a heap out of the given array elements in-place, so the input
         array will be mutated.
         
-        T O(N) best/avg/worst
-        S O(1) 
+     *  Time
+     *- O(N) best/avg/worst
+     
+     * Space 
+     *- O(1) best/avg/worst
      * @param {any[]} array 
      */
     heapify(array) {
@@ -59,9 +62,12 @@ class Heap {
 
     /**
      *  Inserts value into the min/max heap using the siftUp helper method.
-        
-        T O(logN) best/avg/worst
-        S O(1) 
+     * 
+     *  Time
+     *- O(logN) best/avg/worst
+     
+     * Space 
+     *- O(1) best/avg/worst
      * @param {any[]} heap Array of objects 
      * @param {any} val Object being pushed onto the heap
      */
@@ -102,8 +108,11 @@ class Heap {
      *  Removes the highest priority element from the min/max heap using the siftDown helper
         method.
 
-        T O(logN) best/avg/worst
-        S O(1)
+     *  Time
+     *- O(logN) best/avg/worst
+     
+     * Space 
+     *- O(1) best/avg/worst
      * @param {any[]} heap Array of objects 
      */
     remove(heap) {
@@ -155,8 +164,12 @@ class Heap {
 
     /**
      * Peeks at highest priority element in the heap 
-     *  T O(1) best/avg/worst
-        S O(1) 
+     * 
+     *  Time
+     *- O(1) best/avg/worst
+
+     * Space 
+     *- O(1) best/avg/worst
      * @param {any[]} heap Array of objects
      */
     peek(heap) {
