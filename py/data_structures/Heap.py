@@ -116,8 +116,18 @@ class Heap:
 
     def _siftUp(self, heap, start, end):
         """
-        Used to ensure the heap property is met when a value has been inserted into the 
-        heap by moving the inserted value up the heap until the heap property has been satisfied
+        This method has the responsibility of ensuring the heap property is met when elements
+        are inserted into the heap. 
+        
+        When an element is inserted into the heap, the heap property will most likely be violated.
+        This method moves the inserted element up the heap until the heap property is satisifed.
+
+        Inputs:
+            - heap(list[int]): List of integers representing a heap
+            - start (int): Integer representing the index in the array to start sifting down from
+            - end (int): Integer representing the index in the array to stop sifting down to
+        Outputs:
+            - None. Sifts up in place. 
         """
         parentIdx = (start-1)//2
         while parentIdx >= end:
