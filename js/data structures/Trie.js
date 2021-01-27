@@ -30,8 +30,7 @@ class Trie {
     }
 
     /**
-     * Inserts a word into the Trie in O(k) time, O(1) space b/a/w.
-     * @param {string} word 
+     * Inserts a word into the Trie. 
      * 
      * Time:
      *- O(k) best/avg/worst
@@ -40,6 +39,8 @@ class Trie {
      *- O(k) best/avg/worst
 
      * k - length of the word being inserted into the trie 
+
+     * @param {string} word String representing word to insert into the Trie.
 
      * @returns {undefined}
      */
@@ -59,10 +60,16 @@ class Trie {
     }
 
     /**
-     * Looks up a word in the Trie in O(k) time, O(1) space b/a/w.
+     * This method takes an input string and determines if it is currently stored in the Trie. 
+    
+     *Time:
+     *- O(k) best/avg/worst
+    
+     *Space:
+     *- O(1) best/avg/worst
 
-     * @param {string} word 
-     * @returns {boolean} Boolean representing if the word is in the trie 
+     * @param {string} word String representing word to lookup in the Trie
+     * @returns {boolean} Boolean representing whether the string is stored in the Trie 
      */
     lookup(word) {
         let node = this.root;
