@@ -60,8 +60,9 @@ class Trie {
     }
 
     /**
-     * This method takes an input string and determines if it is currently stored in the Trie. 
-    
+     *  This method takes a string as input and returns a boolean indicating whether or not it is currently stored in the 
+        Trie. 
+
      *Time:
      *- O(k) best/avg/worst
     

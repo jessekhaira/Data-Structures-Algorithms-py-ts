@@ -50,7 +50,8 @@ class Trie:
     
     def lookup(self, word):
         """
-        This method takes an input string and determines if it is currently stored in the Trie. 
+        This method takes a string as input and returns a boolean indicating whether or not it is currently stored in the 
+        Trie. 
     
         Time:
             - O(k) best/avg/worst
@@ -70,19 +71,25 @@ class Trie:
             if char not in node:
                 return False
             node = node[char]
-        # Word is only in trie if the last node has the end symbol
-        # in it 
+        # Word is only in trie if the last node has the end symbol in it 
         return self.endSymbol in node 
     
     def startsWith(self, prefix):
         """
-        Checks if the prefix pattern is present in the trie in O(k) time, O(1) space b/a/w.
+        This method recieves a string as an input which is assumed to be a prefix pattern, and then returns a boolean
+        indicating whether or not the prefix pattern is present in the trie. 
+
+        Time:
+            - O(k) best/avg/worst
+        
+        Space:
+            - O(1) best/avg/worst
 
         Input:
-        - prefix(str)
+            - prefix(String): String representing the prefix pattern to look up in the Trie
 
         Returns:
-        - Boolean: Represents if the prefix pattern is in Trie 
+            - Boolean representing whether the prefix pattern is stored in the Trie 
         """
         node = self.root
         return self._startsWithHelper(node, prefix)
