@@ -88,10 +88,19 @@ class Trie {
         return this.endSymbol in node; 
     }
 
-    /**
-     * Checks if the prefix pattern is present in the trie in O(k) time, O(1) space b/a/w.
-     * @param {string} prefix 
-     * @returns {boolean} Boolean representing if the prefix pattern is in the trie
+    /**  
+     * This method recieves a string as an input which is assumed to be a prefix pattern, and then returns a boolean
+        indicating whether or not the prefix pattern is present in the trie. 
+
+     * Time:
+     *- O(k) best/avg/worst
+        
+     * Space:
+     *- O(1) best/avg/worst
+     *
+     * k - length of input string 
+     * @param {string} prefix String representing the prefix pattern to look up in the Trie
+     * @returns {boolean} Boolean representing whether the prefix pattern is stored in the Trie 
      */
     startsWith(prefix) {
         let node = this.root;

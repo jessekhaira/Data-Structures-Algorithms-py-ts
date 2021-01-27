@@ -85,6 +85,7 @@ class Trie:
         Space:
             - O(1) best/avg/worst
 
+        k - length of input string 
         Input:
             - prefix(String): String representing the prefix pattern to look up in the Trie
 
