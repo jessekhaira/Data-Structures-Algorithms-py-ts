@@ -58,6 +58,8 @@ class Trie:
         Space:
             - O(1) best/avg/worst
 
+        k - length of input string
+        
         Input:
             - word(String): String representing word to lookup in the Trie. 
         Returns:

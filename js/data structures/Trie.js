@@ -63,12 +63,13 @@ class Trie {
      *  This method takes a string as input and returns a boolean indicating whether or not it is currently stored in the 
         Trie. 
 
-     *Time:
+     * Time:
      *- O(k) best/avg/worst
     
-     *Space:
+     * Space:
      *- O(1) best/avg/worst
 
+     * k - length of input string 
      * @param {string} word String representing word to lookup in the Trie
      * @returns {boolean} Boolean representing whether the string is stored in the Trie 
      */
