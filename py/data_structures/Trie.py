@@ -33,7 +33,7 @@ class Trie:
         k - length of the word being inserted into the trie 
 
         Input:
-            - word(str)
+            - word(String): String representing word to insert into the Trie. 
         Returns:
             - None 
         """ 
@@ -50,12 +50,17 @@ class Trie:
     
     def lookup(self, word):
         """
-        Looks up a word in the Trie in O(k) time, O(1) space b/a/w.
+        This method takes an input string and determines if it is currently stored in the Trie. 
+    
+        Time:
+            - O(k) best/avg/worst
+        Space:
+            - O(1) best/avg/worst
 
         Input:
-        - word(str)
+            - word(String): String representing word to lookup in the Trie. 
         Returns:
-        - Boolean: Represents if word is in Trie   
+            - Boolean representing whether the string is stored in the Trie 
         """
         node = self.root
         return self._lookupHelper(node, word)
