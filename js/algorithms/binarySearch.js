@@ -11,7 +11,9 @@
     binary search can be used on functions which are monotonically increasing 
     or decreasing in order to find the lowest possible value some condition is met (low
     bound binary search), or the highest possible value some condition is met (high bound
-    binary search). 
+    binary search). This means binary searching over the inputs of these functions to
+    determine which input produces the most optimal value -- highest or lowest output value 
+    that meets some condition. 
 
     Key tip: If the search space consists of integers, then test the binary search on a two
     element set in order to ensure convergence. 
@@ -52,11 +54,12 @@ export function iterativeBinarySearch(array, target) {
     it is an example of a divide and conquer algorithm. 
 
     This algorithm assumes the simplest case of binary search searching over an explicit
-    sorted array, but the search space can be any space that is sorted. For example, 
-    binary search can be used on functions which are monotonically increasing 
-    or decreasing in order to find the lowest possible value some condition is met (low
-    bound binary search), or the highest possible value some condition is met (high bound
-    binary search). 
+    sorted array, but the search space can be any space that is sorted. For example, binary
+    search can be used on functions which are monotonically increasing or decreasing 
+    in order to find the lowest possible value some condition is met (low bound binary search), 
+    or the highest possible value some condition is met (high bound binary search). This means 
+    binary searching over the inputs of these functions to determine which input produces the most 
+    optimal value -- highest or lowest output value that meets some condition. 
 
     Key tip: If the search space consists of integers, then test the binary search on a two
     element set in order to ensure convergence. 
