@@ -120,9 +120,16 @@ class Trie {
 
 
     /**
-     * Deletes a word from the trie if the word exists in the trie in O(k) time, O(1) space b/a/w.
+     * This method recieves a string as input and deletes the string if it is currently stored in the Trie.
+     * 
+     * Time:
+     *- O(k) best/avg/worst
+      
+     * Space:
+     *- O(1) best/avg/worst 
 
-     * @param {string} word 
+     * k - length of input string
+     * @param {string} word String representing the word to delete in the Trie 
      * @returns {null} 
      */
     delete(word) {
