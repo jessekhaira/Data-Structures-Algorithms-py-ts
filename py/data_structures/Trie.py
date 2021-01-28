@@ -107,13 +107,18 @@ class Trie:
 
     def delete(self, word):
         """
-        Deletes a word from the trie if the word exists in the trie in O(k) time, O(1) space b/a/w.
+        This method recieves a string as input and deletes the string if it is currently stored in the Trie. 
+
+        Time:
+            - O(k) best/avg/worst
+        Space:
+            - O(1) best/avg/worst
 
         Input:
-        - word(str)
+            - word(String): String representing the word to delete in the Trie 
 
         Returns:
-        - None 
+            - None 
         """ 
         # confirm word is even in the trie before attempting to delete it
         if not self.lookup(word):
