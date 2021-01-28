@@ -9,7 +9,9 @@ def iterativeBinarySearch(array, target):
     but the search space can be any space that is sorted. For example, binary search can be used on 
     functions which are monotonically increasing  or decreasing in order to find the lowest possible 
     value some condition is met (low bound binary search), or the highest possible value some condition 
-    is met (high bound binary search). 
+    is met (high bound binary search). This means binary searching over the inputs of these functions to
+    determine which input produces the most optimal value -- highest or lowest output value that meets
+    some condition. 
 
     Key tip: If the search space consists of integers, then test the binary search on a two element set 
     in order to ensure convergence. 
@@ -20,7 +22,6 @@ def iterativeBinarySearch(array, target):
     Output:
         - Integer representing the idx at which the target value occurs, or -1 if it does not occur
     """
-    # Define search space is indices of array
     left = 0
     right = len(array)-1
 
