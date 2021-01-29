@@ -8,12 +8,13 @@ def heapsort(array):
     max-heapifying the input array, so on average it will run slower than quicksort, but has the advantage
     of having a worst case time complexity better then quicksort along with not using any space.
 
-    N -> represents the length of the input array
-    Time Complexity b/a/w:
-    - O(NlogN)
+    Time:
+        - O(NlogN) best/avg/worst
 
-    Space Complexity:
-    - O(1) 
+    Space:
+        - O(1) best/avg/worst 
+
+    N - represents the length of the input array
     """
     if not array:
         return [] 

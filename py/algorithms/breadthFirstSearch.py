@@ -8,11 +8,11 @@ def breadthFirstSearch(node):
     out data structure. 
 
     Input:
-        -> node (Binary Tree Root): Root of binary tree to traverse, with properties
+        - node (Binary Tree Root): Root of binary tree to traverse, with properties
         .val to represent the value held at this node, .left to represent the left subtree
         attached to this node, .right to represent the right subtree attached to this node 
     Output:
-        -> list[list[int]] of binary tree levels
+        - list(list[int]) of binary tree levels
 
     """
     queue = deque()

@@ -5,11 +5,11 @@ def floydsTortoiseHareAlgo(node):
     (versus doing the above tasks with a data structure like a hash set). 
     
     Inputs:
-        -> node (Linked List Node): Assumes the input is a node within a linked list with a .val property and 
+        - node (Linked List Node): Assumes the input is a node within a linked list with a .val property and 
         a .next property
 
     Outputs:
-        -> None if there is no cycle in the linked list, or the Node that starts the cycle 
+        - None if there is no cycle in the linked list, or the Node that starts the cycle 
     """
     if not node or not node.next:
         return  
