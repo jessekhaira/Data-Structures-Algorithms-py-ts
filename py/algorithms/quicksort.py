@@ -1,13 +1,21 @@
 def quickSort(array):
     """
-    This function represents an efficient implementation of the quick sort
-    algorithm that runs in O(NlogN) time and O(logN) space, where N is the 
-    length of the input array.
+    This function represents an efficient implementation of the quick sort algorithm.
+
+    Time:
+        - O(NlogN) best/avg
+        - O(N**2) worst 
+
+    Space:
+        - O(logN) best/avg/worst 
+    
+    N - number of elements in the input array 
 
     Inputs:
-        -> array(list[int]): List of integers
+        - array(list[int]): List of integers
+    
     Returns:
-        -> array(list[int]): Sorted in ascending order
+        - The input list of integers sorted in ascending order 
     """
     if not array:
         return
