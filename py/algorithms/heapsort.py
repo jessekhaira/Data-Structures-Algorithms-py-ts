@@ -18,6 +18,9 @@ def heapsort(array):
     """
     if not array:
         return [] 
+    
+    # heap sort relies on the array being a max-heap - therefore we have to heapify the array before
+    # performing any swap operations 
     heapify(array)
     # endIdx represents the idx which the current largest element in the max heap will swap to
     # first iteration, this will be the largest element in the heap so it should go in the last 
