@@ -1,6 +1,11 @@
 def quickSort(array):
     """
-    This function represents an efficient implementation of the quick sort algorithm.
+    This function represents an efficient implementation of the quick sort algorithm. Like the merge sort
+    algorithm, this algorithm uses the divide and conquer strategy to efficiently sort an array. Unlike merge 
+    sort, which splits arrays in half every time, quicksort places a pivot element (chosen to be the leftmost 
+    element in the array in this implementation) to its final sorted position. Quicksort then recurses and sorts 
+    all the elements to the left of a pivot element, and all the elements to the right of a pivot element until
+    the base case is hit.   
 
     Time:
         - O(NlogN) best/avg
