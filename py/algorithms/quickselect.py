@@ -43,6 +43,8 @@ def quickselectHelper(array, k, start, end):
             ptr2 -= 1
         
     swap(array, pivot, ptr2)
+    # if the final sorted index the pivot is sorted to is equal to k, then we've found the kth smallest
+    # element. Otherwise, we recurse into the portion of the array that must contain the kth smallest element
     if ptr2 == k:
         return array[k]
     elif ptr2 > k:
