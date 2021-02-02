@@ -17,8 +17,7 @@ def quickselect(array, k):
 
     Inputs:
         - array (list[int]): List of integers from which to retrieve the kth smallest value 
-        - k (int): Value between 0<=k<len(array). Represents the (sorted) index from which
-        to retrieve the output value. 
+        - k (int): Value between 0<=k<len(array). Represents the (sorted) index from which to retrieve the output value. 
     """
     assert k <= len(array), "k has to be within 0 to len(array)-1!"
     kth_elem = quickselectHelper(array, k, 0, len(array)-1)
