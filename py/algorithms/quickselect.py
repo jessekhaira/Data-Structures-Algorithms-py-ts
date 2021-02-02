@@ -1,7 +1,11 @@
 def quickselect(array, k):
     """
     This function represents the recursive quickselect algorithm, which is used to efficiently find the kth 
-    smallest element in an unordered list. This algorithm is based off of quicksort. 
+    smallest element in an unordered list. This algorithm chooses a pivot element, which in this implementation
+    is chosen to be the leftmost element of the array in every subproblem. Every element of the array is then sorted
+    with respect to this pivot element, with the pivot element then being inserted into its final sorted position. 
+    If the final sorted position is equal to k, the value sorted in the index is returned. If the final sorted position
+    is not equal to k, the portion of the array which contains k is recursed into. 
 
     Time 
         - O(N) best/average
