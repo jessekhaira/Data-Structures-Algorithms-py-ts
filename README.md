@@ -1,7 +1,7 @@
 # Data Structures and Algorithms in JavaScript and Python
 The repo represents a variety of fundamental data structures and algorithms implemented in JavaScript and Python. 
 
-In progress still..
+Currently in progress! 
 # Data Structures 
 ## Python
 1. [Binary Search Tree](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/BinarySearchTree.py)
@@ -9,6 +9,7 @@ In progress still..
 3. [HashMap](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/HashMap.py)
 4. [Min/Max Heap](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/Heap.py)
 5. [Trie](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/Trie.py)
+6. [Linked List](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/LinkedList.py)
 
 ## JavaScript
 1. [Binary Search Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/BinarySearchTree.js)
