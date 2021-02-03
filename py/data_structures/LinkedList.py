@@ -41,7 +41,11 @@ class DoublyLinkedList:
             self.head = newNode
         
 
-    def add_at_tail(self, val):            
+    def add_at_tail(self, val):    
+        """
+        This function creates a doubly linked list node with the value given as input, and inserts the node
+        to be the new tail of the linked list. 
+        """ 
         newNode = DoublyLinkedListNode(val)
         if not self.head:
             self.head = newNode
@@ -83,6 +87,8 @@ class DoublyLinkedList:
                 self.tail.next = newNode
                 newNode.prev = self.tail 
                 self.tail = newNode
+
+    
                 
     def delete_at_index(self, index):
         # have to deal with edge cases first of there not being any head node at all
