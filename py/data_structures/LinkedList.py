@@ -99,6 +99,7 @@ class DoublyLinkedList:
         if not self.head:
             return 
         elif index == 0:
+            # edge case - linked list with only one node in it which is the head node 
             if not self.head.next:
                 self.head = None 
                 self.tail = None
@@ -108,9 +109,9 @@ class DoublyLinkedList:
                 newHead.prev = None 
                 self.head = newHead 
         else:
-            self.unlink(index) 
+            self._unlink(index) 
             
-    def unlink(self, index):
+    def _unlink(self, index):
         currIndex = 0
         prevNode = None
         currNode = self.head 
