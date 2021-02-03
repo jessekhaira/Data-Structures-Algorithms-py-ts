@@ -85,19 +85,23 @@ class DoublyLinkedList:
                 self.tail = newNode
                 
     def delete_at_index(self, index):
-        if not self.head or not self.head.next:
-            self.head = None
-            self.tail = None
+        # have to deal with edge cases first of there not being any head node at all
+        # and deleted the head node before we can go to unlinking code 
+        if not self.head:
             return 
         elif index == 0:
-            newHead = self.head.next 
-            newHead.prev = None 
-            self.head = newHead 
+            if not self.head.next:
+                self.head = None 
+                self.tail = None
+                return 
+            else:
+                newHead = self.head.next 
+                newHead.prev = None 
+                self.head = newHead 
         else:
-            self.unlinkNode(index)
-        
-    
-    def unlinkNode(self, index):
+            self.unlink(index) 
+            
+    def unlink(self, index):
         currIndex = 0
         prevNode = None
         currNode = self.head 
@@ -115,6 +119,11 @@ class DoublyLinkedList:
                 prevNode = currNode
                 currNode = currNode.next
                 currIndex += 1
+        
+            
+
+
+
     
             
 
