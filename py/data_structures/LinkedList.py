@@ -1,4 +1,7 @@
 class DoublyLinkedListNode:
+    """
+    This class represents a doubly linked list node, where every single node has two pointers.
+    """ 
     def __init__(self, val):
         self.val = val
         self.next = None
