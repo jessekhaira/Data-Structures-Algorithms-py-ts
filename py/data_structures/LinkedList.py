@@ -1,6 +1,6 @@
 class DoublyLinkedListNode:
     """
-    This class represents a doubly linked list node, where every single node has two pointers.
+    This class represents a node meant to be used within doubly linked lists.
     """ 
     def __init__(self, val):
         self.val = val
@@ -71,35 +71,39 @@ class DoublyLinkedList:
                 self.head = newNode
                 self.tail = newNode
         else:
-            node = self.head 
-            currIndex = 0 
-            while node and currIndex <= index:
-                if currIndex == index:
-                    savedPrev = node.prev 
-                    node.prev = newNode
-                    newNode.prev = savedPrev
-                    newNode.next = node 
-                    savedPrev.next = newNode
-                    newNode.next = node 
-                    return 
-                else:
-                    node = node.next 
-                    currIndex += 1 
-            
-            if index == currIndex:
-                self.tail.next = newNode
-                newNode.prev = self.tail 
-                self.tail = newNode
+            self._insert_node(newNode, index) 
 
     
+    def _insert_node(self, newNode, index):
+        node = self.head 
+        currIndex = 0 
+        while node and currIndex <= index:
+            if currIndex == index:
+                self._change_node_pointers_insertion(node.prev, node, newNode)
+                return 
+            else:
+                node = node.next 
+                currIndex += 1 
+        # edge case -- inserting node at the end of the linked list means we have a new tail node
+        # so pointers have to be change appropriately for that 
+        if index == currIndex:
+            self.tail.next = newNode
+            newNode.prev = self.tail 
+            self.tail = newNode
+            
+
+    def _change_node_pointers_insertion(self, savedPrev, node, newNode):
+        savedPrev = node.prev 
+        node.prev = newNode
+        newNode.prev = savedPrev
+        newNode.next = node 
+        savedPrev.next = newNode
+        newNode.next = node 
                 
     def delete_at_index(self, index):
-        # have to deal with edge cases first of there not being any head node at all
-        # and deleted the head node before we can go to unlinking code 
         if not self.head:
             return 
         elif index == 0:
-            # edge case - linked list with only one node in it which is the head node 
             if not self.head.next:
                 self.head = None 
                 self.tail = None
