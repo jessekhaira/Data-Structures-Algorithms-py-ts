@@ -57,6 +57,6 @@ class tests(unittest.TestCase):
 
         self.assertEqual(linkedList.head.val, -10)
 
-        
+
 if __name__ == "__main__":
     unittest.main() 
