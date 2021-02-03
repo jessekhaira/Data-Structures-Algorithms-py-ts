@@ -17,13 +17,13 @@ class DoublyLinkedList:
     def get(self, index):
         currIndex = 0
         node = self.head 
-        while currIndex <= index:
+        while node and currIndex <= index:
             if currIndex == index:
-                return node
+                return node.val
             else:
                 currIndex += 1
                 node = node.next 
-        return -1 
+        return -1
 
     def add_at_head(self, val):
         """
@@ -33,11 +33,13 @@ class DoublyLinkedList:
         newNode = DoublyLinkedListNode(val)
         if not self.head:
             self.head = newNode
+            self.tail = newNode
         else:
             newNode = DoublyLinkedListNode(val)
             newNode.next = self.head
             self.head.prev = newNode
             self.head = newNode
+        
 
     def add_at_tail(self, val):            
         newNode = DoublyLinkedListNode(val)
@@ -48,14 +50,19 @@ class DoublyLinkedList:
             self.tail.next = newNode
             newNode.prev = self.tail 
             self.tail = newNode
+        
 
     def add_at_index(self, index, val):
         newNode = DoublyLinkedListNode(val)
         if index == 0:
-            newNode.next = self.head 
-            self.head.prev = newNode
-            self.tail = self.head
-            self.head = newNode
+            if self.head:
+                newNode.next = self.head 
+                self.head.prev = newNode
+                self.tail = self.head
+                self.head = newNode
+            else:
+                self.head = newNode
+                self.tail = newNode
         else:
             node = self.head 
             currIndex = 0 
@@ -65,44 +72,52 @@ class DoublyLinkedList:
                     node.prev = newNode
                     newNode.prev = savedPrev
                     newNode.next = node 
+                    savedPrev.next = newNode
+                    newNode.next = node 
+                    return 
                 else:
                     node = node.next 
                     currIndex += 1 
             
-            if index == currIndex + 1:
-                self.tail.next = node
-                node.prev = self.tail 
-                self.tail = node
-
-
+            if index == currIndex:
+                self.tail.next = newNode
+                newNode.prev = self.tail 
+                self.tail = newNode
+                
     def delete_at_index(self, index):
-        if index == 0:
-            if not self.head.next:
-                self.head = None 
-                self.tail = None
-                return 
-            else:
-                newHead = self.head.next 
-                self.head = newHead 
+        if not self.head or not self.head.next:
+            self.head = None
+            self.tail = None
+            return 
+        elif index == 0:
+            newHead = self.head.next 
+            newHead.prev = None 
+            self.head = newHead 
         else:
-            currIndex = 0
-            prevNode = None
-            currNode = self.head 
-            while currNode and currIndex <= index:
-                if index == currIndex:
+            self.unlinkNode(index)
+        
+    
+    def unlinkNode(self, index):
+        currIndex = 0
+        prevNode = None
+        currNode = self.head 
+        while currNode and currIndex <= index:
+            if index == currIndex:
+                if not currNode.next:
+                    prevNode.next = None
+                    self.tail = prevNode
+                else:
                     nextNode = currNode.next 
                     prevNode.next = nextNode
                     nextNode.prev = prevNode
-                    currNode = nextNode
-                else:
-                    prevNode = currNode
-                    currNode = currNode.next
-                    currIndex += 1 
+                return 
+            else:
+                prevNode = currNode
+                currNode = currNode.next
+                currIndex += 1
+    
             
-            if index == currIndex + 1:
-                prevNode.next = None
-                self.tail = prevNode
-            
+
 
 
 
