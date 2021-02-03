@@ -38,7 +38,6 @@ class DoublyLinkedList:
             self.head = newNode
             self.tail = newNode
         else:
-            newNode = DoublyLinkedListNode(val)
             newNode.next = self.head
             self.head.prev = newNode
             self.head = newNode
@@ -57,29 +56,23 @@ class DoublyLinkedList:
             self.tail.next = newNode
             newNode.prev = self.tail 
             self.tail = newNode
+
         
 
     def add_at_index(self, index, val):
-        newNode = DoublyLinkedListNode(val)
         if index == 0:
-            if self.head:
-                newNode.next = self.head 
-                self.head.prev = newNode
-                self.tail = self.head
-                self.head = newNode
-            else:
-                self.head = newNode
-                self.tail = newNode
+            self.add_at_head(val)
         else:
-            self._insert_node(newNode, index) 
+            self._insert_node(val, index) 
+        
 
     
-    def _insert_node(self, newNode, index):
+    def _insert_node(self, val, index):
         node = self.head 
         currIndex = 0 
         while node and currIndex <= index:
             if currIndex == index:
-                self._change_node_pointers_insertion(node.prev, node, newNode)
+                self._change_node_pointers_insertion(node.prev, node, val)
                 return 
             else:
                 node = node.next 
@@ -87,12 +80,11 @@ class DoublyLinkedList:
         # edge case -- inserting node at the end of the linked list means we have a new tail node
         # so pointers have to be change appropriately for that 
         if index == currIndex:
-            self.tail.next = newNode
-            newNode.prev = self.tail 
-            self.tail = newNode
+            self.add_at_tail(val)
             
 
-    def _change_node_pointers_insertion(self, savedPrev, node, newNode):
+    def _change_node_pointers_insertion(self, savedPrev, node, val):
+        newNode = DoublyLinkedListNode(val) 
         savedPrev = node.prev 
         node.prev = newNode
         newNode.prev = savedPrev
@@ -113,9 +105,9 @@ class DoublyLinkedList:
                 newHead.prev = None 
                 self.head = newHead 
         else:
-            self._unlink(index) 
+            self._unlink_node(index) 
             
-    def _unlink(self, index):
+    def _unlink_node(self, index):
         currIndex = 0
         prevNode = None
         currNode = self.head 
