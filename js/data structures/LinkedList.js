@@ -59,7 +59,7 @@ class DoubleLinkedList {
 
     addAtIndex(index, val) {
         if (index === 0) {
-            this.addAtTail(val);
+            this.addAtHead(val);
         }
         else {
             this._insertNode(index, val);
@@ -81,7 +81,7 @@ class DoubleLinkedList {
             }
         }
         if (currIdx === index) {
-            this.addAtTail(); 
+            this.addAtTail(val); 
         }
     }
 
@@ -120,9 +120,15 @@ class DoubleLinkedList {
         let currIdx = 0; 
         while (node && currIdx <= index) {
             if (currIdx === index) {
-                let savedNext = node.next;
-                prev.next = savedNext;
-                savedNext.prev = prev; 
+                if (!node.next) {
+                    prev.next = null;
+                    this.tail = prev;
+                }
+                else {
+                    let savedNext = node.next;
+                    prev.next = savedNext;
+                    savedNext.prev = prev; 
+                }
                 return; 
             }
             else {
