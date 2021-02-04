@@ -56,4 +56,80 @@ class DoubleLinkedList {
             this.tail = newNode;
         }
     }
+
+    addAtIndex(index, val) {
+        if (index === 0) {
+            this.addAtTail(val);
+        }
+        else {
+            this._insertNode(index, val);
+        }
+    }
+
+    _insertNode(index, val) {
+        let currIdx = 0;
+        let newNode = new DoubleLinkedListNode(val);
+        let node = this.head;
+        while (node && currIdx <= index) {
+            if (currIdx === index) {
+                this._linkNodes(node, newNode);
+                return; 
+            }
+            else {
+                currIdx++;
+                node = node.next; 
+            }
+        }
+        if (currIdx === index) {
+            this.addAtTail(); 
+        }
+    }
+
+    _linkNodes(node, newNode) {
+        let savedPrev = node.prev;
+        savedPrev.next = newNode;
+        newNode.prev = savedPrev;
+
+        newNode.next = node;
+        node.prev = newNode;
+    }
+
+    deleteAtIndex(index) {
+        if (!this.head) {
+            return;
+        }
+        else if (index === 0) {
+            if (!this.head.next) {
+                this.head = null;
+                this.tail = null; 
+            }
+            else {
+                let savedNext = this.head.next;
+                savedNext.prev = null;
+                this.head = savedNext; 
+            }
+        }
+        else {
+            this._unlinkNode(index);
+        }
+    }
+
+    _unlinkNode(index) {
+        let node = this.head;
+        let prev = null; 
+        let currIdx = 0; 
+        while (node && currIdx <= index) {
+            if (currIdx === index) {
+                let savedNext = node.next;
+                prev.next = savedNext;
+                savedNext.prev = prev; 
+                return; 
+            }
+            else {
+                prev = node; 
+                node = node.next;
+                currIdx++; 
+            }
+        }
+    }
 }
