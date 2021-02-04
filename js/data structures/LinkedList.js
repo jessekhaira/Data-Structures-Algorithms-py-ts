@@ -5,3 +5,14 @@ class DoubleLinkedListNode {
         this.next = null;
     }
 }
+
+
+/**
+ * This class represents a double linked list. 
+ */
+class DoubleLinkedList {
+    constructor(val) {
+        this.head = new DoubleLinkedListNode(val);
+        this.tail = this.head; 
+    }
+}
