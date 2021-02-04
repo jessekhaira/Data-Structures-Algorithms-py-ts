@@ -139,3 +139,5 @@ class DoubleLinkedList {
         }
     }
 }
+
+export {DoubleLinkedList};
