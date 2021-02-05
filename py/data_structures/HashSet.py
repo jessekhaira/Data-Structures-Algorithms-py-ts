@@ -44,6 +44,8 @@ class HashSet:
             self._rehash()
 
     def _rehash(self):
+        # double the number of buckets, and since no items will initially be hashed into the new buckets
+        # array, set the size to be zero. 
         saved_version_old_buckets = self._buckets
         self._buckets = (len(self._buckets)*2)*[None]
         self._curr_items_hashed = 0 
