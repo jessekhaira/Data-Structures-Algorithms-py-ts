@@ -15,6 +15,9 @@ class HashSet:
         self._curr_items_hashed = 0  
 
     def add(self, val): 
+        """
+        Inserts the input argument val into the hash set
+        """ 
         hash_val = self._hashing_algorithm(val)
         node_wrapper_val = ChainingNode(val)
         if not self._buckets[hash_val]:
@@ -33,6 +36,9 @@ class HashSet:
             self._rehash()
     
     def contains(self, val):
+        """
+        Returns a boolean indicating whether or not hash set contains val 
+        """
         hash_val = self._hashing_algorithm(val)
         node = self._buckets[hash_val]
         while node:
