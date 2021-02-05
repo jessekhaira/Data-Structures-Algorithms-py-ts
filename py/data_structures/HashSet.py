@@ -57,7 +57,7 @@ class HashSet:
 
     def contains(self, val):
         """
-        Returns a boolean indicating whether or not hash set contains val 
+        Returns a boolean indicating whether or not the hash set contains val 
         """
         hash_val = self._hashing_algorithm(val)
         node = self._buckets[hash_val]
@@ -70,6 +70,9 @@ class HashSet:
 
     
     def remove(self, val):
+        """
+        Removes the input value from the hash set if it is currently stored in the hash set
+        """ 
         hash_val = self._hashing_algorithm(val)
         self._curr_items_hashed -= 1 
         node = self._buckets[hash_val]
