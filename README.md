@@ -10,6 +10,7 @@ Currently in progress!
 4. [Min/Max Heap](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/Heap.py)
 5. [Trie](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/Trie.py)
 6. [Linked List](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/LinkedList.py)
+7. [HashSet](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/HashSet.py)
 
 ## JavaScript
 1. [Binary Search Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/BinarySearchTree.js)
