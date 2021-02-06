@@ -16,6 +16,11 @@ class HashSet{
         this._curr_items_hashed = 0;
     }
 
+    /**
+     * Inserts the input argument, expected to be an integer, into the hash set. If by adding the element, the
+     * design load factor is exceeded, rehashing is done. 
+     * @param {number} key Argument to hash into hashset 
+     */
     add(key) {
         const hashVal = this._hashing_algorithm(key);
         const newNode = new ChainingNode(key);
