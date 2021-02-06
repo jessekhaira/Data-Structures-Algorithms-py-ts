@@ -80,6 +80,10 @@ class HashSet{
         }
     }
 
+    /**
+     * Returns a boolean indicating whether or not the hash set contains the integer input argument 
+     * @param {number} key Integer input argument  
+     */
     contains(key) {
         const hashVal = this._hashing_algorithm(key);
         let node = this._buckets[hashVal];
