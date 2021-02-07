@@ -8,8 +8,7 @@ class HashSet:
     This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with 
     through chaining with linked lists.
 
-    A HashSet is a data structure built on static arrays, and are meant to hold a collection of items that are guaranteed 
-    to be unique.
+    A HashSet is a data structure built on static arrays which is meant to hold a collection of unique items. 
     """ 
     def __init__(self, init_capacity = 1000, load_factor = 0.75): 
         # A static array is the base data structure of a Hash Set 
@@ -33,6 +32,7 @@ class HashSet:
 
         Inputs:
             - val (Integer): Integer input argument to be added to Hash Set
+
         Returns:
             - None 
         """ 

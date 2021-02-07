@@ -8,6 +8,8 @@ class ChainingNode{
 /**
  * This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with 
  * through chaining with linked lists. 
+ * 
+ * A HashSet is a data structure built on static arrays which is meant to hold a collection of unique items. 
 */
 class HashSet{
     constructor(init_capacity = 1000, load_factor = 0.75){
@@ -19,6 +21,15 @@ class HashSet{
     /**
      * Inserts the input argument, expected to be an integer, into the hash set. If by adding the element, the
      * design load factor is exceeded, rehashing is done. 
+     * 
+     *Time:
+     * - O(1) best/avg
+     * - O(N) worst
+     * 
+     * Space:
+     * - O(1) best/avg/worst  
+     * 
+     * N - length of hash set 
      * @param {number} key Argument to hash into hashset 
      */
     add(key) {
@@ -81,8 +92,18 @@ class HashSet{
     }
 
     /**
-     * Returns a boolean indicating whether or not the hash set contains the integer input argument 
+     * Returns a boolean indicating whether or not the hash set contains the integer input argument.
+
+     *Time:
+     * - O(1) best/avg
+     * - O(N) worst
+     * 
+     * Space:
+     * - O(1) best/avg/worst  
+     * 
+     * N - length of hash set 
      * @param {number} key Integer input argument  
+     * @returns {boolean} Boolean indicating whether the hash set contains the integer input
      */
     contains(key) {
         const hashVal = this._hashing_algorithm(key);
