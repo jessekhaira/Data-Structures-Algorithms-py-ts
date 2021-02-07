@@ -4,14 +4,6 @@ class Trie:
     data structure used to store strings. Anytime you have a dataset of strings and you'd like
     to query the dataset, you can consider using a Trie. 
 
-    Time: all best/avg/worst
-        - insert: O(k) 
-        - lookup: O(k)
-        - deletion: O(k)
-        - startsWith: O(k)
-    Space: 
-        - O(n*k)
-
     Where k is the length of the longest word stored in the trie, and n is the total number of words 
     stored in the trie.
 

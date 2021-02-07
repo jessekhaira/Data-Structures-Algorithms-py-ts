@@ -1,17 +1,7 @@
 /**
  *  This class represents a (simple) prefix Trie data structure. The Trie is an ordered tree 
     data structure used to store strings. Anytime you have a dataset of strings and you'd like
-    to query the dataset, you can consider using a Trie. 
-
- * Time: all best/avg/worst
- *- insert: O(k) 
- *- lookup: O(k)
- *- deletion: O(k)
- *- startsWith: O(k)
-
- * Space: 
- *- O(n*k)
-
+    to query the dataset, you can consider using a Trie.
 
  * Where k is the length of a word, and n is the total number of words stored in the trie.
  * Used for autocomplete, spell checking, IP routing, etc. 

@@ -6,7 +6,9 @@ class ChainingNode:
 class HashSet:
     """
     This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with 
-    through chaining with linked lists. 
+    through chaining with linked lists.
+
+    A HashSet represents a collection of items that are guaranteed to be unique.
     """ 
     def __init__(self, init_capacity = 1000, load_factor = 0.75): 
         # A static array is the base data structure of a Hash Set 
