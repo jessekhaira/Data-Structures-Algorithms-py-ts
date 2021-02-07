@@ -8,7 +8,8 @@ class HashSet:
     This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with 
     through chaining with linked lists.
 
-    A HashSet represents a collection of items that are guaranteed to be unique.
+    A HashSet is a data structure built on static arrays, and are meant to hold a collection of items that are guaranteed 
+    to be unique.
     """ 
     def __init__(self, init_capacity = 1000, load_factor = 0.75): 
         # A static array is the base data structure of a Hash Set 
@@ -20,6 +21,15 @@ class HashSet:
         """
         Inserts the input argument, expected to be an integer, into the hash set. If by adding the element, the
         design load factor is exceeded, rehashing is done. 
+
+        Time:
+            - O(1) best/average
+            - O(N) worst
+        Space:
+            - O(1) best/average
+            - O(N) worst
+        
+        N - length of hash set 
 
         Inputs:
             - val (Integer): Integer input argument to be added to Hash Set
@@ -64,7 +74,21 @@ class HashSet:
 
     def contains(self, val):
         """
-        Returns a boolean indicating whether or not the hash set contains val 
+        Returns a boolean indicating whether or not the hash set contains the integer input argument.
+
+        Time:
+            - O(1) best/average
+            - O(N) worst
+        Space:
+            - O(1) best/average/worst
+        
+        N - length of hash set
+
+        Input:
+            - val(Integer): Integer input argument 
+
+        Output:
+            - Boolean indicating whether the hash set contains the integer input
         """
         hash_val = self._hashing_algorithm(val)
         node = self._buckets[hash_val]
