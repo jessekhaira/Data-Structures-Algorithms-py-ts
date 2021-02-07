@@ -18,6 +18,11 @@ class HashSet:
         """
         Inserts the input argument, expected to be an integer, into the hash set. If by adding the element, the
         design load factor is exceeded, rehashing is done. 
+
+        Inputs:
+            - val (Integer): Integer input argument to be added to Hash Set
+        Returns:
+            - None 
         """ 
         hash_val = self._hashing_algorithm(val)
         node_wrapper_val = ChainingNode(val)
