@@ -19,6 +19,7 @@ Currently in progress!
 4. [Min/Max Heap](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/Heap.js)
 5. [Trie](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/data%20structures/Trie.js)
 6. [Linked List](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/LinkedList.js)
+7. [HashSet](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/HashSet.js)
 
 
 # Algorithms
