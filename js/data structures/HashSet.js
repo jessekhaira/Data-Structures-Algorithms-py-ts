@@ -124,6 +124,11 @@ class HashSet{
         return false; 
     }
 
+    /**
+     * This is a hashing algorithm that generates hash codes for integer keys. 
+     * @param {Number} key Integer representing number to generate a hash code for 
+     * @returns {Number} Integer representing the index in the hashset to hash the key into
+     */
     _hashing_algorithm(key) {
         return key%this._buckets.length; 
     }
