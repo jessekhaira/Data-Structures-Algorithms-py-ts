@@ -58,6 +58,11 @@ class HashSet{
         }
     }
 
+    /**
+     * This method is used to dynamically resize the array underlying the hashset in order to keep all operations efficient.
+     * This method is invoked by the add method, when adding a key to the hashset causes the current load factor to exceed
+     * the design load factor. 
+     */
     rehash() {
         const savedBuckets = this._buckets;
         this._curr_items_hashed = 0; 
