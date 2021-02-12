@@ -77,6 +77,15 @@ class HashSet{
 
     /**
      * Removes the Number input from the hashset if it is stored in the hashset. 
+     * 
+     * Time:
+     * - O(1) best/avg
+     * - O(N) worst
+     * 
+     * Space:
+     * - O(1) best/avg/worst  
+     * 
+     * N - length of hashset 
      * @param {Number} key Number to remove from the hashset 
      * @returns {undefined}
      */
