@@ -75,6 +75,11 @@ class HashSet{
         }
     }
 
+    /**
+     * Removes the Number input from the hashset if it is stored in the hashset. 
+     * @param {Number} key Number to remove from the hashset 
+     * @returns {undefined}
+     */
     remove(key) {
         const hashVal = this._hashing_algorithm(key);
         let node = this._buckets[hashVal];
