@@ -2,6 +2,7 @@ class StackNode:
     def __init__(self, val):
         self.val = val
         self.next = None 
+        self.prev = None 
 
 class Stack:
     def __init__(self, val):
@@ -10,4 +11,3 @@ class Stack:
     
     def push(self,val):
         pass 
-
