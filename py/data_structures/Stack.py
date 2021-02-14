@@ -19,11 +19,16 @@ class Stack:
 
     def pop(self):
         if self.tail:
-            new_tail = self.tail.prev
+            # have to deal with edge case of deleting stack with one node in it
             old_tail_val = self.tail.val 
-            new_tail.next = None
-            self.tail = new_tail 
-            return old_tail_val
+            if self.tail.prev:
+                new_tail = self.tail.prev
+                new_tail.next = None
+                self.tail = new_tail 
+                return old_tail_val
+            else:
+                self.tail = None 
+                return old_tail_val
         else:
             raise IndexError("pop from empty stack")
     
@@ -38,7 +43,7 @@ class Stack:
         node = self.tail 
         while node:
             length += 1
-            node = node.next
+            node = node.prev
         return length 
 
  
