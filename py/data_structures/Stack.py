@@ -25,10 +25,9 @@ class Stack:
                 new_tail = self.tail.prev
                 new_tail.next = None
                 self.tail = new_tail 
-                return old_tail_val
             else:
                 self.tail = None 
-                return old_tail_val
+            return old_tail_val
         else:
             raise IndexError("pop from empty stack")
     
