@@ -12,6 +12,16 @@ class Stack {
     }
 
     push(val) {
-        
+        let node = new StackNode(val);
+        if (this.tail) {
+            this.tail.next = node;
+            node.prev = this.tail;
+            this.tail = node; 
+        }
+        else {
+            this.tail = node; 
+        }
     }
+
+    
 }
