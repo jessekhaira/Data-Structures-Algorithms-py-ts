@@ -22,4 +22,9 @@ class Stack:
             new_tail.next = None
             self.tail = new_tail 
             return old_tail_val
-            
+    
+    def top(self):
+        if self.tail:
+            return self.tail.val
+    
+    
