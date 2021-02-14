@@ -13,6 +13,13 @@ class Stack:
         new_node = StackNode(val)
         self.tail.next = new_node
         new_node.prev = self.tail 
-        self.tail = new_node 
+        self.tail = new_node
 
-        
+    def pop(self):
+        if self.tail:
+            new_tail = self.tail.prev
+            old_tail_val = self.tail.val 
+            new_tail.next = None
+            self.tail = new_tail 
+            return old_tail_val
+            
