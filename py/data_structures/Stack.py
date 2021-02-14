@@ -5,15 +5,17 @@ class StackNode:
         self.prev = None 
 
 class Stack:
-    def __init__(self, val):
-        self.head = StackNode(val)
-        self.tail = self.head 
+    def __init__(self):
+        self.tail = None
     
     def push(self,val):
         new_node = StackNode(val)
-        self.tail.next = new_node
-        new_node.prev = self.tail 
-        self.tail = new_node
+        if self.tail:
+            self.tail.next = new_node
+            new_node.prev = self.tail 
+            self.tail = new_node
+        else:
+            self.tail = new_node
 
     def pop(self):
         if self.tail:
@@ -26,5 +28,3 @@ class Stack:
     def top(self):
         if self.tail:
             return self.tail.val
-    
-    
