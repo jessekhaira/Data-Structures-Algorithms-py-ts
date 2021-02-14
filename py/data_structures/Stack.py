@@ -7,7 +7,7 @@ class StackNode:
 class Stack:
     def __init__(self):
         self.tail = None
-    
+
     def push(self,val):
         new_node = StackNode(val)
         if self.tail:
@@ -28,3 +28,12 @@ class Stack:
     def top(self):
         if self.tail:
             return self.tail.val
+
+    def __len__(self):
+        length = 0
+        node = self.tail 
+        while node:
+            length += 1
+            node = node.next
+        return length 
+
