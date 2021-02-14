@@ -24,10 +24,14 @@ class Stack:
             new_tail.next = None
             self.tail = new_tail 
             return old_tail_val
+        else:
+            raise IndexError("pop from empty stack")
     
     def top(self):
         if self.tail:
             return self.tail.val
+        else:
+            raise IndexError("empty stack")
 
     def __len__(self):
         length = 0
@@ -37,3 +41,4 @@ class Stack:
             node = node.next
         return length 
 
+ 
