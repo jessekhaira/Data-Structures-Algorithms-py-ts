@@ -10,4 +10,9 @@ class Stack:
         self.tail = self.head 
     
     def push(self,val):
-        pass 
+        new_node = StackNode(val)
+        self.tail.next = new_node
+        new_node.prev = self.tail 
+        self.tail = new_node 
+
+        
