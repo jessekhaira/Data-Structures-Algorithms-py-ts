@@ -16,4 +16,10 @@ class Queue:
         else:
             self.tail.next = new_node
             self.tail = new_node
-            
+
+    def poll(self):
+        if self.head:
+            return_val = self.head.val
+            self.head = self.head.next 
+        else:
+            raise IndexError("poll from empty queue")
