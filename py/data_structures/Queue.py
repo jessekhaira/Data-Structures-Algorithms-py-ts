@@ -20,7 +20,8 @@ class Queue:
     def poll(self):
         if self.head:
             return_val = self.head.val
-            self.head = self.head.next 
+            self.head = self.head.next
+            return return_val  
         else:
             raise IndexError("poll from empty queue")
     
@@ -29,3 +30,11 @@ class Queue:
             return self.head.val
         else:
             raise IndexError("queue is empty")
+    
+    def __len__(self):
+        node = self.head
+        length = 0
+        while node:
+            length += 1
+            node = node.next 
+        return length 
