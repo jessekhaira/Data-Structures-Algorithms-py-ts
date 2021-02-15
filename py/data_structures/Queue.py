@@ -23,3 +23,9 @@ class Queue:
             self.head = self.head.next 
         else:
             raise IndexError("poll from empty queue")
+    
+    def top(self):
+        if self.head:
+            return self.head.val
+        else:
+            raise IndexError("queue is empty")
