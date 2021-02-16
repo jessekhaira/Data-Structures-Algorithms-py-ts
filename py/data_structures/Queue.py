@@ -4,6 +4,9 @@ class QueueNode:
         self.next = None 
 
 class Queue:
+    """
+    This class represents the Queue data structure.
+    """ 
     def __init__(self):
         self.head = None
         self.tail = None 
