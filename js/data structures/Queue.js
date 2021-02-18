@@ -12,7 +12,7 @@ class Queue {
     }
 
     push(val) {
-        let newNode = new QueueNode();
+        const newNode = new QueueNode(val);
         if(!this.head) {
             this.head = newNode;
             this.tail = newNode;
@@ -27,8 +27,19 @@ class Queue {
         if (this.head) {
             return this.head.val;
         }
+        
         else {
-            throw Error('empty stack');
+            throw Error('empty queue');
+        }
+    }
+
+    pop() {
+        if (this.head) {
+            let newHead = this.head.next;
+            this.head = newHead;
+        }
+        else {
+            throw Error('pop from empty queue');
         }
     }
 }
