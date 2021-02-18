@@ -22,4 +22,13 @@ class Queue {
             this.tail = newNode;
         }
     }
+    
+    top() {
+        if (this.head) {
+            return this.head.val;
+        }
+        else {
+            throw Error('empty stack');
+        }
+    }
 }
