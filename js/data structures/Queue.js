@@ -10,4 +10,16 @@ class Queue {
         this.head = null;
         this.tail = null;
     }
+
+    push(val) {
+        let newNode = new QueueNode();
+        if(!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+    }
 }
