@@ -53,4 +53,14 @@ class Queue {
             throw Error('pop from empty queue');
         }
     }
+
+    length() {
+        let length = 0;
+        let node = this.head;
+        while (node) {
+            length++;
+            node = node.next; 
+        }
+        return length; 
+    }
 }
