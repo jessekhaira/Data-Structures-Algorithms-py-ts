@@ -1,6 +1,6 @@
 
 /**
- * This class represents an object meant to be stored in the Queue data structure.
+ * This class represents an object meant to be stored in the queue data structure.
  */
 class QueueNode {
     constructor(val) {
@@ -10,7 +10,7 @@ class QueueNode {
 }
 
 /**
- * This class represents the Queue data structure.
+ * This class represents the queue data structure.
  */
 class Queue {
     constructor() {
@@ -18,6 +18,10 @@ class Queue {
         this.tail = null;
     }
 
+    /**
+     * This method pushes a node onto the queue with the input value. 
+     * @param {Number} val Number to be stored in the queue
+     */
     push(val) {
         const newNode = new QueueNode(val);
         if(!this.head) {
