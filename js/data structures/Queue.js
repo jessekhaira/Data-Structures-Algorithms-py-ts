@@ -1,3 +1,7 @@
+
+/**
+ * This class represents an object meant to be stored in the Queue data structure.
+ */
 class QueueNode {
     constructor(val) {
         this.val = val;
@@ -5,6 +9,9 @@ class QueueNode {
     }
 }
 
+/**
+ * This class represents the Queue data structure.
+ */
 class Queue {
     constructor() {
         this.head = null;
