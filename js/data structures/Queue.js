@@ -20,7 +20,7 @@ class Queue {
 
     /**
      * This method pushes a node onto the queue with the input value. 
-     * @param {Number} val Number to be stored in the queue
+     * @param {any} val Number to be stored in the queue
      */
     push(val) {
         const newNode = new QueueNode(val);
@@ -33,7 +33,11 @@ class Queue {
             this.tail = newNode;
         }
     }
-    
+
+    /**
+     * This method returns the first element stored in the queue
+     * @returns {any} First element stored in the queue 
+     */
     top() {
         if (this.head) {
             return this.head.val;
