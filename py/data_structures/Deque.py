@@ -22,10 +22,17 @@ class Deque:
         else:
             raise IndexError("peek last in empty deque")
 
-    def add_first(self):
-        pass
+    def add_first(self, val):
+        new_head = DequeNode(val)
+        if self.head:
+            self.head.prev = new_head
+            new_head.next = self.head
+            self.head = new_head
+        else:
+            self.head = new_head
+            self.tail = new_head
     
-    def add_last(self):
+    def add_last(self, val):
         pass
 
     def pop_first(self):
