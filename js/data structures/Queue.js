@@ -68,3 +68,5 @@ class Queue {
         return length; 
     }
 }
+
+export {Queue}; 
