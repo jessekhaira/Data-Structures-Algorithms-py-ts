@@ -33,7 +33,14 @@ class Deque:
             self.tail = new_head
     
     def add_last(self, val):
-        pass
+        new_tail = DequeNode(val)
+        if self.tail:
+            self.tail.next = new_tail
+            new_tail.prev = self.tail 
+            self.tail = new_tail
+        else:
+            self.head = new_tail
+            self.tail = new_tail
 
     def pop_first(self):
         pass
