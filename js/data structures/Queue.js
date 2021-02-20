@@ -50,8 +50,10 @@ class Queue {
 
     pop() {
         if (this.head) {
+            let returnVal = this.head.val;
             let newHead = this.head.next;
             this.head = newHead;
+            return returnVal; 
         }
         else {
             throw Error('pop from empty queue');
