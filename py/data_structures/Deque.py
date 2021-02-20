@@ -52,10 +52,20 @@ class Deque:
         else:
             raise IndexError("pop from empty deque")
 
-
-
     def pop_last(self):
-        pass
+        if self.tail:
+            saved_val = self.tail.val
+            new_tail = self.tail.prev
+            new_tail.next = None 
+            self.tail = new_tail
+            return saved_val
+        else:
+            raise IndexError("pop form empty deque")
 
     def __len__(self):
-        pass 
+        node = self.head
+        length = 0
+        while node:
+            length += 1
+            node = node.next 
+        return length 
