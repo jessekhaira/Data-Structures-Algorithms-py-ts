@@ -19,3 +19,14 @@ class Deque:
     def add_first(self):
         pass
     
+    def add_last(self):
+        pass
+
+    def pop_first(self):
+        pass
+
+    def pop_last(self):
+        pass
+
+    def __len__(self):
+        pass 
