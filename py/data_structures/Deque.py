@@ -1,4 +1,8 @@
 class DequeNode:
+    """
+    This class represents a node based off a doubly linked list node, meant to be used
+    within the Deque data structure.
+    """ 
     def __init__(self, val):
         self.val = val
         self.prev = None
@@ -6,6 +10,9 @@ class DequeNode:
 
 
 class Deque:
+    """
+    This class represents the deque data structure. 
+    """ 
     def __init__(self):
         self.head = None
         self.tail = None
