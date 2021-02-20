@@ -43,7 +43,16 @@ class Deque:
             self.tail = new_tail
 
     def pop_first(self):
-        pass
+        if self.head:
+            saved_val = self.head.val
+            new_head = self.head.next 
+            new_head.prev = None
+            self.head = new_head
+            return saved_val
+        else:
+            raise IndexError("pop from empty deque")
+
+
 
     def pop_last(self):
         pass
