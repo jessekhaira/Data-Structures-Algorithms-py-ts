@@ -17,7 +17,10 @@ class Deque:
             raise IndexError("peek first in empty deque")
     
     def peek_last(self):
-        pass
+        if self.tail:
+            return self.tail.val
+        else:
+            raise IndexError("peek last in empty deque")
 
     def add_first(self):
         pass
