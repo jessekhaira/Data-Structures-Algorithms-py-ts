@@ -36,6 +36,12 @@ class DequeTests(unittest.TestCase):
             head += 1
             self.assertEqual(len(obj4), length-head)
         
+    def test5(self):
+        obj5 = Deque()
+        obj5.add_first(21)
+
+        self.assertEqual(obj5.pop_first(), 21)
+        self.assertRaises(IndexError, obj5.pop_last) 
 
 
 if __name__ == "__main__":

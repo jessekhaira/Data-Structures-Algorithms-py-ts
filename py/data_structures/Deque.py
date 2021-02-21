@@ -75,7 +75,7 @@ class Deque:
                 self.tail = new_tail
             return saved_val
         else:
-            raise IndexError("pop form empty deque")
+            raise IndexError("pop from empty deque")
 
     def __len__(self):
         node = self.head
