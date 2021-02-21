@@ -24,6 +24,19 @@ class DequeTests(unittest.TestCase):
             self.assertEqual(obj3.peek_last(), i)
             self.assertEqual(len(obj3), i+1) 
     
+    def test4(self):
+        obj4 = Deque()
+        for i in range(150):
+            obj4.add_last(i)
+        
+        head = 0
+        length = 150
+        while obj4:
+            self.assertEqual(obj4.pop_first(), head)
+            head += 1
+            self.assertEqual(len(obj4), length-head)
+        
+
 
 if __name__ == "__main__":
     unittest.main()
