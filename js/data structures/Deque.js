@@ -11,4 +11,32 @@ class Deque {
         this.head = null;
         this.tail = null; 
     }
+
+    peekFirst() {
+
+    }
+
+    peekLast() {
+
+    }
+
+    popFirst() {
+
+    }
+    
+    popLast() {
+
+    }
+
+    addFirst() {
+
+    }
+
+    addLast() {
+
+    }
+
+    length() {
+        
+    }
 }
