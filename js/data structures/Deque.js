@@ -47,6 +47,12 @@ class Deque {
     }
 
     length() {
-
+        let length = 0;
+        let node = this.head;
+        while (node) {
+            length++;
+            node = node.next; 
+        }
+        return length; 
     }
 }
