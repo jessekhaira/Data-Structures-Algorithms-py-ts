@@ -13,11 +13,21 @@ class Deque {
     }
 
     peekFirst() {
-
+        if (this.head) {
+            return this.head.val;
+        }
+        else {
+            throw Error("peek in empty deque")
+        }
     }
 
     peekLast() {
-
+        if (this.tail) {
+            return this.tail.val;
+        }
+        else {
+            throw Error("peek in empty deque")
+        }
     }
 
     popFirst() {
@@ -37,6 +47,6 @@ class Deque {
     }
 
     length() {
-        
+
     }
 }
