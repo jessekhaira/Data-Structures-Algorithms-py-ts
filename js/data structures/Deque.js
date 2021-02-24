@@ -31,7 +31,14 @@ class Deque {
     }
 
     popFirst() {
-
+        if (this.head) {
+            const retVal = this.head.val;
+            this.head = this.head.next; 
+            return retVal;
+        }
+        else {
+            throw Error("pop from empty deque"); 
+        }
     }
     
     popLast() {
