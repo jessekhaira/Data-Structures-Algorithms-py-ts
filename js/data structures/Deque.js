@@ -34,6 +34,7 @@ class Deque {
         if (this.head) {
             const retVal = this.head.val;
             this.head = this.head.next; 
+            this.head.prev = null; 
             return retVal;
         }
         else {
@@ -42,6 +43,15 @@ class Deque {
     }
     
     popLast() {
+        if (this.tail) {
+            const retVal = this.tail.val;
+            this.tail = this.tail.prev;
+            this.tail.next = null;
+            return retVal;
+        }
+        else {
+            throw Error("pop from empty deque");
+        }
 
     }
 
