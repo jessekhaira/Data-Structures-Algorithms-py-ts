@@ -55,8 +55,17 @@ class Deque {
 
     }
 
-    addFirst() {
-
+    addFirst(val) {
+        const new_head = new DequeNode(val); 
+        if (this.head) {
+            new_head.next = this.head;
+            this.head.prev = new_head;
+            this.head = new_head;
+        }
+        else {
+            this.head = new_head;
+            this.tail = new_head; 
+        }
     }
 
     addLast() {
