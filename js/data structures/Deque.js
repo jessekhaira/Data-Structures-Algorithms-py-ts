@@ -68,8 +68,17 @@ class Deque {
         }
     }
 
-    addLast() {
-
+    addLast(val) {
+        const new_tail = new DequeNode(val);
+        if (!this.tail) {
+            new_tail.prev = this.tail;
+            this.tail.next = new_tail;
+            this.tail = new_tail;
+        }
+        else {
+            this.head = new_tail;
+            this.tail = new_tail;
+        }
     }
 
     length() {
@@ -82,3 +91,5 @@ class Deque {
         return length; 
     }
 }
+
+export {Deque} 
