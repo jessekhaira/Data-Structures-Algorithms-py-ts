@@ -1,6 +1,6 @@
 class DequeNode {
-    construtor(val) {
-        this.val = val;
+    constructor(val) {
+        this.value = val;
         this.next = null;
         this.prev = null; 
     }
@@ -14,7 +14,7 @@ class Deque {
 
     peekFirst() {
         if (this.head) {
-            return this.head.val;
+            return this.head.value;
         }
         else {
             throw Error("peek in empty deque")
@@ -22,8 +22,9 @@ class Deque {
     }
 
     peekLast() {
+        console.log(this.tail.value); 
         if (this.tail) {
-            return this.tail.val;
+            return this.tail.value;
         }
         else {
             throw Error("peek in empty deque")
@@ -32,10 +33,18 @@ class Deque {
 
     popFirst() {
         if (this.head) {
-            const retVal = this.head.val;
-            this.head = this.head.next; 
-            this.head.prev = null; 
-            return retVal;
+            const retvalue = this.head.value;
+            const new_head = this.head.next; 
+            if (new_head) {
+                new_head.prev = null;
+                this.head.next = null;
+                this.head = new_head;
+            }
+            else {
+                this.head = null;
+                this.tail = null; 
+            }
+            return retvalue;
         }
         else {
             throw Error("pop from empty deque"); 
@@ -44,10 +53,18 @@ class Deque {
     
     popLast() {
         if (this.tail) {
-            const retVal = this.tail.val;
-            this.tail = this.tail.prev;
-            this.tail.next = null;
-            return retVal;
+            const retvalue = this.tail.value;
+            const newTail = this.tail.prev;
+            if (newTail) {
+                newTail.next = null;
+                this.tail.prev = null;
+                this.tail = newTail; 
+            }
+            else {
+                this.head = null;
+                this.tail = null; 
+            }
+            return retvalue;
         }
         else {
             throw Error("pop from empty deque");
@@ -55,8 +72,8 @@ class Deque {
 
     }
 
-    addFirst(val) {
-        const new_head = new DequeNode(val); 
+    addFirst(value) {
+        const new_head = new DequeNode(value); 
         if (this.head) {
             new_head.next = this.head;
             this.head.prev = new_head;
@@ -68,9 +85,9 @@ class Deque {
         }
     }
 
-    addLast(val) {
-        const new_tail = new DequeNode(val);
-        if (!this.tail) {
+    addLast(value) {
+        const new_tail = new DequeNode(value);
+        if (this.tail) {
             new_tail.prev = this.tail;
             this.tail.next = new_tail;
             this.tail = new_tail;
