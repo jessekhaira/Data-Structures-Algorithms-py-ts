@@ -24,5 +24,13 @@ test('test 2', () => {
 })
 
 test('test 3', () => {
-
+    const obj2 = new Deque();
+    for (let i=0; i<150; i++) {
+        obj2.addFirst(i);
+    }
+    
+    for (let i=149; i>=0; i--) {
+        expect(obj2.peekFirst()).toEqual(i);
+        expect(obj2.popFirst()).toEqual(i);
+    }
 })

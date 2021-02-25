@@ -22,7 +22,6 @@ class Deque {
     }
 
     peekLast() {
-        console.log(this.tail.value); 
         if (this.tail) {
             return this.tail.value;
         }
