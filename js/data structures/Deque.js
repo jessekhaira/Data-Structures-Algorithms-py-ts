@@ -1,3 +1,8 @@
+/**
+ * This class represents a doubly linked node, where every node has two pointers, meant to be used in
+ * the Deque class.
+ * @class @public 
+ */
 class DequeNode {
     constructor(val) {
         this.value = val;
