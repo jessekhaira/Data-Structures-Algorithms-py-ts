@@ -6,6 +6,11 @@ class DequeNode {
     }
 }
 
+/**
+ * This class represents the data structure known as a Deque, implemented using doubly linked list
+ * nodes. 
+ * @class @public
+ */
 class Deque {
     constructor() {
         this.head = null;
