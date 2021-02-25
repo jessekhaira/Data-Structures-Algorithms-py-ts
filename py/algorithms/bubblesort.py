@@ -24,7 +24,3 @@ def bubblesort(array):
 
 def swap(array, i, j):
     array[i], array[j] = array[j], array[i] 
-
-
-
-## [1,2,5,6,9]
