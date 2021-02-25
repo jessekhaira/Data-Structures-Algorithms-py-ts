@@ -1,3 +1,8 @@
+/**
+ * This class represents a doubly linked node, where every node has two pointers, meant to be used in
+ * the Stack class.
+ * @class @public 
+ */
 class StackNode{
     constructor(val) {
         this.val = val;
@@ -6,6 +11,10 @@ class StackNode{
     }
 }
 
+/**
+ * This class represents the data structure known as a Stack, implemented using doubly linked list
+ * nodes. 
+ */
 class Stack {
     constructor() {
         this.tail = null; 
