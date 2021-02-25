@@ -1,4 +1,4 @@
-class DequeNode() {
+class DequeNode {
     construtor(val) {
         this.val = val;
         this.next = null;
