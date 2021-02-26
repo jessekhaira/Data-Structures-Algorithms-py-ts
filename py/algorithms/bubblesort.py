@@ -9,6 +9,12 @@ def bubblesort(array):
         - O(1) best/avg/worst
 
     N - number of elements in input array
+
+    Inputs:
+        - list[int]: Array of integers
+
+    Output:
+        Array of integers sorted in ascending order 
     """
     curr_idx = 0
     last_sorted_element = len(array)
