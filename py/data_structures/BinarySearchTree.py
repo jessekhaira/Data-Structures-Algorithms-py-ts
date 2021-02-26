@@ -1,4 +1,4 @@
-from utils.binaryTree import binaryTreeNode
+from py.data_structures.utils.binaryTree import binaryTreeNode
 
 class BinarySearchTree:
     """
@@ -41,11 +41,11 @@ class BinarySearchTree:
     def _insertionHelper(self, val, node):
         if not node:
             return binaryTreeNode(val)
-        elif val <= node.val:
+        elif val < node.val:
             node.left = self._insertionHelper(val, node.left)
             return node 
         
-        elif val > node.val:
+        elif val >= node.val:
             node.right = self._insertionHelper(val, node.right)
             return node 
 
@@ -162,7 +162,7 @@ class BinarySearchTree:
             return node.right, node
         node.left, minNode = self._getMinNode(node.left)
         return node, minNode
-        
+
     
         
             
