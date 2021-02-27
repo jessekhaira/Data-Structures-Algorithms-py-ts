@@ -11,10 +11,10 @@ def bubblesort(array):
     N - number of elements in input array
 
     Inputs:
-        - list[int]: Array of integers
+        - array (list[int]): Array of integers
 
     Output:
-        Array of integers sorted in ascending order 
+        The input array of integers sorted in ascending order 
     """
     curr_idx = 0
     last_sorted_element = len(array)

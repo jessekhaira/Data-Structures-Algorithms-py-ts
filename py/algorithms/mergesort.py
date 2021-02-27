@@ -5,10 +5,9 @@ def mergesort(array):
     integers in O(NlogN) time using just O(N) space.
 
     Inputs:
-        - array(list[int]): List of integers to sort in ascending
-        order
+        - array(list[int]): List of integers to sort in ascending order
     Outputs:
-        - array(list[int]) sorted in ascending order
+        Input list of integers sorted in ascending order
 
     """
     auxArray = array[:]
