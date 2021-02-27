@@ -34,3 +34,5 @@ function bubblesort(array) {
 function swap(array, i, j) {
     [array[i], array[j]] = [array[j], array[i]]; 
 }
+
+export {bubblesort}; 
