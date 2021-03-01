@@ -1,7 +1,4 @@
-class QueueNode:
-    def __init__(self, val):
-        self.val = val
-        self.next = None 
+from py.data_structures.utils.LinkedList import SinglyLinkedListNode
 
 class Queue:
     """
@@ -12,7 +9,7 @@ class Queue:
         self.tail = None 
     
     def push(self, val):
-        new_node = QueueNode(val)
+        new_node = SinglyLinkedListNode(val)
         if not self.head:
             self.head = new_node
             self.tail = new_node
