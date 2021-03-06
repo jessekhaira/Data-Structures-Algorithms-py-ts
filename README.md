@@ -32,7 +32,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quicksort.py)
 - [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/mergesort.py) 
 - [QuickSelect](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quickselect.py)
-- [BubbleSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/py/algorithms/bubblesort.py)
+- [BubbleSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/algorithms/bubblesort.py)
 - [HeapSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/algorithms/heapsort.py)
 
 ### Tree/Graph Traversal 
@@ -52,7 +52,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/quickSort.js)
 - [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/mergeSort.js) 
 - [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/quickselect.js)
-- [BubbleSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/js/algorithms/bubblesort.js)
+- [BubbleSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/bubblesort.js)
 - [HeapSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/js/algorithms/heapsort.js) 
 
 ### Tree/Graph Traversal 
