@@ -1,15 +1,11 @@
-class StackNode:
-    def __init__(self, val):
-        self.val = val
-        self.next = None 
-        self.prev = None 
+from py.data_structures.utils.LinkedList import DoublyLinkedListNode
 
 class Stack:
     def __init__(self):
         self.tail = None
 
     def push(self,val):
-        new_node = StackNode(val)
+        new_node = DoublyLinkedListNode(val)
         if self.tail:
             self.tail.next = new_node
             new_node.prev = self.tail 
