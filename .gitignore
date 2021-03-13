@@ -1,3 +1,5 @@
 .DS_Store
 .vscode/
 dsa_py.egg-info/
+__pycache__/
+*.py[cod]
