@@ -8,6 +8,14 @@ class Tests(unittest.TestCase):
             bst.insertion(val)
         
         self.assertEqual(validateBST(bst), True) 
+    
+    def testLookup(self):
+        bst = BinarySearchTree(4)
+        ints = [1, 2, 3, 5, 6, 7, 8]
+        for val in ints:
+            bst.insertion(val)
+        
+        self.assertEqual(bst.lookup(5).val, 5) 
 
 
 def validateBST(bst):
