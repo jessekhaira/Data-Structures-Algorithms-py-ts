@@ -1,13 +1,4 @@
-class DequeNode:
-    """
-    This class represents a node based off a doubly linked list node, meant to be used
-    within the Deque data structure.
-    """ 
-    def __init__(self, val):
-        self.val = val
-        self.prev = None
-        self.next = None
-
+from py.data_structures.utils.LinkedList import DoublyLinkedListNode
 
 class Deque:
     """
@@ -30,7 +21,7 @@ class Deque:
             raise IndexError("peek last in empty deque")
 
     def add_first(self, val):
-        new_head = DequeNode(val)
+        new_head = DoublyLinkedListNode(val)
         if self.head:
             self.head.prev = new_head
             new_head.next = self.head
@@ -40,7 +31,7 @@ class Deque:
             self.tail = new_head
     
     def add_last(self, val):
-        new_tail = DequeNode(val)
+        new_tail = DoublyLinkedListNode(val)
         if self.tail:
             self.tail.next = new_tail
             new_tail.prev = self.tail 
