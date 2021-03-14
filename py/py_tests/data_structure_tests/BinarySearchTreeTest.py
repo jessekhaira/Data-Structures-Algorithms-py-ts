@@ -15,7 +15,8 @@ class Tests(unittest.TestCase):
         for val in ints:
             bst.insertion(val)
         
-        self.assertEqual(bst.lookup(5).val, 5) 
+        for val in ints:
+            self.assertEqual(bst.lookup(val).val, val) 
 
 
 def validateBST(bst):
