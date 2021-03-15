@@ -180,7 +180,6 @@ class BinarySearchTree {
         [node.left, minNode] = this._findMinNode(node.left);
         return [node, minNode];
     }
-
-
-
 }
+
+export {BinarySearchTree}; 
