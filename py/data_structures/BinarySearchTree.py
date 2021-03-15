@@ -96,10 +96,10 @@ class BinarySearchTree:
         if not node:
             return
         elif val < node.val:
-            node.left = self._deleteHelper(node.left, val)
+            node.left = self._deleteHelperV(node.left, val)
             return node
         elif val > node.val:
-            node.right = self._deleteHelper(node.right, val)
+            node.right = self._deleteHelperV(node.right, val)
             return node 
         else:
             # no left or right child, just delete
@@ -116,7 +116,7 @@ class BinarySearchTree:
             # nodes right subtree, and then delete that node 
             minVal_inRightSubtree = self._getMinValRightV(node.right)
             node.val = minVal_inRightSubtree
-            node.right = self._deleteHelper(node.right, minVal_inRightSubtree)
+            node.right = self._deleteHelperV(node.right, minVal_inRightSubtree)
             return node 
     
     def _getMinValRightV(self, node):
