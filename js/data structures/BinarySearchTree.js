@@ -44,7 +44,7 @@ class BinarySearchTree {
         if (node == null) {
             return new BinaryTreeNode(val);
         }
-        else if (val <= node.val) {
+        else if (val < node.val) {
             node.left = this._insertHelper(node.left, val);
             return node; 
         }

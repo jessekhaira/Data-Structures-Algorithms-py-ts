@@ -3,7 +3,7 @@ import {BinarySearchTree} from '../../data structures/BinarySearchTree';
 describe('Tests testing binary search tree', () => {
     test('testing bst insertion method', () => {
         const bst = new BinarySearchTree(4);
-        const vals = [1, 2, 3, 5, 6 ,7, 8];
+        const vals = [1, 2, 3,4, 5, 6 ,7, 8];
         for (const val of vals) {
             bst.insert(val);
         }
@@ -12,10 +12,10 @@ describe('Tests testing binary search tree', () => {
 
     test('testing bst lookup method', () => {
         const bst = new BinarySearchTree(4);
-        const vals = [1, 2, 3, 5, 6 ,7, 8];
+        const vals = [1, 2, 3, 4, 5, 6 ,7, 8];
         for (const val of vals) {
             bst.insert(val);
-        };
+        }
 
         for (const val of vals) {
             expect(bst.lookup(val).val).toEqual(val); 
