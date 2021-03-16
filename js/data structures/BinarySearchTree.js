@@ -72,7 +72,7 @@ class BinarySearchTree {
      * @param {number} val 
      */
     lookup(val) {
-        node = this.root;
+        let node = this.root;
         return this._lookupHelper(node, val);
     }
 
