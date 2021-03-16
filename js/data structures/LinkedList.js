@@ -1,11 +1,4 @@
-class DoubleLinkedListNode {
-    constructor(val) {
-        this.val = val;
-        this.prev = null;
-        this.next = null;
-    }
-}
-
+import {DoubleLinkedListNode} from '../data structures/utils/LinkedList';
 
 /**
  * This class represents a double linked list. 

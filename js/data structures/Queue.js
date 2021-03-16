@@ -1,13 +1,4 @@
-
-/**
- * This class represents an object meant to be stored in the queue data structure.
- */
-class QueueNode {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
-}
+import {SingleLinkedListNode} from '../data structures/utils/LinkedList';
 
 /**
  * This class represents the queue data structure.
@@ -23,7 +14,7 @@ class Queue {
      * @param {any} val Number to be stored in the queue
      */
     push(val) {
-        const newNode = new QueueNode(val);
+        const newNode = new SingleLinkedListNode(val);
         if(!this.head) {
             this.head = newNode;
             this.tail = newNode;
