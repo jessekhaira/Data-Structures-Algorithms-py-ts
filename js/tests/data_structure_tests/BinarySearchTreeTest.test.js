@@ -22,6 +22,25 @@ describe('Tests testing binary search tree', () => {
         }
     })
 
+    test('testing bst delete method', () => {
+        const bst = new BinarySearchTree(4);
+        const vals = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        for (const val of vals) {
+            bst.insert(val);
+        }
+
+        for (const val of vals) {
+            expect(bst.lookup(val).val).toEqual(val);
+            bst.delete(val);
+            if (val !== 4) {
+                expect(bst.lookup(val)).toEqual(null);
+            }
+            else {
+                expect(bst.lookup(val).val).toEqual(4); 
+            }
+        }
+    }); 
 })
 
 function validateBST(bst) {
