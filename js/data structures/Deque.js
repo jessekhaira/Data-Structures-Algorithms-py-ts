@@ -1,16 +1,4 @@
-/**
- * This class represents a doubly linked node, where every node has two pointers, meant to be used in
- * the Deque class.
- * @class @public 
- */
-class DequeNode {
-    constructor(val) {
-        this.value = val;
-        this.next = null;
-        this.prev = null; 
-    }
-}
-
+import {DoubleLinkedListNode} from '../data structures/utils/LinkedList';
 /**
  * This class represents the data structure known as a Deque, implemented using doubly linked list
  * nodes. 
@@ -24,7 +12,7 @@ class Deque {
 
     peekFirst() {
         if (this.head) {
-            return this.head.value;
+            return this.head.val;
         }
         else {
             throw Error("peek in empty deque")
@@ -33,7 +21,7 @@ class Deque {
 
     peekLast() {
         if (this.tail) {
-            return this.tail.value;
+            return this.tail.val;
         }
         else {
             throw Error("peek in empty deque")
@@ -42,7 +30,7 @@ class Deque {
 
     popFirst() {
         if (this.head) {
-            const retvalue = this.head.value;
+            const retvalue = this.head.val;
             const new_head = this.head.next; 
             if (new_head) {
                 new_head.prev = null;
@@ -62,7 +50,7 @@ class Deque {
     
     popLast() {
         if (this.tail) {
-            const retvalue = this.tail.value;
+            const retvalue = this.tail.val;
             const newTail = this.tail.prev;
             if (newTail) {
                 newTail.next = null;
@@ -82,7 +70,7 @@ class Deque {
     }
 
     addFirst(value) {
-        const new_head = new DequeNode(value); 
+        const new_head = new DoubleLinkedListNode(value); 
         if (this.head) {
             new_head.next = this.head;
             this.head.prev = new_head;
@@ -95,7 +83,7 @@ class Deque {
     }
 
     addLast(value) {
-        const new_tail = new DequeNode(value);
+        const new_tail = new DoubleLinkedListNode(value);
         if (this.tail) {
             new_tail.prev = this.tail;
             this.tail.next = new_tail;
