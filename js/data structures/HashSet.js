@@ -1,10 +1,4 @@
-class ChainingNode{
-    constructor(value){
-        this.val = value;
-        this.next = null; 
-    }
-}
-
+import {SingleLinkedListNode} from '../data structures/utils/LinkedList';
 /**
  * This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with 
  * through chaining with linked lists. 
@@ -34,7 +28,7 @@ class HashSet{
      */
     add(key) {
         const hashVal = this._hashing_algorithm(key);
-        const newNode = new ChainingNode(key);
+        const newNode = new SingleLinkedListNode(key);
         if(!this._buckets[hashVal]) {
             this._buckets[hashVal] = newNode;
         }
