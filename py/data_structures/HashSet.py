@@ -1,7 +1,4 @@
-class ChainingNode:
-    def __init__(self,val):
-        self.val = val
-        self.next = None 
+from py.data_structures.utils.LinkedList import SinglyLinkedListNode
 
 class HashSet:
     """
@@ -37,7 +34,7 @@ class HashSet:
             - None 
         """ 
         hash_val = self._hashing_algorithm(val)
-        node_wrapper_val = ChainingNode(val)
+        node_wrapper_val = SinglyLinkedListNode(val)
         if not self._buckets[hash_val]:
             self._buckets[hash_val] = node_wrapper_val
         else:
