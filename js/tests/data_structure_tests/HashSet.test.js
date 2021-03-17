@@ -10,7 +10,6 @@ test('test1', () => {
     expect(obj1.contains(5)).toStrictEqual(true);
     expect(obj1.contains(9)).toStrictEqual(true);
     expect(obj1.contains(12)).toStrictEqual(false);
-
 });
 
 
