@@ -1,15 +1,13 @@
 /**
- *  This class represents the DisjointSet data structure implemented as an array,
- *  using path compression in the find() method, and union by rank in the union()
- *  method. This data structure tracks a set of elements partitioned into a number 
- *  of disjoint (non-overlapping) subsets.
-
-    This data structure is primarily used when dealing with undirected graphs. For example,
-    to find the number of connected components in an undirected graph, or to find if there
-    is a cycle in a undirected graph.
-
-    Provides constant time operations for all methods.
- * @constructor
+ *  This class represents an efficient implementation of the DisjointSet data structure.
+ *  Not only is the data structure implemented as an array, path compression is used in the 
+ *  find() method, and union by rank is used in the union() method. 
+ * 
+ *  This data structure tracks a set of elements partitioned into a number of disjoint subsets,
+ *  typically used when dealing with undirected graphs. For example, to determine the number of 
+ *  connected components within an undirected graph, to determine if a cycle exists in an undirected
+ *  graph, etc. 
+ *  @public @class 
  */
 class DisjointSet {
     /**

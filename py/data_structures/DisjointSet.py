@@ -1,15 +1,14 @@
 class DisjointSet:
     """
-    This class represents the DisjointSet data structure using path compression, union 
-    by rank, and implemented efficiently as an array. This data structure tracks a
-    set of elements partitioned into a number of disjoint (non-overlapping) subsets.
+    This class represents an efficient implementation of the DisjointSet data structure.
+    Not only is the data structure implemented as an array, path compression is used in the 
+    find() method, and union by rank is used in the union() method. 
 
-    This data structure is primarily used when dealing with undirected graphs. For example,
-    to find the number of connected components in an undirected graph, or to find if there
-    is a cycle in a undirected graph.
-
-    Provides constant time operations for all methods.
-
+    This data structure tracks a set of elements partitioned into a number of disjoint subsets,
+    typically used when dealing with undirected graphs. For example, to determine the number of 
+    connected components within an undirected graph, to determine if a cycle exists in an undirected
+    graph, etc. 
+    
     Inputs:
         -> numNodes (int): Int representing how many nodes there are in the undirected graph
         -> mapping (HashMap // null): Mapping between the nodes and indices in the disjoint set
