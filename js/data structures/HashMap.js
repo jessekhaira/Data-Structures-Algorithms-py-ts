@@ -58,6 +58,8 @@ class HashMap {
      * 
      * Space:
      * - O(1) best/avg/worst  
+     * 
+     * N - number of items hashed into HashMap 
      * @param {Number} key Integer representing the key to hash into the hash table
      * @param {any} val Value associated with the key being hashed into the hash table
      * @returns {undefined} 
@@ -121,7 +123,8 @@ class HashMap {
      * 
      * Space:
      * - O(1) best/avg/worst  
-
+     * 
+     * N - number of items hashed into HashMap 
      * @param {number} key Integer representing the key to lookup in the hashtable.
      * @returns {any} The value associated with the key in the hashtable. If the key doesn't exist 
                 in the table, then null will be returned. 
@@ -156,8 +159,9 @@ class HashMap {
      * - O(N) worst
      * 
      * Space:
-     * - O(1) best/avg/worst  
-
+     * - O(1) best/avg/worst 
+     * 
+     * N - number of items hashed into HashMap 
      * @param {Number} key Number representing a key that may be present in the hashtable
      * @returns {undefined} 
      */
