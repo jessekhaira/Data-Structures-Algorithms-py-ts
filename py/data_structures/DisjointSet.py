@@ -8,10 +8,10 @@ class DisjointSet:
     typically used when dealing with undirected graphs. For example, to determine the number of 
     connected components within an undirected graph, to determine if a cycle exists in an undirected
     graph, etc. 
-    
+
     Inputs:
-        -> numNodes (int): Int representing how many nodes there are in the undirected graph
-        -> mapping (HashMap // null): Mapping between the nodes and indices in the disjoint set
+        - number_nodes (int): Int representing how many nodes there are in the undirected graph
+        - mapping_nodes (HashMap || null): Mapping between the nodes and indices in the disjoint set. Optional
     """
     def __init__(self, number_nodes, mapping_nodes = None):
         # may need to have a mapping between the nodes and index they 
@@ -24,11 +24,17 @@ class DisjointSet:
         This method carries out the find operation for a given node in the disjoint set,
         and returns the representative of the given set. Carries out path compression. 
 
+        Time:
+            - O(1) best/avg/worst
+        Space:
+            - O(1) best/avg/worst
+
         Inputs:
-            -> x (int//node): Can be an int referring to the index that the node is within
-            the forest, or can be a node itself
+            - x (int || node): Can be an int referring to the index that the node is within
+                the forest, or can be a node itself. If node is provided, mapping_nodes cannot be
+                None. 
         Outputs:
-            -> int representing the representative of the set 
+            - int representing the representative of the set 
         """
         x = x if not self.mapping else self.mapping[x]
         # if the current node is just pointing at itself, that means its the representative of the set
@@ -48,14 +54,20 @@ class DisjointSet:
         sets that x and y belong to if x and y are not in the same set. Union by rank
         is implemented here. 
 
+        Time:
+            - O(1) best/avg/worst
+        Space:
+            - O(1) best/avg/worst
+
         Inputs:
-            -> x (int//node): Can be an int referring to the index that the node is within
-            the forest, or can be a node itself
-            -> y (int//node): Can be an int referring to the index that the node is within
-            the forest, or can be a node itself
+            - x (int || node): Can be an int referring to the index that the node is within
+                the forest, or can be a node itself
+                
+            - y (int || node): Can be an int referring to the index that the node is within
+                the forest, or can be a node itself
         
         Returns:
-            -> None
+            - None
         """
         rX = self.find(x)
         rY = self.find(y)

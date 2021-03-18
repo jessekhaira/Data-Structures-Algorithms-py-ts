@@ -30,11 +30,16 @@ class DisjointSet {
 
     /**
      *  This method carries out the find operation for a given node in the disjoint set,
-        and returns the representative of the given set. Carries out path compression. 
+        and returns the representative of the given set. Carries out path compression.
 
+     * Time:
+     * - O(1) best/avg/worst
+     * 
+     * Space:
+     * - O(1) best/avg/worst  
+     * 
      * @param {(number|any)} x Can be an int referring to the index that the node is within
       the forest, or can be a node itself
-
      * @returns {number} Int representing the representative of the set 
      */
     find(x) {
@@ -54,7 +59,13 @@ class DisjointSet {
      *  This method carries out the union operation for the disjoint set, merging the two 
         sets that x and y belong to if x and y are not in the same set. Union by rank
         is implemented here. 
-
+    
+     * Time:
+     * - O(1) best/avg/worst
+     * 
+     * Space:
+     * - O(1) best/avg/worst  
+     * 
      * @param {(number|any)} x Can be an int referring to the index that the node is within
         the forest, or can be a node itself
      * @param {(number|any)} y Can be an int referring to the index that the node is within

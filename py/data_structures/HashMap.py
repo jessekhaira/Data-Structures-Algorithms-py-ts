@@ -46,6 +46,8 @@ class HashMap:
             - O(1) best/avg
             - O(N) worst
 
+        N - number of items hashed into HashMap 
+
         Inputs:
             - key (int): Integer representing the key to hash into the hash table
             - value (any): Value associated with the key being hashed into the hash table
@@ -81,6 +83,8 @@ class HashMap:
             - O(N) worst
         Space:
             - O(1) best/avg/worst  
+
+        N - number of items hashed into HashMap 
 
         Inputs:
             - key (int): Integer representing the key to lookup in the hashtable.
@@ -128,6 +132,8 @@ class HashMap:
         Space:
             - O(1) best/avg/worst  
 
+        N - number of items hashed into HashMap 
+        
         Inputs:
             - key (int): Integer representing a key that may be present in the hashtable
         Returns:
