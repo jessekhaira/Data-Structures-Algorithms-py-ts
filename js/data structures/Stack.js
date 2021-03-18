@@ -1,15 +1,4 @@
-/**
- * This class represents a doubly linked node, where every node has two pointers, meant to be used in
- * the Stack class.
- * @class @public 
- */
-class StackNode{
-    constructor(val) {
-        this.val = val;
-        this.prev = null;
-        this.next = null; 
-    }
-}
+import {DoubleLinkedListNode} from '../data structures/utils/LinkedList';
 
 /**
  * This class represents the data structure known as a Stack, implemented using doubly linked list
@@ -21,7 +10,7 @@ class Stack {
     }
 
     push(val) {
-        let node = new StackNode(val);
+        let node = new DoubleLinkedListNode(val);
         if (this.tail) {
             this.tail.next = node;
             node.prev = this.tail;
