@@ -1,5 +1,5 @@
 from py.algorithms.FloydsTortoiseHareAlgo import floydsTortoiseHareAlgo
-from py.data_structures.LinkedList import DoublyLinkedList
+from py.data_structures.utils.LinkedList import SinglyLinkedListNode
 import unittest
 
 class TestFloydsAlgo(unittest.TestCase):
@@ -7,8 +7,22 @@ class TestFloydsAlgo(unittest.TestCase):
         self.assertEqual(floydsTortoiseHareAlgo(None), None)
 
     def test2(self):
-        node = DoublyLinkedList(5).head
+        node = SinglyLinkedListNode(5)
         self.assertEqual(floydsTortoiseHareAlgo(node), None) 
+
+    def test3(self):
+        node = SinglyLinkedListNode(5)
+        node.next = SinglyLinkedListNode(3)
+        node.next.next = SinglyLinkedListNode(10)
+        self.assertEqual(floydsTortoiseHareAlgo(node), None)
+
+    def test4(self):
+        node = SinglyLinkedListNode(5)
+        node.next = SinglyLinkedListNode(3)
+        node.next.next = SinglyLinkedListNode(10)
+        node.next.next.next = node 
+        self.assertEqual(floydsTortoiseHareAlgo(node), node)
+
 
 
 if __name__ == "__main__":
