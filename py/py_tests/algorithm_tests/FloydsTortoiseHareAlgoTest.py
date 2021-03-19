@@ -23,6 +23,13 @@ class TestFloydsAlgo(unittest.TestCase):
         node.next.next.next = node 
         self.assertEqual(floydsTortoiseHareAlgo(node), node)
 
+    def test5(self):
+        node = SinglyLinkedListNode(5)
+        node.next = SinglyLinkedListNode(3)
+        node.next.next = SinglyLinkedListNode(10)
+        node.next.next.next = SinglyLinkedListNode(15)
+        node.next.next.next.next = node.next.next 
+        self.assertEqual(floydsTortoiseHareAlgo(node), node.next.next)
 
 
 if __name__ == "__main__":
