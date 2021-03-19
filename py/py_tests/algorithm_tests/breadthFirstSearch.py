@@ -1,6 +1,6 @@
 from py.data_structures.BinarySearchTree import BinarySearchTree
 import unittest
-from py.algorithms.breadthFirstSearch import breadthFirstSearch
+from py.algorithms.BreadthFirstSearch import breadthFirstSearch
 
 class tests(unittest.TestCase):
     def test1(self):

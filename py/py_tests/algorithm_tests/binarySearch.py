@@ -1,6 +1,6 @@
 import unittest
-from py.algorithms.binarySearch import iterativeBinarySearch
-from py.algorithms.binarySearch import recursiveBinarySearch
+from py.algorithms.BinarySearch import iterativeBinarySearch
+from py.algorithms.BinarySearch import recursiveBinarySearch
 
 
 class tests(unittest.TestCase):
