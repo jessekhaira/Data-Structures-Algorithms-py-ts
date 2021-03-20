@@ -1,4 +1,4 @@
-import {iterativeBinarySearch, recursiveBinarySearch} from '../../algorithms/binarySearch';
+import {iterativeBinarySearch, recursiveBinarySearch} from '../../algorithms/BinarySearch';
 
 
 describe('test iterative and recursive binary search', () => {

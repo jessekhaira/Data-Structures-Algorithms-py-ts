@@ -1,4 +1,4 @@
-import {bubblesort} from '../../algorithms/bubbleSort.js';
+import {bubblesort} from '../../algorithms/BubbleSort.js';
 
 test('test 1', () => {
     let obj1 = [20,4,5,-9,-120]
