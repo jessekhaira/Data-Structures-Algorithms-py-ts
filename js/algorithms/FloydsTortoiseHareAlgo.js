@@ -34,3 +34,6 @@ function floydsTortoiseHareAlgo(node) {
    }
    return ptr1; 
 }
+
+
+export {floydsTortoiseHareAlgo}; 
