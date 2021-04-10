@@ -2,12 +2,10 @@
 from py.data_structures.utils.LinkedList import SinglyLinkedListNode
 
 class Queue:
-    """
-    This class represents the Queue data structure.
-    """ 
+    """ This class represents the Queue data structure """
     def __init__(self):
         self.head = None
-        self.tail = None 
+        self.tail = None
 
     def push(self, val):
         new_node = SinglyLinkedListNode(val)
