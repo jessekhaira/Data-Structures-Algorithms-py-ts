@@ -1,3 +1,4 @@
+""" Module contains the queue data structure """
 from py.data_structures.utils.LinkedList import SinglyLinkedListNode
 
 class Queue:
@@ -7,7 +8,7 @@ class Queue:
     def __init__(self):
         self.head = None
         self.tail = None 
-    
+
     def push(self, val):
         new_node = SinglyLinkedListNode(val)
         if not self.head:
@@ -24,13 +25,13 @@ class Queue:
             return return_val  
         else:
             raise IndexError("poll from empty queue")
-    
+
     def top(self):
         if self.head:
             return self.head.val
         else:
             raise IndexError("queue is empty")
-    
+
     def __len__(self):
         node = self.head
         length = 0

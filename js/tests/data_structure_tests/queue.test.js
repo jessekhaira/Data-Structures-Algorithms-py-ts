@@ -1,4 +1,4 @@
-import {Queue} from '../../data structures/Queue.js';
+import {Queue} from '../../data structures/queue.js';
 
 
 test('test1', () => {

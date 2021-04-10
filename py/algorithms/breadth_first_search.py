@@ -1,4 +1,4 @@
-from py.data_structures.Queue import Queue
+from py.data_structures.queue import Queue
 
 def breadth_first_search(node):
     """ This algorithm represents the breadth first search traversal algorithm
