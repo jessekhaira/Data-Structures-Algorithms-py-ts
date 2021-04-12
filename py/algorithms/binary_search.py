@@ -1,4 +1,10 @@
-def iterative_binary_search(array: list[int], target: int) -> int:
+"""This module contains the binary search algorithm, implemented iteratively and
+recursively
+"""
+from typing import List
+
+
+def iterative_binary_search(array: List[int], target: int) -> int:
     """This algorithm represents the binary search algorithm implemented
     iteratively.
 
