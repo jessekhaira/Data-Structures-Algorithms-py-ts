@@ -1,4 +1,6 @@
+""" This module contains the breadth first search algorithm """
 from py.data_structures.queue import Queue
+
 
 def breadth_first_search(node):
     """ This algorithm represents the breadth first search traversal algorithm

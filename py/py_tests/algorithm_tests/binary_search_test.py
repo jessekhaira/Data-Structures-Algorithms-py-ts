@@ -1,5 +1,5 @@
-""" This module represents a module intended to test our binary seach
-algorithms """
+""" This module contains code intended to test the binary seach
+algorithms implemented in the library """
 import unittest
 from py.algorithms.binary_search import iterative_binary_search
 from py.algorithms.binary_search import recursive_binary_search
