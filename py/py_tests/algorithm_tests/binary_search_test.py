@@ -1,9 +1,11 @@
+""" This module represents a module intended to test our binary seach
+algorithms """
 import unittest
 from py.algorithms.binary_search import iterative_binary_search
 from py.algorithms.binary_search import recursive_binary_search
 
 
-class tests(unittest.TestCase):
+class BinarySearchTest(unittest.TestCase):
 
     def test1(self):
         arr = [-100, -2, 3, 5]
