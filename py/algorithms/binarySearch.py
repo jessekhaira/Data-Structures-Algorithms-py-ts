@@ -23,20 +23,19 @@ def iterativeBinarySearch(array, target):
         - Integer representing the idx at which the target value occurs, or -1 if it does not occur
     """
     left = 0
-    right = len(array)-1
+    right = len(array) - 1
 
     while left < right:
-        mid = left + (right-left)//2
+        mid = left + (right - left) // 2
 
         if array[mid] == target:
             return mid
         elif array[mid] > target:
             right = mid
         else:
-            left = mid+1 
-        
-    return left if array[left] == target else -1 
+            left = mid + 1
 
+    return left if array[left] == target else -1
 
 
 def recursiveBinarySearch(array, target):
@@ -62,20 +61,20 @@ def recursiveBinarySearch(array, target):
     Output:
         - Integer representing the idx at which the target value occurs, or -1 if it does not occur
     """
-    return recursiveHelperBinarySearch(array, target, 0, len(array)-1)
+    return recursiveHelperBinarySearch(array, target, 0, len(array) - 1)
 
 
 def recursiveHelperBinarySearch(array, target, left, right):
     if left == right:
-        return left if array[left] == target else -1 
-    
-    mid = left + (right-left)//2
+        return left if array[left] == target else -1
+
+    mid = left + (right - left) // 2
 
     if array[mid] == target:
         return mid
-    
+
     elif array[mid] > target:
         return recursiveHelperBinarySearch(array, target, left, mid)
-    
+
     else:
-        return recursiveHelperBinarySearch(array, target, mid+1, right)
+        return recursiveHelperBinarySearch(array, target, mid + 1, right)
