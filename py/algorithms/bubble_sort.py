@@ -8,9 +8,10 @@ def bubble_sort(array: List[int]) -> List[int]:
     order.
 
     Time:
-        - O(N**2) best/avg/worst
+        O(N**2) best/avg/worst
+        
     Space:
-        - O(1) best/avg/worst
+        O(1) best/avg/worst
 
     N - number of elements in input array
 
