@@ -1,8 +1,9 @@
+""" This module contains tests for the merge sort algorithm """
 import unittest
 from py.algorithms.merge_sort import merge_sort
 
 
-class tests(unittest.TestCase):
+class MergeSortTests(unittest.TestCase):
 
     def test1(self):
         array = [-9, 2, 1, 2, 3, 4, 5, 6, 9, 18]
