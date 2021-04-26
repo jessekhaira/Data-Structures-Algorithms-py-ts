@@ -29,6 +29,8 @@ def knuth_morris_pratt(bigstr: str, substr: str) -> int:
         found, the function will return -1.
 
     """
+    if not substr:
+        return -1
     prefix_suffix_table = make_prefix_suffix_table(substr)
     return match(bigstr, substr, prefix_suffix_table)
 
