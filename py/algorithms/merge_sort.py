@@ -7,10 +7,10 @@ def merge_sort(array: List[int]) -> List[int]:
     sort an array of integers in ascending order.
 
     Time:
-        O(Nlog(N)) best/avg/worst 
+        O(Nlog(N)) best/avg/worst
 
     Space:
-        O(N) best/avg/worst 
+        O(N) best/avg/worst
 
     Where N is the length of the input array
 

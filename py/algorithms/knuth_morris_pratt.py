@@ -29,11 +29,11 @@ def knuth_morris_pratt(bigstr: str, substr: str) -> int:
         found, the function will return -1.
 
     """
-    prefixSuffixTable = makePrefixSuffixTable(substr)
-    return match(bigstr, substr, prefixSuffixTable)
+    prefix_suffix_table = make_prefix_suffix_table(substr)
+    return match(bigstr, substr, prefix_suffix_table)
 
 
-def makePrefixSuffixTable(substr):
+def make_prefix_suffix_table(substr):
     table = [-1] * len(substr)
     i = 0
     j = 1
@@ -49,7 +49,7 @@ def makePrefixSuffixTable(substr):
     return table
 
 
-def match(bigstr, substr, prefixSuffixTable):
+def match(bigstr, substr, prefix_suffix_table):
     i = 0
     j = 0
     while i < len(bigstr) and j < len(substr):
@@ -57,7 +57,7 @@ def match(bigstr, substr, prefixSuffixTable):
             i += 1
             j += 1
         elif j != 0:
-            j = prefixSuffixTable[j - 1] + 1
+            j = prefix_suffix_table[j - 1] + 1
         else:
             i += 1
     return i - j if j == len(substr) else -1
