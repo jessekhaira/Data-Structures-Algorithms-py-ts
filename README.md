@@ -30,7 +30,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 ## Python
 ### Sorting & Selection 
 - [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quicksort.py)
-- [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/mergesort.py) 
+- [MergeSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/merge_sort.py) 
 - [QuickSelect](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/quickselect.py)
 - [BubbleSort](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/bubblesort.py)
 - [HeapSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/algorithms/heapsort.py)
@@ -43,7 +43,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 
 ### Miscellaneous
 - [Floyds Tortoise and Hare](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
-- [Knuth-Morris-Pratt](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/knuthMorrisPratt.py)
+- [Knuth-Morris-Pratt](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/knuth_morris_pratt.py)
 - [Binary Search](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/binarySearch.py)
 
 ## JavaScript
