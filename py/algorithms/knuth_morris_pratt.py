@@ -22,8 +22,7 @@ def knuth_morris_pratt(bigstr: str, substr: str) -> int:
 
         substr:
             String representing the string we are looking for within the bigstr
-
-
+ 
     Returns:
         Integer indicating where the substr starts within the bigstr. If not
         found, the function will return -1.
