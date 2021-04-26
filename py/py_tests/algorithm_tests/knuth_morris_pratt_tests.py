@@ -15,6 +15,21 @@ class KnuthMorrisPrattTests(unittest.TestCase):
         substr = ""
         self.assertEqual(knuth_morris_pratt(bigstr, substr), -1)
 
+    def test3(self):
+        bigstr = "loepanajsdnqjkweqwhekjdhfasdkjlashdlasjdjksaasdjias"
+        substr = "weqwhek"
+        self.assertEqual(knuth_morris_pratt(bigstr, substr), 14)
+
+    def test4(self):
+        bigstr = "bizxcnjasd"
+        substr = "sd"
+        self.assertEqual(knuth_morris_pratt(bigstr, substr), 8)
+
+    def test5(self):
+        bigstr = "sd"
+        substr = "sd"
+        self.assertEqual(knuth_morris_pratt(bigstr, substr), 0)
+
 
 if __name__ == "__main__":
     unittest.main()
