@@ -1,3 +1,4 @@
+""" This module holds unit tests for the breadth first search algorithm """
 from py.data_structures.BinarySearchTree import BinarySearchTree
 import unittest
 from py.algorithms.breadth_first_search import breadth_first_search

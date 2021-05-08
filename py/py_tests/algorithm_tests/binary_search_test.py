@@ -6,6 +6,7 @@ from py.algorithms.binary_search import recursive_binary_search
 
 
 class BinarySearchTest(unittest.TestCase):
+    """ This class holds unit tests for the binary search algorithm """
 
     def test1(self):
         arr = [-100, -2, 3, 5]
