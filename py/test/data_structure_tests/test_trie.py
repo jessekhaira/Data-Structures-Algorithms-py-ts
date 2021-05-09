@@ -1,7 +1,9 @@
 import unittest
 from py.data_structures.Trie import Trie
 
+
 class tests(unittest.TestCase):
+
     def test1(self):
         obj1 = Trie()
         obj1.insert("Cat")
@@ -14,7 +16,6 @@ class tests(unittest.TestCase):
 
         self.assertEqual(True, obj1.startsWith("ca"))
         self.assertEqual(True, obj1.startsWith("C"))
-
 
     def test2(self):
         obj1 = Trie()
@@ -37,7 +38,5 @@ class tests(unittest.TestCase):
         self.assertEqual(True, obj1.lookup("back"))
 
 
-
-
 if __name__ == "__main__":
-    unittest.main() 
+    unittest.main()
