@@ -20,7 +20,7 @@ def quickselect(array, k):
         - k (int): Value between 0<=k<len(array). Represents the (sorted) index from which to retrieve the output value. 
     """
     assert k <= len(array), "k has to be within 0 to len(array)-1!"
-    kth_elem = quickselectHelper(array, k, 0, len(array)-1)
+    kth_elem = quickselectHelper(array, k, 0, len(array) - 1)
     return kth_elem
 
 
@@ -28,30 +28,30 @@ def quickselectHelper(array, k, start, end):
     if start >= end:
         return array[start] if start == k else "Not found"
     pivot = start
-    ptr1 = start+1
+    ptr1 = start + 1
     ptr2 = end
     while ptr1 <= ptr2:
         if array[ptr1] > array[pivot] and array[pivot] > array[ptr2]:
             swap(array, ptr1, ptr2)
             ptr1 += 1
             ptr2 -= 1
-        
+
         elif array[ptr1] <= array[pivot]:
             ptr1 += 1
 
         elif array[ptr2] >= array[pivot]:
             ptr2 -= 1
-        
+
     swap(array, pivot, ptr2)
     # if the final sorted index the pivot is sorted to is equal to k, then we've found the kth smallest
     # element. Otherwise, we recurse into the portion of the array that must contain the kth smallest element
     if ptr2 == k:
         return array[k]
     elif ptr2 > k:
-        return quickselectHelper(array, k, start, ptr2-1)
+        return quickselectHelper(array, k, start, ptr2 - 1)
     else:
-        return quickselectHelper(array, k, ptr2+1, end)        
+        return quickselectHelper(array, k, ptr2 + 1, end)
 
-    
+
 def swap(array, i, j):
-    array[i], array[j] = array[j], array[i] 
+    array[i], array[j] = array[j], array[i]

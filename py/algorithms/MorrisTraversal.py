@@ -20,47 +20,47 @@ def Morris_Inorder_Traversal(node):
     """
     if not node:
         return
-    output = set()  
+    output = set()
     while node:
         # inorder traversal easy case - no left subtree means we just visit this node right away
         if not node.left:
-            # don't want to add leaf nodes 
+            # don't want to add leaf nodes
             # also have to account for fact some leaf nodes will have artifical right node
             # unless we use an addition data structure to track those, we will just add and remove them
-            # from the hash-set, which are efficient operations 
+            # from the hash-set, which are efficient operations
             if node.right:
                 output.add(node)
             node = node.right
-        # if there is a left subtree, then we need some way to get back to this node after 
-        # visiting every node in the left subtree. So we get the absolute last node that will be visited 
-        # in the left subtree and set its right pointer to the current node 
+        # if there is a left subtree, then we need some way to get back to this node after
+        # visiting every node in the left subtree. So we get the absolute last node that will be visited
+        # in the left subtree and set its right pointer to the current node
         else:
             lastNodeInLeftSubtree = getPrevNode(node)
             if not lastNodeInLeftSubtree.right:
                 lastNodeInLeftSubtree.right = node
-                node = node.left 
+                node = node.left
             elif lastNodeInLeftSubtree.right == node:
                 lastNodeInLeftSubtree.right = None
                 # if the node has a left subtree, its guaranteed at this point to not have
-                # a right subtree so we can add it 
+                # a right subtree so we can add it
                 if lastNodeInLeftSubtree.left:
                     output.add(lastNodeInLeftSubtree)
                 # otherwise, this connecting node was a leaf node and will be present in output
-                # so we have to remove it 
+                # so we have to remove it
                 else:
                     output.remove(lastNodeInLeftSubtree)
                 if not node.right:
                     output.add(node)
-                node = node.right 
-    return output 
-    
-    
+                node = node.right
+    return output
+
+
 def getPrevNode(node):
     nodeL = node.left
     while nodeL.right and nodeL.right != node:
-        nodeL = nodeL.right 
-    return nodeL 
-    
+        nodeL = nodeL.right
+    return nodeL
+
 
 def Morris_PreOrder_Traversal(node):
     """
@@ -86,21 +86,18 @@ def Morris_PreOrder_Traversal(node):
             prevNode = getPrevNode(node)
             if not prevNode.right:
                 prevNode.right = node
-                if not node.right: 
+                if not node.right:
                     output.add(node)
-                node = node.left 
+                node = node.left
             else:
                 prevNode.right = None
                 if prevNode.left:
-                    output.add(prevNode) 
+                    output.add(prevNode)
                 else:
-                    output.remove(prevNode) 
-                node = node.right 
+                    output.remove(prevNode)
+                node = node.right
         else:
             if node.right:
                 output.add(node)
-            node = node.right 
-    return output 
-
-
-
+            node = node.right
+    return output

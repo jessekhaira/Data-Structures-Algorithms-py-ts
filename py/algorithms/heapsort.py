@@ -17,21 +17,20 @@ def heapsort(array):
     N - represents the length of the input array
     """
     if not array:
-        return [] 
-    
+        return []
     # heap sort relies on the array being a max-heap - therefore we have to heapify the array before
-    # performing any swap operations 
+    # performing any swap operations
     heapify(array)
     # endIdx represents the idx which the current largest element in the max heap will swap to
-    # first iteration, this will be the largest element in the heap so it should go in the last 
-    # idx spot, and so on from there 
-    endIdx = len(array)-1
+    # first iteration, this will be the largest element in the heap so it should go in the last
+    # idx spot, and so on from there
+    endIdx = len(array) - 1
     while endIdx > 0:
-        swap(array, 0, endIdx) 
-        endIdx -= 1 
-        # have to maintain heap property - every parent node has to have a value 
-        # greater than or equal to children nodes 
-        siftDown(array, 0, endIdx) 
+        swap(array, 0, endIdx)
+        endIdx -= 1
+        # have to maintain heap property - every parent node has to have a value
+        # greater than or equal to children nodes
+        siftDown(array, 0, endIdx)
     return array
 
 
@@ -43,12 +42,13 @@ def heapify(array):
         - array(list[int]): List of integers
     Outputs:
         - None 
-    """ 
-    pointer = (len(array)-2)//2
+    """
+    pointer = (len(array) - 2) // 2
     while pointer >= 0:
-        siftDown(array, pointer, len(array)-1)
-        pointer -= 1 
-    
+        siftDown(array, pointer, len(array) - 1)
+        pointer -= 1
+
+
 def siftDown(array, start, end):
     """
     This function represents the siftdown algorithm used to maintain the heap property for a 
@@ -62,21 +62,22 @@ def siftDown(array, start, end):
         - end(int): Integer representing an index within the heap
     Outputs:
         - None
-    """ 
-    firstChild = start*2+1
+    """
+    firstChild = start * 2 + 1
     while firstChild <= end:
-        secondChild = start*2+2 if start*2+2 <= end else -1 
+        secondChild = start * 2 + 2 if start * 2 + 2 <= end else -1
         if secondChild != -1 and array[secondChild] > array[firstChild]:
             idxToSwap = secondChild
         else:
             idxToSwap = firstChild
-        
+
         if array[idxToSwap] > array[start]:
             swap(array, idxToSwap, start)
             start = idxToSwap
             firstChild = start * 2 + 1
         else:
-            break 
+            break
+
 
 def swap(array, i, j):
     """
@@ -90,4 +91,4 @@ def swap(array, i, j):
     Outputs:
         - None. Swaps inplace. 
     """
-    array[i], array[j] = array[j], array[i] 
+    array[i], array[j] = array[j], array[i]

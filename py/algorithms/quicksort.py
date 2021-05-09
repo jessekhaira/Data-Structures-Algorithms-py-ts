@@ -24,14 +24,15 @@ def quickSort(array):
     """
     if not array:
         return
-    quickSortHelper(array, 0, len(array)-1)
+    quickSortHelper(array, 0, len(array) - 1)
     return array
+
 
 def quickSortHelper(array, start, end):
     if start >= end:
         return
     pivot = start
-    ptrL = start+1
+    ptrL = start + 1
     ptrR = end
 
     while ptrL <= ptrR:
@@ -47,15 +48,14 @@ def quickSortHelper(array, start, end):
             ptrR -= 1
 
     swap(array, pivot, ptrR)
-    if end - (ptrR+1) > (ptrR-1) - start:
-        quickSortHelper(array, start, ptrR-1)
-        quickSortHelper(array, ptrR+1, end)
+    if end - (ptrR + 1) > (ptrR - 1) - start:
+        quickSortHelper(array, start, ptrR - 1)
+        quickSortHelper(array, ptrR + 1, end)
 
     else:
-        quickSortHelper(array, ptrR+1, end)
-        quickSortHelper(array, start, ptrR-1)
+        quickSortHelper(array, ptrR + 1, end)
+        quickSortHelper(array, start, ptrR - 1)
+
 
 def swap(array, i, j):
-    array[i], array[j] = array[j], array[i] 
-
-
+    array[i], array[j] = array[j], array[i]

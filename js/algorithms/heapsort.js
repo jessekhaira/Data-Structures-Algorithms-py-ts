@@ -22,28 +22,27 @@ function heapsort(array) {
     }
     heapify(array);
     // endIdx represents the idx which the current largest element in the max heap will swap to
-    // first iteration, this will be the largest element in the heap so it should go in the last 
-    // idx spot, and so on from there 
-    let endIdx = array.length-1;
+    // first iteration, this will be the largest element in the heap so it should go in the last
+    // idx spot, and so on from there
+    let endIdx = array.length - 1;
     while (endIdx > 0) {
         swap(array, 0, endIdx);
         endIdx--;
-        // have to maintain heap property - every parent node has to have a value 
-        // greater than or equal to children nodes         
+        // have to maintain heap property - every parent node has to have a value
+        // greater than or equal to children nodes
         siftDown(array, 0, endIdx);
     }
     return array;
 }
 
-
 /**
- * This function accepts an input array of integers, and max-heapifys the array. 
- * @param {number[]} array List of integers 
+ * This function accepts an input array of integers, and max-heapifys the array.
+ * @param {number[]} array List of integers
  */
 function heapify(array) {
-    let parentIdx = Math.floor(array.length-2/2);
+    let parentIdx = Math.floor(array.length - 2 / 2);
     while (parentIdx >= 0) {
-        siftDown(array, parentIdx, array.length-1);
+        siftDown(array, parentIdx, array.length - 1);
         parentIdx--;
     }
 }
@@ -53,8 +52,8 @@ function heapify(array) {
  * indices within the array of integers, and swaps the values contained at the two indices.
  * @param {number[]} array List of integers
  * @param {number} i int that represents an index in the array
- * @param {number} j int that represents an index in the array 
- * @returns {undefined} Swaps inplace 
+ * @param {number} j int that represents an index in the array
+ * @returns {undefined} Swaps inplace
  */
 function swap(array, i, j) {
     [array[i], array[j]] = [array[j], array[i]];
@@ -72,26 +71,24 @@ function swap(array, i, j) {
  * @returns {undefined} Sifts down in place 
  */
 function siftDown(array, start, end) {
-    let firstChild = start*2+1;
+    let firstChild = start * 2 + 1;
     while (firstChild <= end) {
-        let secondChild = (start*2+2 <= end ? start*2+2: -1);
+        let secondChild = start * 2 + 2 <= end ? start * 2 + 2 : -1;
         let idxToSwap = null;
         if (secondChild !== -1 && array[secondChild] > array[firstChild]) {
             idxToSwap = secondChild;
-        }
-        else {
+        } else {
             idxToSwap = firstChild;
         }
 
         if (array[idxToSwap] > array[start]) {
             swap(array, idxToSwap, start);
             start = idxToSwap;
-            firstChild = start*2+1;
-        }
-        else {
-            break; 
+            firstChild = start * 2 + 1;
+        } else {
+            break;
         }
     }
 }
 
-export default heapsort; 
+export default heapsort;
