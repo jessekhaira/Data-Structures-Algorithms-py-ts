@@ -19,7 +19,7 @@ function breadthFirstSearch(node) {
     }
     let output = [];
     let queue = [node];
-    while (queue.length >0) {
+    while (queue.length > 0) {
         let currLevel = [];
         let currLevelLength = queue.length;
         while (currLevelLength !== 0) {
@@ -35,5 +35,7 @@ function breadthFirstSearch(node) {
         }
         output.push(currLevel);
     }
-    return output; 
+    return output;
 }
+
+export default breadthFirstSearch;
