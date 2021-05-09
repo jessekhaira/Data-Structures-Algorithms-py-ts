@@ -18,46 +18,40 @@
  * @returns {number} Value between 0<=k<len(array). Represents the (sorted) index from which
     to retrieve the output value. 
  */
-function quickselect(array, k) {
+function quickSelect(array, k) {
     if (array == null) {
         return null;
+    } else if (!(0 <= k < array.length - 1)) {
+        return 'k has to be between 0 and array.length-1';
     }
-    else if (!(0<=k<array.length-1)) {
-        return "k has to be between 0 and array.length-1";
-    }
-    let output = quickselectHelper(array, k, 0, array.length-1);
+    let output = quickSelectHelper(array, k, 0, array.length - 1);
     return output;
 }
 
-
-function quickselectHelper(array, k, start, end) {
+function quickSelectHelper(array, k, start, end) {
     if (start >= end) {
-        return (start === k ? array[start]: "Value not found");
+        return start === k ? array[start] : 'Value not found';
     }
     let pivot = start;
-    let ptr1 = start+1;
+    let ptr1 = start + 1;
     let ptr2 = end;
     while (ptr1 <= ptr2) {
         if (array[ptr1] > array[pivot] && array[pivot] > array[ptr2]) {
             [array[ptr1], array[ptr2]] = [array[ptr2], array[ptr1]];
-        }
-        else if (array[ptr1] <= array[pivot]) {
+        } else if (array[ptr1] <= array[pivot]) {
             ptr1++;
-        }
-        else if (array[ptr2] >= array[pivot]) {
+        } else if (array[ptr2] >= array[pivot]) {
             ptr2--;
         }
     }
     [array[pivot], array[ptr2]] = [array[ptr2], array[pivot]];
     if (k === ptr2) {
         return array[k];
-    }
-    else if (ptr2 > k) {
-        return quickselectHelper(array, k, start, ptr2-1);
-    }
-    else {
-        return quickselectHelper(array, k, ptr2+1, end);
+    } else if (ptr2 > k) {
+        return quickSelectHelper(array, k, start, ptr2 - 1);
+    } else {
+        return quickSelectHelper(array, k, ptr2 + 1, end);
     }
 }
 
-export {quickselect}; 
+export default quickSelect;
