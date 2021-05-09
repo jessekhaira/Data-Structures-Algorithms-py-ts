@@ -1,4 +1,3 @@
-
 /**
  *  This algorithm represents the binary search algorithm implemented
     iteratively. This algorithm finds the position of a target value within
@@ -23,28 +22,23 @@
  */
 export function iterativeBinarySearch(array, target) {
     if (array == null) {
-        return -1; 
+        return -1;
     }
     let left = 0;
-    let right = array.length-1;
+    let right = array.length - 1;
     while (left < right) {
-        let mid = left + Math.floor((right-left)/2); 
+        let mid = left + Math.floor((right - left) / 2);
 
         if (array[mid] === target) {
-            return mid; 
-        }
-
-        else if (array[mid] > target) {
-            right = mid; 
-        }
-
-        else {
-            left = mid+1; 
+            return mid;
+        } else if (array[mid] > target) {
+            right = mid;
+        } else {
+            left = mid + 1;
         }
     }
-    return (array[left] === target ? left: -1); 
+    return array[left] === target ? left : -1;
 }
-
 
 /**
  *  This algorithm represents the binary search algorithm implemented
@@ -68,23 +62,19 @@ export function iterativeBinarySearch(array, target) {
  * @returns {number} Represents the idx at which the target value occurs, or -1 if it does not occur
  */
 export function recursiveBinarySearch(array, target) {
-    return recursiveHelperBinarySearch(array, target, 0, array.length-1); 
+    return recursiveHelperBinarySearch(array, target, 0, array.length - 1);
 }
 
 function recursiveHelperBinarySearch(array, target, left, right) {
     if (left == right) {
-        return (array[left] === target ? left: -1);
+        return array[left] === target ? left : -1;
     }
-    let mid = left + Math.floor((right-left)/2);
+    let mid = left + Math.floor((right - left) / 2);
     if (array[mid] === target) {
         return mid;
-    }
-
-    else if (array[mid] >target) {
+    } else if (array[mid] > target) {
         return recursiveHelperBinarySearch(array, target, left, mid);
-    }
-
-    else {
-        return recursiveHelperBinarySearch(array, target, mid+1, right); 
+    } else {
+        return recursiveHelperBinarySearch(array, target, mid + 1, right);
     }
 }
