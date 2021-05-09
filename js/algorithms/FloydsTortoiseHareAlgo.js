@@ -1,4 +1,3 @@
-
 /**
  * This function implements an algorithm called floyd's
     tortoise and hare algorithm. It can be used to find whether
@@ -12,28 +11,27 @@
  * @returns {(object|null)} Node that starts the linked list or null if there is no cycle in the linked list
  */
 function floydsTortoiseHareAlgo(node) {
-   if (node == null || node.next == null) {
-       return null;
-   }
-   let ptr1 = node;
-   let ptr2 = node; 
-   while (ptr2 && ptr2.next) {
-       ptr1 = ptr1.next;
-       ptr2 = ptr2.next.next;
-       if (ptr1 === ptr2) {
-           break;
-       }
-   }
-   if (ptr1 !== ptr2) {
-       return null; 
-   }
-   ptr1 = node;
-   while (ptr1 !== ptr2) {
-       ptr1 = ptr1.next;
-       ptr2 = ptr2.next; 
-   }
-   return ptr1; 
+    if (node == null || node.next == null) {
+        return null;
+    }
+    let ptr1 = node;
+    let ptr2 = node;
+    while (ptr2 && ptr2.next) {
+        ptr1 = ptr1.next;
+        ptr2 = ptr2.next.next;
+        if (ptr1 === ptr2) {
+            break;
+        }
+    }
+    if (ptr1 !== ptr2) {
+        return null;
+    }
+    ptr1 = node;
+    while (ptr1 !== ptr2) {
+        ptr1 = ptr1.next;
+        ptr2 = ptr2.next;
+    }
+    return ptr1;
 }
 
-
-export {floydsTortoiseHareAlgo}; 
+export { floydsTortoiseHareAlgo };

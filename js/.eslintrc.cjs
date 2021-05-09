@@ -17,5 +17,11 @@ module.exports = {
                 properties: 'always',
             },
         ],
+        'max-len': [
+            2,
+            {
+                code: 80,
+            },
+        ],
     },
 };
