@@ -5,11 +5,21 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'airbnb-typescript/base',
+        'plugin:prettier/recommended',
+    ],
     parserOptions: {
         ecmaVersion: 12,
         sourceType: 'module',
+        tsconfigRootDir: __dirname,
+        project: './tsconfig.json',
     },
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint'],
     rules: {
         camelcase: [
             2,
