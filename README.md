@@ -1,5 +1,5 @@
-# Data Structures and Algorithms in JavaScript and Python
-The repo represents a variety of fundamental data structures and algorithms implemented in JavaScript and Python in a clean, efficient, and well documented manner. 
+# Data Structures and Algorithms in TypeScript and Python
+The repo represents a variety of fundamental data structures and algorithms implemented in TypeScript and Python in a clean, efficient, and well documented manner. Currently migrating vanilla javascript implementations to typescript. 
 
 # Data Structures 
 ## Python
@@ -14,7 +14,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [Queue](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/data_structures/Queue.py)
 - [Deque](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/data_structures/Deque.py)
 
-## JavaScript
+## TypeScript
 - [Binary Search Tree](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/BinarySearchTree.js)
 - [Disjoint Set](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/DisjointSet.js)
 - [HashMap](https://github.com/13jk59/dsa_py_js/blob/master/js/data%20structures/HashMap.js)
@@ -46,7 +46,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [Knuth-Morris-Pratt](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/knuth_morris_pratt.py)
 - [Binary Search](https://github.com/13jk59/dsa_py_js/blob/master/py/algorithms/binarySearch.py)
 
-## JavaScript
+## TypeScript
 
 ### Sorting & Selection 
 - [QuickSort](https://github.com/13jk59/dsa_py_js/blob/master/js/algorithms/quickSort.js)
