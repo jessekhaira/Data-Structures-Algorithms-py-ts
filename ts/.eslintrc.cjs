@@ -33,5 +33,6 @@ module.exports = {
                 code: 80,
             },
         ],
+        'no-param-reassign': [2, { props: false }],
     },
 };

@@ -1,3 +1,6 @@
+function swap(array: number[], i: number, j: number) {
+    [array[i], array[j]] = [array[j], array[i]];
+}
 /**
  * This algorithm represents the bubble sort algorithm,
  *  meant to be used to sort an array of integers in
@@ -30,10 +33,6 @@ function bubbleSort(array: number[]): number[] {
         endIdx -= 1;
     }
     return array;
-}
-
-function swap(array: number[], i: number, j: number) {
-    [array[i], array[j]] = [array[j], array[i]];
 }
 
 export default bubbleSort;
