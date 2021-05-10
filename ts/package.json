@@ -1,7 +1,7 @@
 {
   "name": "dsa_js",
   "version": "1.0.0",
-  "description": "dsa in js",
+  "description": "Fundamental data structures and algorithms implemented in typescript",
   "license": "MIT",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
