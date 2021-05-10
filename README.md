@@ -5,7 +5,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 # Data Structures
 
 ## Python
-<<<<<<< HEAD
+
 - [Binary Search Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/BinarySearchTree.py)
 - [Disjoint Set](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/DisjointSet.py)
 - [HashMap](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/HashMap.py)
@@ -14,17 +14,6 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [Linked List](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/LinkedList.py)
 - [HashSet](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/HashSet.py)
 - [Stack](https://github.com/13jk59/dsa_py_js/blob/master/py/data_structures/Stack.py)
-=======
-
-- [Binary Search Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/BinarySearchTree.py)
-- [Disjoint Set](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/DisjointSet.py)
-- [HashMap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/HashMap.py)
-- [Min/Max Heap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Heap.py)
-- [Trie](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Trie.py)
-- [Linked List](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/LinkedList.py)
-- [HashSet](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/HashSet.py)
-- [Stack](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Stack.py)
->>>>>>> updated readme.md
 - [Queue](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/data_structures/Queue.py)
 - [Deque](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/data_structures/Deque.py)
 
