@@ -27,7 +27,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [Linked List](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/LinkedList.js)
 - [HashSet](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/HashSet.js)
 - [Stack](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/Stack.js)
-- [Queue](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/data%20structures/Queue.js)
+- [Queue](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/data%20structures/queue.js)
 - [Deque](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/data%20structures/Deque.js)
 
 # Algorithms
@@ -59,15 +59,15 @@ The repo represents a variety of fundamental data structures and algorithms impl
 
 ### Sorting & Selection
 
-- [QuickSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/quickSort.js)
+- [QuickSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/quick_sort.js)
 - [MergeSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/mergeSort.js)
-- [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/quickselect.js)
-- [BubbleSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/bubbleSort.js)
+- [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/quick_select.js)
+- [BubbleSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/bubble_sort.ts)
 - [HeapSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/heapsort.js)
 
 ### Tree/Graph Traversal
 
-- [Breadth First Search](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/breadthFirstSearch.js)
+- [Breadth First Search](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/breadth_first_search.js)
 - [Post Order Depth First Search Binary Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/postOrderDFS_binaryTree.js)
 - [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/postOrderDFS_naryTree.js)
 - [Morris Traversal](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/MorrisTraversal.js)
@@ -76,4 +76,4 @@ The repo represents a variety of fundamental data structures and algorithms impl
 
 - [Floyds Tortoise and Hare](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/FloydsTortoiseHareAlgo.js)
 - [Knuth-Morris-Pratt](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/knuthMorrisPratt.js)
-- [Binary Search](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/binarySearch.js)
+- [Binary Search](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/binary_search.js)
