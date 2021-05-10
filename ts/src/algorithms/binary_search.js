@@ -27,11 +27,12 @@ export function iterativeBinarySearch(array, target) {
     let left = 0;
     let right = array.length - 1;
     while (left < right) {
-        let mid = left + Math.floor((right - left) / 2);
+        const mid = left + Math.floor((right - left) / 2);
 
         if (array[mid] === target) {
             return mid;
-        } else if (array[mid] > target) {
+        }
+        if (array[mid] > target) {
             right = mid;
         } else {
             left = mid + 1;
@@ -69,12 +70,12 @@ function recursiveHelperBinarySearch(array, target, left, right) {
     if (left == right) {
         return array[left] === target ? left : -1;
     }
-    let mid = left + Math.floor((right - left) / 2);
+    const mid = left + Math.floor((right - left) / 2);
     if (array[mid] === target) {
         return mid;
-    } else if (array[mid] > target) {
-        return recursiveHelperBinarySearch(array, target, left, mid);
-    } else {
-        return recursiveHelperBinarySearch(array, target, mid + 1, right);
     }
+    if (array[mid] > target) {
+        return recursiveHelperBinarySearch(array, target, left, mid);
+    }
+    return recursiveHelperBinarySearch(array, target, mid + 1, right);
 }

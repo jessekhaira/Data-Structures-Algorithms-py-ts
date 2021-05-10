@@ -1,6 +1,7 @@
 /**
- * This algorithm represents the bubble sort algorithm, meant to be used to sort an
-    array of integers in ascending order.
+ * This algorithm represents the bubble sort algorithm,
+ *  meant to be used to sort an array of integers in
+ *  ascending order.
 
  *Time:
  *- O(N**2) best/avg/worst
@@ -18,15 +19,15 @@ function bubbleSort(array: number[]): number[] {
     while (endIdx > 0) {
         // bubble up largest element in array every time
         while (currIdx < endIdx - 1) {
-            let currVal = array[currIdx];
-            let nextVal = array[currIdx + 1];
+            const currVal = array[currIdx];
+            const nextVal = array[currIdx + 1];
             if (currVal >= nextVal) {
                 swap(array, currIdx, currIdx + 1);
             }
-            currIdx++;
+            currIdx += 1;
         }
         currIdx = 0;
-        endIdx--;
+        endIdx -= 1;
     }
     return array;
 }

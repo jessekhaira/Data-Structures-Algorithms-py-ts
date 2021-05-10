@@ -1,17 +1,17 @@
 import bubbleSort from '../../algorithms/bubble_sort';
 
 test('test 1', () => {
-    let obj1 = [20, 4, 5, -9, -120];
+    const obj1 = [20, 4, 5, -9, -120];
     expect(bubbleSort(obj1)).toStrictEqual([-120, -9, 4, 5, 20]);
 });
 
 test('test 2', () => {
-    let obj1 = [-9, 4, 5, 9, 10, 10, 20, 5, 8, -30, -90];
+    const obj1 = [-9, 4, 5, 9, 10, 10, 20, 5, 8, -30, -90];
     expect(bubbleSort(obj1)).toStrictEqual(obj1.sort((a, b) => a - b));
 });
 
 test('test 3', () => {
-    let obj1 = [
+    const obj1 = [
         -9,
         4,
         5,
