@@ -44,14 +44,14 @@ The repo represents a variety of fundamental data structures and algorithms impl
 
 ### Tree/Graph Traversal
 
-- [Breadth First Search](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/breadthFirstSearch.py)
+- [Breadth First Search](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/breadth_first_search.py)
 - [Post Order Depth First Search Binary Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/postOrderDFS_binaryTree.py)
 - [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/postOrderDFS_naryTree.py)
 - [Morris Traversal](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/algorithms/MorrisTraversal.py)
 
 ### Miscellaneous
 
-- [Floyds Tortoise and Hare](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/FloydsTortoiseHareAlgo.py)
+- [Floyds Tortoise and Hare](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/floyds_tortoise_hare.py)
 - [Knuth-Morris-Pratt](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/knuth_morris_pratt.py)
 - [Binary Search](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/binarySearch.py)
 
