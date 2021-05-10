@@ -1,4 +1,4 @@
-import {BinaryTreeNode} from "./utils/BinaryTree";
+import { BinaryTreeNode } from './utils/BinaryTree';
 
 /**
  *  This class represents a binary search tree. This data structure is a
@@ -13,7 +13,7 @@ import {BinaryTreeNode} from "./utils/BinaryTree";
  * @constructor @public
  */
 class BinarySearchTree {
-    /**@param {number} val Value present at the root of the binary search tree */
+    /** @param {number} val Value present at the root of the binary search tree */
     constructor(val) {
         /** Root of binary tree
          * @public
@@ -21,7 +21,7 @@ class BinarySearchTree {
          */
         this.root = new BinaryTreeNode(val);
     }
-    
+
     /**
      *  This method inserts a node into the binary search tree, will ensuring that the 
         binary search tree property is adhered to.
@@ -36,22 +36,21 @@ class BinarySearchTree {
      * @returns {undefined} 
      */
     insert(val) {
-        let node = this.root;
+        const node = this.root;
         return this._insertHelper(node, val);
     }
-    
+
     _insertHelper(node, val) {
         if (node == null) {
             return new BinaryTreeNode(val);
         }
-        else if (val < node.val) {
+        if (val < node.val) {
             node.left = this._insertHelper(node.left, val);
-            return node; 
+            return node;
         }
-        else {
-            node.right = this._insertHelper(node.right, val);
-            return node; 
-        }
+
+        node.right = this._insertHelper(node.right, val);
+        return node;
     }
 
     /**
@@ -72,27 +71,27 @@ class BinarySearchTree {
      * @param {number} val 
      */
     lookup(val) {
-        let node = this.root;
+        const node = this.root;
         return this._lookupHelper(node, val);
     }
 
     _lookupHelper(node, val) {
         if (node == null) {
-            return null; 
+            return null;
         }
-        else if (val === node.val) {
-            return node; 
+        if (val === node.val) {
+            return node;
         }
-        else if (val < node.val) {
+        if (val < node.val) {
             return this._lookupHelper(node.left, val);
         }
-        else if (val > node.val) {
+        if (val > node.val) {
             return this._lookupHelper(node.right, val);
         }
     }
 
     delete(val) {
-        let node = this.root;
+        const node = this.root;
         return this._deleteHelperV(node, val);
     }
 
@@ -105,41 +104,40 @@ class BinarySearchTree {
         If you want to actually remove the node when the node has two children, use deleteHelperVA. 
         */
         if (node == null) {
-            return null; 
+            return null;
         }
-        else if (val < node.val) {
+        if (val < node.val) {
             node.left = this._deleteHelperV(node.left, val);
-            return node; 
+            return node;
         }
-        else if (val > node.val) {
+        if (val > node.val) {
             node.right = this._deleteHelperV(node.right, val);
-            return node; 
+            return node;
         }
-        else {
-            if (node.left == null && node.right == null) {
-                return null;
-            }
-            else if (!node.left) {
-                return node.right;
-            }
-            else if (!node.right) {
-                return node.left; 
-            }
-            let minVal = this._findMinValV(node.right);
-            node.val = minVal;
-            node.right = this._deleteHelperV(node.right, minVal);
-            return node; 
+
+        if (node.left == null && node.right == null) {
+            return null;
         }
+        if (!node.left) {
+            return node.right;
+        }
+        if (!node.right) {
+            return node.left;
+        }
+        const minVal = this._findMinValV(node.right);
+        node.val = minVal;
+        node.right = this._deleteHelperV(node.right, minVal);
+        return node;
     }
 
     _findMinValV(node) {
         if (!node.left) {
-            return node.val; 
+            return node.val;
         }
-        return this._findMinValV(node.left); 
+        return this._findMinValV(node.left);
     }
 
-    _deleteHelperVA(node,val) {
+    _deleteHelperVA(node, val) {
         /*
         This delete helper is the same as the other one, except when the node has two children, this method
         actually removes the node from the tree rather than just replacing its value with the minimum value
@@ -148,29 +146,28 @@ class BinarySearchTree {
         if (node == null) {
             return null;
         }
-        else if (val < node.val) {
+        if (val < node.val) {
             node.left = this._deleteHelperVA(node.left, val);
-            return node; 
+            return node;
         }
-        else if (val > node.val) {
+        if (val > node.val) {
             node.right = this._deleteHelperVA(node.right, val);
             return node;
         }
-        else {
-            if (node.left == null && node.right == null) {
-                return null;
-            }
-            else if (!node.left) {
-                return node.right; 
-            }
-            else if (!node.right) {
-                return node.left; 
-            }
-            [node.right, minNodeSubtree] = this._findMinNode(node.right);
-            minNodeSubtree.left = node.left;
-            minNodeSubtree.right = node.right;
-            return minNodeSubtree; 
+
+        if (node.left == null && node.right == null) {
+            return null;
         }
+        if (!node.left) {
+            return node.right;
+        }
+        if (!node.right) {
+            return node.left;
+        }
+        [node.right, minNodeSubtree] = this._findMinNode(node.right);
+        minNodeSubtree.left = node.left;
+        minNodeSubtree.right = node.right;
+        return minNodeSubtree;
     }
 
     _findMinNode(node) {
@@ -182,4 +179,4 @@ class BinarySearchTree {
     }
 }
 
-export {BinarySearchTree}; 
+export { BinarySearchTree };
