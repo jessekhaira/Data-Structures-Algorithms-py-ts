@@ -5,7 +5,7 @@ import {
 
 describe('test iterative and recursive binary search', () => {
     test('test iterative binary search', () => {
-        let arr = [-100, -2, 3, 5];
+        const arr = [-100, -2, 3, 5];
 
         expect(3).toEqual(iterativeBinarySearch(arr, 5));
         expect(0).toEqual(iterativeBinarySearch(arr, -100));
@@ -14,7 +14,7 @@ describe('test iterative and recursive binary search', () => {
     });
 
     test('test recursive binary search', () => {
-        let arr = [-100, -2, 3, 5];
+        const arr = [-100, -2, 3, 5];
 
         expect(3).toEqual(recursiveBinarySearch(arr, 5));
         expect(0).toEqual(recursiveBinarySearch(arr, -100));
