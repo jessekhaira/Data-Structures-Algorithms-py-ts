@@ -40,7 +40,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [MergeSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/merge_sort.py)
 - [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/quickselect.py)
 - [BubbleSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/bubblesort.py)
-- [HeapSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/algorithms/heapsort.py)
+- [HeapSort](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/algorithms/heap_sort.py)
 
 ### Tree/Graph Traversal
 
