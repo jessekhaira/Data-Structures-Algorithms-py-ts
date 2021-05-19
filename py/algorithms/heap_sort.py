@@ -31,77 +31,85 @@ def heap_sort(array: List[int]) -> List[int]:
     """
     if not array:
         return []
-    # heap sort relies on the array being a max-heap - therefore we have to heapify the array before
+    # heap sort relies on the array being a max-heap -
+    # therefore we have to heapify the array before
     # performing any swap operations
     heapify(array)
-    # endIdx represents the idx which the current largest element in the max heap will swap to
-    # first iteration, this will be the largest element in the heap so it should go in the last
+    # endIdx represents the idx which the current largest element
+    # in the max heap will swap to first iteration, this will be the
+    # largest element in the heap so it should go in the last
     # idx spot, and so on from there
-    endIdx = len(array) - 1
-    while endIdx > 0:
-        swap(array, 0, endIdx)
-        endIdx -= 1
+    end_idx = len(array) - 1
+    while end_idx > 0:
+        swap(array, 0, end_idx)
+        end_idx -= 1
         # have to maintain heap property - every parent node has to have a value
         # greater than or equal to children nodes
-        siftDown(array, 0, endIdx)
+        sift_down(array, 0, end_idx)
     return array
 
 
-def heapify(array):
-    """
-    This function accepts an input array of integers, and max-heapifys the array. 
+def heapify(array: List[int]) -> None:
+    """ This function accepts an input array of integers,
+    and max-heapifys the array.
 
-    Inputs:
-        - array(list[int]): List of integers
-    Outputs:
-        - None 
+    Args:
+        array:
+            List of integers
     """
     pointer = (len(array) - 2) // 2
     while pointer >= 0:
-        siftDown(array, pointer, len(array) - 1)
+        sift_down(array, pointer, len(array) - 1)
         pointer -= 1
 
 
-def siftDown(array, start, end):
-    """
-    This function represents the siftdown algorithm used to maintain the heap property for a 
-    max heap. This algorithm accepts an array of integers, and two integers that represent indices 
-    within the heap such that start <= end. The element located at the start index is moved down 
-    the heap until start > end, or the heap property is satisifed. 
+def sift_down(array: List[int], start: int, end: int) -> None:
+    """ This function represents the siftdown algorithm used
+    to maintain the heap property for a max heap. This algorithm
+    accepts an array of integers, and two integers that represent
+    indices within the heap such that start <= end. The element
+    located at the start index is moved down the heap until start > end,
+    or the heap property is satisifed.
 
-    Inputs:
-        - array(list[int]): List of integers representing a heap
-        - start(int): Integer representing an index within the heap
-        - end(int): Integer representing an index within the heap
-    Outputs:
-        - None
+    Args:
+        array:
+            List of integers representing a heap
+
+        start:
+            Integer representing an index within the heap
+
+        end:
+            Integer representing an index within the heap
     """
-    firstChild = start * 2 + 1
-    while firstChild <= end:
-        secondChild = start * 2 + 2 if start * 2 + 2 <= end else -1
-        if secondChild != -1 and array[secondChild] > array[firstChild]:
-            idxToSwap = secondChild
+    first_child = start * 2 + 1
+    while first_child <= end:
+        second_child = start * 2 + 2 if start * 2 + 2 <= end else -1
+        if second_child != -1 and array[second_child] > array[first_child]:
+            idx_to_swap = second_child
         else:
-            idxToSwap = firstChild
+            idx_to_swap = first_child
 
-        if array[idxToSwap] > array[start]:
-            swap(array, idxToSwap, start)
-            start = idxToSwap
-            firstChild = start * 2 + 1
+        if array[idx_to_swap] > array[start]:
+            swap(array, idx_to_swap, start)
+            start = idx_to_swap
+            first_child = start * 2 + 1
         else:
             break
 
 
-def swap(array, i, j):
-    """
-    This function accepts an array of integers, and two integers i and j that represent
-    indices within the array of integers, and swaps the values contained at the two indices.
+def swap(array: List[int], i: int, j: int) -> None:
+    """ This function accepts an array of integers, and two integers
+    i and j that represent indices within the array of integers,
+    and swaps the values contained at the two indices.
 
-    Inputs:
-        - array(list[int]): List of integer 
-        - i(int): Integer representing an index in the array
-        - j(int): Integer representing an index in the array 
-    Outputs:
-        - None. Swaps inplace. 
+    Args:
+        array:
+            List of integers
+
+        i:
+            Integer representing an index in the array
+
+        j:
+            Integer representing an index in the array
     """
     array[i], array[j] = array[j], array[i]
