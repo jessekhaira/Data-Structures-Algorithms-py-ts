@@ -1,7 +1,8 @@
 """ This module contains code representing the heap sort algorithm """
+from typing import List
 
 
-def heap_sort(array):
+def heap_sort(array: List[int]) -> List[int]:
     """ This algorithm represents the heap sort algorithm, used to
     sort an array of integers in ascending order. This algorithm relies
     on a data structure called a max-heap to efficiently sort an array
