@@ -1,20 +1,32 @@
-def heapsort(array):
-    """
-    This algorithm represents the heap sort algorithm, used to sort an array of integers in ascending
-    order. This algorithm relies on a data structure called a max-heap to efficiently sort an array 
+""" This module contains code representing the heap sort algorithm """
+
+
+def heap_sort(array):
+    """ This algorithm represents the heap sort algorithm, used to
+    sort an array of integers in ascending order. This algorithm relies
+    on a data structure called a max-heap to efficiently sort an array
     of elements in-place.
 
-    This algorithm does not produce a stable sort. This algorithm also has an additional operation of
-    max-heapifying the input array, so on average it will run slower than quicksort, but has the advantage
-    of having a worst case time complexity better then quicksort along with not using any space.
+    This algorithm does not produce a stable sort. This algorithm also
+    has an additional operation of max-heapifying the input array, so
+    on average it will run slower than quicksort, but has the advantage
+    of having a worst case time complexity better then quicksort
+    along with not using any space.
 
     Time:
-        - O(NlogN) best/avg/worst
+        O(NlogN) best/avg/worst
 
     Space:
-        - O(1) best/avg/worst 
+        O(1) best/avg/worst
 
     N - represents the length of the input array
+
+    Args:
+        array:
+            List of integers
+
+    Returns:
+        The input list of integers sorted in ascending order in place
     """
     if not array:
         return []
