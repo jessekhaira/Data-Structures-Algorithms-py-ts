@@ -1,9 +1,9 @@
 """ This module contains code representing the quickselect algorithm, used
 to efficiently find the kth smallest/largest element in a collection """
-from typing import List
+from typing import List, Union
 
 
-def recursive_quickselect(array: List[int], k: int) -> int:
+def recursive_quickselect(array: List[int], k: int) -> Union[int, None]:
     """
     This function represents the recursive quickselect algorithm,
     which is used to efficiently find the kth smallest or largest
@@ -39,16 +39,15 @@ def recursive_quickselect(array: List[int], k: int) -> int:
 
     Returns:
         An integer representing the kth smallest or largest element inside
-        the input array, or -1 if it is not found
+        the input array, or None if it is not found
     """
-    assert k <= len(array), "k has to be within 0 to len(array)-1!"
-    kth_elem = recursive_quick_select_helper(array, k, 0, len(array) - 1)
+    kth_elem = _recursive_quick_select_helper(array, k, 0, len(array) - 1)
     return kth_elem
 
 
-def recursive_quick_select_helper(array, k, start, end):
+def _recursive_quick_select_helper(array, k, start, end):
     if start >= end:
-        return array[start] if start == k else -1
+        return array[start] if start == k else None
     pivot = start
     ptr1 = start + 1
     ptr2 = end
@@ -71,10 +70,9 @@ def recursive_quick_select_helper(array, k, start, end):
     if ptr2 == k:
         return array[k]
     elif ptr2 > k:
-        return recursive_quick_select_helper(array, k, start, ptr2 - 1)
+        return _recursive_quick_select_helper(array, k, start, ptr2 - 1)
     else:
-        return recursive_quick_select_helper
-        (array, k, ptr2 + 1, end)
+        return _recursive_quick_select_helper(array, k, ptr2 + 1, end)
 
 
 def swap(array, i, j):
