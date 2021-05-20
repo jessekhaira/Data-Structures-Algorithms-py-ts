@@ -45,7 +45,8 @@ def recursive_quickselect(array: List[int], k: int) -> Union[int, None]:
     return kth_elem
 
 
-def _recursive_quick_select_helper(array, k, start, end):
+def _recursive_quick_select_helper(array: List[int], k: int, start: int,
+                                   end: int) -> int:
     if start >= end:
         return array[start] if start == k else None
     pivot = start
