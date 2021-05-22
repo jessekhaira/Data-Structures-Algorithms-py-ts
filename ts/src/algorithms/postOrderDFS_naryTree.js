@@ -1,4 +1,3 @@
-
 /**
  *  This code describes the recursive post order traversal
     of a n-ary tree. Before any given node in the tree is visited,
@@ -12,23 +11,22 @@
  */
 function postorder_recursive(node) {
     if (node == null) {
-        return []; 
+        return [];
     }
-    let output = [];
+    const output = [];
     postOrder_helperRecursive(node, output);
-    return output; 
+    return output;
 }
 
 function postOrder_helperRecursive(node, output) {
     if (node == null) {
-        return; 
+        return;
     }
-    for (let child of node.children) {
+    for (const child of node.children) {
         postOrder_helperRecursive(child, output);
     }
     output.push(node.val);
 }
-
 
 /**
  *  This code describes the iterative post order traversal
@@ -43,19 +41,18 @@ function postOrder_helperRecursive(node, output) {
  */
 function postorder_iterative(node) {
     if (node == null) {
-       return []; 
+        return [];
     }
-    let stack = [[node,0]];
-    let output = [];
-    while (stack.length >0) {
-        let [node, idx] = stack.pop();
+    const stack = [[node, 0]];
+    const output = [];
+    while (stack.length > 0) {
+        const [node, idx] = stack.pop();
         if (idx === node.children.length) {
             output.push(node.val);
-        }
-        else {
-            stack.push([node, idx+1]);
+        } else {
+            stack.push([node, idx + 1]);
             stack.push([node.children[idx], 0]);
         }
     }
-    return output; 
-} 
+    return output;
+}

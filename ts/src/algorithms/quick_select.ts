@@ -1,3 +1,34 @@
+function iterativeQuickSelect(array: number[], k: number): number | null {
+    let left = 0;
+    let right = array.length - 1;
+    while (left <= right) {
+        const pivot = left;
+        let p1 = pivot + 1;
+        let p2 = right;
+        while (p1 <= p2) {
+            if (array[p1] >= array[pivot] && array[pivot] >= array[p2]) {
+                [array[p1], array[p2]] = [array[p2], array[p1]];
+                p1 += 1;
+                p2 -= 1;
+            } else if (array[p1] <= array[pivot]) {
+                p1 += 1;
+            } else if (array[p2] >= array[pivot]) {
+                p2 -= 1;
+            }
+        }
+        [array[pivot], array[p2]] = [array[p2], array[pivot]];
+        if (p2 === k) {
+            return array[p2];
+        }
+        if (p2 < k) {
+            left = p2 + 1;
+        } else {
+            right = p2 - 1;
+        }
+    }
+    return k === left ? left : null;
+}
+
 function recursiveQuickSelectHelper(
     array: number[],
     k: number,
@@ -56,4 +87,4 @@ function recursiveQuickSelect(array: number[], k: number): number | null {
     return output;
 }
 
-export { recursiveQuickSelect };
+export { recursiveQuickSelect, iterativeQuickSelect };
