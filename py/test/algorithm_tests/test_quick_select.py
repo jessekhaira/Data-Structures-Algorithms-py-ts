@@ -1,6 +1,6 @@
 """ This module contains code representing tests for the recursive quickselect
 algorithm """
-from py.algorithms.quick_select import recursive_quickselect
+from py.algorithms.quick_select import recursive_quickselect, iterative_quickselect
 import unittest
 
 

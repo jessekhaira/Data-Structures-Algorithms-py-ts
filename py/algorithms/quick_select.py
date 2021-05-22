@@ -6,9 +6,8 @@ from typing import List, Union
 def recursive_quickselect(array: List[int], k: int) -> Union[int, None]:
     """
     This function represents the recursive quickselect algorithm,
-    which is used to efficiently find the kth smallest or largest
-    element in a collection, which in this case is assumed to be an
-    array.
+    which is used to efficiently find the kth smallest element
+    in an array. 
 
     This algorithm chooses a pivot element, which in this implementation
     is chosen to be the leftmost element of the array in every subproblem.
@@ -78,3 +77,29 @@ def _recursive_quick_select_helper(array: List[int], k: int, start: int,
 
 def swap(array, i, j):
     array[i], array[j] = array[j], array[i]
+
+
+def iterative_quickselect(array: List[int], k: int) -> Union[int, None]:
+    left = 0
+    right = len(array) - 1
+    while left <= right:
+        pivot = left
+        p1 = pivot + 1
+        p2 = right
+        while p1 <= p2:
+            if array[p1] >= array[pivot] and array[pivot] >= array[p2]:
+                swap(array, p1, p2)
+                p1 += 1
+                p2 -= 1
+            elif array[p1] <= array[pivot]:
+                p1 += 1
+            elif array[p2] >= array[pivot]:
+                p2 -= 1
+        swap(array, p2, pivot)
+        if p2 == k:
+            return array[p2]
+        elif p2 > k:
+            right = p2 - 1
+        else:
+            left = p2 + 1
+    return left if left == k else None
