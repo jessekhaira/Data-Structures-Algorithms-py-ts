@@ -55,6 +55,8 @@ class TestRecursiveQuickselect(unittest.TestCase):
 
 
 class TestIterativeQuickselect(unittest.TestCase):
+    """ This class contains unit tests for the iterative quickselect
+    algorithm """
 
     def test1(self):
         array = [-2, -9, -12, 3, 2, 1]
