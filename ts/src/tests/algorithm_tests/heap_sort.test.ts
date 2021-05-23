@@ -1,4 +1,4 @@
-import heapsort from '../../algorithms/heap_sort.js';
+import heapsort from '../../algorithms/heap_sort';
 
 test('test 1', () => {
     const obj1 = [20, 4, 5, -9, -120];

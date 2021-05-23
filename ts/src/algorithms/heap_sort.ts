@@ -25,9 +25,11 @@ function swap(array: number[], i: number, j: number): void {
  * @returns {void} Sifts down in place 
  */
 function siftDown(array: number[], start: number, end: number): void {
-    let firstChild = start * 2 + 1;
+    let startPointer = start;
+    let firstChild = startPointer * 2 + 1;
     while (firstChild <= end) {
-        const secondChild = start * 2 + 2 <= end ? start * 2 + 2 : -1;
+        const secondChild =
+            startPointer * 2 + 2 <= end ? startPointer * 2 + 2 : -1;
         let idxToSwap = null;
         if (secondChild !== -1 && array[secondChild] > array[firstChild]) {
             idxToSwap = secondChild;
@@ -35,10 +37,10 @@ function siftDown(array: number[], start: number, end: number): void {
             idxToSwap = firstChild;
         }
 
-        if (array[idxToSwap] > array[start]) {
-            swap(array, idxToSwap, start);
-            start = idxToSwap;
-            firstChild = start * 2 + 1;
+        if (array[idxToSwap] > array[startPointer]) {
+            swap(array, idxToSwap, startPointer);
+            startPointer = idxToSwap;
+            firstChild = startPointer * 2 + 1;
         } else {
             break;
         }
