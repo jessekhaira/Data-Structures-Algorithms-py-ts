@@ -4,6 +4,8 @@ import unittest
 
 
 class KnuthMorrisPrattTests(unittest.TestCase):
+    """ This class contains unit tests for the knuth morris pratt string
+    search algorithm """
 
     def test1(self):
         bigstr = ""
