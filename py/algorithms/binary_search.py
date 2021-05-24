@@ -68,7 +68,6 @@ def recursive_binary_search(array: List[int], target: int) -> int:
     produces the most optimal value -- highest or lowest output value that meets
     some condition.
 
-
     Args:
         array:
             List of integers sorted in ascending order
