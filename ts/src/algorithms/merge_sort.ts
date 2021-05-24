@@ -1,6 +1,9 @@
 /**
  * This function carries out the merge operation using the two sorted partitions
  * of auxArray from lstart to lend, and rstart to rend, to sort the main array.
+ *
+ *
+ *
  * @param {number[]} array List of integers to sort from lstart to rend
  * @param {number[]} auxArray Copy of the main array used to help sort the array
  * @param {number} lstart Integer representing start idx of sorted left portion
@@ -78,9 +81,18 @@ function mergeSortHelper(
 }
 
 /**
- *  This function represents the merge sort algorithm. Merge
-    sort is an algorithm used to efficiently sort an array of 
-    integers in O(NlogN) time using just O(N) space.
+ * This function represents the merge sort algorithm. Merge
+ * sort is an algorithm used to efficiently sort an array of 
+ * integers in O(NlogN) time using just O(N) space.
+ * 
+ * Time:
+ *   O(NlogN) best/avg/worst
+ * 
+ * Space:
+ *   O(N) best/avg/worst
+ * 
+ * Where N is the length of the input array of integers
+ * 
  * @param {number[]} array List of integers to sort in ascending
     order
  * @returns {number[]} List of integers sorted in ascending order
