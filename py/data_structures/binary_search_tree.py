@@ -5,19 +5,20 @@ class BinarySearchTree:
     """
     This class represents a binary search tree. This data structure is a
     rooted binary tree where for any given node, all values in the left subtree
-    of that node are less than or equal to that nodes value, while all values in the right 
-    subtree of that node are greater than that nodes value.
+    of that node are less than or equal to that nodes value, while all values
+    in the right subtree of that node are greater than that nodes value.
 
     This allows for efficient lookups, insertions, and deletions in the average
-    case of O(logN) T | O(1) S. But this data structure does not guarantee balancing,
-    meaning that in the worst case, there are O(N) T | O(1) S lookups, insertions, and 
-    deletions.
+    case of O(logN) T | O(1) S. But this data structure does not guarantee
+    balancing, meaning that in the worst case, there are O(N) T | O(1) S
+    lookups, insertions, and deletions.
 
-    Inputs:
-        -> val (int): Integer representing the value at the root of the BST
+    Attributes:
+        val:
+            Integer representing the value at the root of the BST
     """
 
-    def __init__(self, val):
+    def __init__(self, val: int):
         self.root = binaryTreeNode(val)
 
     def insertion(self, val):
