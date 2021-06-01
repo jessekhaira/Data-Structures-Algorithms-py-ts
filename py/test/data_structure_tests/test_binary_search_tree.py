@@ -1,5 +1,5 @@
 import unittest
-from py.data_structures.BinarySearchTree import BinarySearchTree
+from py.data_structures.binary_search_tree import BinarySearchTree
 
 
 class Tests(unittest.TestCase):
