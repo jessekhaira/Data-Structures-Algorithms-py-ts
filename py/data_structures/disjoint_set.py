@@ -36,7 +36,7 @@ class DisjointSet:
         self.forest = [-1] * number_nodes
         self.mapping = mapping_nodes
 
-    def find(self, x):
+    def find(self, x: Union[int, Any]) -> int:
         """ This method carries out the find operation for a given node
         in the disjoint set, and returns the representative of the given
         set. Carries out path compression.
