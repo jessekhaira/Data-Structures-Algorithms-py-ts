@@ -37,21 +37,24 @@ class DisjointSet:
         self.mapping = mapping_nodes
 
     def find(self, x):
-        """
-        This method carries out the find operation for a given node in the disjoint set,
-        and returns the representative of the given set. Carries out path compression. 
+        """ This method carries out the find operation for a given node
+        in the disjoint set, and returns the representative of the given
+        set. Carries out path compression.
 
         Time:
-            - O(1) best/avg/worst
-        Space:
-            - O(1) best/avg/worst
+            O(1) best/avg/worst
 
-        Inputs:
-            - x (int || node): Can be an int referring to the index that the node is within
-                the forest, or can be a node itself. If node is provided, mapping_nodes cannot be
-                None. 
-        Outputs:
-            - int representing the representative of the set 
+        Space:
+            O(1) best/avg/worst
+
+        Args:
+            x:
+                Integer representing the index that the node is stored within
+                inside of the disjoint set, or can be the node itself. If the
+                node is provided, self.mapping cannot be None.
+
+        Returns:
+            An integer representing the representative of the set
         """
         x = x if not self.mapping else self.mapping[x]
         # if the current node is just pointing at itself, that means its the representative of the set
