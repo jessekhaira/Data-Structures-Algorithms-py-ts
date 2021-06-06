@@ -15,7 +15,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [HashSet](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/HashSet.py)
 - [Stack](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Stack.py)
 - [Queue](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Queue.py)
-- [Deque](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Deque.py)
+- [Deque](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/deque.py)
 
 ## TypeScript
 
