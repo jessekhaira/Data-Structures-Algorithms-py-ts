@@ -90,19 +90,19 @@ class DisjointSet:
                 inside of the disjoint set, or can be the node itself. If the
                 node is provided, self.mapping cannot be None.
         """
-        rX = self.find(x)
-        rY = self.find(y)
-        if rX == rY:
+        r_x = self.find(x)
+        r_y = self.find(y)
+        if r_x == r_y:
             return
 
-        # if rank is lower, more nodes point to that particular node and it will be
+        # if rank is lower, more nodes point to that particular node and it will
         # remain the representative of the entire set including merging node
-        if self.forest[rX] < self.forest[rY]:
-            self.forest[rY] = rX
-        elif self.forest[rY] < self.forest[rX]:
-            self.forest[rX] = rY
+        if self.forest[r_x] < self.forest[r_y]:
+            self.forest[r_y] = r_x
+        elif self.forest[r_y] < self.forest[r_x]:
+            self.forest[r_x] = r_y
 
-        # if they are equal, merge rY to rX randomly and decrease rank of rX
+        # if they are equal, merge r_y to r_x randomly and decrease rank of r_x
         else:
-            self.forest[rY] = rX
-            self.forest[rX] -= 1
+            self.forest[r_y] = r_x
+            self.forest[r_x] -= 1
