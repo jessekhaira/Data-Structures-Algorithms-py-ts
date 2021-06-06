@@ -1,17 +1,30 @@
+""" This module contains code for a class that represents the
+disjoint set data structure """
+
+
 class DisjointSet:
-    """
-    This class represents an efficient implementation of the DisjointSet data structure.
-    Not only is the data structure implemented as an array, path compression is used in the 
-    find() method, and union by rank is used in the union() method. 
+    """ This class represents an efficient implementation of the
+    DisjointSet data structure.
 
-    This data structure tracks a set of elements partitioned into a number of disjoint subsets,
-    typically used when dealing with undirected graphs. For example, to determine the number of 
-    connected components within an undirected graph, to determine if a cycle exists in an undirected
-    graph, etc. 
+    Not only is the data structure implemented as an array, path
+    compression is used in the find() method, and union by rank
+    is used in the union() method.
 
-    Inputs:
-        - number_nodes (int): Int representing how many nodes there are in the undirected graph
-        - mapping_nodes (HashMap || null): Mapping between the nodes and indices in the disjoint set. Optional
+    This data structure tracks a set of elements partitioned into
+    a number of disjoint subsets, typically used when dealing with
+    undirected graphs. For example, to determine the number of
+    connected components within an undirected graph, to determine
+    if a cycle exists in an undirected graph, etc.
+
+    Attributes:
+        number_nodes:
+            Integer representing how many nodes there are in the undirected
+            graph
+
+        mapping_nodes:
+            Dictionary representing a mapping between nodes and the index
+            whcih represents them in the disjoint set, or None if not
+            needed.
     """
 
     def __init__(self, number_nodes, mapping_nodes=None):
