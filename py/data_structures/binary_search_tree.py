@@ -75,17 +75,18 @@ class BinarySearchTree:
             or None if no node contains the given value
         """
         node = self.root
-        return self._lookupHelper(node, val)
+        return self._lookup_helper(node, val)
 
-    def _lookupHelper(self, node, val):
+    def _lookup_helper(self, node: binaryTreeNode,
+                       val: int) -> Union[binaryTreeNode, None]:
         if not node:
             return
         elif node.val == val:
             return node
         elif val <= node.val:
-            return self._lookupHelper(node.left, val)
+            return self._lookup_helper(node.left, val)
         else:
-            return self._lookupHelper(node.right, val)
+            return self._lookup_helper(node.right, val)
 
     def delete(self, val):
         node = self.root
