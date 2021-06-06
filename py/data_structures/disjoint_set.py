@@ -1,5 +1,6 @@
 """ This module contains code for a class that represents the
 disjoint set data structure """
+from typing import Dict, Any, Union
 
 
 class DisjointSet:
@@ -27,7 +28,9 @@ class DisjointSet:
             needed.
     """
 
-    def __init__(self, number_nodes, mapping_nodes=None):
+    def __init__(self,
+                 number_nodes: int,
+                 mapping_nodes: Union[Dict[Any, int], None] = None):
         # may need to have a mapping between the nodes and index they
         # are slotted in array
         self.forest = [-1] * number_nodes
