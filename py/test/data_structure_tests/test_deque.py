@@ -1,5 +1,5 @@
 import unittest
-from py.data_structures.Deque import Deque
+from py.data_structures.deque import Deque
 
 
 class DequeTests(unittest.TestCase):
