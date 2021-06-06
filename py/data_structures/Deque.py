@@ -1,19 +1,21 @@
 from py.data_structures.utils.LinkedList import DoublyLinkedListNode
 
+
 class Deque:
     """
     This class represents the deque data structure. 
-    """ 
+    """
+
     def __init__(self):
         self.head = None
         self.tail = None
-    
+
     def peek_first(self):
         if self.head:
             return self.head.val
         else:
             raise IndexError("peek first in empty deque")
-    
+
     def peek_last(self):
         if self.tail:
             return self.tail.val
@@ -29,12 +31,12 @@ class Deque:
         else:
             self.head = new_head
             self.tail = new_head
-    
+
     def add_last(self, val):
         new_tail = DoublyLinkedListNode(val)
         if self.tail:
             self.tail.next = new_tail
-            new_tail.prev = self.tail 
+            new_tail.prev = self.tail
             self.tail = new_tail
         else:
             self.head = new_tail
@@ -47,7 +49,7 @@ class Deque:
                 self.head = None
                 self.tail = None
             else:
-                new_head = self.head.next 
+                new_head = self.head.next
                 new_head.prev = None
                 self.head = new_head
             return saved_val
@@ -59,10 +61,10 @@ class Deque:
             saved_val = self.tail.val
             if not self.tail.prev:
                 self.head = None
-                self.tail = None 
+                self.tail = None
             else:
                 new_tail = self.tail.prev
-                new_tail.next = None 
+                new_tail.next = None
                 self.tail = new_tail
             return saved_val
         else:
@@ -73,5 +75,5 @@ class Deque:
         length = 0
         while node:
             length += 1
-            node = node.next 
-        return length 
+            node = node.next
+        return length
