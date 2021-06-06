@@ -41,17 +41,17 @@ class BinarySearchTree:
         """
 
         node = self.root
-        return self._insertionHelper(val, node)
+        return self._insertion_helper(val, node)
 
-    def _insertionHelper(self, val, node):
+    def _insertion_helper(self, val: int, node: binaryTreeNode):
         if not node:
             return binaryTreeNode(val)
         elif val < node.val:
-            node.left = self._insertionHelper(val, node.left)
+            node.left = self._insertion_helper(val, node.left)
             return node
 
         elif val >= node.val:
-            node.right = self._insertionHelper(val, node.right)
+            node.right = self._insertion_helper(val, node.right)
             return node
 
     def lookup(self, val):
