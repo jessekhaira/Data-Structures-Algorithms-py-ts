@@ -1,9 +1,9 @@
 from py.data_structures.utils.binaryTree import binaryTreeNode
+from typing import Union
 
 
 class BinarySearchTree:
-    """
-    This class represents a binary search tree. This data structure is a
+    """ This class represents a binary search tree. This data structure is a
     rooted binary tree where for any given node, all values in the left subtree
     of that node are less than or equal to that nodes value, while all values
     in the right subtree of that node are greater than that nodes value.
@@ -22,9 +22,8 @@ class BinarySearchTree:
         self.root = binaryTreeNode(val)
 
     def insertion(self, val: int):
-        """
-        This method inserts a node into the binary search tree, while ensuring
-        that the binary search tree property is adhered to.
+        """ This method inserts a node into the binary search tree, while
+        ensuring that the binary search tree property is adhered to.
 
         Time:
             O(logN) best/average
@@ -54,21 +53,25 @@ class BinarySearchTree:
             node.right = self._insertion_helper(val, node.right)
             return node
 
-    def lookup(self, val):
-        """
-        This method looks for the node that contains the given value in the binary 
-        search tree. 
+    def lookup(self, val: int) -> Union[binaryTreeNode, None]:
+        """ This method will return the first node that contains the input
+        value in the tree, or None if no node contains the value.
 
-        Time Complexity:
-            - best/average: O(logN)
-            - worst: O(N) 
-        Space Complexity:
-            - O(1) b/a/w 
-        
-        Inputs:
-            - val (int): Integer representing the node value to look up in the tree 
-        Outputs:
-            - Node(binaryTreeNode): Binary tree node that contains the given value in the BST 
+        Time:
+            O(logN) best/average
+            O(N) worst
+
+        Space:
+            O(1) best/average/worst
+
+        Where N is the number of nodes in the tree
+
+        Args:
+            val:
+                Integer representing the node value to look up in the tree
+
+        Returns:
+            Binary tree node that contains the given value in the BST
             or None if no node contains the given value
         """
         node = self.root
