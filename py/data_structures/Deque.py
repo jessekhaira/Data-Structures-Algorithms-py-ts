@@ -5,7 +5,7 @@ from py.data_structures.utils.LinkedList import DoublyLinkedListNode
 
 class Deque:
     """
-    This class represents the deque data structure. 
+    This class represents the deque data structure.
     """
 
     def __init__(self):
