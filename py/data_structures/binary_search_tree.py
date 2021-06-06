@@ -21,21 +21,23 @@ class BinarySearchTree:
     def __init__(self, val: int):
         self.root = binaryTreeNode(val)
 
-    def insertion(self, val):
+    def insertion(self, val: int):
         """
-        This method inserts a node into the binary search tree, will ensuring that the 
-        binary search tree property is adhered to.
+        This method inserts a node into the binary search tree, while ensuring
+        that the binary search tree property is adhered to.
 
-        Time Complexity:
-            - best/average: O(logN)
-            - worst: O(N) 
-        Space Complexity:
-            - O(1) b/a/w 
-        
-        Inputs:
-            - val (int): Integer representing the value to be inserted into the tree 
-        Outputs:
-            - None 
+        Time:
+            O(logN) best/average
+            O(N) worst
+
+        Space:
+            O(1) best/avg/worst
+
+        Where N is the number of nodes contained in the tree
+
+        Args:
+            val:
+                Integer representing the value to be inserted into the tree
         """
 
         node = self.root
