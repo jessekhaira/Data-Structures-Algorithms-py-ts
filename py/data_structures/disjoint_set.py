@@ -57,35 +57,38 @@ class DisjointSet:
             An integer representing the representative of the set
         """
         x = x if not self.mapping else self.mapping[x]
-        # if the current node is just pointing at itself, that means its the representative of the set
+        # if the current node is just pointing at itself, that means its the
+        # representative of the set
         if self.forest[x] <= -1:
             return x
-        # otherwise find the representative of the set and set this nodes pointer to it
+        # otherwise find the representative of the set and set this nodes
+        # pointer to it
         else:
             self.forest[x] = self.find(self.forest[x])
 
         return self.forest[x]
 
-    def union(self, x, y):
-        """
-        This method carries out the union operation for the disjoint set, merging the two 
-        sets that x and y belong to if x and y are not in the same set. Union by rank
-        is implemented here. 
+    def union(self, x: Union[int, Any], y: Union[int, Any]) -> None:
+        """ This method carries out the union operation for the disjoint set,
+        merging the two sets that x and y belong to if x and y are not in the
+        same set. Union by rank is implemented here.
 
         Time:
-            - O(1) best/avg/worst
-        Space:
-            - O(1) best/avg/worst
+            O(1) best/avg/worst
 
-        Inputs:
-            - x (int || node): Can be an int referring to the index that the node is within
-                the forest, or can be a node itself
-                
-            - y (int || node): Can be an int referring to the index that the node is within
-                the forest, or can be a node itself
-        
-        Returns:
-            - None
+        Space:
+            O(1) best/avg/worst
+
+        Args:
+            x:
+                Integer representing the index that the node is stored within
+                inside of the disjoint set, or can be the node itself. If the
+                node is provided, self.mapping cannot be None.
+
+            y:
+                Integer representing the index that the node is stored within
+                inside of the disjoint set, or can be the node itself. If the
+                node is provided, self.mapping cannot be None.
         """
         rX = self.find(x)
         rY = self.find(y)
