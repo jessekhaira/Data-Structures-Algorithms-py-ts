@@ -7,10 +7,11 @@ class ChainingNode:
         - key (int): Integer representing the key being hashed into the HashMap
         - value (int): Integer representing the value being hashed into the HashMap
     """
+
     def __init__(self, key, value):
         self.key = key
-        self.val = value 
-        self.next = None 
+        self.val = value
+        self.next = None
 
 
 class HashMap:
@@ -28,11 +29,11 @@ class HashMap:
         - k (int): Initial capacity of the static array. Default is 3000.
         - load_factor (int): Target load factor for the HashMap. Goal is to keep below 0.75. 
     """
+
     def __init__(self, k=3000, load_factor=0.75):
         self.load_factor = load_factor
         self.static_arr = [None] * k
         self.curr_capacity = 0
-    
 
     def put(self, key, value):
         """
@@ -53,14 +54,14 @@ class HashMap:
             - value (any): Value associated with the key being hashed into the hash table
         Outputs:
             - None
-        """ 
+        """
         # get the hash value and look at the bucket in the hash table where this key should be inserted
         # if the bucket is empty, then insert the key-value pair directly into the bucket by inserting
         # node of new linkedlist. Otherwise, add the key-value pair to the end of the linkedlist in the
-        # bucket. 
+        # bucket.
         hash_value = self._hashFunc(key)
         if self.static_arr[hash_value] == None:
-            self.static_arr[hash_value] = ChainingNode(key,value)
+            self.static_arr[hash_value] = ChainingNode(key, value)
         else:
             curr_node = self.static_arr[hash_value]
             while curr_node.next and curr_node.key != key:
@@ -68,11 +69,12 @@ class HashMap:
             if curr_node.key != key:
                 curr_node.next = ChainingNode(key, value)
                 self.curr_capacity += 1
-                if self.curr_capacity/len(self.static_arr) >= self.load_factor:
+                if self.curr_capacity / len(
+                        self.static_arr) >= self.load_factor:
                     self._dynamicArrayResizing()
             else:
-                curr_node.val = value 
-    
+                curr_node.val = value
+
     def get(self, key):
         """
         This function retrieves the value associated with the given input key, if it exists within the 
@@ -94,33 +96,32 @@ class HashMap:
         """
         # look up the bucket in the hashtable the key should be residing and if nothing exists in that
         # bucket, return none. Otherwise, traverse the linked list that exists in that bucket until there
-        # is nothing left or the appropriate key is found. 
+        # is nothing left or the appropriate key is found.
         hash_value = self._hashFunc(key)
         if self.static_arr[hash_value] == None:
-            return 
+            return
         else:
-            currNode = self.static_arr[hash_value] 
+            currNode = self.static_arr[hash_value]
             while currNode and currNode.key != key:
                 currNode = currNode.next
             if not currNode:
-                return 
+                return
             return currNode.val
-    
+
     def _dynamicArrayResizing(self):
         """
         Method used to double the size of the array underlying the HashMap when the load factor of the 
         HashMap is exceeded. 
-        """ 
+        """
         savedArr = self.static_arr
-        self.static_arr = [None] * len(self.static_arr)*2
+        self.static_arr = [None] * len(self.static_arr) * 2
         for pointer in savedArr:
             if pointer:
                 while pointer:
-                    currKey = pointer.key 
+                    currKey = pointer.key
                     currVal = pointer.val
-                    pointer = pointer.next 
+                    pointer = pointer.next
                     self.put(currKey, currVal)
-    
 
     def remove(self, key):
         """
@@ -138,29 +139,29 @@ class HashMap:
             - key (int): Integer representing a key that may be present in the hashtable
         Returns:
             - None 
-        """ 
+        """
         hash_value = self._hashFunc(key)
         if self.static_arr[hash_value] == None:
-            return 
+            return
         else:
             currNode = self.static_arr[hash_value]
-            prevNode = None 
+            prevNode = None
             while currNode and currNode.key != key:
-                prevNode =currNode
-                currNode = currNode.next 
+                prevNode = currNode
+                currNode = currNode.next
             if not currNode:
-                return  
+                return
             self.curr_capacity -= 1
             if not prevNode:
                 # you can't just assume that theres nothing else hashed here
                 # so we have to set hash_value to currNode.next rather than None outright
-                self.static_arr[hash_value] = currNode.next 
-                return 
+                self.static_arr[hash_value] = currNode.next
+                return
             else:
-                prevNode.next = currNode.next 
+                prevNode.next = currNode.next
                 currNode = None
-                return 
-            
+                return
+
     def _hashFunc(self, key):
         """
         This function represents the hashing algorithm being used for the hashmap. This function takes
@@ -175,8 +176,7 @@ class HashMap:
             - key (int): Integer input to be hashed into the hashmap
         Outputs: 
             - Integer representing the index within the hashmap the key falls into
-        """ 
+        """
         # abs() to be able to hash in positive AND negative ints
-        # although python does support negative integer indices 
+        # although python does support negative integer indices
         return abs(key % len(self.static_arr))
-
