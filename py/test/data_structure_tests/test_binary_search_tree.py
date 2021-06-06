@@ -1,8 +1,10 @@
+""" This module contains code for the tests for the binary search
+tree class """
 import unittest
 from py.data_structures.binary_search_tree import BinarySearchTree
 
 
-class Tests(unittest.TestCase):
+class BinarySearchTreeTest(unittest.TestCase):
 
     def testInsertion(self):
         bst = BinarySearchTree(3)
