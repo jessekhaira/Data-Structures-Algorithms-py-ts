@@ -58,32 +58,36 @@ class HashMap:
         self.static_arr = [None] * k
         self.curr_capacity = 0
 
-    def put(self, key, value):
-        """
-        This method puts a value within the hash table according to its hash value, with the keys
-        assumed to be integers. 
+    def put(self, key: int, value: Any):
+        """ This method puts a value within the hash table according to its hash
+        value, with the keys assumed to be integers and values assumed to be
+        any type.
 
         Time:
-            - O(1) best/avg
-            - O(N) worst 
+            O(1) best/average
+            O(N) worst
+
         Space:
-            - O(1) best/avg
-            - O(N) worst
+            O(1) best/average
+            O(N) worst
 
-        N - number of items hashed into HashMap 
+        Where N is the number of items hashed into HashMap
 
-        Inputs:
-            - key (int): Integer representing the key to hash into the hash table
-            - value (any): Value associated with the key being hashed into the hash table
-        Outputs:
-            - None
+        Args:
+            key:
+                Integer representing the key to hash into the hash table
+
+            value:
+                Value of any type, associated with the key being hashed into the
+                hash table
         """
-        # get the hash value and look at the bucket in the hash table where this key should be inserted
-        # if the bucket is empty, then insert the key-value pair directly into the bucket by inserting
-        # node of new linkedlist. Otherwise, add the key-value pair to the end of the linkedlist in the
-        # bucket.
+        # get the hash value and look at the bucket in the hash table where this
+        # key should be inserted if the bucket is empty, then insert the
+        # key-value pair directly into the bucket by inserting node of new
+        # linkedlist. Otherwise, add the key-value pair to the end of the
+        # linkedlist in the bucket.
         hash_value = self._hashFunc(key)
-        if self.static_arr[hash_value] == None:
+        if self.static_arr[hash_value] is None:
             self.static_arr[hash_value] = ChainingNode(key, value)
         else:
             curr_node = self.static_arr[hash_value]
