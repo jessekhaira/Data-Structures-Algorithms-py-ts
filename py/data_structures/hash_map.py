@@ -102,38 +102,43 @@ class HashMap:
             else:
                 curr_node.val = value
 
-    def get(self, key):
-        """
-        This function retrieves the value associated with the given input key, if it exists within the 
-        hashtable.
+    def get(self, key: int) -> Any:
+        """ This function retrieves the value associated with the given input
+        key, if it exists within the hashtable.
 
         Time:
-            - O(1) best/avg
-            - O(N) worst
+            O(1) best/average
+            O(N) worst
+
         Space:
-            - O(1) best/avg/worst  
+            O(1) best/average
+            O(N) worst
 
-        N - number of items hashed into HashMap 
+        Where N is the number of items hashed into HashMap
 
-        Inputs:
-            - key (int): Integer representing the key to lookup in the hashtable.
+        Args:
+            key:
+                Integer representing the key to lookup in the hashtable.
+
         Returns:
-            - value (any): The value associated with the key in the hashtable. If the key doesn't exist 
-                in the table, then None will be returned. 
+            A value of any type, representing the value associated with the
+            key in the hashtable. If the key doesn't exist in the table, then
+            None will be returned.
         """
-        # look up the bucket in the hashtable the key should be residing and if nothing exists in that
-        # bucket, return none. Otherwise, traverse the linked list that exists in that bucket until there
-        # is nothing left or the appropriate key is found.
+        # look up the bucket in the hashtable the key should be residing and
+        # if nothing exists in that bucket, return none. Otherwise, traverse the
+        # linked list that exists in that bucket until there is nothing left or
+        # the appropriate key is found.
         hash_value = self._hashFunc(key)
-        if self.static_arr[hash_value] == None:
+        if self.static_arr is None:
             return
         else:
-            currNode = self.static_arr[hash_value]
-            while currNode and currNode.key != key:
-                currNode = currNode.next
-            if not currNode:
+            curr_node = self.static_arr[hash_value]
+            while curr_node and curr_node.key != key:
+                curr_node = curr_node.next
+            if not curr_node:
                 return
-            return currNode.val
+            return curr_node.val
 
     def _dynamicArrayResizing(self):
         """
@@ -171,22 +176,22 @@ class HashMap:
         if self.static_arr[hash_value] == None:
             return
         else:
-            currNode = self.static_arr[hash_value]
+            curr_node = self.static_arr[hash_value]
             prevNode = None
-            while currNode and currNode.key != key:
-                prevNode = currNode
-                currNode = currNode.next
-            if not currNode:
+            while curr_node and curr_node.key != key:
+                prevNode = curr_node
+                curr_node = curr_node.next
+            if not curr_node:
                 return
             self.curr_capacity -= 1
             if not prevNode:
                 # you can't just assume that theres nothing else hashed here
-                # so we have to set hash_value to currNode.next rather than None outright
-                self.static_arr[hash_value] = currNode.next
+                # so we have to set hash_value to curr_node.next rather than None outright
+                self.static_arr[hash_value] = curr_node.next
                 return
             else:
-                prevNode.next = currNode.next
-                currNode = None
+                prevNode.next = curr_node.next
+                curr_node = None
                 return
 
     def _hashFunc(self, key):
