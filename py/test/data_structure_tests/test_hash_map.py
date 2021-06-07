@@ -1,8 +1,12 @@
+""" This module contains code for the tests for the hash map
+class """
 import unittest
 from py.data_structures.hash_map import HashMap
 
 
-class tests(unittest.TestCase):
+class HashMapTests(unittest.TestCase):
+    """ This class contains unit tests for the hash map
+    data structure """
 
     def test1(self):
         obj1 = HashMap()
