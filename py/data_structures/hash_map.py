@@ -1,3 +1,7 @@
+""" This module contains code for a class that represents the hash map
+data structure, resolving collisons using chaining """
+
+
 class ChainingNode:
     """
     This class represents a Linked List node used for chaining to resolve
