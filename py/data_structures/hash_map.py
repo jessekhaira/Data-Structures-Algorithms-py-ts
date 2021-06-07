@@ -1,40 +1,59 @@
 """ This module contains code for a class that represents the hash map
 data structure, resolving collisons using chaining """
+from typing import Any
 
 
 class ChainingNode:
-    """
-    This class represents a Linked List node used for chaining to resolve
+    """ This class represents a Linked List node used for chaining to resolve
     collisons in a HashMap class.
 
-    Inputs:
-        - key (int): Integer representing the key being hashed into the HashMap
-        - value (int): Integer representing the value being hashed into the HashMap
+    Attributes:
+        key:
+            Any type representing the key being hashed into the HashMap
+
+        value:
+            Any type representing the value being hashed into the HashMap
+
+        next:
+            ChainingNode object or None representing the connection between
+            this node and the next node
     """
 
-    def __init__(self, key, value):
+    def __init__(self, key: Any, value: Any):
         self.key = key
         self.val = value
         self.next = None
 
 
 class HashMap:
+    """ This class represents a HashMap class that accepts integer inputs. All
+    methods of a HashMap are supported by this class -> put, remove, get, with
+    dynamic array resizing.
+
+    HashMaps are built on top of static arrays. This class assumes an initial
+    capacity of a static array of 1000, with a load factor equal to 0.75. When
+    the load factor is exceeded, dynamic array resizing is done to ensure O(1)
+    TS lookups, removals, and additions.
+
+    Attributes:
+        k:
+            Integer representing the initial capacity of the static array.
+            Default is 3000.
+
+        load_factor:
+            Floating point value representing the target load factor for the
+            HashMap. By default, is set to 0.75.
+
+        static_arr:
+            Array that is the underlying data structure of a hash map. Filled up
+            with None values to start, but will contain ChainingNode objects
+            afterwards.
+
+        curr_capacity:
+            Integer representing the number of objects hashed into the hash map.
     """
-    This class represents a HashMap class that accepts integer inputs. All methods
-    of a HashMap are supported by this class -> put, remove, get, with dynamic array 
-    resizing. 
 
-    HashMaps are built on top of static arrays. This class assumes an initial capacity
-    of a static array of 1000, with a load factor equal to 0.75. When the load factor
-    is exceeded, dynamic array resizing is done to ensure O(1) TS lookups, removals, and
-    additions. 
-
-    Inputs:
-        - k (int): Initial capacity of the static array. Default is 3000.
-        - load_factor (int): Target load factor for the HashMap. Goal is to keep below 0.75. 
-    """
-
-    def __init__(self, k=3000, load_factor=0.75):
+    def __init__(self, k: int = 3000, load_factor: float = 0.75):
         self.load_factor = load_factor
         self.static_arr = [None] * k
         self.curr_capacity = 0
