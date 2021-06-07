@@ -58,7 +58,7 @@ class HashMap:
         self.static_arr = [None] * k
         self.curr_capacity = 0
 
-    def put(self, key: int, value: Any):
+    def put(self, key: int, value: Any) -> None:
         """ This method puts a value within the hash table according to its hash
         value, with the keys assumed to be integers and values assumed to be
         any type.
@@ -86,7 +86,7 @@ class HashMap:
         # key-value pair directly into the bucket by inserting node of new
         # linkedlist. Otherwise, add the key-value pair to the end of the
         # linkedlist in the bucket.
-        hash_value = self._hashFunc(key)
+        hash_value = self._hash_function(key)
         if self.static_arr[hash_value] is None:
             self.static_arr[hash_value] = ChainingNode(key, value)
         else:
@@ -98,7 +98,7 @@ class HashMap:
                 self.curr_capacity += 1
                 if self.curr_capacity / len(
                         self.static_arr) >= self.load_factor:
-                    self._dynamicArrayResizing()
+                    self._dynamic_array_resizing()
             else:
                 curr_node.val = value
 
@@ -129,7 +129,7 @@ class HashMap:
         # if nothing exists in that bucket, return none. Otherwise, traverse the
         # linked list that exists in that bucket until there is nothing left or
         # the appropriate key is found.
-        hash_value = self._hashFunc(key)
+        hash_value = self._hash_function(key)
         if self.static_arr is None:
             return
         else:
@@ -140,21 +140,21 @@ class HashMap:
                 return
             return curr_node.val
 
-    def _dynamicArrayResizing(self):
+    def _dynamic_array_resizing(self):
         """ Method used to double the size of the array underlying the
         HashMap when the load factor of the HashMap is exceeded.
         """
-        savedArr = self.static_arr
+        saved_arr = self.static_arr
         self.static_arr = [None] * len(self.static_arr) * 2
-        for pointer in savedArr:
+        for pointer in saved_arr:
             if pointer:
                 while pointer:
-                    currKey = pointer.key
-                    currVal = pointer.val
+                    curr_key = pointer.key
+                    curr_val = pointer.val
                     pointer = pointer.next
-                    self.put(currKey, currVal)
+                    self.put(curr_key, curr_val)
 
-    def remove(self, key):
+    def remove(self, key: int) -> None:
         """ If the input key is within the hashtable, this method removes the
         key-value pair from the hashtable.
 
@@ -172,7 +172,7 @@ class HashMap:
             key:
                 Integer representing the key to lookup in the hashtable.
         """
-        hash_value = self._hashFunc(key)
+        hash_value = self._hash_function(key)
         if self.static_arr is None:
             return
         else:
@@ -195,20 +195,23 @@ class HashMap:
                 curr_node = None
                 return
 
-    def _hashFunc(self, key):
-        """
-        This function represents the hashing algorithm being used for the hashmap. This function takes
-        integers as inputs and produces the bucket within the hashmap the integer falls into. 
+    def _hash_function(self, key: int) -> int:
+        """ This function represents the hashing algorithm being used for the
+        hashmap. This function takes integers as inputs and produces the bucket
+        within the hashmap the integer falls into.
 
         Time:
-            - O(1) best/avg/worst
+            O(1) best/average/worst
+
         Space:
-            - O(1) best/avg/worst
-        
-        Inputs:
-            - key (int): Integer input to be hashed into the hashmap
-        Outputs: 
-            - Integer representing the index within the hashmap the key falls into
+            O(1) best/average/worst
+
+        Args:
+            key:
+                Integer representing the key to lookup in the hashtable.
+
+        Returns:
+            Integer representing the index within the hashmap the key falls into
         """
         # abs() to be able to hash in positive AND negative ints
         # although python does support negative integer indices
