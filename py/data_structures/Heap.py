@@ -1,6 +1,6 @@
 """ This module contains code for a class that represents the heap
 data structure """
-from typing import Callable, Literal, Union
+from typing import Callable, Literal, Union, List, Any
 
 
 class Heap:
@@ -46,20 +46,25 @@ class Heap:
         else:
             self.comparator_func = custom_comparator
 
-    def heapify(self, array):
+    def heapify(self, array: List[object]) -> None:
+        """ This method will create a heap out of the given array elements
+        in-place.
+
+        Time:
+            O(N) best/avg/worst
+
+        Space:
+            O(1) best/avg/worst
+
+        Args:
+            array:
+                List of objects to be heapified. By default, these are
+                assumed to be integers.
         """
-        This method will create a heap out of the given array elements in-place, so the input
-        array will be mutated.
-        
-        Time
-            - O(N) best/avg/worst
-        Space 
-            - O(1) best/avg/worst
-        """
-        firstParentIdx = (len(array) - 2) // 2
-        while firstParentIdx >= 0:
-            self._siftDown(array, firstParentIdx, len(array) - 1)
-            firstParentIdx -= 1
+        first_parent_idx = (len(array) - 2) // 2
+        while first_parent_idx >= 0:
+            self._siftDown(array, first_parent_idx, len(array) - 1)
+            first_parent_idx -= 1
 
     def insert(self, heap, val):
         """
