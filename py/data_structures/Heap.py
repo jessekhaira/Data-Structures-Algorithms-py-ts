@@ -177,30 +177,35 @@ class Heap:
             else:
                 break
 
-    def _sift_up(self, heap, start, end):
-        """
-        This method has the responsibility of ensuring the heap property is met when elements
-        are inserted into the heap. 
-        
-        When an element is inserted into the heap, the heap property will most likely be violated.
-        This method moves the inserted element up the heap until the heap property is satisifed.
+    def _sift_up(self, heap: List[object], start: int, end: int) -> None:
+        """ This method has the responsibility of ensuring the heap
+        property is met when elements are inserted into the heap.
 
-        Inputs:
-            - heap(list[int]): List of integers representing a heap
-            - start (int): Integer representing the index in the array to start sifting up from
-            - end (int): Integer representing the index in the array to stop sifting up 
-        Outputs:
-            - None. Sifts up in place. 
+        When an element is inserted into the heap, the heap property
+        will most likely be violated. This method moves the inserted
+        element up the heap until the heap property is satisifed.
+
+        Args:
+            heap:
+                Array holding objects that represents a heap
+
+            start:
+                Integer representing the index in the array to start sifting
+                up from
+
+            end:
+                Integer representing the last index in the array to sift up to
         """
-        parentIdx = (start - 1) // 2
-        while parentIdx >= end:
+        parent_idx = (start - 1) // 2
+        while parent_idx >= end:
             # if heap property is not met, then we swap and continue upwards
-            # if its true that heap[start] is less than heap[parent], we swap for min-heaps
-            # if its true that heap[start] is greater than heap[parent], we swap for max-heaps
-            if self.comparator_func(heap[start], heap[parentIdx]):
-                self._swap(heap, start, parentIdx)
-                start = parentIdx
-                parentIdx = (start - 1) // 2
+            # if its true that heap[start] is less than heap[parent], we swap
+            # for min-heaps. if its true that heap[start] is greater than
+            # heap[parent], we swap for max-heaps
+            if self.comparator_func(heap[start], heap[parent_idx]):
+                self._swap(heap, start, parent_idx)
+                start = parent_idx
+                parent_idx = (start - 1) // 2
             else:
                 break
 
