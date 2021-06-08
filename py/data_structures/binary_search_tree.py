@@ -18,7 +18,7 @@ class BinarySearchTree:
     Attributes:
         val:
             Integer representing the value at the root of the BST
-           
+
         root:
             Object of type binaryTreeNode representing the node at the root
             of the binary search tree
