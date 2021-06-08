@@ -1,6 +1,7 @@
 """ This module contains code for a class that represents the heap
 data structure """
 from typing import Callable, Literal, Union, List
+from py.utils.utility_functions import swap
 
 
 class Heap:
@@ -132,7 +133,7 @@ class Heap:
         """
         if not heap:
             return
-        self._swap(heap, 0, len(heap) - 1)
+        swap(heap, 0, len(heap) - 1)
         removed_val = heap.pop()
         self._sift_down(heap, 0, len(heap) - 1)
         return removed_val
@@ -171,7 +172,7 @@ class Heap:
             else:
                 idx_to_swap = first_child_idx
             if self.comparator_func(heap[idx_to_swap], heap[curr_idx]):
-                self._swap(heap, idx_to_swap, curr_idx)
+                swap(heap, idx_to_swap, curr_idx)
                 curr_idx = idx_to_swap
                 first_child_idx = curr_idx * 2 + 1
             else:
@@ -203,22 +204,8 @@ class Heap:
             # for min-heaps. if its true that heap[start] is greater than
             # heap[parent], we swap for max-heaps
             if self.comparator_func(heap[start], heap[parent_idx]):
-                self._swap(heap, start, parent_idx)
+                swap(heap, start, parent_idx)
                 start = parent_idx
                 parent_idx = (start - 1) // 2
             else:
                 break
-
-    def _swap(self, heap, i, j):
-        """
-        This method has the responsibility of swapping the values at two indices within an array
-        inplace. 
-
-        Inputs:
-            - heap(list[int]): List of integers representing a heap
-            - i (int): Integer representing an index within the input array
-            - j (int): Integer representing an index within the input array
-        Outputs:
-            - None. Swaps indices inplace. 
-        """
-        heap[i], heap[j] = heap[j], heap[i]
