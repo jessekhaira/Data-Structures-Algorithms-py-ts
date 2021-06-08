@@ -1,6 +1,6 @@
 """ This module contains code for a class that represents the heap
 data structure """
-from typing import Callable, Literal, Union, List, Any
+from typing import Callable, Literal, Union, List
 
 
 class Heap:
@@ -65,12 +65,12 @@ class Heap:
         """
         first_parent_idx = (len(array) - 2) // 2
         while first_parent_idx >= 0:
-            self._siftDown(array, first_parent_idx, len(array) - 1)
+            self._sift_down(array, first_parent_idx, len(array) - 1)
             first_parent_idx -= 1
 
     def insert(self, heap: List[object], val: object) -> None:
-        """ Inserts value into the min/max heap using the siftUp
-        helper method.
+        """ Inserts value into the heap using the sift_up helper
+        method.
 
         Time:
             O(logN) best/average/worst
@@ -81,9 +81,8 @@ class Heap:
         Where N is the number of elements inside of the heap
 
         Args:
-            array:
-                List of objects to be heapified. By default, these are
-                assumed to be integers.
+            heap:
+                Array holding objects that represents a heap
 
             val:
                 Object of the same type as those contained inside of the
@@ -92,37 +91,53 @@ class Heap:
         heap.append(val)
         self._sift_up(heap, len(heap) - 1, 0)
 
-    def peek(self, heap):
-        """
-        Peeks at the highest priority element in the min/max heap.
+    def peek(self, heap: List[object]) -> object:
+        """ Peeks at the highest priority element in the heap.
 
-        Time 
-            - O(1) best/avg/worst
-        Space 
-            - O(1) best/avg/worst
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Args:
+            heap:
+                Array holding objects that represents a heap
+
+        Returns:
+            The object with the highest priority in the heap
         """
         if not heap:
             return
         return heap[0]
 
-    def remove(self, heap):
-        """
-        Removes the highest priority element from the min/max heap using the siftDown helper
-        method.
+    def remove(self, heap: List[object]) -> object:
+        """ Removes the highest priority element from the heap
+        using the sift_down helper method and returns it.
 
-        Time
-            - O(logN) best/avg/worst
-        Space 
-            - O(1) best/avg/worst
+        Time:
+            O(logN) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Where N is the number of elements inside of the heap
+
+        Args:
+            heap:
+                Array holding objects that represents a heap
+
+        Returns:
+            The object with the highest priority in the heap
         """
         if not heap:
             return
         self._swap(heap, 0, len(heap) - 1)
-        removedVal = heap.pop()
-        self._siftDown(heap, 0, len(heap) - 1)
-        return removedVal
+        removed_val = heap.pop()
+        self._sift_down(heap, 0, len(heap) - 1)
+        return removed_val
 
-    def _siftDown(self, heap, start, end):
+    def _sift_down(self, heap, start, end):
         """
         This method has the responsibility of ensuring the heap property is met when elements
         are removed from the heap. 
