@@ -1,5 +1,6 @@
 """ This module contains code for a class that represents the heap
 data structure """
+from typing import Callable, Literal, Union
 
 
 class Heap:
@@ -7,14 +8,13 @@ class Heap:
 
     A heap is a special type of binary tree called a complete binary tree
     as every single level in the heap is filled up except for potentially
-    the last level, and the levels are filled up from left to right.
+    the last level, and the levels are filled up from left to right. In
+    addition, a heap must obey the heap property.
 
-    A heap also must obey the heap property.
-
-    For a max heap, the heap property entails that the value of any given
+    For max heaps, the heap property entails that the value of any given
     node must be greater than or equal to its children nodes values.
 
-    For a min heap, the heap property entails that the value of any given
+    For min heaps, the heap property entails that the value of any given
     node must be less than or equal to its children nodes values.
 
     Attributes:
@@ -25,15 +25,20 @@ class Heap:
             nodes are numbers
 
         type_heap:
-            Integer indicating if heap is a min-heap or max-heap. 0 is min_heap,
-            1 is max_heap.
+            An integer value that should be either 0 or 1, indicating if
+            the heap is a min-heap or max-heap. 0 will cause the heap
+            created to be a min heap, 1 will cause the heap created to
+            be a max heap
     """
 
-    def __init__(self, custom_comparator=None, type_heap=0):
+    def __init__(self,
+                 custom_comparator: Union[Callable, None] = None,
+                 type_heap: Literal[0, 1] = 0):
         if not custom_comparator:
-            # if the type_heap property is zero, the heap will be assumed to be a min-heap
-            # and the comparator function used to ensure the heap property is set appropriately
-            # otherwise if the type_heap is 1, then the heap will be assumed to be a max-heap
+            # if the type_heap property is zero, the heap will be assumed to
+            # be a min-heap and the comparator function used to ensure the heap
+            # property is set appropriately otherwise if the type_heap is 1,
+            # then the heap will be assumed to be a max-heap
             if type_heap == 0:
                 self.comparator_func = lambda x, y: 1 if x - y < 0 else 0
             else:
