@@ -1,5 +1,6 @@
 """ This module contains code representing the heap sort algorithm """
 from typing import List
+from py.utils.utility_functions import swap
 
 
 def heap_sort(array: List[int]) -> List[int]:
@@ -95,21 +96,3 @@ def sift_down(array: List[int], start: int, end: int) -> None:
             first_child = start * 2 + 1
         else:
             break
-
-
-def swap(array: List[int], i: int, j: int) -> None:
-    """ This function accepts an array of integers, and two integers
-    i and j that represent indices within the array of integers,
-    and swaps the values contained at the two indices.
-
-    Args:
-        array:
-            List of integers
-
-        i:
-            Integer representing an index in the array
-
-        j:
-            Integer representing an index in the array
-    """
-    array[i], array[j] = array[j], array[i]
