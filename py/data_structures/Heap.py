@@ -137,36 +137,43 @@ class Heap:
         self._sift_down(heap, 0, len(heap) - 1)
         return removed_val
 
-    def _sift_down(self, heap, start, end):
-        """
-        This method has the responsibility of ensuring the heap property is met when elements
-        are removed from the heap. 
-        
-        When the root element is removed from the heap, a new element is placed at the root. 
-        This method will move that element down the heap until the heap property is satisfied. 
+    def _sift_down(self, heap: List[object], start: int, end: int) -> None:
+        """ This method has the responsibility of ensuring the heap property
+        is met when elements are removed from the heap.
 
-        Inputs:
-            - heap(list[int]): List of integers representing a heap
-            - start (int): Integer representing the index in the array to start sifting down from
-            - end (int): Integer representing the index in the array to stop sifting down to
-        Outputs:
-            - None. Sifts down in place. 
+        When the root element is removed from the heap, a new element is
+        placed at the root. This method will move that element down the heap
+        until the heap property is satisfied.
+
+        Args:
+            heap:
+                Array holding objects that represents a heap
+
+            start:
+                Integer representing the index in the array to start sifting
+                down from
+
+            end:
+                Integer representing the last index in the array to sift down to
         """
-        currIdx = start
-        firstChildIdx = start * 2 + 1
-        while firstChildIdx <= end:
-            secondChildIdx = currIdx * 2 + 2 if currIdx * 2 + 2 <= end else -1
-            # If val at secondChildIdx is less than val at firstChildIdx in minHeaps, then its candidate to consider when swapping
-            # If val at secondChildIdx is greater than val at firstChildIdx in maxHeaps, then its candidate to consider when swapping
-            if secondChildIdx != -1 and self.comparator_func(
-                    heap[secondChildIdx], heap[firstChildIdx]):
-                idxToSwap = secondChildIdx
+        curr_idx = start
+        first_child_idx = start * 2 + 1
+        while first_child_idx <= end:
+            second_child_idx = (curr_idx * 2 +
+                                2 if curr_idx * 2 + 2 <= end else -1)
+            # If val at second_child_idx is less than val at first_child_idx in
+            # minHeaps,then its candidate to consider when swapping. If val at
+            # second_child_idx is greater than val at first_child_idx in
+            # maxHeaps, then its candidate to consider when swapping
+            if second_child_idx != -1 and self.comparator_func(
+                    heap[second_child_idx], heap[first_child_idx]):
+                idx_to_swap = second_child_idx
             else:
-                idxToSwap = firstChildIdx
-            if self.comparator_func(heap[idxToSwap], heap[currIdx]):
-                self._swap(heap, idxToSwap, currIdx)
-                currIdx = idxToSwap
-                firstChildIdx = currIdx * 2 + 1
+                idx_to_swap = first_child_idx
+            if self.comparator_func(heap[idx_to_swap], heap[curr_idx]):
+                self._swap(heap, idx_to_swap, curr_idx)
+                curr_idx = idx_to_swap
+                first_child_idx = curr_idx * 2 + 1
             else:
                 break
 
