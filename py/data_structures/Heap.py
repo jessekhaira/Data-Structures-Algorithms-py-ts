@@ -51,10 +51,12 @@ class Heap:
         in-place.
 
         Time:
-            O(N) best/avg/worst
+            O(N) best/average/worst
 
         Space:
-            O(1) best/avg/worst
+            O(1) best/average/worst
+
+        Where N is the number of elements inside of the heap
 
         Args:
             array:
@@ -66,17 +68,29 @@ class Heap:
             self._siftDown(array, first_parent_idx, len(array) - 1)
             first_parent_idx -= 1
 
-    def insert(self, heap, val):
-        """
-        Inserts value into the min/max heap using the siftUp helper method.
-        
-        Time
-            - O(logN) best/avg/worst
-        Space 
-            - O(1) best/avg/worst
+    def insert(self, heap: List[object], val: object) -> None:
+        """ Inserts value into the min/max heap using the siftUp
+        helper method.
+
+        Time:
+            O(logN) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Where N is the number of elements inside of the heap
+
+        Args:
+            array:
+                List of objects to be heapified. By default, these are
+                assumed to be integers.
+
+            val:
+                Object of the same type as those contained inside of the
+                heap. By default, assumed to be an integer.
         """
         heap.append(val)
-        self._siftUp(heap, len(heap) - 1, 0)
+        self._sift_up(heap, len(heap) - 1, 0)
 
     def peek(self, heap):
         """
@@ -141,7 +155,7 @@ class Heap:
             else:
                 break
 
-    def _siftUp(self, heap, start, end):
+    def _sift_up(self, heap, start, end):
         """
         This method has the responsibility of ensuring the heap property is met when elements
         are inserted into the heap. 
