@@ -9,7 +9,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [Binary Search Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/binary_search_tree.py)
 - [Disjoint Set](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/disjoint_set.py)
 - [HashMap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/hash_map.py)
-- [Min/Max Heap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Heap.py)
+- [Min/Max Heap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/heap.py)
 - [Trie](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Trie.py)
 - [Linked List](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/LinkedList.py)
 - [HashSet](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/HashSet.py)
