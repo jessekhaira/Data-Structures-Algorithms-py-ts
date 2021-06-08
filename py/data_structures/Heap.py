@@ -70,8 +70,7 @@ class Heap:
             first_parent_idx -= 1
 
     def insert(self, heap: List[object], val: object) -> None:
-        """ Inserts value into the heap using the sift_up helper
-        method.
+        """ Inserts value into the heap using the sift_up helper method.
 
         Time:
             O(logN) best/average/worst
@@ -113,8 +112,8 @@ class Heap:
         return heap[0]
 
     def remove(self, heap: List[object]) -> object:
-        """ Removes the highest priority element from the heap
-        using the sift_down helper method and returns it.
+        """ Removes the highest priority element from the heap using the
+        sift_down helper method and returns it.
 
         Time:
             O(logN) best/average/worst
