@@ -1,8 +1,11 @@
+""" This module contains code for the tests for the heap
+class """
 import unittest
 from py.data_structures.heap import Heap
 
 
-class tests(unittest.TestCase):
+class TestHeap(unittest.TestCase):
+    """ This class contains unit tests for the heap data structure """
 
     def testMinHeap(self):
         array = [9, 3, 1, 2, 5, 7]
