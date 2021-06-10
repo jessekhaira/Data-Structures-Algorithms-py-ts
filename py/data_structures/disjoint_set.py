@@ -22,7 +22,7 @@ class DisjointSet:
             Integer representing how many nodes there are in the undirected
             graph
 
-        mapping_nodes:
+        mapping:
             Dictionary representing a mapping between nodes and the index
             whcih represents them in the disjoint set, or None if not
             needed.
@@ -32,18 +32,15 @@ class DisjointSet:
             has a value less then zero, that indicates that it is the
             representative of a set, where you can find the rank by multiplying
             by -1 and adding 1.
-
-        mapping:
-            Instance variable where the input mapping_nodes will be stored
     """
 
     def __init__(self,
                  number_nodes: int,
-                 mapping_nodes: Union[Dict[Any, int], None] = None):
+                 mapping: Union[Dict[Any, int], None] = None):
         # may need to have a mapping between the nodes and index they
         # are slotted in array
         self.forest = [-1] * number_nodes
-        self.mapping = mapping_nodes
+        self.mapping = mapping
 
     def find(self, x: Union[int, Any]) -> int:
         """ This method carries out the find operation for a given node
