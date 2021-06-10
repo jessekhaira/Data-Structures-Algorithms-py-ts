@@ -66,7 +66,7 @@ class Heap:
         """
         first_parent_idx = (len(array) - 2) // 2
         while first_parent_idx >= 0:
-            self._sift_down(array, first_parent_idx, len(array) - 1)
+            self.sift_down(array, first_parent_idx, len(array) - 1)
             first_parent_idx -= 1
 
     def insert(self, heap: List[object], val: object) -> None:
@@ -134,10 +134,10 @@ class Heap:
             return
         swap(heap, 0, len(heap) - 1)
         removed_val = heap.pop()
-        self._sift_down(heap, 0, len(heap) - 1)
+        self.sift_down(heap, 0, len(heap) - 1)
         return removed_val
 
-    def _sift_down(self, heap: List[object], start: int, end: int) -> None:
+    def sift_down(self, heap: List[object], start: int, end: int) -> None:
         """ This method has the responsibility of ensuring the heap property
         is met when elements are removed from the heap.
 
