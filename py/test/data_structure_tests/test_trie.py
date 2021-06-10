@@ -1,8 +1,11 @@
+""" This module contains code for the tests for the trie
+class """
 import unittest
 from py.data_structures.trie import Trie
 
 
-class tests(unittest.TestCase):
+class TrieTests(unittest.TestCase):
+    """ This class contains tests for the trie data structure """
 
     def test1(self):
         obj1 = Trie()
@@ -14,8 +17,8 @@ class tests(unittest.TestCase):
         self.assertEqual(False, obj1.lookup("ca"))
         self.assertEqual(False, obj1.lookup("c"))
 
-        self.assertEqual(True, obj1.startsWith("ca"))
-        self.assertEqual(True, obj1.startsWith("C"))
+        self.assertEqual(True, obj1.starts_with("ca"))
+        self.assertEqual(True, obj1.starts_with("C"))
 
     def test2(self):
         obj1 = Trie()
