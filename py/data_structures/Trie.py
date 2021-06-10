@@ -109,20 +109,21 @@ class Trie:
 
         return True
 
-    def delete(self, word):
-        """
-        This method recieves a string as input and deletes the string if it is currently stored in the Trie. 
+    def delete(self, word: str) -> None:
+        """ This method recieves a string as input and deletes the string if
+        it is currently stored in the Trie.
 
         Time:
-            - O(k) best/avg/worst
+            O(k) best/average/worst
+
         Space:
-            - O(1) best/avg/worst
+            O(1) best/average/worst
 
-        Input:
-            - word(String): String representing the word to delete in the Trie 
+        Where k is the length of the input string
 
-        Returns:
-            - None 
+        Args:
+            word:
+                String representing the word to delete in the Trie
         """
         # confirm word is even in the trie before attempting to delete it
         if not self.lookup(word):
