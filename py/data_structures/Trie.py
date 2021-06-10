@@ -129,14 +129,14 @@ class Trie:
         if not self.lookup(word):
             return
         node = self.root
-        self._deleteHelper(node, word, 0)
+        self._delete_helper(node, word, 0)
 
-    def _deleteHelper(self, node, word, idx):
+    def _delete_helper(self, node, word, idx):
         if idx == len(word):
             node.pop(self.end_symbol)
             return
         newNode = node[word[idx]]
-        self._deleteHelper(newNode, word, idx + 1)
+        self._delete_helper(newNode, word, idx + 1)
 
         # if there are no chars in the new node then we can safely
         # delete it
