@@ -1,13 +1,18 @@
+""" This module contains code for a class that represents a (simplified)
+prefix trie data structure """
+
+
 class Trie:
-    """
-    This class represents a (simple) prefix Trie data structure. The Trie is an ordered tree 
-    data structure used to store strings. Anytime you have a dataset of strings and you'd like
-    to query the dataset, you can consider using a Trie. 
+    """ This class represents a (simple) prefix Trie data structure.
 
-    Where k is the length of the longest word stored in the trie, and n is the total number of words 
-    stored in the trie.
+    The trie is an ordered tree data structure used to store strings.
+    Anytime you have a dataset of strings and you'd like to query the
+    dataset, you can consider using a Trie.
 
-    Used for autocomplete, spell checking, IP routing, etc. 
+    Where k is the length of the longest word stored in the trie, and n
+    is the total number of words stored in the trie.
+
+    Used for autocomplete, spell checking, IP routing, etc.
     """
 
     def __init__(self):
