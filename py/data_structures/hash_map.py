@@ -11,7 +11,7 @@ class ChainingNode:
         key:
             Any type representing the key being hashed into the HashMap
 
-        value:
+        val:
             Any type representing the value being hashed into the HashMap
 
         next:
@@ -19,9 +19,9 @@ class ChainingNode:
             this node and the next node
     """
 
-    def __init__(self, key: Any, value: Any):
+    def __init__(self, key: Any, val: Any):
         self.key = key
-        self.val = value
+        self.val = val
         self.next = None
 
 

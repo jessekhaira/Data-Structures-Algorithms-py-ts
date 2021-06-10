@@ -1,6 +1,6 @@
 """ This module contains the breadth first search algorithm """
 from py.data_structures.queue import Queue
-from py.data_structures.utils.binaryTree import binaryTreeNode
+from py.utils.binaryTree import binaryTreeNode
 from typing import List
 
 

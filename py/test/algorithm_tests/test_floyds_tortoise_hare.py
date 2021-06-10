@@ -1,7 +1,7 @@
 """ This module contains code testing the python implementation of floyds
 tortoise hare algorithm """
 from py.algorithms.floyds_tortoise_hare import floyds_tortoise_hare
-from py.data_structures.utils.LinkedList import SinglyLinkedListNode, DoublyLinkedListNode
+from py.utils.LinkedList import SinglyLinkedListNode, DoublyLinkedListNode
 import unittest
 
 

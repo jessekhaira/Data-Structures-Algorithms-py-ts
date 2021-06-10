@@ -1,4 +1,4 @@
-from py.data_structures.utils.LinkedList import SinglyLinkedListNode
+from py.utils.LinkedList import SinglyLinkedListNode
 
 
 class HashSet:

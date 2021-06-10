@@ -30,6 +30,14 @@ class Heap:
             the heap is a min-heap or max-heap. 0 will cause the heap
             created to be a min heap, 1 will cause the heap created to
             be a max heap
+
+        comparator_func:
+            Function that should accept two nodes as input, compare them,
+            and return an integer representing which node is bigger
+            then the other. Set to custom_comparator if it is provided,
+            otherwise the objects stored in the heap will be assumed to be
+            numbers and the comparator function will be set according to
+            the type_heap argument
     """
 
     def __init__(self,

@@ -1,6 +1,6 @@
 """ This module contains code representing floyd's tortoise and hare algorithm
 """
-from py.data_structures.utils.LinkedList import LinkedListNode
+from py.utils.LinkedList import LinkedListNode
 from typing import Union
 
 
