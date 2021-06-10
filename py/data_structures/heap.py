@@ -19,31 +19,24 @@ class Heap:
     node must be less than or equal to its children nodes values.
 
     Attributes:
-        custom_comparator:
-            Function that represents the comparator function to be used to
-            arrange nodes in the heap, or None which results in a default
-            comparator being used assuming that the values contained in
-            nodes are numbers
+        comparator_func:
+            Function that if specified, should accept two objects as input,
+            compare them, and return an integer representing which object is
+            bigger then the other. If None, it will be assumed that the
+            objects the heap will contain are numbers.
 
         type_heap:
             An integer value that should be either 0 or 1, indicating if
             the heap is a min-heap or max-heap. 0 will cause the heap
             created to be a min heap, 1 will cause the heap created to
             be a max heap
-
-        comparator_func:
-            Function that should accept two nodes as input, compare them,
-            and return an integer representing which node is bigger
-            then the other. Set to custom_comparator if it is provided,
-            otherwise the objects stored in the heap will be assumed to be
-            numbers and the comparator function will be set according to
-            the type_heap argument
     """
 
     def __init__(self,
-                 custom_comparator: Union[Callable, None] = None,
+                 comparator_func: Union[Callable[[object, object], int],
+                                        None] = None,
                  type_heap: Literal[0, 1] = 0):
-        if not custom_comparator:
+        if not comparator_func:
             # if the type_heap property is zero, the heap will be assumed to
             # be a min-heap and the comparator function used to ensure the heap
             # property is set appropriately otherwise if the type_heap is 1,
@@ -52,8 +45,6 @@ class Heap:
                 self.comparator_func = lambda x, y: 1 if x - y < 0 else 0
             else:
                 self.comparator_func = lambda x, y: 1 if x - y > 0 else 0
-        else:
-            self.comparator_func = custom_comparator
 
     def heapify(self, array: List[object]) -> None:
         """ This method will create a heap out of the given array elements
