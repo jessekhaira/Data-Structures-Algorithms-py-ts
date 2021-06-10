@@ -14,6 +14,15 @@ class Trie:
     is the total number of words stored in the trie.
 
     Used for autocomplete, spell checking, IP routing, etc.
+
+    Attributes:
+        end_sumbol:
+            A string that is equivalent to "*" that represents the end symbol
+            for a word in the trie
+
+        root:
+            Dictionary containing mapping between string keys, with dictionary
+            values, representing all the words stored at the root of the trie
     """
 
     def __init__(self):
