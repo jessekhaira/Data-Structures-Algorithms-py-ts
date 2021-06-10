@@ -67,9 +67,9 @@ class Trie:
             Boolean value representing whether the string is stored in the Trie
         """
         node = self.root
-        return self._lookupHelper(node, word)
+        return self._lookup_helper(node, word)
 
-    def _lookupHelper(self, node, word):
+    def _lookup_helper(self, node: Dict[str, Dict], word: str) -> bool:
         for char in word:
             if char not in node:
                 return False
