@@ -26,6 +26,15 @@ class DisjointSet:
             Dictionary representing a mapping between nodes and the index
             whcih represents them in the disjoint set, or None if not
             needed.
+
+        forest:
+            Array of integers representing the disjoint set. When an index
+            has a value less then zero, that indicates that it is the
+            representative of a set, where you can find the rank by multiplying
+            by -1 and adding 1.
+
+        mapping:
+            Instance variable where the input mapping_nodes will be stored
     """
 
     def __init__(self,
