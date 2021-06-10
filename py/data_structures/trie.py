@@ -16,7 +16,7 @@ class Trie:
     Used for autocomplete, spell checking, IP routing, etc.
 
     Attributes:
-        end_sumbol:
+        end_symbol:
             A string that is equivalent to "*" that represents the end symbol
             for a word in the trie
 
