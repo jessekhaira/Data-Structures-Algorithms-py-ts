@@ -16,24 +16,24 @@ class Trie:
     """
 
     def __init__(self):
-        self.endSymbol = "*"
+        self.end_symbol = "*"
         self.root = {}
 
-    def insert(self, word):
-        """
-        Inserts a word into the Trie.
-        
+    def insert(self, word: str) -> None:
+        """ Inserts a word into the Trie.
+
         Time:
-            - O(k) best/avg/worst
+            O(k) best/average/worst
+
         Space:
-            - O(k) best/avg/worst
+            O(k) best/average/worst
 
-        k - length of the word being inserted into the trie 
+        Where k is the length of the word being inserted into
+        the trie
 
-        Input:
-            - word(String): String representing word to insert into the Trie. 
-        Returns:
-            - None 
+        Args:
+            word:
+                String representing word to insert into the Trie.
         """
         node = self.root
         self._insertHelper(node, word)
@@ -44,7 +44,7 @@ class Trie:
                 node[char] = {}
             node = node[char]
 
-        node[self.endSymbol] = True
+        node[self.end_symbol] = True
 
     def lookup(self, word):
         """
@@ -72,7 +72,7 @@ class Trie:
                 return False
             node = node[char]
         # Word is only in trie if the last node has the end symbol in it
-        return self.endSymbol in node
+        return self.end_symbol in node
 
     def startsWith(self, prefix):
         """
@@ -126,7 +126,7 @@ class Trie:
 
     def _deleteHelper(self, node, word, idx):
         if idx == len(word):
-            node.pop(self.endSymbol)
+            node.pop(self.end_symbol)
             return
         newNode = node[word[idx]]
         self._deleteHelper(newNode, word, idx + 1)
