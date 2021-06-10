@@ -131,14 +131,15 @@ class Trie:
         node = self.root
         self._delete_helper(node, word, 0)
 
-    def _delete_helper(self, node, word, idx):
+    def _delete_helper(self, node: Dict[str, Dict], word: str,
+                       idx: int) -> None:
         if idx == len(word):
             node.pop(self.end_symbol)
             return
-        newNode = node[word[idx]]
-        self._delete_helper(newNode, word, idx + 1)
+        new_node = node[word[idx]]
+        self._delete_helper(new_node, word, idx + 1)
 
         # if there are no chars in the new node then we can safely
         # delete it
-        if not newNode:
+        if not new_node:
             node.pop(word[idx])
