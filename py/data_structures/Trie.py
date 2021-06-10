@@ -77,28 +77,31 @@ class Trie:
         # Word is only in trie if the last node has the end symbol in it
         return self.end_symbol in node
 
-    def startsWith(self, prefix):
-        """
-        This method recieves a string as an input which is assumed to be a prefix pattern, and then returns a boolean
-        indicating whether or not the prefix pattern is present in the trie. 
+    def starts_with(self, prefix: str) -> bool:
+        """ This method recieves a string as an input which is assumed to be
+        a prefix pattern, and then returns a boolean indicating whether or not
+        the prefix pattern is present in the trie.
 
         Time:
-            - O(k) best/avg/worst
-        
-        Space:
-            - O(1) best/avg/worst
+            O(k) best/average/worst
 
-        k - length of input string 
+        Space:
+            O(1) best/average/worst
+
+        Where k is the length of the input string
+
         Input:
-            - prefix(String): String representing the prefix pattern to look up in the Trie
+            prefix:
+                String representing the prefix pattern to look up in the Trie
 
         Returns:
-            - Boolean representing whether the prefix pattern is stored in the Trie 
+            Boolean value representing whether the prefix pattern is stored in
+            the Trie
         """
         node = self.root
-        return self._startsWithHelper(node, prefix)
+        return self._starts_with_helper(node, prefix)
 
-    def _startsWithHelper(self, node, prefix):
+    def _starts_with_helper(self, node, prefix):
         for char in prefix:
             if char not in node:
                 return False
