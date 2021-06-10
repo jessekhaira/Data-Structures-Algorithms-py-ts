@@ -9,6 +9,7 @@ class Trie:
 
     Used for autocomplete, spell checking, IP routing, etc. 
     """
+
     def __init__(self):
         self.endSymbol = "*"
         self.root = {}
@@ -28,18 +29,18 @@ class Trie:
             - word(String): String representing word to insert into the Trie. 
         Returns:
             - None 
-        """ 
+        """
         node = self.root
         self._insertHelper(node, word)
-    
+
     def _insertHelper(self, node, word):
         for char in word:
             if char not in node:
                 node[char] = {}
             node = node[char]
-        
+
         node[self.endSymbol] = True
-    
+
     def lookup(self, word):
         """
         This method takes a string as input and returns a boolean indicating whether or not it is currently stored in the 
@@ -59,15 +60,15 @@ class Trie:
         """
         node = self.root
         return self._lookupHelper(node, word)
-    
+
     def _lookupHelper(self, node, word):
         for char in word:
             if char not in node:
                 return False
             node = node[char]
-        # Word is only in trie if the last node has the end symbol in it 
-        return self.endSymbol in node 
-    
+        # Word is only in trie if the last node has the end symbol in it
+        return self.endSymbol in node
+
     def startsWith(self, prefix):
         """
         This method recieves a string as an input which is assumed to be a prefix pattern, and then returns a boolean
@@ -111,10 +112,10 @@ class Trie:
 
         Returns:
             - None 
-        """ 
+        """
         # confirm word is even in the trie before attempting to delete it
         if not self.lookup(word):
-            return 
+            return
         node = self.root
         self._deleteHelper(node, word, 0)
 
@@ -123,12 +124,9 @@ class Trie:
             node.pop(self.endSymbol)
             return
         newNode = node[word[idx]]
-        self._deleteHelper(newNode, word, idx+1)
+        self._deleteHelper(newNode, word, idx + 1)
 
         # if there are no chars in the new node then we can safely
         # delete it
         if not newNode:
             node.pop(word[idx])
-        
-    
-    
