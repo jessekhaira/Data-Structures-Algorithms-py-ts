@@ -1,5 +1,6 @@
 """ This module contains code for a class that represents a (simplified)
 prefix trie data structure """
+from typing import Dict
 
 
 class Trie:
@@ -36,9 +37,9 @@ class Trie:
                 String representing word to insert into the Trie.
         """
         node = self.root
-        self._insertHelper(node, word)
+        self._insert_helper(node, word)
 
-    def _insertHelper(self, node, word):
+    def _insert_helper(self, node: Dict[str, Dict], word: str) -> None:
         for char in word:
             if char not in node:
                 node[char] = {}
@@ -46,22 +47,24 @@ class Trie:
 
         node[self.end_symbol] = True
 
-    def lookup(self, word):
-        """
-        This method takes a string as input and returns a boolean indicating whether or not it is currently stored in the 
-        Trie. 
-    
-        Time:
-            - O(k) best/avg/worst
-        Space:
-            - O(1) best/avg/worst
+    def lookup(self, word: str) -> bool:
+        """ This method takes a string as input and returns a boolean
+        indicating whether or not it is currently stored in the Trie.
 
-        k - length of input string
-        
-        Input:
-            - word(String): String representing word to lookup in the Trie. 
+        Time:
+            O(k) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Where k is the length of the input string
+
+        Args:
+            word:
+                String representing word to lookup in the Trie.
+
         Returns:
-            - Boolean representing whether the string is stored in the Trie 
+            Boolean value representing whether the string is stored in the Trie
         """
         node = self.root
         return self._lookupHelper(node, word)
