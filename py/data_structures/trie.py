@@ -110,7 +110,7 @@ class Trie:
         node = self.root
         return self._starts_with_helper(node, prefix)
 
-    def _starts_with_helper(self, node, prefix):
+    def _starts_with_helper(self, node: Dict[str, Dict], prefix: str) -> bool:
         for char in prefix:
             if char not in node:
                 return False
