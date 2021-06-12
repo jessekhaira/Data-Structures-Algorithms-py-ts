@@ -1,7 +1,7 @@
 """ This module contains code for a class that represents the
 doubly linked list data structure """
-from py.utils.linked_list import DoublyLinkedListNode
 from typing import Any
+from py.utils.linked_list import DoublyLinkedListNode
 
 
 class DoublyLinkedList:
@@ -21,14 +21,13 @@ class DoublyLinkedList:
             Object of type DoublyLinkedListNode representing the
             tail node of the data structure, which on construction is
             equivalent to the tail node
-            ajsdkasdkjsadkjsadasndkjasdkanskdnasjndjasdkjadkjasdkasdjkasndjsadjkasjkdasd
     """
 
-    def __init__(self, val):
+    def __init__(self, val: Any):
         self.head = DoublyLinkedListNode(val)
         self.tail = self.head
 
-    def get(self, index):
+    def get(self, index: int) -> Any:
         curr_index = 0
         node = self.head
         while node and curr_index <= index:
