@@ -59,7 +59,7 @@ class HashMap:
         self.curr_capacity = 0
 
     def put(self, key: int, value: Any) -> None:
-        """ This method puts a value within the hash table according to its hash
+        """ This method puts a value within the hashmap according to its hash
         value, with the keys assumed to be integers and values assumed to be
         any type.
 
@@ -75,13 +75,13 @@ class HashMap:
 
         Args:
             key:
-                Integer representing the key to hash into the hash table
+                Integer representing the key to hash into the hashmap
 
             value:
                 Value of any type, associated with the key being hashed into the
-                hash table
+                hashmap
         """
-        # get the hash value and look at the bucket in the hash table where this
+        # get the hash value and look at the bucket in the hashmap where this
         # key should be inserted if the bucket is empty, then insert the
         # key-value pair directly into the bucket by inserting node of new
         # linkedlist. Otherwise, add the key-value pair to the end of the
@@ -104,7 +104,7 @@ class HashMap:
 
     def get(self, key: int) -> Any:
         """ This function retrieves the value associated with the given input
-        key, if it exists within the hashtable.
+        key, if it exists within the hashmap.
 
         Time:
             O(1) best/average
@@ -118,14 +118,14 @@ class HashMap:
 
         Args:
             key:
-                Integer representing the key to lookup in the hashtable.
+                Integer representing the key to lookup in the hashmap.
 
         Returns:
             A value of any type, representing the value associated with the
-            key in the hashtable. If the key doesn't exist in the table, then
+            key in the hashmap. If the key doesn't exist in the map, then
             None will be returned.
         """
-        # look up the bucket in the hashtable the key should be residing and
+        # look up the bucket in the hashmap the key should be residing and
         # if nothing exists in that bucket, return none. Otherwise, traverse the
         # linked list that exists in that bucket until there is nothing left or
         # the appropriate key is found.
@@ -155,8 +155,8 @@ class HashMap:
                     self.put(curr_key, curr_val)
 
     def remove(self, key: int) -> None:
-        """ If the input key is within the hashtable, this method removes the
-        key-value pair from the hashtable.
+        """ If the input key is within the hashmap, this method removes the
+        key-value pair from the hashmap.
 
         Time:
             O(1) best/average
@@ -170,7 +170,7 @@ class HashMap:
 
         Args:
             key:
-                Integer representing the key to lookup in the hashtable.
+                Integer representing the key to lookup in the hashmap.
         """
         hash_value = self._hash_function(key)
         if self.static_arr is None:
@@ -208,7 +208,7 @@ class HashMap:
 
         Args:
             key:
-                Integer representing the key to hash into the hashtable
+                Integer representing the key to hash into the hashmap
 
         Returns:
             Integer representing the index within the hashmap the key falls into
