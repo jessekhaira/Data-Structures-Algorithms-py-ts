@@ -22,7 +22,6 @@ class DoublyLinkedList:
             tail node of the data structure, which on construction is
             equivalent to the tail node
     """
-
     def __init__(self, val: Any):
         self.head = DoublyLinkedListNode(val)
         self.tail = self.head
@@ -83,7 +82,7 @@ class DoublyLinkedList:
             self.head.prev = new_node
             self.head = new_node
 
-    def add_at_tail(self, val):
+    def add_at_tail(self, val: Any) -> None:
         """ This function creates a doubly linked list node with
         the value given as input, and inserts the node to be the
         new tail of the linked list.
