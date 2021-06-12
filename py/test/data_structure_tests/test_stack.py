@@ -2,7 +2,7 @@ import unittest
 from py.data_structures.stack import Stack
 
 
-class StackUnitTests(unittest.TestCase):
+class StackTests(unittest.TestCase):
 
     def test1(self):
         new_stack = Stack()

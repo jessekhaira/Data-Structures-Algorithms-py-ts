@@ -18,13 +18,20 @@ class HashSet:
         load_factor:
             Floating point value representing the maximum load factor of the
             hash set
+
+        _buckets:
+            Array of size init_capacity representing the underlying data
+            structure of the hash set
+
+        curr_capacity:
+            Integer representing the number of objects hashed into the hash map
     """
 
     def __init__(self, init_capacity: int = 1000, load_factor: float = 0.75):
         # A static array is the base data structure of a Hash Set
         self._buckets = [None] * init_capacity
-        self._design_load_factor = load_factor
-        self._curr_items_hashed = 0
+        self.load_factor = load_factor
+        self.curr_capacity = 0
 
     def add(self, val: int) -> None:
         """ Inserts the input argument, expected to be an integer, into the hash
@@ -66,9 +73,9 @@ class HashSet:
         # adding items to hash set increases current load factor, and
         # if the load factor is >= then # the design load factor,
         # we rehash to keep the time complexity of the hash set methods low
-        self._curr_items_hashed += 1
-        curr_load_factor = (self._curr_items_hashed) / len(self._buckets)
-        if curr_load_factor >= self._design_load_factor:
+        self.curr_capacity += 1
+        curr_load_factor = (self.curr_capacity) / len(self._buckets)
+        if curr_load_factor >= self.load_factor:
             self._rehash()
 
     def _rehash(self):
@@ -77,7 +84,7 @@ class HashSet:
         # array, set the size to be zero.
         saved_version_old_buckets = self._buckets
         self._buckets = (len(self._buckets) * 2) * [None]
-        self._curr_items_hashed = 0
+        self.curr_capacity = 0
         for node in saved_version_old_buckets:
             while node:
                 self.add(node.val)
@@ -123,7 +130,7 @@ class HashSet:
                 is currently stored
         """
         hash_val = self._hashing_algorithm(val)
-        self._curr_items_hashed -= 1
+        self.curr_capacity -= 1
         node = self._buckets[hash_val]
         prev = None
         while node:

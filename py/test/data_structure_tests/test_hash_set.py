@@ -1,8 +1,10 @@
+""" This module contains unit tests for the hash set data structure """
 import unittest
 from py.data_structures.hash_set import HashSet
 
 
-class TestHashSet(unittest.TestCase):
+class HashSetTests(unittest.TestCase):
+    """ This class contains unit tests for the hash set data structure """
 
     def test1(self):
         obj1 = HashSet()
@@ -31,10 +33,10 @@ class TestHashSet(unittest.TestCase):
 
     def test3(self):
         obj1 = HashSet()
-        for i in range(1000):
+        for _ in range(1000):
             obj1.add(1000)
 
-        self.assertEqual(obj1._curr_items_hashed, 1)
+        self.assertEqual(obj1.curr_capacity, 1)
 
 
 if __name__ == "__main__":
