@@ -107,7 +107,27 @@ class DoublyLinkedList:
             new_node.prev = self.tail
             self.tail = new_node
 
-    def add_at_index(self, index, val):
+    def add_at_index(self, index: int, val: Any) -> None:
+        """
+        This method addes wraps the input val into a DoublyLinkedListNode
+        and then inserts it as a node in the data structure at the ith
+        index.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Args:
+            index:
+                Integer representing the index at which to insert the node
+                within the linked list
+
+            val:
+                Data of any type representing the value to store as a node
+                at the ith index inside of the linked list
+        """
         if index == 0:
             self.add_at_head(val)
         else:
