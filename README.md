@@ -13,7 +13,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [Trie](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/trie.py)
 - [Linked List](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/linked_list.py)
 - [HashSet](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/hash_set.py)
-- [Stack](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Stack.py)
+- [Stack](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/stack.py)
 - [Queue](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Queue.py)
 - [Deque](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/deque.py)
 
