@@ -1,11 +1,27 @@
 """ This module contains code for a class that represents the
 doubly linked list data structure """
 from py.utils.linked_list import DoublyLinkedListNode
+from typing import Any
 
 
 class DoublyLinkedList:
     """ This class represents the doubly linked list data
     structure.
+
+    Attributes:
+        val:
+            Value of any type representing the data initially stored at
+            the head node of the doubly linked list data structure
+            
+        head:
+            Object of type DoublyLinkedListNode representing
+            the head node of the data structure
+        
+        tail:
+            Object of type DoublyLinkedListNode representing the
+            tail node of the data structure, which on construction is
+            equivalent to the tail node
+            ajsdkasdkjsadkjsadasndkjasdkanskdnasjndjasdkjadkjasdkasdjkasndjsadjkasjkdasd
     """
 
     def __init__(self, val):
@@ -13,20 +29,21 @@ class DoublyLinkedList:
         self.tail = self.head
 
     def get(self, index):
-        currIndex = 0
+        curr_index = 0
         node = self.head
-        while node and currIndex <= index:
-            if currIndex == index:
+        while node and curr_index <= index:
+            if curr_index == index:
                 return node.val
             else:
-                currIndex += 1
+                curr_index += 1
                 node = node.next
         return -1
 
-    def add_at_head(self, val):
+    def add_at_head(self, val: Any) -> None:
         """
-        This function creates a doubly linked list node with the value given as input, and inserts the node
-        to be the new head of the linked list.
+        This function creates a doubly linked list node with the
+        value given as input, and inserts the node to be the new
+        head of the linked list.
         """
         newNode = DoublyLinkedListNode(val)
         if not self.head:
@@ -59,17 +76,17 @@ class DoublyLinkedList:
 
     def _insert_node(self, val, index):
         node = self.head
-        currIndex = 0
-        while node and currIndex <= index:
-            if currIndex == index:
+        curr_index = 0
+        while node and curr_index <= index:
+            if curr_index == index:
                 self._change_node_pointers_insertion(node.prev, node, val)
                 return
             else:
                 node = node.next
-                currIndex += 1
+                curr_index += 1
         # edge case -- inserting node at the end of the linked list means we have a new tail node
         # so pointers have to be change appropriately for that
-        if index == currIndex:
+        if index == curr_index:
             self.add_at_tail(val)
 
     def _change_node_pointers_insertion(self, savedPrev, node, val):
@@ -97,11 +114,11 @@ class DoublyLinkedList:
             self._unlink_node(index)
 
     def _unlink_node(self, index):
-        currIndex = 0
+        curr_index = 0
         prevNode = None
         currNode = self.head
-        while currNode and currIndex <= index:
-            if index == currIndex:
+        while currNode and curr_index <= index:
+            if index == curr_index:
                 if not currNode.next:
                     prevNode.next = None
                     self.tail = prevNode
@@ -113,4 +130,4 @@ class DoublyLinkedList:
             else:
                 prevNode = currNode
                 currNode = currNode.next
-                currIndex += 1
+                curr_index += 1
