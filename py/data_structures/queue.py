@@ -1,5 +1,5 @@
 """ Module contains the queue data structure """
-from py.utils.LinkedList import SinglyLinkedListNode
+from py.utils.linked_list import SinglyLinkedListNode
 
 
 class Queue:

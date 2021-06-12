@@ -1,6 +1,6 @@
 """ This module contains code for a class representing the deque
 data structure """
-from py.utils.LinkedList import DoublyLinkedListNode
+from py.utils.linked_list import DoublyLinkedListNode
 
 
 class Deque:

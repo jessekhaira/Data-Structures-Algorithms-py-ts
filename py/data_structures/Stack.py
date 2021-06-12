@@ -1,4 +1,4 @@
-from py.utils.LinkedList import DoublyLinkedListNode
+from py.utils.linked_list import DoublyLinkedListNode
 
 
 class Stack:

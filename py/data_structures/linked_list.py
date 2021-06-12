@@ -1,5 +1,5 @@
 """ This module contains code for a class that represents the doubly linked list data structure """
-rom py.utils.linked_list import DoublyLinkedListNode
+from py.utils.linked_list import DoublyLinkedListNode
 
 
 class DoublyLinkedList:
