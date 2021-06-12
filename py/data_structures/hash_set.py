@@ -19,6 +19,7 @@ class HashSet:
             Floating point value representing the maximum load factor of the
             hash set
     """
+
     def __init__(self, init_capacity: int = 1000, load_factor: float = 0.75):
         # A static array is the base data structure of a Hash Set
         self._buckets = [None] * init_capacity
