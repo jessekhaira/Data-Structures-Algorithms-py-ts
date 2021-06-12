@@ -1,7 +1,11 @@
 import unittest
-from py.data_structures.LinkedList import DoublyLinkedList
+from py.data_structures.linked_list import DoublyLinkedList
 
-class tests(unittest.TestCase):
+class DoublyLinkedListTests(unittest.TestCase):
+    """
+    This class contains unit tests for the doubly linked
+    list data structure
+    """
     def test1(self):
         linkedList = DoublyLinkedList(5)
         linkedList.add_at_head(9)

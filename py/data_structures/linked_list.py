@@ -1,9 +1,10 @@
-from py.utils.LinkedList import DoublyLinkedListNode
+""" This module contains code for a class that represents the doubly linked list data structure """
+rom py.utils.linked_list import DoublyLinkedListNode
 
 
 class DoublyLinkedList:
-    """
-    This class represents a doubly linked list. 
+    """ This class represents the doubly linked list data
+    structure.
     """
 
     def __init__(self, val):
