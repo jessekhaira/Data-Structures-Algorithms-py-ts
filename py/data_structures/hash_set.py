@@ -19,7 +19,6 @@ class HashSet:
             Floating point value representing the maximum load factor of the
             hash set
     """
-
     def __init__(self, init_capacity: int = 1000, load_factor: float = 0.75):
         # A static array is the base data structure of a Hash Set
         self._buckets = [None] * init_capacity
@@ -53,7 +52,8 @@ class HashSet:
             node = self._buckets[hash_val]
             prev = None
             while node:
-                # unique collection of items - if we're adding same item twice, then only one of them counts
+                # unique collection of items - if we're adding same item twice,
+                # then only one of them counts
                 if node.val == val:
                     return
                 else:
@@ -62,15 +62,17 @@ class HashSet:
 
             prev.next = node_wrapper_val
 
-        # adding items to hash set increases current load factor, and if the load factor is >= then
-        # the design load factor, we rehash to keep the time complexity of the hash set methods low
+        # adding items to hash set increases current load factor, and
+        # if the load factor is >= then # the design load factor,
+        # we rehash to keep the time complexity of the hash set methods low
         self._curr_items_hashed += 1
         curr_load_factor = (self._curr_items_hashed) / len(self._buckets)
         if curr_load_factor >= self._design_load_factor:
             self._rehash()
 
     def _rehash(self):
-        # double the number of buckets, and since no items will initially be hashed into the new buckets
+        # double the number of buckets, and since no items will initially be
+        # hashed into the new buckets
         # array, set the size to be zero.
         saved_version_old_buckets = self._buckets
         self._buckets = (len(self._buckets) * 2) * [None]
@@ -82,18 +84,19 @@ class HashSet:
 
     def contains(self, val):
         """
-        Returns a boolean indicating whether or not the hash set contains the integer input argument.
+        Returns a boolean indicating whether or not the hash set contains the
+        integer input argument.
 
         Time:
             - O(1) best/average
             - O(N) worst
         Space:
             - O(1) best/average/worst
-        
+
         N - length of hash set
 
         Input:
-            - val(Integer): Integer input argument 
+            - val(Integer): Integer input argument
 
         Output:
             - Boolean indicating whether the hash set contains the integer input
@@ -109,7 +112,8 @@ class HashSet:
 
     def remove(self, val):
         """
-        Removes the input value from the hash set if it is currently stored in the hash set
+        Removes the input value from the hash set if it is currently
+        stored in the hash set
         """
         hash_val = self._hashing_algorithm(val)
         self._curr_items_hashed -= 1
@@ -118,12 +122,13 @@ class HashSet:
         while node:
             if node.val == val:
                 # edge case - deleting head of linked list from bucket
-                # means the new head will be the node after the head node (which can be None)
+                # means the new head will be the node after the head node
+                # (which can be None)
                 if not prev:
                     self._buckets[hash_val] = node.next
                 else:
-                    savedNext = node.next
-                    prev.next = savedNext
+                    saved_next = node.next
+                    prev.next = saved_next
                 return
             else:
                 prev = node
