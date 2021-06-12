@@ -1,7 +1,9 @@
 import unittest
-from py.data_structures.HashSet import HashSet
+from py.data_structures.hash_set import HashSet
 
-class tests(unittest.TestCase):
+
+class TestHashSet(unittest.TestCase):
+
     def test1(self):
         obj1 = HashSet()
         obj1.add(5)
@@ -11,7 +13,6 @@ class tests(unittest.TestCase):
         self.assertEqual(obj1.contains(5), True)
         self.assertEqual(obj1.contains(12), False)
         self.assertEqual(obj1.contains(9), True)
-
 
     def test2(self):
         obj1 = HashSet()

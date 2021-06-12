@@ -1,39 +1,49 @@
+""" This module contains code for a class that represents the hash
+set data structure """
 from py.utils.linked_list import SinglyLinkedListNode
 
 
 class HashSet:
-    """
-    This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with 
-    through chaining with linked lists.
+    """ This class represents a Hash Set designed specifically to accept
+    integer values. Hash collisons are dealt with through chaining with
+    linked lists.
 
-    A HashSet is a data structure built on static arrays which is meant to hold a collection of unique items. 
+    A HashSet is a data structure built on static arrays which is meant to
+    hold a collection of unique items.
+
+    Attributes:
+        init_capacity:
+            Integer representing the initial capacity of the hash set
+
+        load_factor:
+            Floating point value representing the maximum load factor of the
+            hash set
     """
 
-    def __init__(self, init_capacity=1000, load_factor=0.75):
+    def __init__(self, init_capacity: int = 1000, load_factor: float = 0.75):
         # A static array is the base data structure of a Hash Set
         self._buckets = [None] * init_capacity
         self._design_load_factor = load_factor
         self._curr_items_hashed = 0
 
-    def add(self, val):
-        """
-        Inserts the input argument, expected to be an integer, into the hash set. If by adding the element, the
-        design load factor is exceeded, rehashing is done. 
+    def add(self, val: int) -> None:
+        """ Inserts the input argument, expected to be an integer, into the hash
+        set. If by adding the element, the design load factor is exceeded,
+        rehashing is done.
 
         Time:
-            - O(1) best/average
-            - O(N) worst
+            O(1) best/average
+            O(N) worst
+
         Space:
-            - O(1) best/average
-            - O(N) worst
-        
-        N - length of hash set 
+            O(1) best/average
+            O(N) worst
 
-        Inputs:
-            - val (Integer): Integer input argument to be added to Hash Set
+        Where N is the number of items hashed into the hash set
 
-        Returns:
-            - None 
+        Args:
+            val:
+                Integer input argument to be added to Hash Set
         """
         hash_val = self._hashing_algorithm(val)
         node_wrapper_val = SinglyLinkedListNode(val)
