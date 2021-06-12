@@ -12,11 +12,11 @@ class DoublyLinkedList:
         val:
             Value of any type representing the data initially stored at
             the head node of the doubly linked list data structure
-            
+
         head:
             Object of type DoublyLinkedListNode representing
             the head node of the data structure
-        
+
         tail:
             Object of type DoublyLinkedListNode representing the
             tail node of the data structure, which on construction is
@@ -28,6 +28,27 @@ class DoublyLinkedList:
         self.tail = self.head
 
     def get(self, index: int) -> Any:
+        """ This method gets the value out of the ith node within the
+        linked list.
+
+        Time:
+            O(N) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Where N is the number of nodes in the linked list.
+
+        Args:
+            index:
+                Integer representing the index inside of the linked list to
+                fetch the value from
+
+        Returns:
+            Value of any type representing the data stored at the ith index
+            in the linked list
+        """
+
         curr_index = 0
         node = self.head
         while node and curr_index <= index:
