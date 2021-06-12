@@ -83,24 +83,26 @@ class HashSet:
                 self.add(node.val)
                 node = node.next
 
-    def contains(self, val):
-        """
-        Returns a boolean indicating whether or not the hash set contains the
-        integer input argument.
+    def contains(self, val: int) -> bool:
+        """ Returns a boolean indicating whether or not the hash set
+        contains the integer input argument.
 
         Time:
-            - O(1) best/average
-            - O(N) worst
+            O(1) best/average
+            O(N) worst
+
         Space:
-            - O(1) best/average/worst
+            O(1) best/average
+            O(N) worst
 
-        N - length of hash set
+        Where N is the number of items hashed into the hash set
 
-        Input:
-            - val(Integer): Integer input argument
+        Args:
+            val:
+                Integer input argument to check exists in the hash set
 
         Output:
-            - Boolean indicating whether the hash set contains the integer input
+            Boolean indicating whether the hash set contains the integer input
         """
         hash_val = self._hashing_algorithm(val)
         node = self._buckets[hash_val]
