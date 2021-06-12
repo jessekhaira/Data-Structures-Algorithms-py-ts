@@ -11,7 +11,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [HashMap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/hash_map.py)
 - [Min/Max Heap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/heap.py)
 - [Trie](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/trie.py)
-- [Linked List](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/LinkedList.py)
+- [Linked List](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/linked_list.py)
 - [HashSet](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/HashSet.py)
 - [Stack](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Stack.py)
 - [Queue](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/data_structures/Queue.py)
