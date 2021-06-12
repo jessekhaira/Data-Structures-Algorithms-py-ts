@@ -208,7 +208,7 @@ class HashMap:
 
         Args:
             key:
-                Integer representing the key to lookup in the hashtable.
+                Integer representing the key to hash into the hashtable
 
         Returns:
             Integer representing the index within the hashmap the key falls into

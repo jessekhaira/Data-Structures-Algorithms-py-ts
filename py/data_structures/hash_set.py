@@ -113,10 +113,14 @@ class HashSet:
                 node = node.next
         return False
 
-    def remove(self, val):
-        """
-        Removes the input value from the hash set if it is currently
+    def remove(self, val: int) -> None:
+        """ Removes the input value from the hash set if it is currently
         stored in the hash set
+
+        Args:
+            val:
+                Integer input argument to remove from the hash set if it
+                is currently stored
         """
         hash_val = self._hashing_algorithm(val)
         self._curr_items_hashed -= 1
@@ -137,5 +141,23 @@ class HashSet:
                 prev = node
                 node = node.next
 
-    def _hashing_algorithm(self, val):
+    def _hashing_algorithm(self, val: int) -> int:
+        """ This function represents the hashing algorithm being used for the
+        hashset. This function takes integers as inputs and produces the bucket
+        within the hashset the integer falls into.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Args:
+            key:
+                Integer representing the value to hash into the hashset
+
+        Returns:
+            Integer representing the index within the hashset the value falls
+            into
+        """
         return val % len(self._buckets)
