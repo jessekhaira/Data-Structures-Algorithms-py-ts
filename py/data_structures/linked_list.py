@@ -22,6 +22,7 @@ class DoublyLinkedList:
             tail node of the data structure, which on construction is
             equivalent to the tail node
     """
+
     def __init__(self, val: Any):
         self.head = DoublyLinkedListNode(val)
         self.tail = self.head
@@ -47,7 +48,6 @@ class DoublyLinkedList:
             Value of any type representing the data stored at the ith index
             in the linked list
         """
-
         curr_index = 0
         node = self.head
         while node and curr_index <= index:
@@ -133,7 +133,7 @@ class DoublyLinkedList:
         else:
             self._insert_node(val, index)
 
-    def _insert_node(self, val, index):
+    def _insert_node(self, val: Any, index: int) -> None:
         node = self.head
         curr_index = 0
         while node and curr_index <= index:
@@ -143,21 +143,39 @@ class DoublyLinkedList:
             else:
                 node = node.next
                 curr_index += 1
-        # edge case -- inserting node at the end of the linked list means we have a new tail node
-        # so pointers have to be change appropriately for that
+        # edge case -- inserting node at the end of the linked list
+        # means we have a new tail node so pointers have to be change
+        # appropriately for that
         if index == curr_index:
             self.add_at_tail(val)
 
-    def _change_node_pointers_insertion(self, savedPrev, node, val):
+    def _change_node_pointers_insertion(self, saved_prev: DoublyLinkedListNode,
+                                        node: DoublyLinkedListNode,
+                                        val: int) -> None:
         new_node = DoublyLinkedListNode(val)
-        savedPrev = node.prev
+        saved_prev = node.prev
         node.prev = new_node
-        new_node.prev = savedPrev
+        new_node.prev = saved_prev
         new_node.next = node
-        savedPrev.next = new_node
+        saved_prev.next = new_node
         new_node.next = node
 
-    def delete_at_index(self, index):
+    def delete_at_index(self, index: int) -> None:
+        """
+        This method deletes the node at the given index out of the
+        linked list.
+
+        Time:
+            O(N) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Args:
+            index:
+                Integer representing the index of the node to delete from
+                the linked list
+        """
         if not self.head:
             return
         elif index == 0:
@@ -166,27 +184,27 @@ class DoublyLinkedList:
                 self.tail = None
                 return
             else:
-                newHead = self.head.next
-                newHead.prev = None
-                self.head = newHead
+                new_head = self.head.next
+                new_head.prev = None
+                self.head = new_head
         else:
             self._unlink_node(index)
 
-    def _unlink_node(self, index):
+    def _unlink_node(self, index: int) -> None:
         curr_index = 0
-        prevNode = None
-        currNode = self.head
-        while currNode and curr_index <= index:
+        prev_node = None
+        curr_node = self.head
+        while curr_node and curr_index <= index:
             if index == curr_index:
-                if not currNode.next:
-                    prevNode.next = None
-                    self.tail = prevNode
+                if not curr_node.next:
+                    prev_node.next = None
+                    self.tail = prev_node
                 else:
-                    nextNode = currNode.next
-                    prevNode.next = nextNode
-                    nextNode.prev = prevNode
+                    next_node = curr_node.next
+                    prev_node.next = next_node
+                    next_node.prev = prev_node
                 return
             else:
-                prevNode = currNode
-                currNode = currNode.next
+                prev_node = curr_node
+                curr_node = curr_node.next
                 curr_index += 1
