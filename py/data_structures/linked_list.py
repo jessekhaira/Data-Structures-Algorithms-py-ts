@@ -84,9 +84,20 @@ class DoublyLinkedList:
             self.head = new_node
 
     def add_at_tail(self, val):
-        """
-        This function creates a doubly linked list node with the value given as input, and inserts the node
-        to be the new tail of the linked list. 
+        """ This function creates a doubly linked list node with
+        the value given as input, and inserts the node to be the
+        new tail of the linked list.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Args:
+            val:
+                Data of any type representing the value to be stored
+                at the new tail node
         """
         new_node = DoublyLinkedListNode(val)
         if not self.head:
