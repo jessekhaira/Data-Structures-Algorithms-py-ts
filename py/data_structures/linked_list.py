@@ -54,9 +54,8 @@ class DoublyLinkedList:
         while node and curr_index <= index:
             if curr_index == index:
                 return node.val
-            else:
-                curr_index += 1
-                node = node.next
+            curr_index += 1
+            node = node.next
         return -1
 
     def add_at_head(self, val: Any) -> None:
@@ -65,28 +64,28 @@ class DoublyLinkedList:
         value given as input, and inserts the node to be the new
         head of the linked list.
         """
-        newNode = DoublyLinkedListNode(val)
+        new_node = DoublyLinkedListNode(val)
         if not self.head:
-            self.head = newNode
-            self.tail = newNode
+            self.head = new_node
+            self.tail = new_node
         else:
-            newNode.next = self.head
-            self.head.prev = newNode
-            self.head = newNode
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
 
     def add_at_tail(self, val):
         """
         This function creates a doubly linked list node with the value given as input, and inserts the node
         to be the new tail of the linked list. 
         """
-        newNode = DoublyLinkedListNode(val)
+        new_node = DoublyLinkedListNode(val)
         if not self.head:
-            self.head = newNode
-            self.tail = newNode
+            self.head = new_node
+            self.tail = new_node
         else:
-            self.tail.next = newNode
-            newNode.prev = self.tail
-            self.tail = newNode
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
 
     def add_at_index(self, index, val):
         if index == 0:
@@ -110,13 +109,13 @@ class DoublyLinkedList:
             self.add_at_tail(val)
 
     def _change_node_pointers_insertion(self, savedPrev, node, val):
-        newNode = DoublyLinkedListNode(val)
+        new_node = DoublyLinkedListNode(val)
         savedPrev = node.prev
-        node.prev = newNode
-        newNode.prev = savedPrev
-        newNode.next = node
-        savedPrev.next = newNode
-        newNode.next = node
+        node.prev = new_node
+        new_node.prev = savedPrev
+        new_node.next = node
+        savedPrev.next = new_node
+        new_node.next = node
 
     def delete_at_index(self, index):
         if not self.head:
