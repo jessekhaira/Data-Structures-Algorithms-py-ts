@@ -1,6 +1,7 @@
 """ This module contains code for a class that represents the
 stack data structure """
 from py.utils.linked_list import DoublyLinkedListNode
+from typing import Any
 
 
 class Stack:
@@ -22,7 +23,21 @@ class Stack:
     def __init__(self):
         self.tail = None
 
-    def push(self, val):
+    def push(self, val: Any) -> None:
+        """ This method wraps the input value, which can be of any type,
+        inside of a doubly linked list node and pushes it on top of
+        the stack.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Args:
+            val:
+                Value of any type to be pushed on top of the stack
+        """
         new_node = DoublyLinkedListNode(val)
         if self.tail:
             self.tail.next = new_node
