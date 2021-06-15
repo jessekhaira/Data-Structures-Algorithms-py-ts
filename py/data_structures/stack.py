@@ -46,7 +46,25 @@ class Stack:
         else:
             self.tail = new_node
 
-    def pop(self):
+    def pop(self) -> Any:
+        """ This method removes the node on top of the stack and returns
+        the value contained within it.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Returns:
+            Value of any type representing the value stored inside of the node
+            on top of the stack
+
+        Raises:
+            IndexError:
+                If there is no node within the stack, the method will raise an
+                error that the operation cannot be done
+        """
         if self.tail:
             # have to deal with edge case of deleting stack with one node in it
             old_tail_val = self.tail.val
