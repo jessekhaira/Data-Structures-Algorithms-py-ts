@@ -1,8 +1,12 @@
+""" This module contains code for the tests for the stack
+class """
 import unittest
 from py.data_structures.stack import Stack
 
 
 class StackTests(unittest.TestCase):
+    """ This class contains unit tests for the stack
+    data structure """
 
     def test1(self):
         new_stack = Stack()
