@@ -78,13 +78,44 @@ class Stack:
         else:
             raise IndexError("pop from empty stack")
 
-    def top(self):
+    def top(self) -> Any:
+        """ This method returns the value contained within the node
+        on top of the stack
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Returns:
+            Value of any type representing the value stored inside of the node
+            on top of the stack
+
+        Raises:
+            IndexError:
+                If there is no node within the stack, the method will raise an
+                error that the operation cannot be done
+        """
         if self.tail:
             return self.tail.val
         else:
             raise IndexError("empty stack")
 
     def __len__(self):
+        """ This method returns the number of nodes inside of the stack.
+
+        Time:
+            O(N) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Where N is the number of nodes stored inside the stack currently
+
+        Returns:
+            Integer representing the number of nodes stored inside the stack
+        """
         length = 0
         node = self.tail
         while node:
