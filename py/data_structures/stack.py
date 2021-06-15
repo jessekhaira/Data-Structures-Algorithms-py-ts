@@ -102,7 +102,7 @@ class Stack:
         else:
             raise IndexError("empty stack")
 
-    def __len__(self):
+    def __len__(self) -> int:
         """ This method returns the number of nodes inside of the stack.
 
         Time:
