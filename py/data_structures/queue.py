@@ -56,6 +56,12 @@ class Queue:
         """ This method removes the node at the start of the queue, extracts
         the value out of that node, and returns it.
 
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
         Returns:
             Value of any type representing the data stored at the beginning
             of the queue
@@ -72,7 +78,25 @@ class Queue:
         else:
             raise IndexError("poll from empty queue")
 
-    def top(self):
+    def top(self) -> Any:
+        """ This method returns the value stored inside the node at the
+        beginning of the queue.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Returns:
+            Value of any type representing the data stored at the beginning
+            of the queue
+
+        Raises:
+            IndexError:
+                If trying to peek at an empty queue, an index error will
+                be raised
+        """
         if self.head:
             return self.head.val
         else:
