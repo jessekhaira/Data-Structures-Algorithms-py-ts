@@ -113,7 +113,7 @@ class Stack:
         Space:
             O(1) best/average/worst
 
-        Where N is the number of nodes stored inside the stack currently
+        Where N is the number of nodes currently stored inside the stack
 
         Returns:
             Integer representing the number of nodes stored inside the stack

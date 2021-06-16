@@ -16,6 +16,10 @@ class Queue:
     trees and graphs in a breadth first manner, in operating systems to maintain
     a queue of processes ready to execute, within computer systems, and so on.
 
+    Real world queues function in a conceptually similar way to digital queues.
+    For example, we wait in queues any time we wait in a line, that most likely
+    also follow the FIFO principle.
+
     Attributes:
         head:
             Variable of type SinglyLinkedListNode that points to the start of
@@ -102,7 +106,20 @@ class Queue:
         else:
             raise IndexError("queue is empty")
 
-    def __len__(self):
+    def __len__(self) -> int:
+        """ This method returns the number of nodes inside of the queue.
+
+        Time:
+            O(N) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Where N is the number of nodes currently stored inside the queue
+
+        Returns:
+            Integer representing the number of nodes stored inside the queue
+        """
         node = self.head
         length = 0
         while node:
