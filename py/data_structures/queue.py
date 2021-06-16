@@ -1,6 +1,7 @@
 """ This module contains code for a class that represents the
 queue data structure """
 from py.utils.linked_list import SinglyLinkedListNode
+from typing import Any
 
 
 class Queue:
@@ -29,7 +30,20 @@ class Queue:
         self.head = None
         self.tail = None
 
-    def push(self, val):
+    def push(self, val: Any) -> None:
+        """ This method wraps the input value in a SinglyLinkedListNode
+        and inserts it at the end of the queue.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Args:
+            val:
+                Value of any type to be added to the end of the queue
+        """
         new_node = SinglyLinkedListNode(val)
         if not self.head:
             self.head = new_node
@@ -38,7 +52,19 @@ class Queue:
             self.tail.next = new_node
             self.tail = new_node
 
-    def poll(self):
+    def poll(self) -> Any:
+        """ This method removes the node at the start of the queue, extracts
+        the value out of that node, and returns it.
+
+        Returns:
+            Value of any type representing the data stored at the beginning
+            of the queue
+
+        Raises:
+            IndexError:
+                If trying to poll out of an empty queue, an index error will
+                be raised
+        """
         if self.head:
             return_val = self.head.val
             self.head = self.head.next
