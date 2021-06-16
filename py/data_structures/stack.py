@@ -6,9 +6,11 @@ from typing import Any
 
 class Stack:
     """ This class represents the stack data structure, built using
-    pythons doubly linked list nodes. The basic principle of the stack is
-    Last In First Out (LIFO), where the last element added will be
-    the first one removed (like a stack of plates).
+    doubly linked nodes.
+
+    The basic principle of the stack is Last In First Out (LIFO),
+    where the last element added will be the first one removed (like a stack of
+    plates).
 
     Stacks are very useful in cases where you want to process a nested
     data structure, or for functions that call other functions, even

@@ -1,9 +1,29 @@
-""" Module contains the queue data structure """
+""" This module contains code for a class that represents the
+queue data structure """
 from py.utils.linked_list import SinglyLinkedListNode
 
 
 class Queue:
-    """ This class represents the Queue data structure """
+    """ This class represents the Queue data structure implemented using
+    singly linked nodes.
+
+    A queue consists of a sequence of entities managed using the First In
+    First Out (FIFO) principle, where the first elements added are
+    the first ones removed.
+
+    The queue has a variety of applications, including being used to traverse
+    trees and graphs in a breadth first manner, in operating systems to maintain
+    a queue of processes ready to execute, within computer systems, and so on.
+
+    Attributes:
+        head:
+            Variable of type SinglyLinkedListNode that points to the start of
+            the queue
+
+        tail:
+            Variable of type SinglyLinkedListNode that points to the end of
+            the queue
+    """
 
     def __init__(self):
         self.head = None
