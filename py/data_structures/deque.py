@@ -1,6 +1,7 @@
 """ This module contains code for a class representing the deque
 data structure """
 from py.utils.linked_list import DoublyLinkedListNode
+from typing import Any
 
 
 class Deque:
@@ -21,7 +22,7 @@ class Deque:
         self.head = None
         self.tail = None
 
-    def peek_first(self):
+    def peek_first(self) -> Any:
         """ This method returns the value contained inside the head
         node of the deque.
 
@@ -45,7 +46,25 @@ class Deque:
         else:
             raise IndexError("peek first in empty deque")
 
-    def peek_last(self):
+    def peek_last(self) -> Any:
+        """ This method returns the value contained inside the tail
+        node of the deque.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Returns:
+            Value of any type representing the value stored inside the
+            tail node of the deque
+
+        Raises:
+            IndexError:
+                An IndexError will be raised if there are no nodes inside
+                of the deque
+        """
         if self.tail:
             return self.tail.val
         else:
