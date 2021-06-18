@@ -8,6 +8,10 @@ class Deque:
     """ This class represents the deque data structure, implemented
     using doubly linked nodes.
 
+    A deque is a linear collection that has support for lookup, insertion
+    and deletion in O(1) time and space at the both the front and at
+    the back of the data structure.
+
     Attributes:
         head:
             Object of type DoublyLinkedListNode representing the element
