@@ -111,6 +111,24 @@ class Deque:
             self.tail = new_tail
 
     def pop_first(self):
+        """ This method removes the first node from the deque, retrieves the
+        value stored inside it and returns it.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Returns:
+            Value of any type representing the value stored inside the
+            head node of the deque
+
+        Raises:
+            IndexError:
+                An IndexError will be raised if there are no nodes inside
+                of the deque
+        """
         if self.head:
             saved_val = self.head.val
             if not self.head.next:
