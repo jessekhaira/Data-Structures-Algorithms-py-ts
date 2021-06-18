@@ -19,7 +19,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 
 ## TypeScript
 
-- [Binary Search Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/BinarySearchTree.js)
+- [Binary Search Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/binary_search_tree.ts)
 - [Disjoint Set](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/DisjointSet.js)
 - [HashMap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/HashMap.js)
 - [Min/Max Heap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/Heap.js)

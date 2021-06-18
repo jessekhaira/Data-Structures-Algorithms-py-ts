@@ -1,4 +1,4 @@
-import { BinarySearchTree } from '../../data structures/BinarySearchTree';
+import { BinarySearchTree } from '../../data structures/binary_search_tree';
 import breadthFirstSearch from '../../algorithms/breadth_first_search';
 
 test('test 1 for breadth first search algorithm', () => {

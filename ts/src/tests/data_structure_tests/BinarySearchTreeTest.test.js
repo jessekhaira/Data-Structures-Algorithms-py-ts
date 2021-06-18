@@ -1,4 +1,4 @@
-import { BinarySearchTree } from '../../data structures/BinarySearchTree';
+import { BinarySearchTree } from '../../data structures/binary_search_tree';
 
 describe('Tests testing binary search tree', () => {
     test('testing bst insertion method', () => {
