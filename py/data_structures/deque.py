@@ -71,6 +71,16 @@ class Deque:
             raise IndexError("peek last in empty deque")
 
     def add_first(self, val):
+        """ This method wraps the input val, which can be of any type,
+        inside of a DoublyLinkedListNode and adds it to the deque as
+        the first node.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+        """
         new_head = DoublyLinkedListNode(val)
         if self.head:
             self.head.prev = new_head
