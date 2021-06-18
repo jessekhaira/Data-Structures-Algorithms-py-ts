@@ -3,7 +3,7 @@
  * binary search tree data structure
  * @package
  */
-import { BinaryTreeNode } from './utils/BinaryTree';
+import { BinaryTreeNode } from './utils/binary_tree';
 
 /**
  *  This class represents a binary search tree. This data structure is a
@@ -19,10 +19,11 @@ import { BinaryTreeNode } from './utils/BinaryTree';
  * @public
  */
 class BinarySearchTree {
-    root;
+    root: BinaryTreeNode;
 
     /**
-     * @param {number} val Number representing the value at the root of the BST
+     * @param {number} val
+     *      Number representing the value at the root of the BST
      */
     constructor(val: number) {
         /** Object of type binaryTreeNode representing the node at the root
@@ -34,8 +35,8 @@ class BinarySearchTree {
     }
 
     /**
-     *  This method inserts a node into the binary search tree, will ensuring that the 
-        binary search tree property is adhered to.
+     *  This method inserts a node into the binary search tree, while ensuring
+     *  that the binary search tree property is adhered to.
 
         Time Complexity:
             - best/average: O(logN)
@@ -43,17 +44,20 @@ class BinarySearchTree {
         Space Complexity:
             - O(1) b/a/w 
         
-     * @param {number} val Integer representing the value to be inserted into the tree 
+     * @param {number} val Number representing the value to be inserted into the tree 
      * @returns {undefined} 
      */
-    insert(val) {
+    insert(val: number): BinaryTreeNode | null {
         const node = this.root;
         return this._insertHelper(node, val);
     }
 
-    _insertHelper(node, val) {
+    _insertHelper(
+        node: BinaryTreeNode | null,
+        val: number,
+    ): BinaryTreeNode | null {
         if (node == null) {
-            return new BinaryTreeNode(val);
+            return null;
         }
         if (val < node.val) {
             node.left = this._insertHelper(node.left, val);
@@ -81,12 +85,15 @@ class BinarySearchTree {
             or None if no node contains the given value
      * @param {number} val 
      */
-    lookup(val) {
+    lookup(val: number): null | BinaryTreeNode {
         const node = this.root;
         return this._lookupHelper(node, val);
     }
 
-    _lookupHelper(node, val) {
+    _lookupHelper(
+        node: BinaryTreeNode | null,
+        val: number,
+    ): null | BinaryTreeNode {
         if (node == null) {
             return null;
         }
@@ -99,21 +106,27 @@ class BinarySearchTree {
         if (val > node.val) {
             return this._lookupHelper(node.right, val);
         }
+        return null;
     }
 
-    delete(val) {
+    delete(val: number): null | BinaryTreeNode {
         const node = this.root;
         return this._deleteHelperV(node, val);
     }
 
-    _deleteHelperV(node, val) {
-        /*
-        This delete helper uses a convenient method to erase the node when the node has two
-        children. This node actually doesn't erase the node with the target value, this method
-        just replaces its value with the minimum value in the nodes right subtree.
-
-        If you want to actually remove the node when the node has two children, use deleteHelperVA. 
-        */
+    /**
+     * This delete helper uses a convenient method to erase the node when the
+     * node has two children. This node actually doesn't erase the node with
+     * the target value, this method just replaces its value with the minimum
+     * value in the nodes right subtree.
+     *
+     * If you want to actually remove the node when the node has two children,
+     * use deleteHelperVA
+     */
+    _deleteHelperV(
+        node: BinaryTreeNode | null,
+        val: number,
+    ): null | BinaryTreeNode {
         if (node == null) {
             return null;
         }
@@ -141,19 +154,23 @@ class BinarySearchTree {
         return node;
     }
 
-    _findMinValV(node) {
+    _findMinValV(node: BinaryTreeNode): number {
         if (!node.left) {
             return node.val;
         }
         return this._findMinValV(node.left);
     }
 
-    _deleteHelperVA(node, val) {
-        /*
-        This delete helper is the same as the other one, except when the node has two children, this method
-        actually removes the node from the tree rather than just replacing its value with the minimum value
-        in the right subtree. 
-        */
+    /**
+     *  This delete helper is the same as the other one, except when the
+     *  node has two children, this method actually removes the node from the
+     *  tree rather than just replacing its value with the minimum value
+     *  in the right subtree.
+     */
+    _deleteHelperVA(
+        node: BinaryTreeNode | null,
+        val: number,
+    ): BinaryTreeNode | null {
         if (node == null) {
             return null;
         }
@@ -165,7 +182,6 @@ class BinarySearchTree {
             node.right = this._deleteHelperVA(node.right, val);
             return node;
         }
-
         if (node.left == null && node.right == null) {
             return null;
         }
@@ -175,19 +191,29 @@ class BinarySearchTree {
         if (!node.right) {
             return node.left;
         }
+        let minNodeSubtree: BinaryTreeNode | null;
         [node.right, minNodeSubtree] = this._findMinNode(node.right);
-        minNodeSubtree.left = node.left;
-        minNodeSubtree.right = node.right;
-        return minNodeSubtree;
+        if (minNodeSubtree) {
+            minNodeSubtree.left = node.left;
+            minNodeSubtree.right = node.right;
+            return minNodeSubtree;
+        }
+        return null;
     }
 
-    _findMinNode(node) {
+    _findMinNode(
+        node: BinaryTreeNode | null,
+    ): [BinaryTreeNode | null, BinaryTreeNode | null] {
+        if (node == null) {
+            return [null, null];
+        }
         if (node.left == null) {
             return [node.right, node];
         }
+        let minNode: BinaryTreeNode | null;
         [node.left, minNode] = this._findMinNode(node.left);
         return [node, minNode];
     }
 }
 
-export { BinarySearchTree };
+export default BinarySearchTree;

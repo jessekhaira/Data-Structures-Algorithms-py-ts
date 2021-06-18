@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from '../data structures/utils/BinaryTree';
+import { BinaryTreeNode } from '../data structures/utils/binary_tree';
 /**
  * This algorithm contains the breadth first search
 traversal algorithm used specifically for a binary tree.

@@ -3,6 +3,7 @@
     "compilerOptions": {
       "esModuleInterop": true,
       "allowJs": true,
+      "sourceMap": true,
       "noImplicitAny": true,
       "moduleResolution": "node",
       "lib": ["es2018"],
