@@ -32,6 +32,9 @@
         "tsconfig": "tsconfig.json"
       }
     },
+    "testPathIgnorePatterns" : [
+      "<rootDir>/built" 
+    ],
     "modulePaths": [
       "<rootDir>"
     ],
