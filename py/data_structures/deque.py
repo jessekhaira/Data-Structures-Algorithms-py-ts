@@ -70,7 +70,7 @@ class Deque:
         else:
             raise IndexError("peek last in empty deque")
 
-    def add_first(self, val):
+    def add_first(self, val: Any) -> None:
         """ This method wraps the input val, which can be of any type,
         inside of a DoublyLinkedListNode and adds it to the deque as
         the first node.
@@ -90,7 +90,17 @@ class Deque:
             self.head = new_head
             self.tail = new_head
 
-    def add_last(self, val):
+    def add_last(self, val: Any) -> None:
+        """ This method wraps the input val, which can be of any type,
+        inside of a DoublyLinkedListNode and adds it to the deque as
+        the last node.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+        """
         new_tail = DoublyLinkedListNode(val)
         if self.tail:
             self.tail.next = new_tail
