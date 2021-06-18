@@ -1,8 +1,12 @@
+""" This module contains code for the tests for the deque
+class """
 import unittest
 from py.data_structures.deque import Deque
 
 
 class DequeTests(unittest.TestCase):
+    """ This class contains unit tests for the deque
+    data structure """
 
     def test1(self):
         obj1 = Deque()
