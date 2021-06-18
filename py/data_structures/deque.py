@@ -22,8 +22,23 @@ class Deque:
         self.tail = None
 
     def peek_first(self):
-        """ This method returns the value contained at the head
-        node of the deque
+        """ This method returns the value contained inside the head
+        node of the deque.
+
+        Time:
+            O(1) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Returns:
+            Value of any type representing the value stored inside the
+            head node of the deque
+
+        Raises:
+            IndexError:
+                An IndexError will be raised if there are no nodes inside
+                of the deque
         """
         if self.head:
             return self.head.val
