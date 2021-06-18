@@ -174,7 +174,20 @@ class Deque:
         else:
             raise IndexError("pop from empty deque")
 
-    def __len__(self):
+    def __len__(self) -> int:
+        """ This method returns the number of nodes inside of the deque.
+
+        Time:
+            O(N) best/average/worst
+
+        Space:
+            O(1) best/average/worst
+
+        Where N is the number of nodes currently stored inside the deque
+
+        Returns:
+            Integer representing the number of nodes stored inside the deque
+        """
         node = self.head
         length = 0
         while node:
