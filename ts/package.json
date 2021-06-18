@@ -22,7 +22,9 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest ",
+    "prestart": "npm run build",
+    "build": "tsc"
   },
   "jest": {
     "globals": {
@@ -30,6 +32,9 @@
         "tsconfig": "tsconfig.json"
       }
     },
+    "modulePaths": [
+      "<rootDir>"
+    ],
     "moduleFileExtensions": [
       "ts",
       "js"

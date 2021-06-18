@@ -1,4 +1,4 @@
-import { floydsTortoiseHareAlgo } from '../../algorithms/FloydsTortoiseHareAlgo.js';
+import { floydsTortoiseHareAlgo } from '../../algorithms/FloydsTortoiseHareAlgo';
 import { SingleLinkedListNode } from '../../data structures/utils/LinkedList';
 
 test('test edge case -- no input', () => {

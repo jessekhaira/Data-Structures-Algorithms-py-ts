@@ -47,17 +47,14 @@ class BinarySearchTree {
      * @param {number} val Number representing the value to be inserted into the tree 
      * @returns {undefined} 
      */
-    insert(val: number): BinaryTreeNode | null {
+    insert(val: number): BinaryTreeNode {
         const node = this.root;
         return this._insertHelper(node, val);
     }
 
-    _insertHelper(
-        node: BinaryTreeNode | null,
-        val: number,
-    ): BinaryTreeNode | null {
+    _insertHelper(node: BinaryTreeNode | null, val: number): BinaryTreeNode {
         if (node == null) {
-            return null;
+            return new BinaryTreeNode(val);
         }
         if (val < node.val) {
             node.left = this._insertHelper(node.left, val);

@@ -26,6 +26,12 @@ test('test 3 for breadth first search algorithm', () => {
     bst.insert(2350);
 
     const output = [[1235], [50, 3500], [95, 2400], [2350]];
-    console.log(breadthFirstSearch(bst.root));
-    // expect(breadthFirstSearch(bst.root)).toStrictEqual(output);
+    expect(breadthFirstSearch(bst.root)).toStrictEqual(output);
 });
+
+const bst: BinarySearchTree = new BinarySearchTree(1235);
+bst.insert(50);
+bst.insert(95);
+bst.insert(3500);
+bst.insert(2400);
+bst.insert(2350);
