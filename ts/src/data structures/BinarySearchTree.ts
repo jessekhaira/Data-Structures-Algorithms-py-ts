@@ -1,21 +1,30 @@
+/**
+ * @fileoverview This module contains code for a class that represents the
+ * binary search tree data structure
+ * @package
+ */
 import { BinaryTreeNode } from './utils/BinaryTree';
 
 /**
  *  This class represents a binary search tree. This data structure is a
-    rooted binary tree where for any given node, all values in the left subtree
-    of that node are less than or equal to that nodes value, while all values in the right 
-    subtree of that node are greater than that nodes value.
+ *  rooted binary tree where for any given node, all values in the left subtree
+ *  of that node are less than or equal to that nodes value, while all values
+ *  in the right subtree of that node are greater than that nodes value
+ * 
+ *  This allows for efficient lookups, insertions, and deletions in the average
+ *  case of O(logN) time. But this data structure does not guarantee
+ *  balancing, meaning that in the worst case, lookups, insertions, and 
+ *  deletions will take O(N) time and space.
 
-    This allows for efficient lookups, insertions, and deletions in the average
-    case of O(logN) T | O(1)S. But this data structure does not guarantee balancing,
-    meaning that in the worst case, lookups, insertions, and deletions take O(N) T | O(1) S.
-
- * @constructor @public
+ * @public
  */
 class BinarySearchTree {
-    /** @param {number} val Value present at the root of the binary search tree */
-    constructor(val) {
-        /** Root of binary tree
+    /**
+     * @param {number} val Number representing the value at the root of the BST
+     */
+    constructor(val: number) {
+        /** Object of type binaryTreeNode representing the node at the root
+            of the binary search tree
          * @public
          * @type {BinaryTreeNode}
          */
