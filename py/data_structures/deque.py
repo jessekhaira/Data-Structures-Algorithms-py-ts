@@ -4,8 +4,17 @@ from py.utils.linked_list import DoublyLinkedListNode
 
 
 class Deque:
-    """
-    This class represents the deque data structure.
+    """ This class represents the deque data structure, implemented
+    using doubly linked nodes.
+
+    Attributes:
+        head:
+            Object of type DoublyLinkedListNode representing the element
+            stored as the first element of the deque
+
+        tail:
+            Object of type DoublyLinkedListNode representing the element
+            stored as the last element of the deque
     """
 
     def __init__(self):
@@ -13,6 +22,9 @@ class Deque:
         self.tail = None
 
     def peek_first(self):
+        """ This method returns the value contained at the head
+        node of the deque
+        """
         if self.head:
             return self.head.val
         else:
