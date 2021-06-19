@@ -14,9 +14,9 @@
  *  @public @class
  */
 class DisjointSet {
-    disjointSet;
+    disjointSet: number[];
 
-    mapping;
+    mapping: Record<string | number, number> | null;
 
     /**
      *
@@ -27,7 +27,7 @@ class DisjointSet {
      */
     constructor(
         numNodes: number,
-        mapping: Record<string | number | symbol, number> | null = null,
+        mapping: Record<string | number, number> | null = null,
     ) {
         /**
          *  Array of integers representing the disjoint set. When an index
@@ -37,21 +37,28 @@ class DisjointSet {
          * @public
          * @type {number[]}
          */
-        this.disjointSet = Array(numNodes).fill(-1);
+        this.disjointSet = [];
+        for (let i = 0; i < numNodes; i += 1) {
+            this.disjointSet.push(-1);
+        }
 
         /**
          *  Dictionary representing a mapping between nodes and the index
          *  which represents them in the disjoint set, or None if not
          *  needed
          *  @public
-         *  @type {Record<string | number | symbol, number> | null}
+         *  @type {Record<string | number, number> | null}
          */
         this.mapping = mapping;
     }
 
     /**
-     *  This method carries out the find operation for a given node in the disjoint set,
-        and returns the representative of the given set. Carries out path compression.
+     *  This method carries out the find operation for a given node
+     *  in the disjoint set, and returns the representative of the
+     *  given set. Carries out path compression. 
+     * 
+     *  If the mapping is defined, then this method will always
+     *  expect the input argument to be of type string. 
 
      * Time:
      * - O(1) best/avg/worst
@@ -59,27 +66,29 @@ class DisjointSet {
      * Space:
      * - O(1) best/avg/worst  
      * 
-     * @param {(number|any)} x Can be an int referring to the index that the node is within
-      the forest, or can be a node itself
+     * @param {(number|any)} x Can be an int referring to the index that
+     *      the node is within the forest, or can be a node itself
      * @returns {number} Int representing the representative of the set 
      */
-    find(x) {
-        x = this.mapping === null ? x : this.mapping[x];
-        // if the current node is just pointing at itself, that means its the representative of the set
-        if (this.disjointSet[x] <= -1) {
-            return x;
+    find(x: number | string): number {
+        const lookupNode = this.mapping ? this.mapping[x] : (x as number);
+        // if the current node is just pointing at itself, that means its the
+        // representative of the set
+        if (this.disjointSet[lookupNode] <= -1) {
+            return lookupNode;
         }
-        // otherwise find the representative of the set and set this nodes pointer to it
+        // otherwise find the representative of the set and set this nodes
+        // pointer to it
 
-        this.disjointSet[x] = this.find(this.disjointSet[x]);
+        this.disjointSet[lookupNode] = this.find(this.disjointSet[lookupNode]);
 
-        return this.disjointSet[x];
+        return this.disjointSet[lookupNode];
     }
 
     /**
-     *  This method carries out the union operation for the disjoint set, merging the two 
-        sets that x and y belong to if x and y are not in the same set. Union by rank
-        is implemented here. 
+     *  This method carries out the union operation for the disjoint set,
+     *  merging the two sets that x and y belong to if x and y are not in
+     *  the same set. Union by rank is implemented here. 
     
      * Time:
      * - O(1) best/avg/worst
@@ -87,28 +96,26 @@ class DisjointSet {
      * Space:
      * - O(1) best/avg/worst  
      * 
-     * @param {(number|any)} x Can be an int referring to the index that the node is within
-        the forest, or can be a node itself
-     * @param {(number|any)} y Can be an int referring to the index that the node is within
-        the forest, or can be a node itself
-
+     * @param {number|string} x Can be an int referring to the index that the
+     *      node is within the forest, or can be a node itself
+     * @param {number|string} y Can be an int referring to the index that the
+     *      node is within the forest, or can be a node itself
      * @returns {null} None 
      */
-    union(x, y) {
+    union(x: number | string, y: number | string): void {
         const rX = this.find(x);
         const rY = this.find(y);
-        if (rX === rY) {
-            return null;
-        }
-        if (this.disjointSet[rX] < this.disjointSet[rY]) {
-            this.disjointSet[rY] = rX;
-        } else if (this.disjointSet[rY] < this.disjointSet[rX]) {
-            this.disjointSet[rX] = rY;
-        } else {
-            this.disjointSet[rY] = rX;
-            this.disjointSet[rX] -= 1;
+        if (rX !== rY) {
+            if (this.disjointSet[rX] < this.disjointSet[rY]) {
+                this.disjointSet[rY] = rX;
+            } else if (this.disjointSet[rY] < this.disjointSet[rX]) {
+                this.disjointSet[rX] = rY;
+            } else {
+                this.disjointSet[rY] = rX;
+                this.disjointSet[rX] -= 1;
+            }
         }
     }
 }
 
-export { DisjointSet };
+export default DisjointSet;

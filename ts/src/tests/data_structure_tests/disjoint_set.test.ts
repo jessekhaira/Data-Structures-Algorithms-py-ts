@@ -1,4 +1,4 @@
-import { DisjointSet } from '../../data structures/disjoint_set';
+import DisjointSet from '../../data structures/disjoint_set';
 
 test('test 1', () => {
     const obj1 = new DisjointSet(20);
