@@ -22,8 +22,9 @@ class DisjointSet {
      *
      * @param {number} numNodes Integer representing how many nodes
             there are in the undirected graph
-     * @param {(object|null)} mapping Mapping between the nodes and indices
-            in the disjoint set
+     * @param {Record<string | number, number> | null} mapping Mapping between
+            keys, which can be strings and numbers, to numbers which represent
+            indices in the disjoint set. Can also be null if unneeded
      */
     constructor(
         numNodes: number,
