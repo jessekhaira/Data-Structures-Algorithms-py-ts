@@ -1,4 +1,10 @@
 /**
+ * @fileoverview This module contains code for a class that represents the
+ * disjoint set data structure
+ * @package
+ */
+
+/**
  *  This class represents an efficient implementation of the
  *  DisjointSet data structure.
  *
