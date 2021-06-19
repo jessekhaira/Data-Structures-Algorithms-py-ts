@@ -24,7 +24,7 @@ class DisjointSet:
 
         mapping:
             Dictionary representing a mapping between nodes and the index
-            whcih represents them in the disjoint set, or None if not
+            which represents them in the disjoint set, or None if not
             needed
 
         forest:

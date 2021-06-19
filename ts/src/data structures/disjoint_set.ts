@@ -1,29 +1,51 @@
 /**
- *  This class represents an efficient implementation of the DisjointSet data structure.
- *  Not only is the data structure implemented as an array, path compression is used in the
- *  find() method, and union by rank is used in the union() method.
+ *  This class represents an efficient implementation of the
+ *  DisjointSet data structure.
  *
- *  This data structure tracks a set of elements partitioned into a number of disjoint subsets,
- *  typically used when dealing with undirected graphs. For example, to determine the number of
- *  connected components within an undirected graph, to determine if a cycle exists in an undirected
- *  graph, etc.
+ *  Not only is the data structure implemented as an array, path
+ *  compression is used in the find() method, and union by rank
+ *  is used in the union() method.
+ *
+ *  This data structure tracks a set of elements partitioned into
+ *  a number of disjoint subsets, typically used when dealing with
+ *  undirected graphs. For example, to determine the number of
+ *  connected components within an undirected graph, to determine
+ *  if a cycle exists in an undirected graph, etc.
  *  @public @class
  */
 class DisjointSet {
+    disjointSet;
+
+    mapping;
+
     /**
      *
-     * @param {number} numNodes Int representing how many nodes there are in the undirected graph
-     * @param {(object|null)} mapping Mapping between the nodes and indices in the disjoint set
+     * @param {number} numNodes Integer representing how many nodes
+            there are in the undirected graph
+     * @param {(object|null)} mapping Mapping between the nodes and indices
+            in the disjoint set
      */
-    constructor(numNodes, mapping = null) {
+    constructor(
+        numNodes: number,
+        mapping: Record<string | number | symbol, number> | null = null,
+    ) {
         /**
-         * Disjoint Set represented as an array
-         *
+         *  Array of integers representing the disjoint set. When an index
+         *  has a value less then zero, that indicates that it is the
+         *  representative of a set, where you can find the rank by multiplying
+         *  by -1 and adding 1
          * @public
          * @type {number[]}
          */
         this.disjointSet = Array(numNodes).fill(-1);
 
+        /**
+         *  Dictionary representing a mapping between nodes and the index
+         *  which represents them in the disjoint set, or None if not
+         *  needed
+         *  @public
+         *  @type {Record<string | number | symbol, number> | null}
+         */
         this.mapping = mapping;
     }
 
