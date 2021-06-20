@@ -79,7 +79,7 @@ class BinarySearchTree {
      *- O(1) best/average/worst
      * 
      * Where N is the number of nodes in the tree
-     * @param {number} val Integer representing the node value to look up
+     * @param {number} val Number representing the node value to look up
      * in the tree 
      * @returns {BinaryTreeNode|null} Binary tree node that contains the given 
      * value in the BST or None if no node contains the given value
@@ -108,6 +108,24 @@ class BinarySearchTree {
         return null;
     }
 
+    /**
+     * This method deletes the first node with the given value inside
+     * of the binary search tree if it exists.
+     * 
+     * Time:
+     *- O(logN) best/average
+     *- O(N) worst
+     *
+     * Space:
+     *- O(logN) best/average
+     *- O(N) worst
+     
+     * Where N is the number of nodes in the binary search tree
+
+     * @param val Number representing the node value to look up
+     * in the tree 
+     * @returns {BinaryTreeNode|null}
+     */
     delete(val: number): null | BinaryTreeNode {
         const node = this.root;
         return this._deleteHelperV(node, val);
