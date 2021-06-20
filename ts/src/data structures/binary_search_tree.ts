@@ -22,8 +22,7 @@ class BinarySearchTree {
     root: BinaryTreeNode;
 
     /**
-     * @param {number} val
-     *      Number representing the value at the root of the BST
+     * @param {number} val Number representing the value at the root of the BST
      */
     constructor(val: number) {
         /** Object of type binaryTreeNode representing the node at the root
@@ -67,21 +66,21 @@ class BinarySearchTree {
     }
 
     /**
-     *  This method looks for the node that contains the given value in the binary 
-        search tree. 
-
-        Time Complexity:
-            - best/average: O(logN)
-            - worst: O(N) 
-        Space Complexity:
-            - O(1) b/a/w 
-        
-        Inputs:
-            - val (int):  Integer representing the node value to look up in the tree 
-        Outputs:
-            - Node(binaryTreeNode): Binary tree node that contains the given value in the BST 
-            or None if no node contains the given value
-     * @param {number} val 
+     *  This method looks for the node that contains the given value in the
+     *  binary search tree. 
+     * 
+     *  Time:
+     *- O(logN) best/average
+     *- O(N) worst
+     
+     * Space:
+     *- O(1) best/average/worst
+     * 
+     * Where N is the number of nodes in the tree
+     * @param {number} val Integer representing the node value to look up
+     * in the tree 
+     * @returns {BinaryTreeNode|null} Binary tree node that contains the given 
+     * value in the BST or None if no node contains the given value
      */
     lookup(val: number): null | BinaryTreeNode {
         const node = this.root;

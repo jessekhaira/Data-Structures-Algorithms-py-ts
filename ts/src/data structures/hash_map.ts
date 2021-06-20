@@ -5,9 +5,7 @@
  */
 
 /**
- *  This class represents a Linked List node used to resolve
-    collisons in a HashMap.
-
+ *  This class represents a node used to resolve collisons in a HashMap.
  * @public
  * @constructor
  */
