@@ -1,7 +1,7 @@
-import { HashMap } from '../../data structures/hash_map';
+import HashMap from '../../data structures/hash_map';
 
 test('test 1', () => {
-    const obj1 = new HashMap();
+    const obj1 = new HashMap<number>();
     obj1.put(5, 12);
     obj1.put(15, 23);
     obj1.put(25, 93);
@@ -11,7 +11,7 @@ test('test 1', () => {
 });
 
 test('test 2', () => {
-    const obj1 = new HashMap();
+    const obj1 = new HashMap<number>();
     obj1.put(5, 12);
     obj1.put(15, 23);
     obj1.put(25, 93);
