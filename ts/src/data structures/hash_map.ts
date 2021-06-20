@@ -8,8 +8,10 @@
 class ChainingNode {
     /**
      *
-     * @param {number} key Integer representing the key being hashed into the HashMap
-     * @param {number } val Integer representing the value being hashed into the HashMap
+     * @param {number} key Integer representing the key being
+     *      hashed into the HashMap
+     * @param {number } val Integer representing the value being
+     *      hashed into the HashMap
      */
     constructor(key, val) {
         this.key = key;
@@ -23,15 +25,14 @@ class ChainingNode {
 }
 
 /**
- *  This class represents a HashMap class that accepts integer inputs. All methods
-    of a HashMap are supported by this class -> put, remove, get, with dynamic array 
-    resizing. 
-
-    HashMaps are built on top of static arrays. This class assumes an initial capacity
-    of a static array of 1000, with a load factor equal to 0.75. When the load factor
-    is exceeded, dynamic array resizing is done to ensure O(1) TS lookups, removals, and
-    additions. Hash collisons are handled through chaining with Linked Lists. 
-
+ *  This class represents a HashMap class that accepts integer inputs. All
+ *  methods of a HashMap are supported by this class -> put, remove, get, with
+ *  dynamic array resizing.
+ * 
+ *  HashMaps are built on top of static arrays. This class assumes an initial
+ *  capacity of a static array of 1000, with a load factor equal to 0.75. When
+ *  the load factor is exceeded, dynamic array resizing is done to ensure O(1)
+ *  TS lookups, removals, and additions.
  * @public
  * @constructor
 
@@ -39,7 +40,8 @@ class ChainingNode {
 class HashMap {
     /**
      * @param {number} k Initial capacity of the static array. Default is 3000.
-     * @param {number} loadFactor Target load factor for the HashMap. Goal is to keep below 0.75.
+     * @param {number} loadFactor Target load factor for the HashMap. Goal is
+     *      to keep below 0.75.
      */
     constructor(k = 3000, loadFactor = 0.75) {
         this.buckets = Array(k).fill(null);

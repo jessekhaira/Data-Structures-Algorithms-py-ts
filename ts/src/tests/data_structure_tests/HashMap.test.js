@@ -1,4 +1,4 @@
-import { HashMap } from '../../data structures/hash_map.js';
+import { HashMap } from '../../data structures/hash_map';
 
 test('test 1', () => {
     const obj1 = new HashMap();

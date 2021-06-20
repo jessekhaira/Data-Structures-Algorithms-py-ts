@@ -35,5 +35,6 @@ module.exports = {
         ],
         'no-param-reassign': [2, { props: false }],
         'no-underscore-dangle': 'off',
+        'max-classes-per-file': ['error', 2],
     },
 };
