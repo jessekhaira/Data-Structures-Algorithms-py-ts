@@ -23,3 +23,20 @@ test('test 2', () => {
     expect(obj1.get(25)).toStrictEqual(1231);
     expect(obj1.get(-1)).toStrictEqual(null);
 });
+
+test('test 3', () => {
+    const obj1 = new HashMap<string>();
+    for (let i = 0; i < 6000; i += 1) {
+        obj1.put(i, `a${i}`);
+        expect(obj1.get(i)).toStrictEqual(`a${i}`);
+    }
+    expect(obj1.get(5)).toStrictEqual('a5');
+    expect(obj1.get(15)).toStrictEqual('a15');
+    expect(obj1.get(25)).toStrictEqual('a25');
+    expect(obj1.get(-1)).toStrictEqual(null);
+
+    for (let i = 250; i < 500; i += 1) {
+        obj1.remove(i);
+        expect(obj1.get(i)).toStrictEqual(null);
+    }
+});
