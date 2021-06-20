@@ -1,4 +1,10 @@
 /**
+ * @fileoverview This module contains code for a class that represents the
+ * HashMap data structure
+ * @package
+ */
+
+/**
  *  This class represents a Linked List node used to resolve
     collisons in a HashMap.
 
