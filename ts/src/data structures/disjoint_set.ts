@@ -64,8 +64,8 @@ class DisjointSet {
      *  in the disjoint set, and returns the representative of the
      *  given set. Carries out path compression. 
      * 
-     *  If the mapping is defined, then this method will always
-     *  expect the input argument to be of type string. 
+     *  If a map is not provided, the input must be a number that
+     *  corresponds to an index in the disjoint set.
 
      * Time:
      * - O(1) best/avg/worst
@@ -73,7 +73,7 @@ class DisjointSet {
      * Space:
      * - O(1) best/avg/worst  
      * 
-     * @param {(number|any)} x Can be an int referring to the index that
+     * @param {number|string} x Can be an int referring to the index that
      *      the node is within the forest, or can be a node itself
      * @returns {number} Int representing the representative of the set 
      */
