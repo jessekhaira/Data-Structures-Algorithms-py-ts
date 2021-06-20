@@ -36,16 +36,18 @@ class BinarySearchTree {
     /**
      *  This method inserts a node into the binary search tree, while ensuring
      *  that the binary search tree property is adhered to.
+     * 
+     *  Time:
+     *- O(logN) best/average
+     *- O(N) worst
 
-        Time Complexity:
-            - best/average: O(logN)
-            - worst: O(N) 
-        Space Complexity:
-            - O(1) b/a/w 
+     * Space:
+     *- O(1) best/average/worst
         
+     * Where N is the number of nodes in the tree
      * @param {number} val Number representing the value to be
             inserted into the tree 
-     * @returns {undefined} 
+     * @returns {BinaryTreeNode} 
      */
     insert(val: number): BinaryTreeNode {
         const node = this.root;
