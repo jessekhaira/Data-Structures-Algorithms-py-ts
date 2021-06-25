@@ -4,13 +4,17 @@ import { DoubleLinkedListNode } from './utils/LinkedList';
  * nodes.
  * @class @public
  */
-class Deque {
+class Deque<T> {
+    head: null | DoubleLinkedListNode;
+
+    tail: null | DoubleLinkedListNode;
+
     constructor() {
         this.head = null;
         this.tail = null;
     }
 
-    peekFirst() {
+    peekFirst(): T {
         if (this.head) {
             return this.head.val;
         }
