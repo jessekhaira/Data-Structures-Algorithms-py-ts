@@ -1,12 +1,12 @@
-import {SingleLinkedListNode} from '../data structures/utils/LinkedList';
+import { SingleLinkedListNode } from './utils/linked_list_utility';
 /**
- * This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with 
- * through chaining with linked lists. 
- * 
- * A HashSet is a data structure built on static arrays which is meant to hold a collection of unique items. 
-*/
-class HashSet{
-    constructor(init_capacity = 1000, load_factor = 0.75){
+ * This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with
+ * through chaining with linked lists.
+ *
+ * A HashSet is a data structure built on static arrays which is meant to hold a collection of unique items.
+ */
+class HashSet {
+    constructor(init_capacity = 1000, load_factor = 0.75) {
         this._buckets = Array(init_capacity).fill(null);
         this._design_load_factor = load_factor;
         this._curr_items_hashed = 0;
@@ -14,27 +14,26 @@ class HashSet{
 
     /**
      * Inserts the input argument, expected to be an integer, into the hash set. If by adding the element, the
-     * design load factor is exceeded, rehashing is done. 
-     * 
+     * design load factor is exceeded, rehashing is done.
+     *
      *Time:
      * - O(1) best/avg
      * - O(N) worst
-     * 
+     *
      * Space:
-     * - O(1) best/avg/worst  
-     * 
-     * N - length of hash set 
-     * @param {number} key Argument to hash into hashset 
+     * - O(1) best/avg/worst
+     *
+     * N - length of hash set
+     * @param {number} key Argument to hash into hashset
      */
     add(key) {
         const hashVal = this._hashing_algorithm(key);
         const newNode = new SingleLinkedListNode(key);
-        if(!this._buckets[hashVal]) {
+        if (!this._buckets[hashVal]) {
             this._buckets[hashVal] = newNode;
-        }
-        else {
+        } else {
             let node = this._buckets[hashVal];
-            let prev = null; 
+            let prev = null;
             while (node) {
                 if (node.val === key) {
                     return;
@@ -46,7 +45,7 @@ class HashSet{
         }
 
         this._curr_items_hashed++;
-        const currLoadFactor = (this._curr_items_hashed/this._buckets.length);
+        const currLoadFactor = this._curr_items_hashed / this._buckets.length;
         if (currLoadFactor >= this._design_load_factor) {
             this.rehash();
         }
@@ -55,52 +54,50 @@ class HashSet{
     /**
      * This method is used to dynamically resize the array underlying the hashset in order to keep all operations efficient.
      * This method is invoked by the add method, when adding a key to the hashset causes the current load factor to exceed
-     * the design load factor. 
+     * the design load factor.
      */
     rehash() {
         const savedBuckets = this._buckets;
-        this._curr_items_hashed = 0; 
-        this._buckets = Array(savedBuckets.length *2).fill(null); 
+        this._curr_items_hashed = 0;
+        this._buckets = Array(savedBuckets.length * 2).fill(null);
         for (let node of savedBuckets) {
             while (node) {
                 this.add(node.val);
-                node = node.next; 
+                node = node.next;
             }
         }
     }
 
     /**
-     * Removes the Number input from the hashset if it is stored in the hashset. 
-     * 
+     * Removes the Number input from the hashset if it is stored in the hashset.
+     *
      * Time:
      * - O(1) best/avg
      * - O(N) worst
-     * 
+     *
      * Space:
-     * - O(1) best/avg/worst  
-     * 
-     * N - length of hashset 
-     * @param {Number} key Number to remove from the hashset 
+     * - O(1) best/avg/worst
+     *
+     * N - length of hashset
+     * @param {Number} key Number to remove from the hashset
      * @returns {undefined}
      */
     remove(key) {
         const hashVal = this._hashing_algorithm(key);
         let node = this._buckets[hashVal];
-        let prev = null; 
+        let prev = null;
         while (node) {
             if (node.val === key) {
                 if (!prev) {
-                    this._buckets[hashVal] = node.next; 
-                }
-                else {
-                    prev.next = node.next; 
+                    this._buckets[hashVal] = node.next;
+                } else {
+                    prev.next = node.next;
                 }
                 return;
             }
-            else {
-                prev = node; 
-                node = node.next; 
-            }
+
+            prev = node;
+            node = node.next;
         }
     }
 
@@ -123,23 +120,22 @@ class HashSet{
         let node = this._buckets[hashVal];
         while (node) {
             if (node.val === key) {
-                return true; 
+                return true;
             }
-            else {
-                node = node.next; 
-            }
+
+            node = node.next;
         }
-        return false; 
+        return false;
     }
 
     /**
-     * This is a hashing algorithm that generates hash codes for integer keys. 
-     * @param {Number} key Integer representing number to generate a hash code for 
+     * This is a hashing algorithm that generates hash codes for integer keys.
+     * @param {Number} key Integer representing number to generate a hash code for
      * @returns {Number} Integer representing the index in the hashset to hash the key into
      */
     _hashing_algorithm(key) {
-        return key%this._buckets.length; 
+        return key % this._buckets.length;
     }
 }
 
-export {HashSet}; 
+export { HashSet };

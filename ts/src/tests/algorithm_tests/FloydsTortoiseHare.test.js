@@ -1,5 +1,5 @@
 import { floydsTortoiseHareAlgo } from '../../algorithms/FloydsTortoiseHareAlgo';
-import { SingleLinkedListNode } from '../../data structures/utils/LinkedList';
+import { SingleLinkedListNode } from '../../data structures/utils/linked_list_utility';
 
 test('test edge case -- no input', () => {
     expect(floydsTortoiseHareAlgo()).toEqual(null);

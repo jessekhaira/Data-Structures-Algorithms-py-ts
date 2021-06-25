@@ -1,63 +1,58 @@
-import {DoubleLinkedListNode} from '../data structures/utils/LinkedList';
+import { DoubleLinkedListNode } from './utils/linked_list_utility';
 
 /**
  * This class represents the data structure known as a Stack, implemented using doubly linked list
- * nodes. 
+ * nodes.
  */
 class Stack {
     constructor() {
-        this.tail = null; 
+        this.tail = null;
     }
 
     push(val) {
-        let node = new DoubleLinkedListNode(val);
+        const node = new DoubleLinkedListNode(val);
         if (this.tail) {
             this.tail.next = node;
             node.prev = this.tail;
-            this.tail = node; 
-        }
-        else {
-            this.tail = node; 
+            this.tail = node;
+        } else {
+            this.tail = node;
         }
     }
 
     pop() {
         if (this.tail) {
-            let oldTailVal = this.tail.val;
+            const oldTailVal = this.tail.val;
             if (this.tail.prev) {
-                let newTail = this.tail.prev; 
+                const newTail = this.tail.prev;
                 newTail.next = null;
                 this.tail = newTail;
-            }
-            else {
+            } else {
                 this.tail = null;
             }
-            return oldTailVal; 
+            return oldTailVal;
         }
-        else {
-            throw Error("pop from empty stack");
-        }
+
+        throw Error('pop from empty stack');
     }
 
     top() {
         if (this.tail) {
             return this.tail.val;
         }
-        else {
-            throw Error("empty stack")
-        }
+
+        throw Error('empty stack');
     }
 
     length() {
         let size = 0;
-        let node = this.tail; 
+        let node = this.tail;
         while (node) {
             size++;
             node = node.prev;
         }
-        return size; 
+        return size;
     }
-
 }
 
-export {Stack}; 
+export { Stack };
