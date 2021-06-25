@@ -1,13 +1,14 @@
 import { DoubleLinkedListNode } from './utils/linked_list_utility';
 /**
- * This class represents the data structure known as a Deque, implemented using doubly linked list
+ * This class represents the data structure known as a Deque,
+ * implemented using doubly linked list
  * nodes.
  * @class @public
  */
 class Deque<T> {
-    head: null | DoubleLinkedListNode;
+    head: null | DoubleLinkedListNode<T>;
 
-    tail: null | DoubleLinkedListNode;
+    tail: null | DoubleLinkedListNode<T>;
 
     constructor() {
         this.head = null;
@@ -22,7 +23,7 @@ class Deque<T> {
         throw Error('peek in empty deque');
     }
 
-    peekLast() {
+    peekLast(): T {
         if (this.tail) {
             return this.tail.val;
         }
@@ -30,7 +31,7 @@ class Deque<T> {
         throw Error('peek in empty deque');
     }
 
-    popFirst() {
+    popFirst(): T {
         if (this.head) {
             const retvalue = this.head.val;
             const new_head = this.head.next;
@@ -48,7 +49,7 @@ class Deque<T> {
         throw Error('pop from empty deque');
     }
 
-    popLast() {
+    popLast(): T {
         if (this.tail) {
             const retvalue = this.tail.val;
             const newTail = this.tail.prev;
@@ -66,7 +67,7 @@ class Deque<T> {
         throw Error('pop from empty deque');
     }
 
-    addFirst(value) {
+    addFirst(value: T): void {
         const new_head = new DoubleLinkedListNode(value);
         if (this.head) {
             new_head.next = this.head;
@@ -78,7 +79,7 @@ class Deque<T> {
         }
     }
 
-    addLast(value) {
+    addLast(value: T): void {
         const new_tail = new DoubleLinkedListNode(value);
         if (this.tail) {
             new_tail.prev = this.tail;
@@ -90,11 +91,11 @@ class Deque<T> {
         }
     }
 
-    length() {
+    length(): number {
         let length = 0;
         let node = this.head;
         while (node) {
-            length++;
+            length += 1;
             node = node.next;
         }
         return length;
