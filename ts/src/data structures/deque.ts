@@ -1,53 +1,49 @@
-import {DoubleLinkedListNode} from '../data structures/utils/LinkedList';
+import { DoubleLinkedListNode } from './utils/LinkedList';
 /**
  * This class represents the data structure known as a Deque, implemented using doubly linked list
- * nodes. 
+ * nodes.
  * @class @public
  */
 class Deque {
     constructor() {
         this.head = null;
-        this.tail = null; 
+        this.tail = null;
     }
 
     peekFirst() {
         if (this.head) {
             return this.head.val;
         }
-        else {
-            throw Error("peek in empty deque")
-        }
+
+        throw Error('peek in empty deque');
     }
 
     peekLast() {
         if (this.tail) {
             return this.tail.val;
         }
-        else {
-            throw Error("peek in empty deque")
-        }
+
+        throw Error('peek in empty deque');
     }
 
     popFirst() {
         if (this.head) {
             const retvalue = this.head.val;
-            const new_head = this.head.next; 
+            const new_head = this.head.next;
             if (new_head) {
                 new_head.prev = null;
                 this.head.next = null;
                 this.head = new_head;
-            }
-            else {
+            } else {
                 this.head = null;
-                this.tail = null; 
+                this.tail = null;
             }
             return retvalue;
         }
-        else {
-            throw Error("pop from empty deque"); 
-        }
+
+        throw Error('pop from empty deque');
     }
-    
+
     popLast() {
         if (this.tail) {
             const retvalue = this.tail.val;
@@ -55,30 +51,26 @@ class Deque {
             if (newTail) {
                 newTail.next = null;
                 this.tail.prev = null;
-                this.tail = newTail; 
-            }
-            else {
+                this.tail = newTail;
+            } else {
                 this.head = null;
-                this.tail = null; 
+                this.tail = null;
             }
             return retvalue;
         }
-        else {
-            throw Error("pop from empty deque");
-        }
 
+        throw Error('pop from empty deque');
     }
 
     addFirst(value) {
-        const new_head = new DoubleLinkedListNode(value); 
+        const new_head = new DoubleLinkedListNode(value);
         if (this.head) {
             new_head.next = this.head;
             this.head.prev = new_head;
             this.head = new_head;
-        }
-        else {
+        } else {
             this.head = new_head;
-            this.tail = new_head; 
+            this.tail = new_head;
         }
     }
 
@@ -88,8 +80,7 @@ class Deque {
             new_tail.prev = this.tail;
             this.tail.next = new_tail;
             this.tail = new_tail;
-        }
-        else {
+        } else {
             this.head = new_tail;
             this.tail = new_tail;
         }
@@ -100,10 +91,10 @@ class Deque {
         let node = this.head;
         while (node) {
             length++;
-            node = node.next; 
+            node = node.next;
         }
-        return length; 
+        return length;
     }
 }
 
-export {Deque} 
+export { Deque };
