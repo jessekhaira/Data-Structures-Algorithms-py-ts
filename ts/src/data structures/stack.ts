@@ -1,8 +1,8 @@
 import { DoubleLinkedListNode } from './utils/linked_list_utility';
 
 /**
- * This class represents the data structure known as a Stack, implemented using doubly linked list
- * nodes.
+ * This class represents the data structure known as a Stack,
+ * implemented using doubly linked list nodes.
  */
 class Stack {
     constructor() {
