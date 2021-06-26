@@ -4,12 +4,14 @@ import { DoubleLinkedListNode } from './utils/linked_list_utility';
  * This class represents the data structure known as a Stack,
  * implemented using doubly linked list nodes.
  */
-class Stack {
+class Stack<T> {
+    tail: null | DoubleLinkedListNode<T>;
+
     constructor() {
         this.tail = null;
     }
 
-    push(val) {
+    push(val: T): void {
         const node = new DoubleLinkedListNode(val);
         if (this.tail) {
             this.tail.next = node;
@@ -20,7 +22,7 @@ class Stack {
         }
     }
 
-    pop() {
+    pop(): T {
         if (this.tail) {
             const oldTailVal = this.tail.val;
             if (this.tail.prev) {
@@ -36,7 +38,7 @@ class Stack {
         throw Error('pop from empty stack');
     }
 
-    top() {
+    top(): T {
         if (this.tail) {
             return this.tail.val;
         }
@@ -44,15 +46,15 @@ class Stack {
         throw Error('empty stack');
     }
 
-    length() {
+    length(): number {
         let size = 0;
         let node = this.tail;
         while (node) {
-            size++;
+            size += 1;
             node = node.prev;
         }
         return size;
     }
 }
 
-export { Stack };
+export default Stack;
