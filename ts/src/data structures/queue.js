@@ -1,7 +1,20 @@
 import { SingleLinkedListNode } from './utils/linked_list_utility';
 
 /**
- * This class represents the queue data structure.
+ *  This class represents the Queue data structure implemented using
+ *  singly linked nodes.
+ *
+ *  A queue consists of a sequence of entities managed using the First In
+ *  First Out (FIFO) principle, where the first elements added are
+ *  the first ones removed.
+ *
+ *  The queue has a variety of applications, including being used to traverse
+ *  trees and graphs in a breadth first manner, in operating systems to maintain
+ *  a queue of processes ready to execute, within computer systems, and so on.
+ *
+ *  Real world queues function in a conceptually similar way to digital queues.
+ *  For example, we wait in queues any time we wait in a line, that most likely
+ *  also follow the FIFO principle.
  */
 class Queue {
     constructor() {
