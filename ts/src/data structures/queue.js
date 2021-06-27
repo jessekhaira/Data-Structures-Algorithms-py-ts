@@ -17,6 +17,12 @@ import { SingleLinkedListNode } from './utils/linked_list_utility';
  *  also follow the FIFO principle.
  */
 class Queue {
+    /**
+     * @param {SingleLinkedListNode | null} head Object of type null or
+     * SingleLinkedListNode representing the first object in the queue
+     * @param {SingleLinkedListNode| null} tail Object of type null or
+     * SingleLinkedListNode representing the last object in the queue
+     */
     constructor() {
         this.head = null;
         this.tail = null;
