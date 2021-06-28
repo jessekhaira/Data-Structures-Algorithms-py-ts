@@ -16,15 +16,21 @@ import { SingleLinkedListNode } from './utils/linked_list_utility';
  *  For example, we wait in queues any time we wait in a line, that most likely
  *  also follow the FIFO principle.
  */
-class Queue {
-    /**
-     * @param {SingleLinkedListNode | null} head Object of type null or
-     * SingleLinkedListNode representing the first object in the queue
-     * @param {SingleLinkedListNode| null} tail Object of type null or
-     * SingleLinkedListNode representing the last object in the queue
-     */
+class Queue<T> {
+    head: null | SingleLinkedListNode<T>;
+
+    tail: null | SingleLinkedListNode<T>;
+
     constructor() {
+        /**
+         * @param {SingleLinkedListNode | null} head Object of type null or
+         * SingleLinkedListNode representing the first object in the queue
+         * */
         this.head = null;
+        /**
+         * @param {SingleLinkedListNode| null} tail Object of type null or
+         * SingleLinkedListNode representing the last object in the queue
+         * */
         this.tail = null;
     }
 
@@ -32,13 +38,13 @@ class Queue {
      * This method pushes a node onto the queue with the input value.
      * @param {any} val Number to be stored in the queue
      */
-    push(val) {
+    push(val: T): void {
         const newNode = new SingleLinkedListNode(val);
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
         } else {
-            this.tail.next = newNode;
+            if (this.tail) this.tail.next = newNode;
             this.tail = newNode;
         }
     }
@@ -47,7 +53,7 @@ class Queue {
      * This method returns the first element stored in the queue
      * @returns {any} First element stored in the queue
      */
-    top() {
+    top(): T | void {
         if (this.head) {
             return this.head.val;
         }
@@ -55,7 +61,7 @@ class Queue {
         throw Error('empty queue');
     }
 
-    pop() {
+    pop(): T {
         if (this.head) {
             const returnVal = this.head.val;
             const newHead = this.head.next;
@@ -66,15 +72,15 @@ class Queue {
         throw Error('pop from empty queue');
     }
 
-    length() {
+    length(): number {
         let length = 0;
         let node = this.head;
         while (node) {
-            length++;
+            length += 1;
             node = node.next;
         }
         return length;
     }
 }
 
-export { Queue };
+export default Queue;
