@@ -73,16 +73,20 @@ class Heap<T> {
      * @param {number} end Integer representing the index in the array to
      * stop sifting up
      */
-    _siftUp(heap: T[], start: number, end: number) {
+    _siftUp(heap: T[], start: number, end: number): void {
         let parentIdx = Math.floor((start - 1) / 2);
+        let siftUpStart = start;
         while (parentIdx >= end) {
-            // if heap property is not met, then we swap and continue upwards
-            // if its true that heap[start] is less than heap[parent], we swap for min-heaps
-            // if its true that heap[start] is greater than heap[parent], we swap for max-heaps
-            if (this.comparatorFunction(heap[start], heap[parentIdx])) {
-                this.swap(heap, start, parentIdx);
-                start = parentIdx;
-                parentIdx = Math.floor((start - 1) / 2);
+            /* if heap property is not met, then we swap and continue upwards
+            if its true that heap[start] is less than heap[parent], we swap 
+            for min-heaps
+            if its true that heap[start] is greater than heap[parent], we swap
+            for max-heaps
+            */
+            if (this.comparatorFunction(heap[siftUpStart], heap[parentIdx])) {
+                this.swap(heap, siftUpStart, parentIdx);
+                siftUpStart = parentIdx;
+                parentIdx = Math.floor((siftUpStart - 1) / 2);
             } else {
                 break;
             }
