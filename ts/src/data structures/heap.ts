@@ -16,13 +16,18 @@
     @constructor @public
  */
 class Heap {
+    comparator_function: (x: number, y: number) => 1 | 0;
+
     /**
      * @param {(Function|null)} custom_comparator Comparator function to be used to process this heap 
      * @param {Number} type_heap Integer indicating if heap is a min-heap or max-heap. 0 is min_heap, 1
         is max_heap. Important if custom comparator is null, otherwise we just use the comparator provided
         to process the heap. 
      */
-    constructor(custom_comparator = null, type_heap = 0) {
+    constructor(
+        custom_comparator: null | ((x: number, y: number) => 1 | 0) = null,
+        type_heap = 0,
+    ) {
         if (!custom_comparator) {
             /*
                 if the type_heap property is zero, the heap will be assumed to be a min-heap
