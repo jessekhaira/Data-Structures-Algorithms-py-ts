@@ -1,3 +1,4 @@
+import { swap } from '../utils/general_utility_functions';
 /**
  * This class represents a Heap.
  * 
@@ -84,7 +85,7 @@ class Heap<T> {
             for max-heaps
             */
             if (this.comparatorFunction(heap[siftUpStart], heap[parentIdx])) {
-                this.swap(heap, siftUpStart, parentIdx);
+                swap(heap, siftUpStart, parentIdx);
                 siftUpStart = parentIdx;
                 parentIdx = Math.floor((siftUpStart - 1) / 2);
             } else {
@@ -108,7 +109,7 @@ class Heap<T> {
         if (heap == null || heap.length === 0) {
             return null;
         }
-        this.swap(heap, 0, heap.length - 1);
+        swap(heap, 0, heap.length - 1);
         const removedVal = heap.pop() as T;
         this._siftDown(heap, 0, heap.length - 1);
         return removedVal;
@@ -149,7 +150,7 @@ class Heap<T> {
             }
 
             if (this.comparatorFunction(heap[idxToSwap], heap[currIdx])) {
-                this.swap(heap, currIdx, idxToSwap);
+                swap(heap, currIdx, idxToSwap);
                 currIdx = idxToSwap;
                 firstChildIdx = currIdx * 2 + 1;
             } else {
@@ -167,23 +168,13 @@ class Heap<T> {
      * Space 
      *- O(1) best/avg/worst
      * @param {any[]} heap Array of objects
-     */
-    peek(heap: any[]): null | T {
+    */
+    // eslint-disable-next-line
+    peek(heap: T[]): null | T {
         if (heap == null || heap.length === 0) {
             return null;
         }
         return heap[0];
-    }
-
-    /**
-     * This method has the responsibility of swapping the values at
-     * two indices within an array inplace.
-     * @param {T[]} heap List of integers representing a heap
-     * @param {number} i Integer representing an index within the input array
-     * @param {number} j Integer representing an index within the input array
-     */
-    swap(heap: T[], i: number, j: number): void {
-        [heap[i], heap[j]] = [heap[j], heap[i]];
     }
 }
 
