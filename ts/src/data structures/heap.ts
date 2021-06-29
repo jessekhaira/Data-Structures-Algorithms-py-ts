@@ -61,17 +61,19 @@ class Heap<T> {
     }
 
     /**
-     *  This method has the responsibility of ensuring the heap property is met when elements
-        are inserted into the heap. 
-        
-        When an element is inserted into the heap, the heap property will most likely be violated.
-        This method moves the inserted element up the heap until the heap property is satisifed.
-     * @param {number[]} heap List of integers representing a heap
-     * @param {number} start Integer representing the index in the array to start sifting up from
-     * @param {number} end Integer representing the index in the array to stop sifting up 
-     * @returns {undefined} Undefined. Sifts up in place.
+     *  This method has the responsibility of ensuring the heap property
+     *  is met when elements are inserted into the heap.
+     *
+     *  When an element is inserted into the heap, the heap property will
+     *  most likely be violated. This method moves the inserted element up
+     *  the heap until the heap property is satisifed.
+     * @param {T[]} heap List of integers representing a heap
+     * @param {number} start Integer representing the index in the array to
+     * start sifting up from
+     * @param {number} end Integer representing the index in the array to
+     * stop sifting up
      */
-    _siftUp(heap, start, end) {
+    _siftUp(heap: T[], start: number, end: number) {
         let parentIdx = Math.floor((start - 1) / 2);
         while (parentIdx >= end) {
             // if heap property is not met, then we swap and continue upwards
