@@ -46,6 +46,9 @@ class Heap:
             else:
                 self.comparator_func = lambda x, y: 1 if x - y > 0 else 0
 
+        else:
+            self.comparator_func = comparator_func
+
     def heapify(self, array: List[object]) -> None:
         """ This method will create a heap out of the given array elements
         in-place.
