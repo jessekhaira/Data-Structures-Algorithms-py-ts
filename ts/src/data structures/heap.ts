@@ -94,8 +94,8 @@ class Heap<T> {
     }
 
     /**
-     *  Removes the highest priority element from the min/max heap using the siftDown helper
-        method.
+     *  Removes the highest priority element from the min/max heap using the
+     *  siftDown helper method.
 
      *  Time
      *- O(logN) best/avg/worst
@@ -104,30 +104,32 @@ class Heap<T> {
      *- O(1) best/avg/worst
      * @param {any[]} heap Array of objects 
      */
-    remove(heap) {
+    remove(heap: T[]): T | null {
         if (heap == null || heap.length === 0) {
             return null;
         }
         this.swap(heap, 0, heap.length - 1);
-        const removedVal = heap.pop();
+        const removedVal = heap.pop() as T;
         this._siftDown(heap, 0, heap.length - 1);
         return removedVal;
     }
 
     /**
-     * This method has the responsibility of ensuring the heap property is met when elements
-        are removed from the heap. 
-        
-        When the root element is removed from the heap, a new element is placed at the root. This method
-        will move that element down the heap until the heap property is satisfied. 
+     *  This method has the responsibility of ensuring the heap property is met
+     *  when elements are removed from the heap. 
+     * 
+     *  When the root element is removed from the heap, a new element is placed
+     *  at the root. This method will move that element down the heap until the
+     *  heap property is satisfied. 
 
-     * @param {number[]} heap  List of integers representing a heap
-     * @param {number} start Integer representing the index in the array to start sifting down from
-     * @param {number} end Integer representing the index in the array to stop sifting down to
-     * @returns {undefined} None. Sifts down in place. 
+     * @param {T[]} heap  List of integers representing a heap
+     * @param {number} start Integer representing the index in the array to
+     *  start sifting down from
+     * @param {number} end Integer representing the index in the array to
+     *  stop sifting down to
 
      */
-    _siftDown(heap, start, end) {
+    _siftDown(heap: T[], start: number, end: number): void {
         let currIdx = start;
         let firstChildIdx = currIdx * 2 + 1;
         while (firstChildIdx <= end) {
@@ -166,7 +168,7 @@ class Heap<T> {
      *- O(1) best/avg/worst
      * @param {any[]} heap Array of objects
      */
-    peek(heap) {
+    peek(heap: any[]): null | T {
         if (heap == null || heap.length === 0) {
             return null;
         }
@@ -174,16 +176,15 @@ class Heap<T> {
     }
 
     /**
-     * This method has the responsibility of swapping the values at two indices within an array
-     * inplace.
-     * @param {number[]} heap List of integers representing a heap
+     * This method has the responsibility of swapping the values at
+     * two indices within an array inplace.
+     * @param {T[]} heap List of integers representing a heap
      * @param {number} i Integer representing an index within the input array
      * @param {number} j Integer representing an index within the input array
-     * @returns {undefined} Swaps indices inplace
      */
-    swap(heap, i, j) {
+    swap(heap: T[], i: number, j: number): void {
         [heap[i], heap[j]] = [heap[j], heap[i]];
     }
 }
 
-export { Heap };
+export default Heap;
