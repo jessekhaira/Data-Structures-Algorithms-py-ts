@@ -1,4 +1,4 @@
-import { DoubleLinkedListNode } from './utils/linked_list_utility';
+import { DoubleLinkedListNode } from '../utils/linked_list_utility';
 
 /**
  * This class represents the data structure known as a Stack,

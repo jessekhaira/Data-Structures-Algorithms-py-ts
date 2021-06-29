@@ -3,7 +3,7 @@
  * binary search tree data structure
  * @package
  */
-import { BinaryTreeNode } from './utils/binary_tree';
+import { BinaryTreeNode } from '../utils/binary_tree';
 
 /**
  *  This class represents a binary search tree. This data structure is a

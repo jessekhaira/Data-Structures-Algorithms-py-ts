@@ -2,7 +2,7 @@ import {
     Morris_Inorder_Traversal,
     Morris_PreOrder_Traversal,
 } from '../../algorithms/MorrisTraversal';
-import { BinaryTreeNode } from '../../data structures/utils/binary_tree';
+import { BinaryTreeNode } from '../../utils/binary_tree';
 
 describe('Test Inorder Morris', () => {
     test('test1', () => {

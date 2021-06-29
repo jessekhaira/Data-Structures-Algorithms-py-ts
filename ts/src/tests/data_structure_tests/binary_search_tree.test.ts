@@ -1,5 +1,5 @@
 import BinarySearchTree from '../../data structures/binary_search_tree';
-import { BinaryTreeNode } from '../../data structures/utils/binary_tree';
+import { BinaryTreeNode } from '../../utils/binary_tree';
 
 function validateBSTHelper(
     node: BinaryTreeNode | null,

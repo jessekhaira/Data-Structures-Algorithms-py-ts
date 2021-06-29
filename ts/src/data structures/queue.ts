@@ -1,4 +1,4 @@
-import { SingleLinkedListNode } from './utils/linked_list_utility';
+import { SingleLinkedListNode } from '../utils/linked_list_utility';
 
 /**
  *  This class represents the Queue data structure implemented using
