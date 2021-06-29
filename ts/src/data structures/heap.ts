@@ -22,7 +22,7 @@ class Heap {
         is max_heap. Important if custom comparator is null, otherwise we just use the comparator provided
         to process the heap. 
      */
-    constructor(custom_comparator = null, type_heap =0) {
+    constructor(custom_comparator = null, type_heap = 0) {
         if (!custom_comparator) {
             /*
                 if the type_heap property is zero, the heap will be assumed to be a min-heap
@@ -30,13 +30,11 @@ class Heap {
                 otherwise if the type_heap is 1, then the heap will be assumed to be a max-heap
             */
             if (type_heap === 0) {
-                this.comparator_function = (x,y) => (x-y < 0 ? 1: 0);
+                this.comparator_function = (x, y) => (x - y < 0 ? 1 : 0);
+            } else {
+                this.comparator_function = (x, y) => (x - y > 0 ? 1 : 0);
             }
-            else {
-                this.comparator_function = (x,y) => (x-y > 0 ? 1:0);
-            }
-        }
-        else {
+        } else {
             this.comparator_function = custom_comparator;
         }
     }
@@ -53,9 +51,9 @@ class Heap {
      * @param {any[]} array 
      */
     heapify(array) {
-        let parentIdx = Math.floor((array.length-2)/2);
+        let parentIdx = Math.floor((array.length - 2) / 2);
         while (parentIdx >= 0) {
-            this._siftDown(array, parentIdx, array.length-1);
+            this._siftDown(array, parentIdx, array.length - 1);
             parentIdx--;
         }
     }
@@ -73,7 +71,7 @@ class Heap {
      */
     insert(heap, val) {
         heap.push(val);
-        this._siftUp(heap, heap.length-1, 0);
+        this._siftUp(heap, heap.length - 1, 0);
     }
 
     /**
@@ -88,7 +86,7 @@ class Heap {
      * @returns {undefined} Undefined. Sifts up in place.
      */
     _siftUp(heap, start, end) {
-        let parentIdx = Math.floor((start-1)/2);
+        let parentIdx = Math.floor((start - 1) / 2);
         while (parentIdx >= end) {
             // if heap property is not met, then we swap and continue upwards
             // if its true that heap[start] is less than heap[parent], we swap for min-heaps
@@ -96,9 +94,8 @@ class Heap {
             if (this.comparator_function(heap[start], heap[parentIdx])) {
                 this.swap(heap, start, parentIdx);
                 start = parentIdx;
-                parentIdx = Math.floor((start-1)/2);
-            }
-            else {
+                parentIdx = Math.floor((start - 1) / 2);
+            } else {
                 break;
             }
         }
@@ -119,9 +116,9 @@ class Heap {
         if (heap == null || heap.length === 0) {
             return null;
         }
-        this.swap(heap, 0, heap.length-1);
-        let removedVal = heap.pop();
-        this._siftDown(heap, 0, heap.length-1);
+        this.swap(heap, 0, heap.length - 1);
+        const removedVal = heap.pop();
+        this._siftDown(heap, 0, heap.length - 1);
         return removedVal;
     }
 
@@ -139,25 +136,30 @@ class Heap {
 
      */
     _siftDown(heap, start, end) {
-        let currIdx = start; 
-        let firstChildIdx = currIdx*2+1;
+        let currIdx = start;
+        let firstChildIdx = currIdx * 2 + 1;
         while (firstChildIdx <= end) {
-            let secondChildIdx = (currIdx*2 +2 <= end ? currIdx*2+2:-1);
+            const secondChildIdx =
+                currIdx * 2 + 2 <= end ? currIdx * 2 + 2 : -1;
             let idxToSwap = null;
-            if (secondChildIdx !== -1 && this.comparator_function(heap[secondChildIdx], heap[firstChildIdx])) {
+            if (
+                secondChildIdx !== -1 &&
+                this.comparator_function(
+                    heap[secondChildIdx],
+                    heap[firstChildIdx],
+                )
+            ) {
                 idxToSwap = secondChildIdx;
-            }
-            else {
+            } else {
                 idxToSwap = firstChildIdx;
             }
 
             if (this.comparator_function(heap[idxToSwap], heap[currIdx])) {
                 this.swap(heap, currIdx, idxToSwap);
                 currIdx = idxToSwap;
-                firstChildIdx = currIdx*2+1;
-            }
-            else {
-                break; 
+                firstChildIdx = currIdx * 2 + 1;
+            } else {
+                break;
             }
         }
     }
@@ -176,22 +178,20 @@ class Heap {
         if (heap == null || heap.length === 0) {
             return null;
         }
-        return heap[0]; 
+        return heap[0];
     }
-    
+
     /**
-     * This method has the responsibility of swapping the values at two indices within an array 
-     * inplace. 
+     * This method has the responsibility of swapping the values at two indices within an array
+     * inplace.
      * @param {number[]} heap List of integers representing a heap
      * @param {number} i Integer representing an index within the input array
      * @param {number} j Integer representing an index within the input array
-     * @returns {undefined} Swaps indices inplace 
+     * @returns {undefined} Swaps indices inplace
      */
     swap(heap, i, j) {
         [heap[i], heap[j]] = [heap[j], heap[i]];
     }
-
-
 }
 
-export {Heap};
+export { Heap };
