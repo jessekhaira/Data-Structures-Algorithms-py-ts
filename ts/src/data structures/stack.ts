@@ -27,6 +27,11 @@ class Stack<T> {
         }
     }
 
+    /**
+     * This method unwraps the value inside the DoubleLinkedListNode
+     * on top of the stack and returns it.
+     * @returns {T} Value of type T, specified when the stack is created
+     */
     pop(): T {
         if (this.tail) {
             const oldTailVal = this.tail.val;
