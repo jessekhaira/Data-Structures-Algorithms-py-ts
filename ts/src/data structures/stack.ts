@@ -11,6 +11,11 @@ class Stack<T> {
         this.tail = null;
     }
 
+    /**
+     * This method wraps the input value into a DoubleLinkedListNode
+     * and pushes it on top of the stack.
+     * @param {T} val Value of type T, specified when the stack is created
+     */
     push(val: T): void {
         const node = new DoubleLinkedListNode(val);
         if (this.tail) {
