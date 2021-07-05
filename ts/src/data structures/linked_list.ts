@@ -4,16 +4,16 @@ import { DoubleLinkedListNode } from '../utils/linked_list_utility';
  * This class represents a double linked list.
  */
 class DoubleLinkedList<T> {
-    head: DoubleLinkedListNode<T>;
+    head: DoubleLinkedListNode<T> | null;
 
-    tail: DoubleLinkedListNode<T>;
+    tail: DoubleLinkedListNode<T> | null;
 
     constructor(val: T) {
         this.head = new DoubleLinkedListNode(val);
         this.tail = this.head;
     }
 
-    get(index) {
+    get(index: number): T | -1 {
         let currIdx = 0;
         let node = this.head;
         while (node && currIdx <= index) {
@@ -21,13 +21,13 @@ class DoubleLinkedList<T> {
                 return node.val;
             }
 
-            currIdx++;
+            currIdx += 1;
             node = node.next;
         }
         return -1;
     }
 
-    addAtHead(val) {
+    addAtHead(val: T): void {
         const newNode = new DoubleLinkedListNode(val);
         if (!this.head) {
             this.head = newNode;
@@ -39,19 +39,19 @@ class DoubleLinkedList<T> {
         }
     }
 
-    addAtTail(val) {
+    addAtTail(val: T): void {
         const newNode = new DoubleLinkedListNode(val);
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
-        } else {
+        } else if (this.tail) {
             this.tail.next = newNode;
             newNode.prev = this.tail;
             this.tail = newNode;
         }
     }
 
-    addAtIndex(index, val) {
+    addAtIndex(index: number, val: T): void {
         if (index === 0) {
             this.addAtHead(val);
         } else {
@@ -59,17 +59,17 @@ class DoubleLinkedList<T> {
         }
     }
 
-    _insertNode(index, val) {
+    _insertNode(index: number, val: T): void {
         let currIdx = 0;
         const newNode = new DoubleLinkedListNode(val);
         let node = this.head;
         while (node && currIdx <= index) {
             if (currIdx === index) {
-                this._linkNodes(node, newNode);
+                DoubleLinkedList._linkNodes(node, newNode);
                 return;
             }
 
-            currIdx++;
+            currIdx += 1;
             node = node.next;
         }
         if (currIdx === index) {
@@ -77,37 +77,43 @@ class DoubleLinkedList<T> {
         }
     }
 
-    _linkNodes(node, newNode) {
+    static _linkNodes<K>(
+        node: DoubleLinkedListNode<K>,
+        newNode: DoubleLinkedListNode<K>,
+    ): void {
         const savedPrev = node.prev;
-        savedPrev.next = newNode;
-        newNode.prev = savedPrev;
+        if (savedPrev) {
+            savedPrev.next = newNode;
+            newNode.prev = savedPrev;
 
-        newNode.next = node;
-        node.prev = newNode;
-    }
-
-    deleteAtIndex(index) {
-        if (!this.head) {
-        } else if (index === 0) {
-            if (!this.head.next) {
-                this.head = null;
-                this.tail = null;
-            } else {
-                const savedNext = this.head.next;
-                savedNext.prev = null;
-                this.head = savedNext;
-            }
-        } else {
-            this._unlinkNode(index);
+            newNode.next = node;
+            node.prev = newNode;
         }
     }
 
-    _unlinkNode(index) {
+    deleteAtIndex(index: number): void {
+        if (this.head) {
+            if (index === 0) {
+                if (!this.head.next) {
+                    this.head = null;
+                    this.tail = null;
+                } else {
+                    const savedNext = this.head.next;
+                    savedNext.prev = null;
+                    this.head = savedNext;
+                }
+            } else {
+                this._unlinkNode(index);
+            }
+        }
+    }
+
+    _unlinkNode(index: number): void {
         let node = this.head;
         let prev = null;
         let currIdx = 0;
         while (node && currIdx <= index) {
-            if (currIdx === index) {
+            if (currIdx === index && prev) {
                 if (!node.next) {
                     prev.next = null;
                     this.tail = prev;
@@ -116,14 +122,13 @@ class DoubleLinkedList<T> {
                     prev.next = savedNext;
                     savedNext.prev = prev;
                 }
-                return;
             }
 
             prev = node;
             node = node.next;
-            currIdx++;
+            currIdx += 1;
         }
     }
 }
 
-export { DoubleLinkedList };
+export default DoubleLinkedList;
