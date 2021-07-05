@@ -3,8 +3,12 @@ import { DoubleLinkedListNode } from '../utils/linked_list_utility';
 /**
  * This class represents a double linked list.
  */
-class DoubleLinkedList {
-    constructor(val) {
+class DoubleLinkedList<T> {
+    head: DoubleLinkedListNode<T>;
+
+    tail: DoubleLinkedListNode<T>;
+
+    constructor(val: T) {
         this.head = new DoubleLinkedListNode(val);
         this.tail = this.head;
     }
