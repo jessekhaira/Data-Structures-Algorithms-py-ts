@@ -1,4 +1,4 @@
-import Trie from '../../data structures/Trie';
+import Trie from '../../data structures/trie';
 
 test('test1', () => {
     const obj1 = new Trie();

@@ -83,12 +83,12 @@ class Trie {
         let currNode = node;
         for (let i = 0; i < word.length; i += 1) {
             const char = word[i];
-            if (!(char in currNode)) {
+            if (!(char in currNode.children)) {
                 return false;
             }
             currNode = currNode.children[char];
         }
-        return node.containsEndOfWord;
+        return currNode.containsEndOfWord;
     }
 
     /**  
@@ -108,23 +108,26 @@ class Trie {
      * @returns {boolean} Boolean representing whether the prefix pattern is
      * stored in the Trie 
      */
-    startsWith(prefix) {
+    startsWith(prefix: string): boolean {
         const node = this.root;
-        return this._startsWithHelper(prefix, node);
+        return Trie._startsWithHelper(prefix, node);
     }
 
-    _startsWithHelper(prefix, node) {
-        for (const char of prefix) {
-            if (!(char in node)) {
+    static _startsWithHelper(prefix: string, node: TrieNode): boolean {
+        let currNode = node;
+        for (let i = 0; i < prefix.length; i += 1) {
+            const char = prefix[i];
+            if (!(char in currNode.children)) {
                 return false;
             }
-            node = node[char];
+            currNode = currNode.children[char];
         }
         return true;
     }
 
     /**
-     * This method recieves a string as input and deletes the string if it is currently stored in the Trie.
+     * This method recieves a string as input and deletes the string if
+     * it is currently stored in the Trie.
      * 
      * Time:
      *- O(k) best/avg/worst
@@ -136,25 +139,23 @@ class Trie {
      * @param {string} word String representing the word to delete in the Trie 
      * @returns {null} 
      */
-    delete(word) {
-        if (!this.lookup(word)) {
-            return null;
+    delete(word: string): void {
+        if (this.lookup(word)) {
+            const node = this.root;
+            Trie._deleteHelper(node, word, 0);
         }
-        const node = this.root;
-        this._deleteHelper(node, word, 0);
     }
 
-    _deleteHelper(node, word, idx) {
+    static _deleteHelper(node: TrieNode, word: string, idx: number): undefined {
         if (idx === word.length) {
-            delete node[this.endSymbol];
-            return null;
+            node.containsEndOfWord = false;
+            return;
         }
-        const newNode = node[word[idx]];
-        this._deleteHelper(newNode, word, idx + 1);
+        const newNode = node.children[word[idx]];
+        Trie._deleteHelper(newNode, word, idx + 1);
 
-        if (Object.keys(newNode).length === 0) {
-            delete node[word[idx]];
-            return null;
+        if (Object.keys(newNode.children).length === 0) {
+            delete node.children[word[idx]];
         }
     }
 }
