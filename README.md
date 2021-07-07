@@ -23,7 +23,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 - [Disjoint Set](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/disjoint_set.ts)
 - [HashMap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/hash_map.ts)
 - [Min/Max Heap](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/heap.ts)
-- [Trie](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/data%20structures/Trie.js)
+- [Trie](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/data%20structures/trie.ts)
 - [Linked List](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/linked_list.ts)
 - [HashSet](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/HashSet.js)
 - [Stack](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/data%20structures/stack.ts)

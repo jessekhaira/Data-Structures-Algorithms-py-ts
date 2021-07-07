@@ -8,15 +8,15 @@
  */
 class Trie {
     constructor() {
-        /** Attribute symbolizing the end of a word in the trie 
+        /** Attribute symbolizing the end of a word in the trie
          * @param {string}
-        */
-        this.endSymbol = "*";
+         */
+        this.endSymbol = '*';
 
         /** Root node of the tree
          * @param {object}
          */
-        this.root = {}; 
+        this.root = {};
     }
 
     /**
@@ -35,7 +35,7 @@ class Trie {
      * @returns {undefined}
      */
     insert(word) {
-        let node = this.root;
+        const node = this.root;
         return this._insertHelper(node, word);
     }
 
@@ -46,7 +46,7 @@ class Trie {
             }
             node = node[char];
         }
-        node[this.endSymbol] = true; 
+        node[this.endSymbol] = true;
     }
 
     /**
@@ -64,10 +64,9 @@ class Trie {
      * @returns {boolean} Boolean representing whether the string is stored in the Trie 
      */
     lookup(word) {
-        let node = this.root;
+        const node = this.root;
         return this._lookupHelper(word, node);
     }
-
 
     _lookupHelper(word, node) {
         for (const char of word) {
@@ -76,7 +75,7 @@ class Trie {
             }
             node = node[char];
         }
-        return this.endSymbol in node; 
+        return this.endSymbol in node;
     }
 
     /**  
@@ -94,7 +93,7 @@ class Trie {
      * @returns {boolean} Boolean representing whether the prefix pattern is stored in the Trie 
      */
     startsWith(prefix) {
-        let node = this.root;
+        const node = this.root;
         return this._startsWithHelper(prefix, node);
     }
 
@@ -105,9 +104,8 @@ class Trie {
             }
             node = node[char];
         }
-        return true; 
+        return true;
     }
-
 
     /**
      * This method recieves a string as input and deletes the string if it is currently stored in the Trie.
@@ -123,13 +121,12 @@ class Trie {
      * @returns {null} 
      */
     delete(word) {
-        if (!(this.lookup(word))) {
+        if (!this.lookup(word)) {
             return null;
         }
-        let node = this.root;
+        const node = this.root;
         this._deleteHelper(node, word, 0);
     }
-
 
     _deleteHelper(node, word, idx) {
         if (idx === word.length) {
@@ -137,14 +134,13 @@ class Trie {
             return null;
         }
         const newNode = node[word[idx]];
-        this._deleteHelper(newNode, word, idx+1);
+        this._deleteHelper(newNode, word, idx + 1);
 
         if (Object.keys(newNode).length === 0) {
             delete node[word[idx]];
-            return null; 
+            return null;
         }
     }
 }
 
-
-export {Trie}; 
+export default Trie;
