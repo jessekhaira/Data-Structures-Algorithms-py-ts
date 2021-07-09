@@ -141,4 +141,4 @@ class HashSet {
     }
 }
 
-export { HashSet };
+export default HashSet;

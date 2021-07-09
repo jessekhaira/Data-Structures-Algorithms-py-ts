@@ -1,4 +1,4 @@
-import { HashSet } from '../../data structures/HashSet';
+import HashSet from '../../data structures/hash_set';
 
 test('test1', () => {
     const obj1 = new HashSet();
