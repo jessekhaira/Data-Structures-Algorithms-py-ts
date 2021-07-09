@@ -1,9 +1,11 @@
 import { SingleLinkedListNode } from '../utils/linked_list_utility';
 /**
- * This class represents a Hash Set designed specifically to accept integer values. Hash collisons are dealt with
- * through chaining with linked lists.
+ * This class represents a Hash Set designed specifically to accept
+ * integer values. Hash collisons are dealt with through chaining with
+ * linked lists.
  *
- * A HashSet is a data structure built on static arrays which is meant to hold a collection of unique items.
+ * A HashSet is a data structure built on static arrays which is meant
+ * to hold a collection of unique items.
  */
 class HashSet {
     constructor(init_capacity = 1000, load_factor = 0.75) {
@@ -13,10 +15,11 @@ class HashSet {
     }
 
     /**
-     * Inserts the input argument, expected to be an integer, into the hash set. If by adding the element, the
-     * design load factor is exceeded, rehashing is done.
+     * Inserts the input argument, expected to be an integer, into
+     * the hash set. If by adding the element, the design load
+     * factor is exceeded, rehashing is done.
      *
-     *Time:
+     * Time:
      * - O(1) best/avg
      * - O(N) worst
      *
