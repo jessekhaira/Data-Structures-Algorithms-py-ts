@@ -8,9 +8,9 @@ import { SingleLinkedListNode } from '../utils/linked_list_utility';
  * to hold a collection of unique items.
  */
 class HashSet {
-    constructor(init_capacity = 1000, load_factor = 0.75) {
-        this._buckets = Array(init_capacity).fill(null);
-        this._design_load_factor = load_factor;
+    constructor(initCapacity = 1000, loadFactor = 0.75) {
+        this._buckets = Array(initCapacity).fill(null);
+        this._design_load_factor = loadFactor;
         this._curr_items_hashed = 0;
     }
 
