@@ -7,8 +7,8 @@ import { SingleLinkedListNode } from '../utils/linked_list_utility';
  * A HashSet is a data structure built on static arrays which is meant
  * to hold a collection of unique items.
  */
-class HashSet<T> {
-    _buckets: (null | SingleLinkedListNode<T>)[];
+class HashSet {
+    _buckets: (null | SingleLinkedListNode<number>)[];
 
     _designLoadFactor: number;
 
@@ -38,7 +38,7 @@ class HashSet<T> {
      * N - length of hash set
      * @param {number} key Argument to hash into hashset
      */
-    add(key) {
+    add(key: number): void {
         const hashVal = this._hashing_algorithm(key);
         const newNode = new SingleLinkedListNode(key);
         if (!this._buckets[hashVal]) {
@@ -53,10 +53,10 @@ class HashSet<T> {
                 prev = node;
                 node = node.next;
             }
-            prev.next = newNode;
+            if (prev) prev.next = newNode;
         }
 
-        this._currItemsHashed++;
+        this._currItemsHashed += 1;
         const currLoadFactor = this._currItemsHashed / this._buckets.length;
         if (currLoadFactor >= this._designLoadFactor) {
             this.rehash();
