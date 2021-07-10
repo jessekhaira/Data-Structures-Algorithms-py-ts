@@ -7,11 +7,20 @@ import { SingleLinkedListNode } from '../utils/linked_list_utility';
  * A HashSet is a data structure built on static arrays which is meant
  * to hold a collection of unique items.
  */
-class HashSet {
+class HashSet<T> {
+    _buckets: (null | SingleLinkedListNode<T>)[];
+
+    _designLoadFactor: number;
+
+    _currItemsHashed: number;
+
     constructor(initCapacity = 1000, loadFactor = 0.75) {
-        this._buckets = Array(initCapacity).fill(null);
-        this._design_load_factor = loadFactor;
-        this._curr_items_hashed = 0;
+        this._buckets = [];
+        for (let i = 0; i < initCapacity; i += 1) {
+            this._buckets.push(null);
+        }
+        this._designLoadFactor = loadFactor;
+        this._currItemsHashed = 0;
     }
 
     /**
@@ -47,9 +56,9 @@ class HashSet {
             prev.next = newNode;
         }
 
-        this._curr_items_hashed++;
-        const currLoadFactor = this._curr_items_hashed / this._buckets.length;
-        if (currLoadFactor >= this._design_load_factor) {
+        this._currItemsHashed++;
+        const currLoadFactor = this._currItemsHashed / this._buckets.length;
+        if (currLoadFactor >= this._designLoadFactor) {
             this.rehash();
         }
     }
@@ -61,7 +70,7 @@ class HashSet {
      */
     rehash() {
         const savedBuckets = this._buckets;
-        this._curr_items_hashed = 0;
+        this._currItemsHashed = 0;
         this._buckets = Array(savedBuckets.length * 2).fill(null);
         for (let node of savedBuckets) {
             while (node) {
