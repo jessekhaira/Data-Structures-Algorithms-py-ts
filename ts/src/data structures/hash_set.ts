@@ -15,10 +15,7 @@ class HashSet {
     _currItemsHashed: number;
 
     constructor(initCapacity = 1000, loadFactor = 0.75) {
-        this._buckets = [];
-        for (let i = 0; i < initCapacity; i += 1) {
-            this._buckets.push(null);
-        }
+        this._buckets = HashSet.fillBuckets(initCapacity);
         this._designLoadFactor = loadFactor;
         this._currItemsHashed = 0;
     }
@@ -39,7 +36,7 @@ class HashSet {
      * @param {number} key Argument to hash into hashset
      */
     add(key: number): void {
-        const hashVal = this._hashing_algorithm(key);
+        const hashVal = this._hashingAlgorithm(key);
         const newNode = new SingleLinkedListNode(key);
         if (!this._buckets[hashVal]) {
             this._buckets[hashVal] = newNode;
@@ -63,17 +60,26 @@ class HashSet {
         }
     }
 
+    static fillBuckets<T>(length: number): (null | T)[] {
+        const buckets: (null | T)[] = [];
+        for (let i = 0; i < length; i += 1) {
+            buckets.push(null);
+        }
+        return buckets;
+    }
+
     /**
      * This method is used to dynamically resize the array underlying the
      * hashset in order to keep all operations efficient. This method is
      * invoked by the add method, when adding a key to the hashset causes
      * the current load factor to exceed the design load factor.
      */
-    rehash() {
+    rehash(): void {
         const savedBuckets = this._buckets;
         this._currItemsHashed = 0;
-        this._buckets = Array(savedBuckets.length * 2).fill(null);
-        for (let node of savedBuckets) {
+        this._buckets = HashSet.fillBuckets(savedBuckets.length * 2);
+        for (let i = 0; i < this._buckets.length; i += 1) {
+            let node = this._buckets[i];
             while (node) {
                 this.add(node.val);
                 node = node.next;
@@ -95,8 +101,8 @@ class HashSet {
      * @param {Number} key Number to remove from the hashset
      * @returns {undefined}
      */
-    remove(key) {
-        const hashVal = this._hashing_algorithm(key);
+    remove(key: number): void {
+        const hashVal = this._hashingAlgorithm(key);
         let node = this._buckets[hashVal];
         let prev = null;
         while (node) {
@@ -115,7 +121,8 @@ class HashSet {
     }
 
     /**
-     * Returns a boolean indicating whether or not the hash set contains the integer input argument.
+     * Returns a boolean indicating whether or not the hash set contains the
+     * integer input argument.
 
      *Time:
      * - O(1) best/avg
@@ -126,10 +133,11 @@ class HashSet {
      * 
      * N - length of hash set 
      * @param {number} key Integer input argument  
-     * @returns {boolean} Boolean indicating whether the hash set contains the integer input
+     * @returns {boolean} Boolean indicating whether the hash set contains
+     * the integer input
      */
-    contains(key) {
-        const hashVal = this._hashing_algorithm(key);
+    contains(key: number): boolean {
+        const hashVal = this._hashingAlgorithm(key);
         let node = this._buckets[hashVal];
         while (node) {
             if (node.val === key) {
@@ -143,10 +151,12 @@ class HashSet {
 
     /**
      * This is a hashing algorithm that generates hash codes for integer keys.
-     * @param {Number} key Integer representing number to generate a hash code for
-     * @returns {Number} Integer representing the index in the hashset to hash the key into
+     * @param {Number} key Integer representing number to generate
+     * a hash code for
+     * @returns {Number} Integer representing the index in the hashset
+     * to hash the key into
      */
-    _hashing_algorithm(key) {
+    _hashingAlgorithm(key: number): number {
         return key % this._buckets.length;
     }
 }

@@ -30,9 +30,9 @@ test('test 2', () => {
 
 test('test 3', () => {
     const obj2 = new HashSet();
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 1000; i += 1) {
         obj2.add(0);
     }
 
-    expect(obj2._curr_items_hashed).toStrictEqual(1);
+    expect(obj2._currItemsHashed).toStrictEqual(1);
 });
