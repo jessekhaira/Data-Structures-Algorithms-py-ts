@@ -74,6 +74,6 @@ The repo represents a variety of fundamental data structures and algorithms impl
 
 ### Miscellaneous
 
-- [Floyds Tortoise and Hare](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/FloydsTortoiseHareAlgo.js)
+- [Floyds Tortoise and Hare](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/floyds_tortoise_hare.ts)
 - [Knuth-Morris-Pratt](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/knuth_morris_pratt.ts)
 - [Binary Search](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/binary_search.ts)
