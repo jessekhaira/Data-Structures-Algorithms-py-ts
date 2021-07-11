@@ -59,7 +59,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 
 ### Sorting & Selection
 
-- [QuickSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/quick_sort.js)
+- [QuickSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/quick_sort.ts)
 - [MergeSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/merge_sort.ts)
 - [QuickSelect](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/ts/src/algorithms/quick_select.ts)
 - [BubbleSort](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/ts/src/algorithms/bubble_sort.ts)
