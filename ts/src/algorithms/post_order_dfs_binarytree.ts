@@ -21,8 +21,6 @@ function postOrderDFS_recursive(node, output) {
     return output;
 }
 
-
-
 /**
  *  This code describes the iterative post order traversal
     of a binary tree. Before any given node in the tree is visited,
@@ -37,26 +35,28 @@ function postOrderDFS_recursive(node, output) {
  */
 function postOrderDFS_iterative(node) {
     if (node == null) {
-        return; 
+        return;
     }
-    let output =[];
-    let stack = [];
+    const output = [];
+    const stack = [];
     let lastNode = null;
     // empty arrays, objects, sets are truthy statements in javascript not in python so have
-    // to explicitly specify the length 
-    while (stack.length>0 || node) {
+    // to explicitly specify the length
+    while (stack.length > 0 || node) {
         while (node) {
             stack.push(node);
             node = node.left;
         }
-        if (stack[stack.length-1].right && stack[stack.length-1].right !== lastNode) {
-            node = stack[stack.length-1].right; 
-        }
-        else {
-            let currNode = stack.pop();
+        if (
+            stack[stack.length - 1].right &&
+            stack[stack.length - 1].right !== lastNode
+        ) {
+            node = stack[stack.length - 1].right;
+        } else {
+            const currNode = stack.pop();
             lastNode = currNode;
             output.push(currNode.val);
         }
     }
-    return output; 
+    return output;
 }
