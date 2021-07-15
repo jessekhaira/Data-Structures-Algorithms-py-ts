@@ -5,9 +5,7 @@
  */
 class SingleLinkedListNode<T> {
     next: null | SingleLinkedListNode<T>;
-
     val: T;
-
     constructor(val: T) {
         this.val = val;
         this.next = null;
@@ -18,10 +16,13 @@ class SingleLinkedListNode<T> {
  * pointers.
  * @class @public
  */
-class DoubleLinkedListNode<T> extends SingleLinkedListNode<T> {
+class DoubleLinkedListNode<T> {
     prev: null | DoubleLinkedListNode<T>;
+    next: null | DoubleLinkedListNode<T>;
+    val: T;
     constructor(val: T) {
-        super(val);
+        this.val = val;
+        this.next = null;
         this.prev = null;
     }
 }

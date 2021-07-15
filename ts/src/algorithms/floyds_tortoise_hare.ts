@@ -1,4 +1,8 @@
-import { SingleLinkedListNode } from 'src/utils/linked_list_utility';
+import DoubleLinkedList from 'src/data structures/linked_list';
+import {
+    DoubleLinkedListNode,
+    SingleLinkedListNode,
+} from 'src/utils/linked_list_utility';
 
 /**
  * This function implements an algorithm called floyd's
@@ -14,10 +18,10 @@ import { SingleLinkedListNode } from 'src/utils/linked_list_utility';
  * there is no cycle in the linked list
  */
 function floydsTortoiseHareAlgo<T>(
-    node: SingleLinkedListNode<T>,
-): null | SingleLinkedListNode<T> {
-    let ptr1: SingleLinkedListNode<T> | null = node;
-    let ptr2: SingleLinkedListNode<T> | null = node;
+    node: SingleLinkedListNode<T> | DoubleLinkedListNode<T>,
+): null | SingleLinkedListNode<T> | DoubleLinkedListNode<T> {
+    let ptr1: SingleLinkedListNode<T> | DoubleLinkedListNode<T> | null = node;
+    let ptr2: SingleLinkedListNode<T> | DoubleLinkedListNode<T> | null = node;
     while (ptr2 && ptr2.next) {
         if (ptr1) ptr1 = ptr1.next;
         ptr2 = ptr2.next.next;
@@ -25,7 +29,7 @@ function floydsTortoiseHareAlgo<T>(
             break;
         }
     }
-    if (ptr1 !== ptr2) {
+    if (ptr1 !== ptr2 || node.next == null) {
         return null;
     }
     ptr1 = node;
