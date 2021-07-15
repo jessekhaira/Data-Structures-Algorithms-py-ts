@@ -8,3 +8,4 @@ venv/
 *.swo
 *~
 built/
+node_modules/

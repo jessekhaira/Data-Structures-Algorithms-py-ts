@@ -9,11 +9,18 @@
       "lib": ["es2018"],
       "module": "es6",
       "target": "ES2020",
-      "baseUrl": ".",
+      "baseUrl": "./src",
       "paths": {
-        "*": ["node_modules/*", "src/types/*"]
+        "*": ["node_modules/*", "src/types/*"],
+        "src/*": [
+          "./*"
+        ]
+        "utils/*": [
+          "./utils/*"
+        ]
       },
-      "typeRoots": ["node_modules/@types", "src/types"],
+      
+      "typeRoots": ["./node_modules/@types", "./src/@types"],
       "outDir": "./built"
     },
     "include": ["./src/**/*", "jest.config.js"],

@@ -12,6 +12,12 @@ module.exports = {
         'airbnb-typescript/base',
         'plugin:prettier/recommended',
     ],
+    settings: {
+        "import/resolver": {
+            "node": {
+                "paths": ["./src"]
+            }
+    },
     parserOptions: {
         ecmaVersion: 12,
         sourceType: 'module',
