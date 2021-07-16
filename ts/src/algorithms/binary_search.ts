@@ -24,7 +24,7 @@
  * @returns {number} Represents the idx at which the target value occurs,
  * or -1 if it does not occur
  */
-export function iterativeBinarySearch(array: number[], target: number): number {
+function iterativeBinarySearch(array: number[], target: number): number {
     if (array == null) {
         return -1;
     }
@@ -88,6 +88,8 @@ function recursiveHelperBinarySearch(
  * @returns {number} Represents the idx at which the target value occurs,
  * or -1 if it does not occur
  */
-export function recursiveBinarySearch(array: number[], target: number): number {
+function recursiveBinarySearch(array: number[], target: number): number {
     return recursiveHelperBinarySearch(array, target, 0, array.length - 1);
 }
+
+export { iterativeBinarySearch, recursiveBinarySearch };
