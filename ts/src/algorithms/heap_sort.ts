@@ -1,15 +1,4 @@
-/**
- * This function accepts an array of integers, and two integers i
- * and j that represent indices within the array of integers, and
- * swaps the values contained at the two indices.
- * @param {number[]} array List of integers
- * @param {number} i int that represents an index in the array
- * @param {number} j int that represents an index in the array
- * @returns {void} Swaps inplace
- */
-function swap(array: number[], i: number, j: number): void {
-    [array[i], array[j]] = [array[j], array[i]];
-}
+import { swap } from 'src/utils/general_utility_functions';
 
 /**
  *  This function represents the siftdown algorithm used to maintain
