@@ -1,6 +1,4 @@
-function swap(array: number[], i: number, j: number) {
-    [array[i], array[j]] = [array[j], array[i]];
-}
+import { swap } from 'src/utils/general_utility_functions';
 /**
  * This algorithm represents the bubble sort algorithm,
  *  meant to be used to sort an array of integers in
