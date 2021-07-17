@@ -1,31 +1,25 @@
+import { NaryTreeNode } from 'src/utils/binary_tree';
+
+function postOrderHelperRecursive<T>(node: NaryTreeNode<T>, output: T[]): void {
+    node.children.forEach((child) => {
+        postOrderHelperRecursive(child, output);
+    });
+    output.push(node.val);
+}
+
 /**
  *  This code describes the recursive post order traversal
     of a n-ary tree. Before any given node in the tree is visited,
     all the nodes in the left subtree of the current node, and all
     the nodes in the right subtree of the current node are visited.
 
- * @param {object} node Root of Nary Tree
- * @param {number} node.val Value of current node 
- * @param {object[]} node.children Array of children that are rooted to current node
+ * @param {NaryTreeNode} node Root of Nary Tree
  * @returns {number[]} Output values of n-ary tree in post order 
  */
-function postorder_recursive(node) {
-    if (node == null) {
-        return [];
-    }
-    const output = [];
-    postOrder_helperRecursive(node, output);
+function postOrderRecursive<T>(node: NaryTreeNode<T>): T[] {
+    const output: T[] = [];
+    postOrderHelperRecursive<T>(node, output);
     return output;
-}
-
-function postOrder_helperRecursive(node, output) {
-    if (node == null) {
-        return;
-    }
-    for (const child of node.children) {
-        postOrder_helperRecursive(child, output);
-    }
-    output.push(node.val);
 }
 
 /**
@@ -34,25 +28,22 @@ function postOrder_helperRecursive(node, output) {
     all the nodes in the left subtree of the current node, and all
     the nodes in the right subtree of the current node are visited.
 
- * @param {object} node Root of Nary Tree
- * @param {number} node.val Value of current node 
- * @param {object[]} node.children Array of children that are rooted to current node
+ * @param {NaryTreeNode} node Root of Nary Tree
  * @returns {number[]} Output values in binary tree in post order 
  */
-function postorder_iterative(node) {
-    if (node == null) {
-        return [];
-    }
+function postOrderIterative<T>(node: NaryTreeNode<T>): T[] {
     const stack = [[node, 0]];
-    const output = [];
+    const output: T[] = [];
     while (stack.length > 0) {
-        const [node, idx] = stack.pop();
-        if (idx === node.children.length) {
-            output.push(node.val);
+        const [currNode, idx] = stack.pop() as [NaryTreeNode<T>, number];
+        if (idx === currNode.children.length) {
+            output.push(currNode.val);
         } else {
-            stack.push([node, idx + 1]);
-            stack.push([node.children[idx], 0]);
+            stack.push([currNode, idx + 1]);
+            stack.push([currNode.children[idx], 0]);
         }
     }
     return output;
 }
+
+export { postOrderRecursive, postOrderIterative };
