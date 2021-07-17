@@ -12,4 +12,15 @@ class BinaryTreeNode {
     }
 }
 
-export { BinaryTreeNode };
+class NaryTreeNode<T> {
+    val: T;
+
+    children: NaryTreeNode<T>[];
+
+    constructor(val: T) {
+        this.val = val;
+        this.children = [];
+    }
+}
+
+export { BinaryTreeNode, NaryTreeNode };
