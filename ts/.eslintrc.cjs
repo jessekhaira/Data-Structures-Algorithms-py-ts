@@ -13,10 +13,11 @@ module.exports = {
         'plugin:prettier/recommended',
     ],
     settings: {
-        "import/resolver": {
-            "node": {
-                "paths": ["./src"]
-            }
+        'import/resolver': {
+            node: {
+                paths: ['./src'],
+            },
+        },
     },
     parserOptions: {
         ecmaVersion: 12,
