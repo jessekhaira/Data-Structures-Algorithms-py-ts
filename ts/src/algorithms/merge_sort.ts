@@ -16,7 +16,7 @@
  * portion of auxArray
  *
  */
-function _merge(
+function merge(
     array: number[],
     auxArray: number[],
     lstart: number,
