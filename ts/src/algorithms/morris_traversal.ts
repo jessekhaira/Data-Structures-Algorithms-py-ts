@@ -1,4 +1,13 @@
 import { BinaryTreeNode } from 'src/utils/binary_tree';
+
+function getPrevNode(node: BinaryTreeNode): BinaryTreeNode {
+    let nodeL = node.left as BinaryTreeNode;
+    while (nodeL.right && nodeL.right !== node) {
+        nodeL = nodeL.right;
+    }
+    return nodeL;
+}
+
 /**
  *  This algorithm represents a way to traverse binary trees in-order using just
     O(1) space with the Morris Traversal algorithm.
@@ -15,22 +24,20 @@ import { BinaryTreeNode } from 'src/utils/binary_tree';
  * @param {BinaryTreeNode} node 
  * @returns {Set} Set containing all nodes with one child 
  */
-function morrisInorderTraversal(node) {
-    if (node == null) {
-        return [];
-    }
-    const output = new Set();
-    while (node) {
-        if (!node.left) {
-            if (node.right) {
-                output.add(node);
+function morrisInorderTraversal(node: BinaryTreeNode): Set<BinaryTreeNode> {
+    const output: Set<BinaryTreeNode> = new Set();
+    let currNode: BinaryTreeNode | null = node;
+    while (currNode) {
+        if (!currNode.left) {
+            if (currNode.right) {
+                output.add(currNode);
             }
-            node = node.right;
+            currNode = currNode.right;
         } else {
-            const prevNode = getPrevNode(node);
+            const prevNode = getPrevNode(currNode);
             if (!prevNode.right) {
-                prevNode.right = node;
-                node = node.left;
+                prevNode.right = currNode;
+                currNode = currNode.left;
             } else {
                 prevNode.right = null;
                 if (prevNode.left) {
@@ -38,24 +45,15 @@ function morrisInorderTraversal(node) {
                 } else {
                     output.delete(prevNode);
                 }
-                if (!node.right) {
-                    output.add(node);
+                if (!currNode.right) {
+                    output.add(currNode);
                 }
-                node = node.right;
+                currNode = currNode.right;
             }
         }
     }
     return output;
 }
-
-function getPrevNode(node) {
-    let nodeL = node.left;
-    while (nodeL.right && nodeL.right !== node) {
-        nodeL = nodeL.right;
-    }
-    return nodeL;
-}
-
 /**
     This algorithm represents a way to traverse binary trees in
     pre-order manner using just O(1) space with the Morris Traversal algorithm.
@@ -71,25 +69,23 @@ function getPrevNode(node) {
  * @param {BinaryTreeNode} node 
  * @returns {Set} Set containing all nodes with one child 
  */
-function morrisPreorderTraversal(node) {
-    if (node == null) {
-        return [];
-    }
-    const output = new Set();
-    while (node) {
-        if (!node.left) {
-            if (node.right) {
-                output.add(node);
+function morrisPreorderTraversal(node: BinaryTreeNode): Set<BinaryTreeNode> {
+    const output: Set<BinaryTreeNode> = new Set();
+    let currNode: BinaryTreeNode | null = node;
+    while (currNode) {
+        if (!currNode.left) {
+            if (currNode.right) {
+                output.add(currNode);
             }
-            node = node.right;
+            currNode = currNode.right;
         } else {
-            const prevNode = getPrevNode(node);
+            const prevNode = getPrevNode(currNode);
             if (!prevNode.right) {
-                prevNode.right = node;
-                if (!node.right) {
-                    output.add(node);
+                prevNode.right = currNode;
+                if (!currNode.right) {
+                    output.add(currNode);
                 }
-                node = node.left;
+                currNode = currNode.left;
             } else {
                 prevNode.right = null;
                 if (prevNode.left) {
@@ -97,7 +93,7 @@ function morrisPreorderTraversal(node) {
                 } else {
                     output.delete(prevNode);
                 }
-                node = node.right;
+                currNode = currNode.right;
             }
         }
     }

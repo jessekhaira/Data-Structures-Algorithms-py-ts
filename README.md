@@ -1,6 +1,6 @@
 # Data Structures and Algorithms in TypeScript and Python
 
-The repo represents a variety of fundamental data structures and algorithms implemented in TypeScript and Python in a clean, efficient, and well documented manner. Currently migrating vanilla javascript implementations to typescript.
+The repo represents a variety of fundamental data structures and algorithms implemented in TypeScript and Python in a clean, efficient, and well documented manner.
 
 # Data Structures
 
