@@ -15,7 +15,7 @@ import { BinaryTreeNode } from 'src/utils/binary_tree';
  * @param {BinaryTreeNode} node 
  * @returns {Set} Set containing all nodes with one child 
  */
-export function morrisInorderTraversal(node) {
+function morrisInorderTraversal(node) {
     if (node == null) {
         return [];
     }
@@ -57,20 +57,21 @@ function getPrevNode(node) {
 }
 
 /**
-    This algorithm represents a way to traverse binary trees in pre-order manner using just
-    O(1) space with the Morris Traversal algorithm.
+    This algorithm represents a way to traverse binary trees in
+    pre-order manner using just O(1) space with the Morris Traversal algorithm.
     
-    In pre-order traversal, the node is visited first, then its left subtree, then its right subtree. 
+    In pre-order traversal, the node is visited first, then its left subtree,
+    then its right subtree. 
 
-    In this case, the algorithm is being used to find the number of nodes in the binary
-    tree with just one child. 
+    In this case, the algorithm is being used to find the number of nodes in
+    the binary tree with just one child. 
 
     Time b/a/w: O(n) where n is the number of nodes in the tree
     Space b/a/w: O(1)
- * @param {object} node 
+ * @param {BinaryTreeNode} node 
  * @returns {Set} Set containing all nodes with one child 
  */
-export function Morris_PreOrder_Traversal(node) {
+function morrisPreorderTraversal(node) {
     if (node == null) {
         return [];
     }
@@ -102,3 +103,5 @@ export function Morris_PreOrder_Traversal(node) {
     }
     return output;
 }
+
+export { morrisInorderTraversal, morrisPreorderTraversal };

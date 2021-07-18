@@ -77,7 +77,7 @@ function mergeSortHelper(
     const middle = start + Math.floor((end - start) / 2);
     mergeSortHelper(auxArray, array, start, middle);
     mergeSortHelper(auxArray, array, middle + 1, end);
-    _merge(array, auxArray, start, middle, middle + 1, end);
+    merge(array, auxArray, start, middle, middle + 1, end);
 }
 
 /**

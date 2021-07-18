@@ -1,8 +1,8 @@
 import {
-    Morris_Inorder_Traversal,
-    Morris_PreOrder_Traversal,
-} from '../../algorithms/MorrisTraversal';
-import { BinaryTreeNode } from '../../utils/binary_tree';
+    morrisInorderTraversal,
+    morrisPreorderTraversal,
+} from 'src/algorithms/morris_traversal';
+import { BinaryTreeNode } from 'src/utils/binary_tree';
 
 describe('Test Inorder Morris', () => {
     test('test1', () => {
@@ -13,8 +13,8 @@ describe('Test Inorder Morris', () => {
         output.add(rootBT.right);
         output.add(rootBT);
 
-        expect(Morris_Inorder_Traversal(rootBT)).toEqual(output);
-        expect(Morris_PreOrder_Traversal(rootBT)).toEqual(output);
+        expect(morrisInorderTraversal(rootBT)).toEqual(output);
+        expect(morrisPreorderTraversal(rootBT)).toEqual(output);
     });
 
     test('test2', () => {
@@ -27,8 +27,8 @@ describe('Test Inorder Morris', () => {
         const output = new Set();
         output.add(rootBT);
 
-        expect(Morris_Inorder_Traversal(rootBT)).toEqual(output);
-        expect(Morris_PreOrder_Traversal(rootBT)).toEqual(output);
+        expect(morrisInorderTraversal(rootBT)).toEqual(output);
+        expect(morrisPreorderTraversal(rootBT)).toEqual(output);
     });
 
     test('test3', () => {
@@ -39,8 +39,8 @@ describe('Test Inorder Morris', () => {
         rootBT.left = new BinaryTreeNode(9);
 
         const output = new Set();
-        expect(Morris_Inorder_Traversal(rootBT)).toEqual(output);
-        expect(Morris_PreOrder_Traversal(rootBT)).toEqual(output);
+        expect(morrisInorderTraversal(rootBT)).toEqual(output);
+        expect(morrisPreorderTraversal(rootBT)).toEqual(output);
     });
 
     test('test4', () => {
@@ -56,7 +56,7 @@ describe('Test Inorder Morris', () => {
         output.add(rootBT.left);
         output.add(rootBT.left.left);
 
-        expect(Morris_Inorder_Traversal(rootBT)).toEqual(output);
-        expect(Morris_PreOrder_Traversal(rootBT)).toEqual(output);
+        expect(morrisInorderTraversal(rootBT)).toEqual(output);
+        expect(morrisPreorderTraversal(rootBT)).toEqual(output);
     });
 });
