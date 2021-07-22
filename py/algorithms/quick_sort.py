@@ -1,9 +1,10 @@
 """ This module contains code for an efficient implementation of the
 quick sort algorithm """
 from py.utils.utility_functions import swap
+from typing import List
 
 
-def quick_sort(array):
+def quick_sort(array: List[int]) -> List[int]:
     """ This function represents an efficient implementation of the
     quick sort algorithm. Like the merge sort algorithm, this algorithm
     uses the divide and conquer strategy to efficiently sort an array.
