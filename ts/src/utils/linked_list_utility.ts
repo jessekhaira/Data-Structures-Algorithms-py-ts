@@ -5,7 +5,9 @@
  */
 class SingleLinkedListNode<T> {
     next: null | SingleLinkedListNode<T>;
+
     val: T;
+
     constructor(val: T) {
         this.val = val;
         this.next = null;
@@ -18,8 +20,11 @@ class SingleLinkedListNode<T> {
  */
 class DoubleLinkedListNode<T> {
     prev: null | DoubleLinkedListNode<T>;
+
     next: null | DoubleLinkedListNode<T>;
+
     val: T;
+
     constructor(val: T) {
         this.val = val;
         this.next = null;
