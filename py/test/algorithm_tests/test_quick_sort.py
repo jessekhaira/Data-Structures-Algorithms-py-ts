@@ -1,9 +1,13 @@
+""" This module contains code representing tests for the quicksort
+algorithm """
 import unittest
 from py.algorithms.quick_sort import quick_sort
 import random
 
 
-class tests(unittest.TestCase):
+class QuickSortTests(unittest.TestCase):
+    """ This class contains code representing tests for the quicksort
+    algorithm """
 
     def test1(self):
         self.assertEqual([1, 2, 3, 4], quick_sort([4, 3, 2, 1]))
