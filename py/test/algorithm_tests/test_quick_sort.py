@@ -1,5 +1,5 @@
 import unittest
-from py.algorithms.quicksort import quickSort
+from py.algorithms.quick_sort import quickSort
 import random
 
 
