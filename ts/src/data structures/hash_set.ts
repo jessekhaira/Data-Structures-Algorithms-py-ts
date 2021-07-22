@@ -1,6 +1,6 @@
 import { SingleLinkedListNode } from '../utils/linked_list_utility';
 /**
- * This class represents a Hash Set designed specifically to accept asdjkasdjkasjkdaskjdnjsakdknjsadknjas
+ * This class represents a Hash Set designed specifically to accept
  * integer values. Hash collisons are dealt with through chaining with
  * linked lists.
  *
