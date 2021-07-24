@@ -49,15 +49,15 @@ def post_order_dfs_iterative(node: binaryTreeNode) -> List[int]:
         return
     stack = []
     output = []
-    lastNode = None
+    last_node = None
     while stack or node:
         while node:
             stack.append(node)
             node = node.left
-        if stack[-1].right and stack[-1].right != lastNode:
+        if stack[-1].right and stack[-1].right != last_node:
             node = stack[-1].right
         else:
-            currNode = stack.pop()
-            output.append(currNode.val)
-            lastNode = currNode
+            curr_node = stack.pop()
+            output.append(curr_node.val)
+            last_node = curr_node
     return output
