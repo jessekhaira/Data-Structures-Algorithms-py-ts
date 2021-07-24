@@ -1,5 +1,5 @@
 """ This module contains code representing the post order depth
-first search algorithm """
+first search algorithm for a binary tree"""
 
 from py.utils.binaryTree import binaryTreeNode
 from typing import Literal, List

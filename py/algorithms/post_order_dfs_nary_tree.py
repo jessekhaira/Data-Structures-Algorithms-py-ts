@@ -1,44 +1,45 @@
-def postOrderDFS_nary(node):
-    """
-    This algorithm traverses an N-Ary tree in post-order fashion recursively. 
+""" This module contains code representing the post order depth
+first search algorithm for a nary tree"""
+from py.utils.binaryTree import binaryTreeNode
+from typing import List
 
-    Assumes input nodes have a property .children containing all the children 
-    the node is connected to, and a property .val
+
+def post_order_dfs_nary_recursive(node: binaryTreeNode) -> List[int]:
+    """ This algorithm traverses an N-Ary tree in
+    post-order fashion recursively.
     """
     if not node:
         return
     output = []
-    postOrderHelper_recursive(node, output)
+    post_order_nary_helper_recursive(node, output)
     return output
 
 
-def postOrderHelper_recursive(node, output):
+def post_order_nary_helper_recursive(node, output):
     if not node:
         return
     for child in node.children:
-        postOrderHelper_recursive(child, output)
+        post_order_nary_helper_recursive(child, output)
     output.append(node.val)
 
 
-def postorder_iterative(self, node):
-    """
-    This algorithm traverses an N-Ary tree in post-order fashion iteratively. 
+def postorder_iterative(node: binaryTreeNode) -> List[int]:
+    """ This algorithm traverses an N-Ary tree in post-order fashion
+    iteratively.
 
-    Assumes input nodes have a property .children containing all the children the node is connected to,
-    and a property .val.
-
-    Key thing: emulate the recursive call stack using an actual stack. How we convert recursive code to iterative code. 
+    Key thing: emulate the recursive call stack using an actual stack. How we
+    convert recursive code to iterative code.
     """
     if not node:
         return
     stack = [(node, 0)]
     output = []
     while stack:
-        node, currIdxChild = stack.pop()
-        if currIdxChild == len(node.children):
+        node, curr_idx_child = stack.pop()
+        if curr_idx_child == len(node.children):
             output.append(node.val)
         else:
-            stack.append((node, currIdxChild + 1))
-            stack.append((node.children[currIdxChild], 0))
+            stack.append((node, curr_idx_child + 1))
+            stack.append((node.children[curr_idx_child], 0))
 
     return output
