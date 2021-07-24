@@ -1,4 +1,9 @@
-def post_order_dfs_recursive(node, output):
+from py.utils.binaryTree import binaryTreeNode
+from typing import Literal, List
+
+
+def post_order_dfs_recursive(node: binaryTreeNode,
+                             output: Literal[[]]) -> List[int]:
     """ This code describes the recursive post order traversal
     of a binary tree. Before any given node in the tree is visited,
     all the nodes in the left subtree of the current node, and all
@@ -23,13 +28,12 @@ def post_order_dfs_recursive(node, output):
 
 
 def post_order_dfs_iterative(node):
-    """
-    This code describes the iterative post order traversal
+    """ This code describes the iterative post order traversal
     of a binary tree. Before any given node in the tree is visited,
     all the nodes in the left subtree of the current node, and all
     the nodes in the right subtree of the current node are visited.
 
-    Inputs:
+    Args:
         -> node (Binary Tree Node): Binary Tree node that is assumed 
         to have a .left property, .right property, and .val property.
         -> output(list)
