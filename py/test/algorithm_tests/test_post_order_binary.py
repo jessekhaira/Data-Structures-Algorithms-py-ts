@@ -6,6 +6,8 @@ import unittest
 
 
 class PostOrderDFSBinary(unittest.TestCase):
+    """ This class contains tests for the post order depth
+    first search algorithm """
 
     def test1(self):
         bst = BinarySearchTree(5)
