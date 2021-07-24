@@ -46,7 +46,7 @@ The repo represents a variety of fundamental data structures and algorithms impl
 
 - [Breadth First Search](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/breadth_first_search.py)
 - [Post Order Depth First Search Binary Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/post_order_dfs_binary_tree.py)
-- [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/postOrderDFS_naryTree.py)
+- [Post Order Depth First Search N-Ary Tree](https://github.com/13jk59/Data-Structures-Algorithms-py-ts/blob/master/py/algorithms/post_order_dfs_nary_tree.py)
 - [Morris Traversal](https://github.com/13jk59/Data-Structures-Algorithms-py-js/blob/master/py/algorithms/MorrisTraversal.py)
 
 ### Miscellaneous

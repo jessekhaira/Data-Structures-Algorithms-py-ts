@@ -11,13 +11,13 @@ def postOrderDFS_nary(node):
     postOrderHelper_recursive(node, output)
     return output
 
+
 def postOrderHelper_recursive(node, output):
     if not node:
         return
     for child in node.children:
         postOrderHelper_recursive(child, output)
     output.append(node.val)
-
 
 
 def postorder_iterative(self, node):
@@ -31,14 +31,14 @@ def postorder_iterative(self, node):
     """
     if not node:
         return
-    stack = [(node,0)]
-    output = [] 
+    stack = [(node, 0)]
+    output = []
     while stack:
-        node, currIdxChild = stack.pop() 
+        node, currIdxChild = stack.pop()
         if currIdxChild == len(node.children):
             output.append(node.val)
         else:
-            stack.append((node, currIdxChild+1))
+            stack.append((node, currIdxChild + 1))
             stack.append((node.children[currIdxChild], 0))
-            
-    return output 
+
+    return output
