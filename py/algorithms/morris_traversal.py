@@ -20,7 +20,7 @@ def morris_inorder_traversal(node):
 
     Space:
         O(1) best/average/worst
-    
+
     Where N is the number of nodes in the binary tree
 
     Args:
@@ -50,20 +50,20 @@ def morris_inorder_traversal(node):
         # get the absolute last node that will be visited in the left
         # subtree and set its right pointer to the current node
         else:
-            lastNodeInLeftSubtree = getPrevNode(node)
-            if not lastNodeInLeftSubtree.right:
-                lastNodeInLeftSubtree.right = node
+            last_node_in_left_subtree = getPrevNode(node)
+            if not last_node_in_left_subtree.right:
+                last_node_in_left_subtree.right = node
                 node = node.left
-            elif lastNodeInLeftSubtree.right == node:
-                lastNodeInLeftSubtree.right = None
-                # if the node has a left subtree, its guaranteed at this point to not have
-                # a right subtree so we can add it
-                if lastNodeInLeftSubtree.left:
-                    output.add(lastNodeInLeftSubtree)
-                # otherwise, this connecting node was a leaf node and will be present in output
-                # so we have to remove it
+            elif last_node_in_left_subtree.right == node:
+                last_node_in_left_subtree.right = None
+                # if the node has a left subtree, its guaranteed at this point
+                # to not have a right subtree so we can add it
+                if last_node_in_left_subtree.left:
+                    output.add(last_node_in_left_subtree)
+                # otherwise, this connecting node was a leaf node and will be
+                # present in output so we have to remove it
                 else:
-                    output.remove(lastNodeInLeftSubtree)
+                    output.remove(last_node_in_left_subtree)
                 if not node.right:
                     output.add(node)
                 node = node.right
