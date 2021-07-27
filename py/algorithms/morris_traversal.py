@@ -20,30 +20,35 @@ def morris_inorder_traversal(node):
 
     Space:
         O(1) best/average/worst
+    
+    Where N is the number of nodes in the binary tree
 
     Args:
         node:
             Binary tree node representing the root of the binary
             tree
-    Output:
+    Returns:
         A hashset containing all nodes in the tree with one child
     """
     if not node:
         return
     output = set()
     while node:
-        # inorder traversal easy case - no left subtree means we just visit this node right away
+        # inorder traversal easy case - no left subtree means we just visit
+        # this node right away
         if not node.left:
-            # don't want to add leaf nodes
-            # also have to account for fact some leaf nodes will have artifical right node
-            # unless we use an addition data structure to track those, we will just add and remove them
-            # from the hash-set, which are efficient operations
+            # don't want to add leaf nodes. also have to account for fact some
+            # leaf nodes will have artifical right node
+            # unless we use an addition data structure to track those,
+            # we will just add and remove them from the hash-set, which
+            # are efficient operations
             if node.right:
                 output.add(node)
             node = node.right
-        # if there is a left subtree, then we need some way to get back to this node after
-        # visiting every node in the left subtree. So we get the absolute last node that will be visited
-        # in the left subtree and set its right pointer to the current node
+        # if there is a left subtree, then we need some way to get back to
+        # this node after visiting every node in the left subtree. So we
+        # get the absolute last node that will be visited in the left
+        # subtree and set its right pointer to the current node
         else:
             lastNodeInLeftSubtree = getPrevNode(node)
             if not lastNodeInLeftSubtree.right:
