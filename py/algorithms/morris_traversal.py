@@ -1,22 +1,32 @@
-def Morris_Inorder_Traversal(node):
-    """
-    This algorithm represents a way to traverse binary trees in-order using just
-    O(1) space with the Morris Traversal algorithm.
-    
-    In in-order traversal, all the nodes in a given nodes left subtree are visited,
-    then the current node is visited, then all the nodes in the right subtree of a given
-    node are visited. 
-    
-    In this case, the algorithm is being used to find the number of nodes in the binary
-    tree with just one child. 
+""" This module contains code representing the morris traversal
+algorithm """
 
-    Time b/a/w: O(n) where n is the number of nodes in the tree
-    Space b/a/w: O(1)
 
-    Input:
-        -> node (Binary Tree Node): Root of binary tree
+def morris_inorder_traversal(node):
+    """ This algorithm represents a way to traverse binary
+    trees in-order using just O(1) space with the Morris
+    Traversal algorithm.
+
+    In in-order traversal, all the nodes in a given nodes left
+    subtree are visited, then the current node is visited,
+    then all the nodes in the right subtree of a given
+    node are visited.
+
+    In this case, the algorithm is being used to find the number
+    of nodes in the binary tree with just one child.
+
+    Time:
+        O(N) best/average/worst
+
+    Space:
+        O(1) best/average/worst
+
+    Args:
+        node:
+            Binary tree node representing the root of the binary
+            tree
     Output:
-        -> set{} containing all nodes in the tree with one child 
+        A hashset containing all nodes in the tree with one child
     """
     if not node:
         return
