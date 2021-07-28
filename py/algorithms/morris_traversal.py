@@ -1,8 +1,10 @@
 """ This module contains code representing the morris traversal
 algorithm """
+from py.utils.binaryTree import binaryTreeNode
+from typing import Set, Any
 
 
-def morris_inorder_traversal(node):
+def morris_inorder_traversal(node: binaryTreeNode) -> Set[Any]:
     """ This algorithm represents a way to traverse binary
     trees in-order using just O(1) space with the Morris
     Traversal algorithm.
@@ -50,7 +52,7 @@ def morris_inorder_traversal(node):
         # get the absolute last node that will be visited in the left
         # subtree and set its right pointer to the current node
         else:
-            last_node_in_left_subtree = getPrevNode(node)
+            last_node_in_left_subtree = get_prev_node(node)
             if not last_node_in_left_subtree.right:
                 last_node_in_left_subtree.right = node
                 node = node.left
@@ -70,46 +72,54 @@ def morris_inorder_traversal(node):
     return output
 
 
-def getPrevNode(node):
-    nodeL = node.left
-    while nodeL.right and nodeL.right != node:
-        nodeL = nodeL.right
-    return nodeL
+def get_prev_node(node):
+    node_l = node.left
+    while node_l.right and node_l.right != node:
+        node_l = node_l.right
+    return node_l
 
 
-def Morris_PreOrder_Traversal(node):
-    """
-    This algorithm represents a way to traverse binary trees in pre-order manner using just
-    O(1) space with the Morris Traversal algorithm.
-    
-    In pre-order traversal, the node is visited first, then its left subtree, then its right subtree. 
+def morris_pre_order_traversal(node: binaryTreeNode) -> Set[Any]:
+    """ This algorithm represents a way to traverse binary
+    trees in pre-order manner using just O(1) space with
+    the Morris Traversal algorithm.
 
-    In this case, the algorithm is being used to find the number of nodes in the binary
-    tree with just one child. 
+    In pre-order traversal, the node is visited first, then
+    its left subtree, then its right subtree.
 
-    Time b/a/w: O(n) where n is the number of nodes in the tree
-    Space b/a/w: O(1)
+    In this case, the algorithm is being used to find the number
+    of nodes in the binary tree with just one child.
 
-    Input:
-        -> node (Binary Tree Node): Root of binary tree
-    Output:
-        -> set{} containing all nodes in the tree with one child 
+    Time:
+        O(N) best/average/worst
+
+    Space:
+        O(1) best/average/worst
+
+    Where N is the number of nodes in the tree
+
+    Args:
+        node:
+            Binary tree node representing the root of the binary
+            tree
+    Returns:
+        A hashset containing all nodes in the tree with one child
     """
     output = set()
     while node:
         if node.left:
-            prevNode = getPrevNode(node)
-            if not prevNode.right:
-                prevNode.right = node
+            prev_node = get_prev_node(node)
+            if not prev_node.right:
+                prev_node.right = node
                 if not node.right:
                     output.add(node)
                 node = node.left
             else:
-                prevNode.right = None
-                if prevNode.left:
-                    output.add(prevNode)
+                prev_node.right = None
+                if prev_node.left:
+                    output.add(prev_node)
                 else:
-                    output.remove(prevNode)
+                    output.remove(prev_node)
                 node = node.right
         else:
             if node.right:
