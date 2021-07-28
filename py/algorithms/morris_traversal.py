@@ -72,7 +72,7 @@ def morris_inorder_traversal(node: binaryTreeNode) -> Set[Any]:
     return output
 
 
-def get_prev_node(node):
+def get_prev_node(node: binaryTreeNode) -> binaryTreeNode:
     node_l = node.left
     while node_l.right and node_l.right != node:
         node_l = node_l.right
