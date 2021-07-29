@@ -1,10 +1,10 @@
 """ This module contains code representing the morris traversal
 algorithm """
-from py.utils.binary_tree import binaryTreeNode
+from py.utils.binary_tree import BinaryTreeNode
 from typing import Set, Any
 
 
-def morris_inorder_traversal(node: binaryTreeNode) -> Set[Any]:
+def morris_inorder_traversal(node: BinaryTreeNode) -> Set[Any]:
     """ This algorithm represents a way to traverse binary
     trees in-order using just O(1) space with the Morris
     Traversal algorithm.
@@ -72,14 +72,14 @@ def morris_inorder_traversal(node: binaryTreeNode) -> Set[Any]:
     return output
 
 
-def get_prev_node(node: binaryTreeNode) -> binaryTreeNode:
+def get_prev_node(node: BinaryTreeNode) -> BinaryTreeNode:
     node_l = node.left
     while node_l.right and node_l.right != node:
         node_l = node_l.right
     return node_l
 
 
-def morris_pre_order_traversal(node: binaryTreeNode) -> Set[Any]:
+def morris_pre_order_traversal(node: BinaryTreeNode) -> Set[Any]:
     """ This algorithm represents a way to traverse binary
     trees in pre-order manner using just O(1) space with
     the Morris Traversal algorithm.

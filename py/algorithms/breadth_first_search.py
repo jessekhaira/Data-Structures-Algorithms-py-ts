@@ -1,10 +1,10 @@
 """ This module contains the breadth first search algorithm """
 from py.data_structures.queue import Queue
-from py.utils.binary_tree import binaryTreeNode
+from py.utils.binary_tree import BinaryTreeNode
 from typing import List
 
 
-def breadth_first_search(node: binaryTreeNode) -> List[List[int]]:
+def breadth_first_search(node: BinaryTreeNode) -> List[List[int]]:
     """ This algorithm represents the breadth first search traversal algorithm
     used specifically for a binary tree.
 

@@ -1,6 +1,6 @@
 """ This module contains code for a class that represents the binary
 search tree data structure """
-from py.utils.binary_tree import binaryTreeNode
+from py.utils.binary_tree import BinaryTreeNode
 from typing import Union, Tuple
 
 
@@ -20,12 +20,12 @@ class BinarySearchTree:
             Integer representing the value at the root of the BST
 
         root:
-            Object of type binaryTreeNode representing the node at the root
+            Object of type BinaryTreeNode representing the node at the root
             of the binary search tree
     """
 
     def __init__(self, val: int):
-        self.root = binaryTreeNode(val)
+        self.root = BinaryTreeNode(val)
 
     def insertion(self, val: int) -> None:
         """ This method inserts a node into the binary search tree, while
@@ -49,9 +49,9 @@ class BinarySearchTree:
         node = self.root
         return self._insertion_helper(val, node)
 
-    def _insertion_helper(self, val: int, node: binaryTreeNode) -> None:
+    def _insertion_helper(self, val: int, node: BinaryTreeNode) -> None:
         if not node:
-            return binaryTreeNode(val)
+            return BinaryTreeNode(val)
         elif val < node.val:
             node.left = self._insertion_helper(val, node.left)
             return node
@@ -60,7 +60,7 @@ class BinarySearchTree:
             node.right = self._insertion_helper(val, node.right)
             return node
 
-    def lookup(self, val: int) -> Union[binaryTreeNode, None]:
+    def lookup(self, val: int) -> Union[BinaryTreeNode, None]:
         """ This method will return the first node that contains the input
         value in the tree, or None if no node contains the value.
 
@@ -84,8 +84,8 @@ class BinarySearchTree:
         node = self.root
         return self._lookup_helper(node, val)
 
-    def _lookup_helper(self, node: binaryTreeNode,
-                       val: int) -> Union[binaryTreeNode, None]:
+    def _lookup_helper(self, node: BinaryTreeNode,
+                       val: int) -> Union[BinaryTreeNode, None]:
         if not node:
             return
         elif node.val == val:
@@ -116,7 +116,7 @@ class BinarySearchTree:
         node = self.root
         self._delete_helper_v(node, val)
 
-    def _delete_helper_v(self, node: binaryTreeNode, val: int):
+    def _delete_helper_v(self, node: BinaryTreeNode, val: int):
         """ This delete helper uses a convenient method to erase
         the node when the node has two children. This node actually
         doesn't erase the node with the target value, this method
@@ -154,14 +154,14 @@ class BinarySearchTree:
                                                min_val_in_right_subtree)
             return node
 
-    def _get_min_val_right_v(self, node: binaryTreeNode) -> int:
+    def _get_min_val_right_v(self, node: BinaryTreeNode) -> int:
         # min val has no left child
         if not node.left:
             return node.val
         return self._getMinValRight(node.left)
 
-    def _delete_helper_a(self, node: binaryTreeNode,
-                         val: int) -> Union[binaryTreeNode, None]:
+    def _delete_helper_a(self, node: BinaryTreeNode,
+                         val: int) -> Union[BinaryTreeNode, None]:
         """ This delete helper is the same as the other one, except when
         the node has two children, this method actually removes the node
         from the tree rather than just replacing its value with the minimum
@@ -194,7 +194,7 @@ class BinarySearchTree:
 
     def _get_min_node(
             self,
-            node: binaryTreeNode) -> Tuple[binaryTreeNode, binaryTreeNode]:
+            node: BinaryTreeNode) -> Tuple[BinaryTreeNode, BinaryTreeNode]:
         if not node.left:
             return node.right, node
         node.left, min_node = self._get_min_node(node.left)

@@ -1,11 +1,11 @@
 """ This module contains code representing the post order depth
 first search algorithm for a binary tree"""
 
-from py.utils.binary_tree import binaryTreeNode
+from py.utils.binary_tree import BinaryTreeNode
 from typing import Literal, List
 
 
-def post_order_dfs_recursive(node: binaryTreeNode,
+def post_order_dfs_recursive(node: BinaryTreeNode,
                              output: Literal[[]]) -> List[int]:
     """ This code describes the recursive post order traversal
     of a binary tree. Before any given node in the tree is visited,
@@ -31,7 +31,7 @@ def post_order_dfs_recursive(node: binaryTreeNode,
     return output
 
 
-def post_order_dfs_iterative(node: binaryTreeNode) -> List[int]:
+def post_order_dfs_iterative(node: BinaryTreeNode) -> List[int]:
     """ This code describes the iterative post order traversal
     of a binary tree. Before any given node in the tree is visited,
     all the nodes in the left subtree of the current node, and all

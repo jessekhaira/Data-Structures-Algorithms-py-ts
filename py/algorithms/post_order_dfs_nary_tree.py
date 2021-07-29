@@ -1,10 +1,10 @@
 """ This module contains code representing the post order depth
 first search algorithm for a nary tree"""
-from py.utils.binary_tree import binaryTreeNode
+from py.utils.binary_tree import BinaryTreeNode
 from typing import List
 
 
-def post_order_dfs_nary_recursive(node: binaryTreeNode) -> List[int]:
+def post_order_dfs_nary_recursive(node: BinaryTreeNode) -> List[int]:
     """ This algorithm traverses an N-Ary tree in
     post-order fashion recursively.
     """
@@ -23,7 +23,7 @@ def post_order_nary_helper_recursive(node, output):
     output.append(node.val)
 
 
-def postorder_iterative(node: binaryTreeNode) -> List[int]:
+def postorder_iterative(node: BinaryTreeNode) -> List[int]:
     """ This algorithm traverses an N-Ary tree in post-order fashion
     iteratively.
 

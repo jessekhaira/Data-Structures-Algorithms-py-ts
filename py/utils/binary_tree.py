@@ -1,5 +1,6 @@
-class binaryTreeNode(object):
+class BinaryTreeNode(object):
+
     def __init__(self, val):
         self.val = val
         self.left = None
-        self.right = None 
+        self.right = None

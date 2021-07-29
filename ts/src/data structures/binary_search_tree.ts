@@ -25,7 +25,7 @@ class BinarySearchTree {
      * @param {number} val Number representing the value at the root of the BST
      */
     constructor(val: number) {
-        /** Object of type binaryTreeNode representing the node at the root
+        /** Object of type BinaryTreeNode representing the node at the root
             of the binary search tree
          * @public
          * @type {BinaryTreeNode}
