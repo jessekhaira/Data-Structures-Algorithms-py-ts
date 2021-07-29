@@ -13,7 +13,7 @@ def bubble_sort(array: List[int]) -> List[int]:
     Space:
         O(1) best/avg/worst
 
-    N - number of elements in input array
+    Where N is the number of elements in input array
 
     Args:
         array:
