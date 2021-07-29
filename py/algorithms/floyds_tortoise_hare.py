@@ -16,7 +16,7 @@ def floyds_tortoise_hare(node: LinkedListNode) -> Union[None, LinkedListNode]:
     Space:
         O(1) best/avg/worst
 
-    N - number of nodes in linked list
+    Where N is the number of nodes in the linked list
 
     Args:
         node:
