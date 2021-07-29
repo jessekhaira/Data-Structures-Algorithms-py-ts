@@ -13,6 +13,14 @@ def breadth_first_search(node: BinaryTreeNode) -> List[List[int]]:
     the queue data structure, which is known as a first in first out data
     structure.
 
+    Time:
+        O(N) best/average/worst
+
+    Space:
+        O(N) best/average/worst
+
+    Where N is the number of nodes in the binary tree
+
     Args:
         node:
             Root of binary tree to traverse
