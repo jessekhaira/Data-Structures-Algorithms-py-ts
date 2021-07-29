@@ -1,6 +1,6 @@
 """ This module contains code representing the morris traversal
 algorithm """
-from py.utils.binaryTree import binaryTreeNode
+from py.utils.binary_tree import binaryTreeNode
 from typing import Set, Any
 
 

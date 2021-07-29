@@ -1,6 +1,6 @@
 """ This module contains code for a class that represents the binary
 search tree data structure """
-from py.utils.binaryTree import binaryTreeNode
+from py.utils.binary_tree import binaryTreeNode
 from typing import Union, Tuple
 
 

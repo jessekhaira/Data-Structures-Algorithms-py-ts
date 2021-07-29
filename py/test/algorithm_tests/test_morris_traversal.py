@@ -1,7 +1,7 @@
 import unittest
 from py.algorithms.morris_traversal import Morris_Inorder_Traversal
 from py.algorithms.morris_traversal import Morris_PreOrder_Traversal
-from py.utils.binaryTree import binaryTreeNode
+from py.utils.binary_tree import binaryTreeNode
 
 
 class test(unittest.TestCase):
