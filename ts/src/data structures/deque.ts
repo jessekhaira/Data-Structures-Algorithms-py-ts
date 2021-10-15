@@ -15,6 +15,12 @@ class Deque<T> {
         this.tail = null;
     }
 
+    /**
+     * This method is used to return the first value stored inside of the
+     * deque
+     * @returns {T} Argument of type T, representing the first value inside
+     * of the deque
+     */
     peekFirst(): T {
         if (this.head) {
             return this.head.val;
@@ -23,6 +29,12 @@ class Deque<T> {
         throw Error('peek in empty deque');
     }
 
+    /**
+     * This method is used to return the last value stored inside of the
+     * deque
+     * @returns {T} Argument of type T, representing the last value inside
+     * of the deque
+     */
     peekLast(): T {
         if (this.tail) {
             return this.tail.val;
