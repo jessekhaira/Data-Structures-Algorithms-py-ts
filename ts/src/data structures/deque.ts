@@ -43,6 +43,12 @@ class Deque<T> {
         throw Error('peek in empty deque');
     }
 
+    /**
+     * This method is used to remove and return the first value stored
+     * inside of the deque
+     * @returns {T} Argument of type T, representing the first value inside
+     * of the deque
+     */
     popFirst(): T {
         if (this.head) {
             const retvalue = this.head.val;
