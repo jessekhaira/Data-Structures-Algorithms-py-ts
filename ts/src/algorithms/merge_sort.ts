@@ -1,9 +1,6 @@
 /**
  * This function carries out the merge operation using the two sorted partitions
  * of auxArray from lstart to lend, and rstart to rend, to sort the main array.
- *
- *
- *
  * @param {number[]} array List of integers to sort from lstart to rend
  * @param {number[]} auxArray Copy of the main array used to help sort the array
  * @param {number} lstart Integer representing start idx of sorted left portion

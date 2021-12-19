@@ -37,7 +37,7 @@ def quick_sort(array: List[int]) -> List[int]:
     return array
 
 
-def quick_sort_helper(array, start, end):
+def quick_sort_helper(array: List[int], start: int, end: int) -> None:
     if start >= end:
         return
     pivot = start
