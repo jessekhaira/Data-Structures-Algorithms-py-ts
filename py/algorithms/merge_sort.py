@@ -86,24 +86,22 @@ def _merge(array: List[int], aux_array: List[int], lstart: int, lend: int,
         rend:
             Integer representing end idx of sorted right portion of aux_array
     """
-    ptr1 = lstart
     ptr_arr = lstart
-    ptr2 = rstart
-    while ptr1 <= lend and ptr2 <= rend:
-        if aux_array[ptr1] <= aux_array[ptr2]:
-            array[ptr_arr] = aux_array[ptr1]
-            ptr1 += 1
+    while lstart <= lend and rstart <= rend:
+        if aux_array[lstart] <= aux_array[rstart]:
+            array[ptr_arr] = aux_array[lstart]
+            lstart += 1
         else:
-            array[ptr_arr] = aux_array[ptr2]
-            ptr2 += 1
+            array[ptr_arr] = aux_array[rstart]
+            rstart += 1
         ptr_arr += 1
 
-    while ptr1 <= lend:
-        array[ptr_arr] = aux_array[ptr1]
-        ptr1 += 1
+    while lstart <= lend:
+        array[ptr_arr] = aux_array[lstart]
+        lstart += 1
         ptr_arr += 1
 
-    while ptr2 <= rend:
-        array[ptr_arr] = aux_array[ptr2]
-        ptr2 += 1
+    while rstart <= rend:
+        array[ptr_arr] = aux_array[rstart]
+        rstart += 1
         ptr_arr += 1
