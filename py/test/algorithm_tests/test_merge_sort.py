@@ -7,7 +7,7 @@ class MergeSortTests(unittest.TestCase):
 
     def test1(self):
         array = [-9, 2, 1, 2, 3, 4, 5, 6, 9, 18]
-        self.assertEqual([-9, 1, 2, 2, 3, 4, 5, 6, 9, 18], merge_sort(array))
+        self.assertEqual(sorted(array), merge_sort(array))
 
     def test2(self):
         array = []
@@ -15,7 +15,15 @@ class MergeSortTests(unittest.TestCase):
 
     def test3(self):
         array = [-1000, 21, 2, 5, 9, -2000, 21]
-        self.assertEqual([-2000, -1000, 2, 5, 9, 21, 21], merge_sort(array))
+        self.assertEqual(sorted(array), merge_sort(array))
+
+    def test4(self):
+        array = [
+            -1000, 21, 2, 5, 9, -2000, 21, 500, 23, 123, 5921, 123, 81239,
+            12309123, 12039950, -12318, -213123123, -1232193, 192.232, 2521.324,
+            129838912391
+        ]
+        self.assertEqual(sorted(array), merge_sort(array))
 
 
 if __name__ == "__main__":
