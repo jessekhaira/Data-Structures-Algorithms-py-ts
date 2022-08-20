@@ -59,3 +59,9 @@ test('test 4', () => {
 
     expect(mergesort(obj)).toStrictEqual(obj.sort((a, b) => a - b));
 });
+
+test('test edge case', () => {
+    const obj: number[] = [];
+
+    expect(mergesort(obj)).toStrictEqual(null);
+});
