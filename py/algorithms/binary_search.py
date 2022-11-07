@@ -1,14 +1,14 @@
-"""This module contains the binary search algorithm, implemented iteratively and
-recursively
+"""This module contains the binary search algorithm, implemented
+iteratively and recursively
 """
 from typing import List
 
 
 def iterative_binary_search(array: List[int], target: int) -> int:
-    """This algorithm represents the iterative low bound binary search 
+    """This algorithm represents the iterative low bound binary search
     algorithm. If the target element is present in the array, the index
     returned will represent the first time that element occurred inside the
-    array. 
+    array.
 
     This algorithm finds the position of a target value within within a sorted
     array by dividing a range of values into halves, and continuing to narrow
@@ -21,11 +21,11 @@ def iterative_binary_search(array: List[int], target: int) -> int:
     For example, binary search can be used on functions which are monotonically
     increasing  or decreasing in order to find the lowest possible value some
     condition is met (low bound binary search), or the highest possible value
-    some condition is met (high bound binary search). 
-    
+    some condition is met (high bound binary search).
+
     This means binary searching over the inputs of these functions to determine
-    which input produces the most optimal value -- highest or lowest output value
-    that meets some condition.
+    which input produces the most optimal value (ie: the highest or lowest
+    output value that meets some condition).
 
     Args:
         array:
