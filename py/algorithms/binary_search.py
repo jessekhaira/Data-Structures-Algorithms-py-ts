@@ -52,7 +52,7 @@ def iterative_low_bound_binary_search(array: List[int], target: int) -> int:
     return left if array[left] == target else -1
 
 
-def iterative_high_bound_binary_search(array, target):
+def iterative_high_bound_binary_search(array: List[int], target: int) -> int:
     if not array:
         return -1
     left = 0
