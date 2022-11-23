@@ -4,7 +4,7 @@ iteratively and recursively
 from typing import List
 
 
-def iterative_binary_search(array: List[int], target: int) -> int:
+def iterative_low_bound_binary_search(array: List[int], target: int) -> int:
     """This algorithm represents the iterative low bound binary search
     algorithm. If the target element is present in the array, the index
     returned will represent the first time that element occurred inside the
