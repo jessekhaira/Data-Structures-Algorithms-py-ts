@@ -1,7 +1,7 @@
 """ This module contains code intended to test the binary seach
 algorithms implemented in the library """
 import unittest
-from py.algorithms.binary_search import iterative_low_bound_binary_search
+from py.algorithms.binary_search import iterative_low_bound_binary_search, iterative_high_bound_binary_search
 from py.algorithms.binary_search import recursive_binary_search
 
 
@@ -36,6 +36,13 @@ class TestIterativeLowBoundBinarySearch(unittest.TestCase):
         ]
         self.assertEqual(iterative_low_bound_binary_search(arr, 525),
                          len(arr) - 4)
+
+
+class TestIterativeHighBoundBinarySearch(unittest.TestCase):
+
+    def test1(self):
+        arr = [-1000, -100, -100, -100, -100, -2, 5, 8, 9, 15, 25, 45, 100]
+        self.assertEqual(iterative_high_bound_binary_search(arr, -100), 4)
 
 
 class TestRecursiveBinarySearch(unittest.TestCase):
