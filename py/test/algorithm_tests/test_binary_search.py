@@ -5,7 +5,7 @@ from py.algorithms.binary_search import iterative_low_bound_binary_search
 from py.algorithms.binary_search import recursive_binary_search
 
 
-class BinarySearchTest(unittest.TestCase):
+class TestIterativeLowBoundBinarySearch(unittest.TestCase):
     """ This class holds unit tests for the binary search algorithm """
 
     def test1(self):
@@ -18,7 +18,10 @@ class BinarySearchTest(unittest.TestCase):
 
         self.assertEqual(-1, iterative_low_bound_binary_search(arr, -122))
 
-    def test2(self):
+
+class TestRecursiveBinarySearch(unittest.TestCase):
+
+    def test1(self):
         arr = [-100, -2, 3, 5]
         self.assertEqual(3, recursive_binary_search(arr, 5))
 
