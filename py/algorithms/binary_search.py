@@ -2,6 +2,7 @@
 iteratively and recursively
 """
 from typing import List
+import math
 
 
 def iterative_low_bound_binary_search(array: List[int], target: int) -> int:
@@ -38,6 +39,8 @@ def iterative_low_bound_binary_search(array: List[int], target: int) -> int:
         Integer representing the idx at which the target value occurs, or -1 if
         it does not occur
     """
+    if not array:
+        return -1
     left = 0
     right = len(array) - 1
     while left < right:
@@ -46,6 +49,20 @@ def iterative_low_bound_binary_search(array: List[int], target: int) -> int:
             right = mid
         else:
             left = mid + 1
+    return left if array[left] == target else -1
+
+
+def iterative_high_bound_binary_search(array, target):
+    if not array:
+        return -1
+    left = 0
+    right = len(array) - 1
+    while left < right:
+        mid = math.ceil((left + right) / 2)
+        if array[mid] <= target:
+            left = mid
+        else:
+            right = mid - 1
     return left if array[left] == target else -1
 
 
