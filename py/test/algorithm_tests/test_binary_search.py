@@ -48,6 +48,14 @@ class TestIterativeHighBoundBinarySearch(unittest.TestCase):
         arr = [-1000, -100, -100, -100, -100, -2, 5, 8, 9, 15, 25, 45, 100]
         self.assertEqual(iterative_high_bound_binary_search(arr, 5), 6)
 
+    def test3(self):
+        arr = [
+            -1000, -100, -100, -100, -100, -2, 5, 5, 5, 5, 5, 8, 9, 15, 25, 45,
+            100, 100, 100, 100, 500, 500, 525, 525, 525, 525
+        ]
+        self.assertEqual(iterative_high_bound_binary_search(arr, 525),
+                         len(arr) - 1)
+
 
 class TestRecursiveBinarySearch(unittest.TestCase):
 
