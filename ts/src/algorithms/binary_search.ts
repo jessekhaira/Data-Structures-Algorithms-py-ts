@@ -34,10 +34,7 @@ function iterativeBinarySearch(array: number[], target: number): number {
     while (left < right) {
         const mid = left + Math.floor((right - left) / 2);
 
-        if (array[mid] === target) {
-            return mid;
-        }
-        if (array[mid] > target) {
+        if (array[mid] >= target) {
             right = mid;
         } else {
             left = mid + 1;
