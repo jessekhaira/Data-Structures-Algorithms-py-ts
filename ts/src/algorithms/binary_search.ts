@@ -22,7 +22,7 @@
     output value that meets some condition).
  * @param {number[]} array List of integers sorted in ascending order
  * @param {number} target Integer we're looking for in the array 
- * @returns {number} Represents the idx at which the target value occurs,
+ * @returns {number} Represents the first idx at which the target value occurs,
  * or -1 if it does not occur
  */
 function iterativeBinarySearch(array: number[], target: number): number {
