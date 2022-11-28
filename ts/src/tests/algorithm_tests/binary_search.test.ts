@@ -36,6 +36,27 @@ describe('test iterative low bound binary search', () => {
         expect(arr.length - 4).toEqual(iterativeLowBoundBinarySearch(arr, 3));
         expect(-1).toEqual(iterativeLowBoundBinarySearch(arr, 52));
     });
+
+    test('test3', () => {
+        const arr = [
+            -1000,
+            -1000,
+            5,
+            10,
+            10,
+            15,
+            35,
+            45,
+            45,
+            45,
+            45,
+            45,
+            50,
+            55,
+        ];
+
+        expect(0).toEqual(iterativeLowBoundBinarySearch(arr, -1000));
+    });
 });
 
 describe('test recursive binary search', () => {
