@@ -46,6 +46,26 @@ function iterativeLowBoundBinarySearch(
     return array[left] === target ? left : -1;
 }
 
+function iterativeHighBoundBinarySearch(
+    array: number[],
+    target: number,
+): number {
+    if (array == null) {
+        return -1;
+    }
+    let left = 0;
+    let right = array.length - 1;
+    while (left < right) {
+        const mid = Math.ceil((left + right) / 2);
+        if (array[mid] <= target) {
+            left = mid;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return array[left] === target ? left : -1;
+}
+
 function recursiveHelperBinarySearch(
     array: number[],
     target: number,
