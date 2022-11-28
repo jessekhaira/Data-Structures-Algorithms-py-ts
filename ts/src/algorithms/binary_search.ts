@@ -113,4 +113,8 @@ function recursiveBinarySearch(array: number[], target: number): number {
     return recursiveHelperBinarySearch(array, target, 0, array.length - 1);
 }
 
-export { iterativeLowBoundBinarySearch, recursiveBinarySearch };
+export {
+    iterativeLowBoundBinarySearch,
+    recursiveBinarySearch,
+    iterativeHighBoundBinarySearch,
+};
