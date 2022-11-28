@@ -34,6 +34,7 @@ describe('test iterative low bound binary search', () => {
         expect(0).toEqual(iterativeLowBoundBinarySearch(arr, -100));
         expect(7).toEqual(iterativeLowBoundBinarySearch(arr, -50));
         expect(arr.length - 4).toEqual(iterativeLowBoundBinarySearch(arr, 3));
+        expect(-1).toEqual(iterativeLowBoundBinarySearch(arr, 52));
     });
 });
 
