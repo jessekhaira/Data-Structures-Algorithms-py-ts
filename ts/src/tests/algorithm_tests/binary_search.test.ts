@@ -1,5 +1,5 @@
 import {
-    iterativeBinarySearch,
+    iterativeLowBoundBinarySearch,
     recursiveBinarySearch,
 } from '../../algorithms/binary_search';
 
@@ -7,10 +7,10 @@ describe('test iterative low bound binary search', () => {
     test('test1', () => {
         const arr = [-100, -2, 3, 5];
 
-        expect(3).toEqual(iterativeBinarySearch(arr, 5));
-        expect(0).toEqual(iterativeBinarySearch(arr, -100));
-        expect(1).toEqual(iterativeBinarySearch(arr, -2));
-        expect(-1).toEqual(iterativeBinarySearch(arr, -122));
+        expect(3).toEqual(iterativeLowBoundBinarySearch(arr, 5));
+        expect(0).toEqual(iterativeLowBoundBinarySearch(arr, -100));
+        expect(1).toEqual(iterativeLowBoundBinarySearch(arr, -2));
+        expect(-1).toEqual(iterativeLowBoundBinarySearch(arr, -122));
     });
 
     test('test2', () => {
@@ -31,9 +31,9 @@ describe('test iterative low bound binary search', () => {
             10,
         ];
 
-        expect(0).toEqual(iterativeBinarySearch(arr, -100));
-        expect(7).toEqual(iterativeBinarySearch(arr, -50));
-        expect(arr.length - 4).toEqual(iterativeBinarySearch(arr, 3));
+        expect(0).toEqual(iterativeLowBoundBinarySearch(arr, -100));
+        expect(7).toEqual(iterativeLowBoundBinarySearch(arr, -50));
+        expect(arr.length - 4).toEqual(iterativeLowBoundBinarySearch(arr, 3));
     });
 });
 

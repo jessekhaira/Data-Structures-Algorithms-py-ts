@@ -25,7 +25,10 @@
  * @returns {number} Represents the first idx at which the target value occurs,
  * or -1 if it does not occur
  */
-function iterativeBinarySearch(array: number[], target: number): number {
+function iterativeLowBoundBinarySearch(
+    array: number[],
+    target: number,
+): number {
     if (array == null) {
         return -1;
     }
@@ -90,4 +93,4 @@ function recursiveBinarySearch(array: number[], target: number): number {
     return recursiveHelperBinarySearch(array, target, 0, array.length - 1);
 }
 
-export { iterativeBinarySearch, recursiveBinarySearch };
+export { iterativeLowBoundBinarySearch, recursiveBinarySearch };
