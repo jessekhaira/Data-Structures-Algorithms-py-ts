@@ -70,6 +70,27 @@ describe('test iterative high bound binary search', () => {
         expect(1).toEqual(iterativeLowBoundBinarySearch(arr, -2));
         expect(-1).toEqual(iterativeLowBoundBinarySearch(arr, -122));
     });
+
+    test('test2', () => {
+        const arr = [
+            -100,
+            -100,
+            -100,
+            -100,
+            -100,
+            -100,
+            -100,
+            -50,
+            -50,
+            -2,
+            3,
+            5,
+            5,
+            10,
+        ];
+
+        expect(6).toEqual(iterativeHighBoundBinarySearch(arr, -100));
+    });
 });
 
 describe('test recursive binary search', () => {
