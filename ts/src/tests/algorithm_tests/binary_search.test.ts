@@ -1,6 +1,7 @@
 import {
     iterativeLowBoundBinarySearch,
     recursiveBinarySearch,
+    iterativeHighBoundBinarySearch,
 } from '../../algorithms/binary_search';
 
 describe('test iterative low bound binary search', () => {
@@ -58,6 +59,16 @@ describe('test iterative low bound binary search', () => {
         expect(0).toEqual(iterativeLowBoundBinarySearch(arr, -1000));
         expect(7).toEqual(iterativeLowBoundBinarySearch(arr, 45));
         expect(3).toEqual(iterativeLowBoundBinarySearch(arr, 10));
+    });
+});
+
+describe('test iterative high bound binary search', () => {
+    test('test1', () => {
+        const arr = [-100, -2, 3, 5];
+        expect(3).toEqual(iterativeLowBoundBinarySearch(arr, 5));
+        expect(0).toEqual(iterativeLowBoundBinarySearch(arr, -100));
+        expect(1).toEqual(iterativeLowBoundBinarySearch(arr, -2));
+        expect(-1).toEqual(iterativeLowBoundBinarySearch(arr, -122));
     });
 });
 
