@@ -20,6 +20,14 @@
     This means binary searching over the inputs of these functions to determine
     which input produces the most optimal value (ie: the highest or lowest
     output value that meets some condition).
+
+    Time: 
+        O(logN) best/average/worst
+    Space:
+        O(1) best/average/worst
+
+    Where N represents the length of the input array
+    
  * @param {number[]} array List of integers sorted in ascending order
  * @param {number} target Integer we're looking for in the array 
  * @returns {number} Represents the first idx at which the target value occurs,
