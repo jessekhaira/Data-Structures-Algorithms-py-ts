@@ -55,6 +55,9 @@ function iterativeLowBoundBinarySearch(
  * target didn't occurr at all.
  *
  * @param {number[]} array List of integers sorted in ascending order
+ * @param {number} target Target to search for in the array
+ * @returns {number} A number representing the highest position the target
+ * occurred inside the array
  */
 function iterativeHighBoundBinarySearch(
     array: number[],
