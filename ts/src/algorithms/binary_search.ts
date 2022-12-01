@@ -27,7 +27,7 @@
         O(1) best/average/worst
 
     Where N represents the length of the input array
-    
+
  * @param {number[]} array List of integers sorted in ascending order
  * @param {number} target Integer we're looking for in the array 
  * @returns {number} Represents the first idx at which the target value occurs,
@@ -61,6 +61,13 @@ function iterativeLowBoundBinarySearch(
  * Given a sorted input array and a number target, the algorithm will return
  * the highest position the target occurred inside the array, or a -1 if the
  * target didn't occurr at all.
+ *
+ * Time:
+ *  O(logN) best/average/worst
+ * Space:
+ *  O(1) best/average/worst
+ *
+ * Where N represents the length of the input array
  *
  * @param {number[]} array List of integers sorted in ascending order
  * @param {number} target Target to search for in the array
