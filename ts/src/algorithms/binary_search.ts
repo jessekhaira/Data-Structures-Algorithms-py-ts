@@ -46,6 +46,14 @@ function iterativeLowBoundBinarySearch(
     return array[left] === target ? left : -1;
 }
 
+/**
+ * This algorithm represents the high bound binary search algorithm implemented
+ * iteratively.
+ *
+ * Given a sorted input array and a number target, the algorithm will return
+ * the highest position the target occurred inside the array, or a -1 if the
+ * target didn't occurr at all.
+ */
 function iterativeHighBoundBinarySearch(
     array: number[],
     target: number,
