@@ -53,6 +53,8 @@ function iterativeLowBoundBinarySearch(
  * Given a sorted input array and a number target, the algorithm will return
  * the highest position the target occurred inside the array, or a -1 if the
  * target didn't occurr at all.
+ *
+ * @param {number[]} array List of integers sorted in ascending order
  */
 function iterativeHighBoundBinarySearch(
     array: number[],
